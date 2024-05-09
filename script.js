@@ -47,6 +47,7 @@ coordinates.onAdd = function () {
 
 coordinates.addTo(map);
 const markerPlace = document.querySelector('.center-of-map-description');
+const mapPlace = document.querySelector('#map');
 
 // update info about bounds when site loaded
 document.addEventListener('DOMContentLoaded', function () {
@@ -55,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function updateInfo() {
   const { lat, lng } = map.getCenter();
-  const zoom = map.getZoom();
   markerPlace.innerHTML = `Point: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
 }
 
@@ -80,6 +80,7 @@ const coordsPointControl = L.Control.extend({
     // показываем и скрываем указатель получения координат
     btn.onclick = function () {
       markerPlace.classList.toggle('hide');
+      mapPlace.classList.toggle('center-of-map');
     };
 
     return btn;
