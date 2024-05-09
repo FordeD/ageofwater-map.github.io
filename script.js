@@ -176,7 +176,8 @@ const map = L.map('map', config).setView([lat, lng], zoom);
 // Used to load and display tile layers on the map
 // Most tile servers require attribution, which you can set under `Layer`
 L.tileLayer('https://forded.github.io/ageofwater-map.github.io/map_parts/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://steamcommunity.com/id/forded/">Создано игроком FordeD</a>',
+  attribution:
+    '&copy; <a href="https://steamcommunity.com/id/forded/"><img src="https://forded.github.io/ageofwater-map.github.io/icons/steam_logo.webp"/>Создано игроком FordeD</a> <a href="https://discord.gg/SWumurcV6g"><img src="https://forded.github.io/ageofwater-map.github.io/icons/discord_logo.webp"/>при поддержке Русского сообщества AoW</a>',
 }).addTo(map);
 
 // reactivate zoom at the desired location
