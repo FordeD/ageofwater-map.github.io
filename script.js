@@ -159,7 +159,7 @@ const icons = {
 const config = {
   minZoom: 1,
   maxZoom: 6,
-  zoomControl: true,
+  zoomControl: false,
   fullscreenControl: true,
   noWrap: true,
   bounds: [
