@@ -156,7 +156,13 @@ const icons = {
   })
 }
 
-let config = {
+const crs = L.Util.extend({}, L.CRS, {
+  projection: L.Projection.LonLat,
+  transformation: new L.Transformation(1, 0, 1, 0),
+});
+
+const config = {
+  crs,
   minZoom: 1,
   maxZoom: 6,
   zoomControl: false,
