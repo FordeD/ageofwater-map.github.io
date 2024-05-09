@@ -17,10 +17,10 @@ const ROCK = 'Скала';
 
 const worldPoints = {
   pirates: [
-    [71.77394, -161.45508, [SHIPS.anchous, SHIPS.clever].join(',')],
-    [33.50476, -153.19336, [SHIPS.murena, SHIPS.clever].join(',')],
-    [-36.75649, -153.52295, [SHIPS.murena, SHIPS.anchous, SHIPS.clever, SHIPS.zorkiy].join(',')],
-    [81.9709, -28.94897, [SHIPS.anchous, SHIPS.clever].join(',')],
+    [71.77394, -161.45508, [SHIPS.anchous, SHIPS.clever].join('</br>')],
+    [33.50476, -153.19336, [SHIPS.murena, SHIPS.clever].join('</br>')],
+    [-36.75649, -153.52295, [SHIPS.murena, SHIPS.anchous, SHIPS.clever, SHIPS.zorkiy].join('</br>')],
+    [81.9709, -28.94897, [SHIPS.anchous, SHIPS.clever].join('</br>')],
   ],
   scraps: [
     [82.50056, -133.28613, SCRAP],
@@ -148,21 +148,22 @@ const icons = {
     iconAnchor: [15, 15],
     popupAnchor: [0, -32],
   }),
+  dynamites: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/dynamite.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -32],
+  })
 }
-
-// динамит
-const dynamiteIcon = L.icon({
-  iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/dynamite.png',
-  iconSize: [30, 30],
-  iconAnchor: [15, 15],
-  popupAnchor: [0, -32],
-});
 
 let config = {
   minZoom: 1,
   maxZoom: 6,
   zoomControl: false,
   fullscreenControl: true,
+  noWrap: true,
+  attribution:
+    '&copy; <a href="https://steamcommunity.com/id/forded/"><img src="https://forded.github.io/ageofwater-map.github.io/icons/steam_logo.webp"/>Создано игроком FordeD</a></br><a href="https://discord.gg/SWumurcV6g"><img src="https://forded.github.io/ageofwater-map.github.io/icons/discord_logo.webp"/>при поддержке Русского сообщества AoW</a>',
 };
 // magnification with which the map will start
 const zoom = 1;
@@ -175,10 +176,7 @@ const map = L.map('map', config).setView([lat, lng], zoom);
 
 // Used to load and display tile layers on the map
 // Most tile servers require attribution, which you can set under `Layer`
-L.tileLayer('https://forded.github.io/ageofwater-map.github.io/map_parts/{z}/{x}/{y}.png', {
-  attribution:
-    '&copy; <a href="https://steamcommunity.com/id/forded/"><img src="https://forded.github.io/ageofwater-map.github.io/icons/steam_logo.webp"/>Создано игроком FordeD</a> <a href="https://discord.gg/SWumurcV6g"><img src="https://forded.github.io/ageofwater-map.github.io/icons/discord_logo.webp"/>при поддержке Русского сообщества AoW</a>',
-}).addTo(map);
+L.tileLayer('https://forded.github.io/ageofwater-map.github.io/map_parts/{z}/{x}/{y}.png').addTo(map);
 
 // reactivate zoom at the desired location
 // [topleft, topright, bottomleft, bottomright]
