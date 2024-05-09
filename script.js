@@ -10,6 +10,7 @@ const SHIPS = {
 const SCRAP = 'Металл';
 const AMMO = 'Обломки боеприпасов';
 const CHEMICAL = 'Химические отходы';
+const EXPLOSIVES = 'Мины';
 const DYNAMITE = 'Динамит';
 const PANTOON = 'Деревянный пантон';
 const ROCK = 'Скала';
