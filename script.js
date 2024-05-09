@@ -87,4 +87,4 @@ const coordsPointControl = L.Control.extend({
 });
 
 // добавляем кнопку на карту
-map.addControl(new customControl());
+map.addControl(new coordsPointControl());
