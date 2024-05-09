@@ -72,10 +72,10 @@ const coordsPointControl = L.Control.extend({
     btn.title = 'Показать точку вывода координат';
     btn.textContent = '🛠';
     btn.className = 'showPoint';
-    // btn.setAttribute(
-    //   'style',
-    //   'background-color: transparent; width: 30px; height: 30px; border: none; display: flex; cursor: pointer; justify-content: center; font-size: 2rem;',
-    // );
+    btn.setAttribute(
+      'style',
+      'background-color: transparent; width: 26px; height: 26px; border: none; display: flex; cursor: pointer; justify-content: center; font-size: 2rem;',
+    );
 
     // показываем и скрываем указатель получения координат
     btn.onclick = function () {
