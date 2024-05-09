@@ -180,7 +180,10 @@ const map = L.map('map', config).setView([lat, lng], zoom);
 
 // Used to load and display tile layers on the map
 // Most tile servers require attribution, which you can set under `Layer`
-L.tileLayer('https://forded.github.io/ageofwater-map.github.io/map_parts/{z}/{x}/{y}.png').addTo(map);
+L.tileLayer(
+  'https://forded.github.io/ageofwater-map.github.io/map_parts/{z}/{x}/{y}.png',
+  config,
+).addTo(map);
 
 // reactivate zoom at the desired location
 // [topleft, topright, bottomleft, bottomright]
