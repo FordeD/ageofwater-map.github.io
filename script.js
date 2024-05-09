@@ -26,8 +26,8 @@ L.tileLayer('https://forded.github.io/ageofwater-map.github.io/map_parts/{z}/{x}
 L.control.zoom({ position: 'topleft' }).addTo(map);
 
 // loop that adds many markers to the map
-for (let i = 0; i < points.length; i++) {
-  const [lat, lng, popupText] = points[i];
+for (let i = 0; i < worldPoints.length; i++) {
+  const [lat, lng, popupText] = worldPoints[i];
 
   marker = new L.marker([lat, lng]).bindPopup(popupText).addTo(map);
 }
