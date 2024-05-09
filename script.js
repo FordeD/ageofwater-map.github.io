@@ -163,7 +163,7 @@ let config = {
   fullscreenControl: true,
   noWrap: true,
   attribution:
-    '&copy; <a href="https://steamcommunity.com/id/forded/"><img src="https://forded.github.io/ageofwater-map.github.io/icons/steam_logo.webp"/>Создано игроком FordeD</a></br><a href="https://discord.gg/SWumurcV6g"><img src="https://forded.github.io/ageofwater-map.github.io/icons/discord_logo.webp"/>при поддержке Русского сообщества AoW</a>',
+    '&copy; <a href="https://steamcommunity.com/id/forded/"><img width="12" height="12" src="https://forded.github.io/ageofwater-map.github.io/icons/steam_logo.webp"/>Создано игроком FordeD</a></br><a href="https://discord.gg/SWumurcV6g"><img src="https://forded.github.io/ageofwater-map.github.io/icons/discord_logo.webp" width="12" height="12" />при поддержке Русского сообщества AoW</a>',
 };
 // magnification with which the map will start
 const zoom = 1;
