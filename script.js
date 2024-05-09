@@ -163,8 +163,8 @@ const config = {
   fullscreenControl: true,
   noWrap: true,
   bounds: [
-    [-90, -180],
-    [90, 180]
+    [85.05492, -179.86816],
+    [-85.05208, 180.01099],
   ],
   attribution:
     '&copy; <a href="https://steamcommunity.com/id/forded/"><img width="12" height="12" src="https://forded.github.io/ageofwater-map.github.io/icons/steam_logo.webp"/>Создано игроком FordeD</a></br><a href="https://discord.gg/SWumurcV6g"><img src="https://forded.github.io/ageofwater-map.github.io/icons/discord_logo.webp" width="12" height="12" />при поддержке Русского сообщества AoW</a>',
