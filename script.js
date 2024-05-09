@@ -191,11 +191,6 @@ for (const type of types) {
     marker = new L.marker([lat, lng], { icon: icons[type] }).bindPopup(popupText).addTo(map);
   }
 }
-for (let i = 0; i < worldPoints.length; i++) {
-  const [lat, lng, popupText] = worldPoints[i];
-
-  marker = new L.marker([lat, lng]).bindPopup(popupText).addTo(map);
-}
 
 // Вывод координат на карте
 map.on('dragend', updateInfo);
