@@ -182,7 +182,7 @@ const SHIPS = {
   },
   T3: {
     BISTRIY: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_bitriy.webp',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_bistriy.webp',
       name: 'Быстрый (III)',
     },
     ZORKIJ: {
