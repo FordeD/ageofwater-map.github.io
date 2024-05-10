@@ -504,7 +504,7 @@ function generateScrapPopup() {
     SCRAP,
     RESPURCES.SCRAP,
     'Место добычи при помощи драги',
-    RESPURCES.SCRAP,
+    [RESPURCES.SCRAP],
     null,
     'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте, крафте, исследованиях и строительстве базы',
   );
@@ -515,7 +515,7 @@ function generateAmmoPopup() {
     AMMO,
     RESPURCES.AMMO,
     'Место добычи при помощи драги',
-    RESPURCES.AMMO,
+    [RESPURCES.AMMO],
     null,
     'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте и крафте оружия, исследованиях',
   );
@@ -526,7 +526,7 @@ function generateChemicalPopup() {
     CHEMICAL,
     RESPURCES.CHEMICAL,
     'Место добычи при помощи драги',
-    RESPURCES.CHEMICAL,
+    [RESPURCES.CHEMICAL],
     null,
     'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте, крафте модулей и исследованиях',
   );
