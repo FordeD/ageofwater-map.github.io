@@ -31,6 +31,14 @@ const RESPURCES = {
   BARREL: 'https://forded.github.io/ageofwater-map.github.io/resources/barrel.jpg',
 };
 
+const ACTIONS = {
+  CREW: 'https://forded.github.io/ageofwater-map.github.io/icons/crew_action.png',
+  TRADE: 'https://forded.github.io/ageofwater-map.github.io/icons/trade_action.png',
+  REPAIR: 'https://forded.github.io/ageofwater-map.github.io/icons/repair_action.png',
+  QUEST: 'https://forded.github.io/ageofwater-map.github.io/icons/quest_action.png',
+  MESSAGE: 'https://forded.github.io/ageofwater-map.github.io/icons/mail_action.png',
+};
+
 const worldPoints = {
   pirates: [
     [71.77394, -161.45508, [SHIPS.anchous, SHIPS.clever].join('</br>')],
@@ -162,22 +170,453 @@ const worldPoints = {
     [-76.71013, 54.53613, generateChemicalPopup()],
   ],
   pois: [
-    [23.9461, 0.63721, 'Три Кита'],
-    [27.43029, 1.51611, 'Три Хвоста'],
-    [-44.55916, -60.68848, 'Донжон'],
-    [-44.62175, 33.61816, 'Моби Дик'],
-    [-12.59745, 95.49316, 'Три Трубы'],
-    [80.8414, -144.51416, 'Расщелина'],
-    [80.95955, -145.34912, 'Бар "Веселая пещера"'],
+    [
+      80.8414,
+      -144.51416,
+      generateDescription(
+        'Поселение "Расщелина"',
+        null,
+        'Поселение для получения квестов, можно зайти только днем',
+        [],
+        [],
+        'В этом поселении берутся PvP квесты',
+        [ACTIONS.QUEST],
+      ),
+    ],
+    [
+      80.95955,
+      -145.34912,
+      generateDescription(
+        'Бар "Веселая пещера"',
+        null,
+        'Можно зайти только ночью',
+        [],
+        [],
+        'В этом месте берутся и сдаются квесты на члена экипажа Лин',
+        [ACTIONS.QUEST],
+      ),
+    ],
+    [
+      77.99819,
+      -145.23926,
+      generateDescription(
+        'Маяк',
+        null,
+        '',
+        [],
+        [],
+        'В это поселение приезжает караван в одном из квестов на получение члена экипажа Лин',
+      ),
+    ],
+    [
+      76.58836,
+      -115.7959,
+      generateDescription(
+        'Поселение "Кукольный дом"',
+        null,
+        '',
+        [],
+        [],
+        'Поселение для начала цепочки квестов на получение члена экипажа Лин',
+        [ACTIONS.QUEST, ACTIONS.CREW],
+      ),
+    ],
+    [
+      76.1745,
+      -55.7666,
+      generateDescription('Поселение "Радиодруин"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      72.75104,
+      -6.1084,
+      generateDescription('Бар "Богомол"', null, '', [], [], '', [ACTIONS.QUEST, ACTIONS.TRADE]),
+    ],
+    [
+      77.99819,
+      99.53613,
+      generateDescription('Поселение "Авианосец"', null, '', [], [], '', [
+        ACTIONS.QUEST,
+        ACTIONS.TRADE,
+      ]),
+    ],
+    [
+      80.42302,
+      111.92871,
+      generateDescription('Поселение "Дутагаз"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      67.187,
+      -14.28223,
+      generateDescription(
+        'Мастерская "У Джмми"',
+        null,
+        'В этой мастерской можно починить корабль за пробки',
+        [],
+        [],
+        '',
+        [ACTIONS.QUEST, ACTIONS.REPAIR],
+      ),
+    ],
+    [
+      67.187,
+      -14.28223,
+      generateDescription('Водолазное товарищество "Ама"', null, '', [], [], '', [
+        ACTIONS.QUEST,
+        ACTIONS.TRADE,
+      ]),
+    ],
+    [
+      53.77469,
+      -120.80566,
+      generateDescription('Поселение "Дракон"', null, '', [], [], '', [
+        ACTIONS.QUEST,
+        ACTIONS.TRADE,
+      ]),
+    ],
+    [
+      51.6998,
+      -80.1123,
+      generateDescription('Поселение "Хани Бани"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      53.77469,
+      -63.85254,
+      generateDescription(
+        'Поселение "Мотель"',
+        null,
+        'В этом поселении можно взять цепочку PvP квестов',
+        [],
+        [],
+        '',
+        [ACTIONS.QUEST],
+      ),
+    ],
+    [
+      48.60386,
+      -39.41895,
+      generateDescription('"Радиовышка"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      45.24395,
+      1.18652,
+      generateDescription(
+        'Мастерская "Север"',
+        null,
+        'В этой мастерской можно починить корабль за пробки',
+        [],
+        [],
+        '',
+        [ACTIONS.REPAIR],
+      ),
+    ],
+    [
+      58.2864,
+      13.40332,
+      generateDescription('Поселение "Близнецы"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      48.13677,
+      52.33887,
+      generateDescription('Поселение "Русалка"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      46.40756,
+      87.40723,
+      generateDescription(
+        'Поселение "Корабел"',
+        null,
+        'В этой мастерской можно починить корабль за пробки',
+        [],
+        [],
+        'По цепочке квестов в этом месте вы можете получит один из трех актуальных бортов I тира на выбор',
+        [ACTIONS.QUEST, ACTIONS.REPAIR],
+      ),
+    ],
+    [
+      25.52261,
+      82.57324,
+      generateDescription('Поселение "Поплавок"', null, '', [], [], '', [
+        ACTIONS.QUEST,
+        ACTIONS.TRADE,
+      ]),
+    ],
+    [
+      3.645,
+      118.34473,
+      generateDescription(
+        'Мастерская "Нико"',
+        null,
+        'В этой мастерской можно починить корабль за пробки',
+        [],
+        [],
+        '',
+        [ACTIONS.QUEST, ACTIONS.REPAIR],
+      ),
+    ],
+    [
+      -12.51167,
+      95.58105,
+      generateDescription(
+        'Поселение "Три трубы"',
+        null,
+        '',
+        [],
+        [],
+        'По цепочке квестов в из "Коллизея" на получение двух членов экипажа Лиззи попросит вас принисти 50 Химических отходов',
+        [ACTIONS.QUEST, ACTIONS.TRADE],
+      ),
+    ],
+    [
+      -1.09857,
+      58.13965,
+      generateDescription(
+        'Мастерская "Восток"',
+        null,
+        'В этой мастерской можно починить корабль за пробки',
+        [],
+        [],
+        '',
+        [ACTIONS.REPAIR],
+      ),
+    ],
+    [
+      23.9461,
+      0.63721,
+      generateDescription(
+        'Поселение "Три кита"',
+        null,
+        'Основное поселение игры, на данном поселении находится база игрока которую нужно будет улучшать. В поселении имеется торговец, шериф выдающий как обычные так и PvP задания, а так же другие NPC',
+        [],
+        [],
+        '',
+        [ACTIONS.QUEST, ACTIONS.TRADE, ACTIONS.MESSAGE, ACTIONS.REPAIR],
+      ),
+    ],
+    [
+      27.43029,
+      1.51611,
+      generateDescription(
+        'Бар "Три Хвоста"',
+        null,
+        'В этом поселении можно купить воду и еду, а так же продать некоторые другие товары товары',
+        [],
+        [],
+        'В некоторых квестах на развитие базы вас будут отправлять в это место',
+        [ACTIONS.QUEST, ACTIONS.TRADE],
+      ),
+    ],
+    [
+      -1.18644,
+      -55.67871,
+      generateDescription(
+        'Мастерская "Запад"',
+        null,
+        'В этой мастерской можно починить корабль за пробки',
+        [],
+        [],
+        '',
+        [ACTIONS.REPAIR],
+      ),
+    ],
+    [
+      6.79554,
+      -80.2002,
+      generateDescription(
+        'Поселение "Клумба"',
+        null,
+        'В этом поселении можно взять цепочку PvP квестов',
+        [],
+        [],
+        '',
+        [ACTIONS.QUEST],
+      ),
+    ],
+    [29.95493, -75.36621, generateDescription('Поселение "Статуя"', null, '', [], [], '')],
+    [
+      -31.98944,
+      -76.86035,
+      generateDescription(
+        'Поселение "Колизей"',
+        null,
+        'В этом поселении можно начать цепочку квестов на получение двух членов экипажа Батыр и Аймара',
+        [],
+        [],
+        '',
+        [ACTIONS.QUEST, ACTIONS.CREW],
+      ),
+    ],
+    [
+      -44.55916,
+      -60.68848,
+      generateDescription(
+        'Поселение "Донжон"',
+        null,
+        'В этом поселении можно продать или купить определенные товары по высокой цене',
+        [],
+        [],
+        '',
+        [ACTIONS.QUEST, ACTIONS.TRADE],
+      ),
+    ],
+    [
+      -37.33522,
+      -37.9248,
+      generateDescription('Поселение "Дом охотника на акул"', null, '', [], [], '', [
+        ACTIONS.QUEST,
+      ]),
+    ],
+    [
+      -55.40407,
+      -53.21777,
+      generateDescription('NPC охотник на акул', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      -61.07954,
+      -55.67871,
+      generateDescription('Поселение "Проклятый локатор"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      -31.98944,
+      1.18652,
+      generateDescription('Поселение "Орден"', null, '', [], [], '', [
+        ACTIONS.QUEST,
+        ACTIONS.TRADE,
+      ]),
+    ],
+    [
+      -50.65294,
+      -0.39551,
+      generateDescription(
+        'Мастерская "Юг"',
+        null,
+        'В этой мастерской можно починить корабль за пробки',
+        [],
+        [],
+        '',
+        [ACTIONS.REPAIR],
+      ),
+    ],
+    [
+      -64.75539,
+      -2.06543,
+      generateDescription('Поселение "Красная стрела"', null, '', [], [], '', [
+        ACTIONS.QUEST,
+        ACTIONS.TRADE,
+      ]),
+    ],
+    [
+      -63.33241,
+      17.44629,
+      generateDescription('Бар "Жираф"', null, '', [], [], '', [ACTIONS.QUEST, ACTIONS.TRADE]),
+    ],
+    [
+      -72.40899,
+      -14.98535,
+      generateDescription('Поселение "Колокольня"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      -75.53014,
+      22.45605,
+      generateDescription('Поселение "Ветряки"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      -66.7399,
+      46.62598,
+      generateDescription('Поселение "Здание суда"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      -59.46741,
+      69.47754,
+      generateDescription('Поселение "Слон"', null, '', [], [], '', [ACTIONS.QUEST, ACTIONS.TRADE]),
+    ],
+    [
+      -44.62175,
+      33.61816,
+      generateDescription('Поселение "Моби Дик"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      -34.70549,
+      63.06152,
+      generateDescription('Поселение "Диоген"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      -29.11378,
+      41.96777,
+      generateDescription('Поселение "Вход на вулкан"', null, '', [], [], '', [
+        ACTIONS.QUEST,
+      ]),
+    ],
   ],
   traders: [
-    [83.18708, 1.07666, 'Торговец 12'],
-    [78.54741, 82.46338, 'Торговец 1'],
-    [62.3598, 142.05322, 'Торговец 2'],
-    [-1.16447, 163.89404, 'Торговец 3'],
-    [-63.32255, 142.05322, 'Торговец 4'],
-    [-80.40473, 82.50732, 'Торговец 5'],
-    [-83.4353, 1.09863, 'Торговец 6'],
+    [
+      27.01998,
+      56.55762,
+      generateDescription(
+        'Торговец "Центр"',
+        null,
+        'Торговая точка для продажи и покупки ресурсов',
+      ),
+    ],
+    [
+      78.54741,
+      82.46338,
+      generateDescription('Торговец 1', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      62.3598,
+      142.05322,
+      generateDescription('Торговец 2', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      -1.16447,
+      163.89404,
+      generateDescription('Торговец 3', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      -63.32255,
+      142.05322,
+      generateDescription('Торговец 4', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      -80.40473,
+      82.50732,
+      generateDescription('Торговец 5', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      -83.4353,
+      1.09863,
+      generateDescription('Торговец 6', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      -80.41571,
+      -80.1123,
+      generateDescription('Торговец 7', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      -63.33241,
+      -139.79004,
+      generateDescription('Торговец 8', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      -1.27431,
+      -161.49902,
+      generateDescription('Торговец 9', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      62.37,
+      -139.61426,
+      generateDescription('Торговец 10', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      80.05046,
+      -80.2002,
+      generateDescription('Торговец 11', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
+    [
+      83.18708,
+      1.07666,
+      generateDescription('Торговец 12', null, 'Торговая точка для продажи и покупки ресурсов'),
+    ],
   ],
   dynamites: [
     [29.51611, -2.39502, DYNAMITE],
@@ -247,6 +686,12 @@ const icons = {
   }),
   pois: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/poi.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -32],
+  }),
+  postal: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/postal.png',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -32],
@@ -472,10 +917,17 @@ const legendControl = L.Control.extend({
 map.addControl(new legendControl());
 
 
-function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null) {
+function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null, actions = []) {
   let context = `<div class="popup-header-block"><h3 class="popup-title">${title}</h3>`;
   if (image) {
     context += `<div class="popup-main-image"><img src="${image}" width="100" height="100"></div>`;
+  }
+  if (actions) {
+    context += '<div class="popup-actions-block">';
+    for (const action of actions) {
+      context += `<img class="popup-resource-image" src="${action}" width="35" height="35" />`;
+    }
+    context += '</div>';
   }
   context += '</div><div class="clr"></div>';
   if (description) {
