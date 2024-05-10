@@ -220,29 +220,6 @@ for (const type of types) {
   }
 }
 
-// centering a group of markers
-map.on("layeradd layerremove", function () {
-  // Create new empty bounds
-  let bounds = new L.LatLngBounds();
-  // Iterate the map's layers
-  map.eachLayer(function (layer) {
-    // Check if layer is a featuregroup
-    if (layer instanceof L.FeatureGroup) {
-      // Extend bounds with group's bounds
-      bounds.extend(layer.getBounds());
-    }
-  });
-
-  // Check if bounds are valid (could be empty)
-  if (bounds.isValid()) {
-    // Valid, fit bounds
-    map.flyToBounds(bounds);
-  } else {
-    // Invalid, fit world
-    // map.fitWorld();
-  }
-});
-
 
 // Вывод координат на карте
 map.on('dragend', updateInfo);
@@ -337,7 +314,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
 
 new L.Control.CustomButtons(null, legendMarkers, { collapsed: false }).addTo(map);
 
-const legendPlace = document.querySelector('.leaflet-control-layers-list');
+const legendPlace = document.querySelector('.leaflet-control-layers');
 
 
 const legendControl = L.Control.extend({
@@ -350,11 +327,11 @@ const legendControl = L.Control.extend({
   onAdd: function (map) {
     const btn = L.DomUtil.create('button');
     btn.title = 'Показать/скрыть фильтр меток';
-    btn.textContent = '';
+    btn.textContent = '📌';
     btn.className = 'showLegend';
     btn.setAttribute(
       'style',
-      "background-color: transparent; width: 26px; height: 26px; border: none; display: flex; cursor: pointer; justify-content: center; font-size: 2rem; background-image: 'https://forded.github.io/ageofwater-map.github.io/icons/filter.png'; background-size: cover;",
+      "background-color: transparent; width: 26px; height: 26px; border: none; display: flex; cursor: pointer; justify-content: center; font-size: 2rem;",
     );
 
     // показываем и скрываем указатель получения координат
