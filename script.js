@@ -93,6 +93,19 @@ const worldPoints = {
   ],
 };
 
+const legendNames = {
+  pirates: 'Пиратские корабли',
+  scraps: 'Металл',
+  ammos: 'Обломки боеприпасов',
+  chemicals: 'Химические отходы',
+  pois: 'Поселения',
+  traders: 'Торговцы',
+  dynamites: 'Динамит',
+  explosives: 'Мины',
+  pantoons: 'Деревянные пантоны',
+  rocks: 'Скалы'
+};
+
 const icons = {
   pirates: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -156,6 +169,8 @@ const icons = {
   })
 }
 
+const iconGroups = [];
+
 const config = {
   minZoom: 1,
   maxZoom: 6,
@@ -191,13 +206,43 @@ L.control.zoom({ position: 'topleft' }).addTo(map);
 
 // loop that adds many markers to the map
 const types = Object.keys(worldPoints);
+iconGroups['all'] = new L.FeatureGroup();
+const legendMarkers = {};
 for (const type of types) {
+  iconGroups[type] = new L.FeatureGroup();
+  legendMarkers[legendNames[type]] = iconGroups[type];
   for (let i = 0; i < worldPoints[type].length; i++) {
     const [lat, lng, popupText] = worldPoints[type][i];
 
-    marker = new L.marker([lat, lng], { icon: icons[type] }).bindPopup(popupText).addTo(map);
+    let marker = new L.marker([lat, lng], { icon: icons[type] }).bindPopup(popupText);
+    iconGroups[type].addLayer(marker);
+    
   }
 }
+
+// centering a group of markers
+map.on("layeradd layerremove", function () {
+  // Create new empty bounds
+  let bounds = new L.LatLngBounds();
+  // Iterate the map's layers
+  map.eachLayer(function (layer) {
+    // Check if layer is a featuregroup
+    if (layer instanceof L.FeatureGroup) {
+      // Extend bounds with group's bounds
+      bounds.extend(layer.getBounds());
+    }
+  });
+
+  // Check if bounds are valid (could be empty)
+  if (bounds.isValid()) {
+    // Valid, fit bounds
+    map.flyToBounds(bounds);
+  } else {
+    // Invalid, fit world
+    // map.fitWorld();
+  }
+});
+
 
 // Вывод координат на карте
 map.on('dragend', updateInfo);
@@ -248,6 +293,73 @@ const coordsPointControl = L.Control.extend({
     btn.onclick = function () {
       markerPlace.classList.toggle('hide');
       mapPlace.classList.toggle('center-of-map');
+    };
+
+    return btn;
+  },
+});
+
+// добавляем кнопку на карту
+map.addControl(new coordsPointControl());
+
+L.Control.CustomButtons = L.Control.Layers.extend({
+  onAdd: function () {
+    this._initLayout();
+    this._addMarker();
+    this._removeMarker();
+    this._update();
+    return this._container;
+  },
+  _addMarker: function () {
+    this.createButton('Показать', 'add-button');
+  },
+  _removeMarker: function () {
+    this.createButton('Скрыть', 'remove-button');
+  },
+  createButton: function (type, className) {
+    const elements = this._container.getElementsByClassName('leaflet-control-layers-list');
+    const button = L.DomUtil.create('button', `btn-markers ${className}`, elements[0]);
+    button.textContent = `${type} метки`;
+
+    L.DomEvent.on(button, 'click', function (e) {
+      const checkbox = document.querySelectorAll(
+        '.leaflet-control-layers-overlays input[type=checkbox]',
+      );
+
+      // Remove/add all layer from map when click on button
+      [].slice.call(checkbox).map((el) => {
+        el.checked = type === 'add' ? false : true;
+        el.click();
+      });
+    });
+  },
+});
+
+new L.Control.CustomButtons(null, overlayMaps, { collapsed: false }).addTo(map);
+
+const legendPlace = document.querySelector('.leaflet-control-layers-list');
+
+
+const legendControl = L.Control.extend({
+  // button position
+  options: {
+    position: 'topleft',
+  },
+
+  // method
+  onAdd: function (map) {
+    const btn = L.DomUtil.create('button');
+    btn.title = 'Показать/скрыть фильтр меток';
+    btn.textContent = '';
+    btn.className = 'showLegend';
+    btn.setAttribute(
+      'style',
+      "background-color: transparent; width: 26px; height: 26px; border: none; display: flex; cursor: pointer; justify-content: center; font-size: 2rem; background-image: 'https://forded.github.io/ageofwater-map.github.io/icons/filter.png'; background-size: cover;",
+    );
+
+    // показываем и скрываем указатель получения координат
+    btn.onclick = function () {
+      legendPlace.classList.toggle('hide');
     };
 
     return btn;
