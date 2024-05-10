@@ -469,19 +469,23 @@ function generateDescription(title, image = null, description = null, resources 
   if (nuances) {
     context += `<b>Уточнение:</b></br><p>${nuances}</p></br></br>`;
   }
-  context += `<div class="popup-resource-block">`;
-  context += '<b>Получаемые ресурсы:</b></br>';
-  for (const resource of resources) {
-    context += `<img class="popup-resource-image" src="${resource}" width="75" height="75" />`;
+  if (resources) {
+    context += `<div class="popup-resource-block">`;
+    context += '<b>Получаемые ресурсы:</b></br>';
+    for (const resource of resources) {
+      context += `<img class="popup-resource-image" src="${resource}" width="75" height="75" />`;
+    }
+    context += `</div></br></br>`;
   }
-  context += `</div></br></br>`;
 
-  context += `<div class="popup-resource-block">`;
-  context += '<b>Получаемые предметы за абордаж:</b></br>';
-  for (const boarding of boardings) {
-    context += `<img class="popup-resource-image" src="${boarding}" width="75" height="75" />`;
+  if (boardings) {
+    context += `<div class="popup-resource-block">`;
+    context += '<b>Можно получить при абордаже:</b></br>';
+    for (const boarding of boardings) {
+      context += `<img class="popup-resource-image" src="${boarding}" width="75" height="75" />`;
+    }
+    context += `</div>`;
   }
-  context += `</div>`;
   return context;
 };
 
