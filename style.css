@@ -66,3 +66,11 @@ body {
   background: rgba(48, 48, 49, 0.7);
   color: #ffffff;
 }
+
+.custom-popup-block {
+  background: rgba(48, 48, 49, 0.7);
+  color: #ffffff;
+  max-width: 500px;
+  max-height: 500px;
+  overflow-y: scroll;
+}

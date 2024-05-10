@@ -298,6 +298,12 @@ const config = {
   attribution:
     '&copy; <a href="https://steamcommunity.com/id/forded/"><img width="12" height="12" src="https://forded.github.io/ageofwater-map.github.io/icons/steam_logo.webp"/>Создано игроком FordeD</a></br><a href="https://discord.gg/SWumurcV6g"><img src="https://forded.github.io/ageofwater-map.github.io/icons/discord_logo.webp" width="12" height="12" />при поддержке Русского сообщества AoW</a>',
 };
+
+const popupOptions = {
+  maxWidth: '500px',
+  maxHeight: '500px',
+  className: 'custom-popup-block', // name custom popup
+};
 // magnification with which the map will start
 const zoom = 2;
 // co-ordinates
@@ -326,9 +332,12 @@ for (const type of types) {
   iconGroups[type] = new L.FeatureGroup();
   legendMarkers[legendNames[type]] = iconGroups[type];
   for (let i = 0; i < worldPoints[type].length; i++) {
-    const [lat, lng, popupText] = worldPoints[type][i];
+    const [lat, lng, popupContent] = worldPoints[type][i];
 
-    let marker = new L.marker([lat, lng], { icon: icons[type] }).bindPopup(popupText);
+    let marker = new L.marker([lat, lng], { icon: icons[type] }).bindPopup(
+      popupContent,
+      popupOptions,
+    );
     iconGroups[type].addLayer(marker);
     
   }
@@ -496,8 +505,8 @@ function generateScrapPopup() {
     RESPURCES.SCRAP,
     'Место добычи при помощи драги',
     RESPURCES.SCRAP,
-    'В малом количестве могут добываться и иные ресурсы',
-    'Ресурс используется в ремонте, крафте, исследованиях и строительстве базы'
+    null,
+    'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте, крафте, исследованиях и строительстве базы',
   );
 }
 
@@ -507,8 +516,8 @@ function generateAmmoPopup() {
     RESPURCES.AMMO,
     'Место добычи при помощи драги',
     RESPURCES.AMMO,
-    'В малом количестве могут добываться и иные ресурсы',
-    'Ресурс используется в ремонте и крафте оружия, исследованиях',
+    null,
+    'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте и крафте оружия, исследованиях',
   );
 }
 
@@ -518,7 +527,7 @@ function generateChemicalPopup() {
     RESPURCES.CHEMICAL,
     'Место добычи при помощи драги',
     RESPURCES.CHEMICAL,
-    'В малом количестве могут добываться и иные ресурсы',
-    'Ресурс используется в ремонте, крафте модулей и исследованиях',
+    null,
+    'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте, крафте модулей и исследованиях',
   );
 }
