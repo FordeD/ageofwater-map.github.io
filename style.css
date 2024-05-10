@@ -90,7 +90,7 @@ body {
   color: #ffffff;
   max-width: 500px;
   max-height: 500px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .leaflet-popup-content p {
@@ -129,4 +129,13 @@ body {
 
 .popup-main-image img {
   padding: 5px 0px 0px 5px;
+}
+
+.marker-toltip {
+  border: 1px solid rgba(48, 48, 49, 0.9);
+  background-color: rgba(48, 48, 49, 0.9);;
+  color: #ffffff;
+  padding: 8px 20px 4px 20px;
+  font-size: 1rem;
+  line-height: 100%;
 }

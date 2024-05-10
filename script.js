@@ -937,6 +937,14 @@ for (const type of types) {
       popupContent,
       popupOptions,
     );
+    if (type === 'pois') {
+      marker.bindTooltip(popupText, {
+        permanent: true,
+        direction: "bottom",
+        className: "marker-toltip",
+        offset: [-15, 30],
+      });
+    }
     iconGroups[type].addLayer(marker);
     
   }
