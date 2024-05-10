@@ -739,6 +739,11 @@ const worldPoints = {
     [-1.71361, -8.56934, generateDynamitePopup()],
     [-13.88075, 1.18652, generateDynamitePopup()],
     [-28.96009, 1.18652, generateDynamitePopup()],
+    [-36.06686, 25.70801, generateDynamitePopup()],
+    [-21.49396, 40.56152, generateDynamitePopup()],
+    [3.55728, 45.21973, generateDynamitePopup()],
+    [0.48339, 22.0166, generateDynamitePopup()],
+    [23.20096, 36.95801, generateDynamitePopup()],
   ],
   explosives: [[-56.77681, 90.4834, EXPLOSIVES]],
   pantoons: [
