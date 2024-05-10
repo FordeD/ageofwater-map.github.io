@@ -867,6 +867,12 @@ const worldPoints = {
       'Поселение "Шарк-Сити"',
     ],
     [
+      -82.01528,
+      -154.11621,
+      generateDescription('Тайное логово', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Тайное логово',
+    ],
+    [
       -74.66002,
       123.20068,
       generateDescription('Поселение "Бензоколонка"', null, '', [], [], '', [ACTIONS.QUEST]),
