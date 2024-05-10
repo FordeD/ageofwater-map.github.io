@@ -937,7 +937,7 @@ function generateDescription(title, image = null, description = null, resources 
   if (nuances) {
     context += `<b>Уточнение:</b><p>${nuances}</p>`;
   }
-  if (resources) {
+  if (resources && resources.length) {
     context += `<div class="popup-resource-block">`;
     context += '<b>Получаемые ресурсы:</b>';
     for (const resource of resources) {
@@ -946,7 +946,7 @@ function generateDescription(title, image = null, description = null, resources 
     context += `</div>`;
   }
 
-  if (boardings) {
+  if (boardings && boardings.length) {
     context += `<div class="popup-resource-block">`;
     context += '<b>Можно получить при абордаже:</b>';
     for (const boarding of boardings) {
