@@ -471,18 +471,22 @@ map.addControl(new legendControl());
 
 
 function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null) {
-  let context = `<h3 class="popup-title">${title}</h3></br></br>`;
+  let context = `<div><h3 class="popup-title">${title}</h3></br></br>`;
   if (image) {
-    context += `<div class="popup-main-image"><img src="${image}" width="150" height="150"></div>`;
+    context += `<div class="popup-main-image"><img src="${image}" width="100" height="100"></div>`;
+  }
+  context += '</div>';
+  if (description) {
+    context += `<b>Описание:</b></br><p>${description}</p></br>`;
   }
   if (nuances) {
-    context += `<b>Уточнение:</b></br><p>${nuances}</p></br></br>`;
+    context += `<b>Уточнение:</b></br><p>${nuances}</p></br>`;
   }
   if (resources) {
     context += `<div class="popup-resource-block">`;
     context += '<b>Получаемые ресурсы:</b></br>';
     for (const resource of resources) {
-      context += `<img class="popup-resource-image" src="${resource}" width="75" height="75" />`;
+      context += `<img class="popup-resource-image" src="${resource}" width="40" height="40" />`;
     }
     context += `</div></br></br>`;
   }

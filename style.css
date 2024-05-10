@@ -74,3 +74,20 @@ body {
   max-height: 500px;
   overflow-y: scroll;
 }
+
+.leaflet-popup-content-wrapper {
+  background: none;
+}
+
+.popup-title {
+  display: block;
+  float: left;
+  padding: 5px;
+  max-width: 350px;
+  min-width: 200px;
+}
+.popup-main-image {
+  display: block;
+  float: right;
+  width: 100px;
+}
