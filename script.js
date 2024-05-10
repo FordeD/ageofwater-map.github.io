@@ -158,25 +158,25 @@ const ITEMS = {
 const SHIPS = {
   T1: {
     SOFIYA: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_Sofiya.jpg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_Sofiya.webp',
       name: 'София (I)',
     },
     DINGHY: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_dinghy.jpg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_dinghy.webp',
       name: 'Dinghy (I)',
     },
   },
   T2: {
     SCORPEN: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_scorpen.jpg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_scorpen.webp',
       name: 'Скорпен (II)',
     },
     MARIANA: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_mariana.jpg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_mariana.webp',
       name: 'Mariana Seiner (II)',
     },
     MARLIN: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_marlin.jpg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_marlin.webp',
       name: 'TK7 Marlin Torpedo Boat (II)',
     },
   },
@@ -190,7 +190,7 @@ const SHIPS = {
       name: 'Зоркий (III)',
     },
     CLEVER: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_clever.jwebppg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_clever.webp',
       name: 'Клевер (III)',
     },
     MORJ: {
