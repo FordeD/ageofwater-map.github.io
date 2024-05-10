@@ -80,6 +80,10 @@ body {
   color: #ffffff;
 }
 
+.popup-header-block {
+  min-width: 350px;
+}
+
 .popup-title {
   display: block;
   float: left;
