@@ -214,7 +214,7 @@ const SHIPS = {
   },
   T5: {
     REPEJ: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_repej.webp',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T5_repej.webp',
       name: 'Репей (V)',
     },
   },
