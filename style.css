@@ -92,3 +92,7 @@ body {
   float: right;
   width: 100px;
 }
+
+.clr {
+  float: none;
+}

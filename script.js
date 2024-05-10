@@ -471,11 +471,11 @@ map.addControl(new legendControl());
 
 
 function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null) {
-  let context = `<div><h3 class="popup-title">${title}</h3></br></br>`;
+  let context = `<div class="popup-header-block"><h3 class="popup-title">${title}</h3>`;
   if (image) {
     context += `<div class="popup-main-image"><img src="${image}" width="100" height="100"></div>`;
   }
-  context += '</div>';
+  context += '</div><div class="clr"></div>';
   if (description) {
     context += `<b>Описание:</b></br><p>${description}</p></br>`;
   }
