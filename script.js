@@ -114,19 +114,19 @@ const icons = {
     popupAnchor: [0, -32],
   }),
   scraps: L.icon({
-    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/scrap.png',
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/resources/scrap.jpg',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -32],
   }),
   ammos: L.icon({
-    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/ammo.png',
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/resources/ammo.jpg',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -32],
   }),
   chemicals: L.icon({
-    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/chemical.png',
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/resources/chemical.jpg',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -32],
@@ -166,8 +166,8 @@ const icons = {
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -32],
-  })
-}
+  }),
+};
 
 const iconGroups = [];
 
