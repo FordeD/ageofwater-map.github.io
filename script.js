@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function updateInfo() {
   const { lat, lng } = map.getCenter();
-  markerPlace.innerHTML = `Point: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+  markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
 }
 
 // create custom button
@@ -328,7 +328,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
 
       // Remove/add all layer from map when click on button
       [].slice.call(checkbox).map((el) => {
-        el.checked = type === 'add' ? false : true;
+        el.checked = type === 'Показать' ? false : true;
         el.click();
       });
     });
@@ -367,4 +367,4 @@ const legendControl = L.Control.extend({
 });
 
 // добавляем кнопку на карту
-map.addControl(new coordsPointControl());
+map.addControl(new legendControl());
