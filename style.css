@@ -122,3 +122,7 @@ body {
 .clr {
   float: none;
 }
+
+.popup-main-image img {
+  padding: 5px 0px 0px 5px;
+}
