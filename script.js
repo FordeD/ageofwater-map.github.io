@@ -485,10 +485,10 @@ function generateDescription(title, image = null, description = null, resources 
   }
   context += '</div><div class="clr"></div>';
   if (description) {
-    context += `<b>Описание:</b></br><p>${description}</p>`;
+    context += `<b>Описание:</b><p>${description}</p>`;
   }
   if (nuances) {
-    context += `<b>Уточнение:</b></br><p>${nuances}</p>`;
+    context += `<b>Уточнение:</b><p>${nuances}</p>`;
   }
   if (resources) {
     context += `<div class="popup-resource-block">`;
