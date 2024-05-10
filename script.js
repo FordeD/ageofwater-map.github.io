@@ -12,23 +12,33 @@ const AMMO = 'Обломки боеприпасов';
 const CHEMICAL = 'Химические отходы';
 const EXPLOSIVES = 'Мины';
 const DYNAMITE = 'Динамит';
-const PANTOON = 'Деревянный пантон';
+const PANTOON = 'Разбитый пантон';
 const ROCK = 'Скала';
 
 const RESPURCES = {
   SCRAP: 'https://forded.github.io/ageofwater-map.github.io/resources/scrap.jpg',
+  STEEL: 'https://forded.github.io/ageofwater-map.github.io/resources/steel.jpg',
   AMMO: 'https://forded.github.io/ageofwater-map.github.io/resources/ammo.jpg',
   CHEMICAL: 'https://forded.github.io/ageofwater-map.github.io/resources/chemical.jpg',
   COPPER: 'https://forded.github.io/ageofwater-map.github.io/resources/copper.jpg',
+  COPPER_PLATES: 'https://forded.github.io/ageofwater-map.github.io/resources/copper_plate.jpg',
   DYNAMITE: 'https://forded.github.io/ageofwater-map.github.io/resources/dynamite.jpg',
   FIBER: 'https://forded.github.io/ageofwater-map.github.io/resources/fiber.jpg',
   WOOD: 'https://forded.github.io/ageofwater-map.github.io/resources/wood.jpg',
   TEXTILE: 'https://forded.github.io/ageofwater-map.github.io/resources/textile.jpg',
+  FABRIC: 'https://forded.github.io/ageofwater-map.github.io/resources/fabric.jpg',
   MECHANISM: 'https://forded.github.io/ageofwater-map.github.io/resources/mechanism.jpg',
   PLASTIC: 'https://forded.github.io/ageofwater-map.github.io/resources/plastic.jpg',
+  PLASTIC_PLATE: 'https://forded.github.io/ageofwater-map.github.io/resources/plastic_PLATE.jpg',
   PLATS: 'https://forded.github.io/ageofwater-map.github.io/resources/plats.jpg',
   REACTIVE: 'https://forded.github.io/ageofwater-map.github.io/resources/reactive.jpg',
   BARREL: 'https://forded.github.io/ageofwater-map.github.io/resources/barrel.jpg',
+  BAIT: 'https://forded.github.io/ageofwater-map.github.io/resources/bait.jpg',
+  BALLAST: 'https://forded.github.io/ageofwater-map.github.io/resources/ballast.jpg',
+  EAT: 'https://forded.github.io/ageofwater-map.github.io/resources/eat.jpg',
+  ROPE: 'https://forded.github.io/ageofwater-map.github.io/resources/rope.jpg',
+  WATER: 'https://forded.github.io/ageofwater-map.github.io/resources/water.jpg',
+  PLANK: 'https://forded.github.io/ageofwater-map.github.io/resources/plank.jpg',
 };
 
 const ACTIONS = {
@@ -182,6 +192,16 @@ const worldPoints = {
         'В этом поселении берутся PvP квесты',
         [ACTIONS.QUEST],
       ),
+    ],
+    [
+      -81.29503,
+      -145.23926,
+      generateDescription('Поселение "Шарк-Сити"', null, '', [], [], '', [ACTIONS.QUEST]),
+    ],
+    [
+      -74.66002,
+      123.20068,
+      generateDescription('Поселение "Бензоколонка"', null, '', [], [], '', [ACTIONS.QUEST]),
     ],
     [
       80.95955,
@@ -542,9 +562,7 @@ const worldPoints = {
     [
       -29.11378,
       41.96777,
-      generateDescription('Поселение "Вход на вулкан"', null, '', [], [], '', [
-        ACTIONS.QUEST,
-      ]),
+      generateDescription('Поселение "Вход на вулкан"', null, '', [], [], '', [ACTIONS.QUEST]),
     ],
   ],
   traders: [
@@ -629,20 +647,138 @@ const worldPoints = {
   ],
   explosives: [[-56.77681, 90.4834, EXPLOSIVES]],
   pantoons: [
-    [69.72572, 7.7124, PANTOON],
-    [66.5045, 25.86182, PANTOON],
-    [64.74602, 40.01221, PANTOON],
-    [59.54546, 69.80713, PANTOON],
-    [32.45416, 92.83447, PANTOON],
-    [1.55987, 98.15186, PANTOON],
-    [-16.44662, 87.60498, PANTOON],
+    [69.72572, 7.7124, generatePantoonPopup()],
+    [66.5045, 25.86182, generatePantoonPopup()],
+    [64.74602, 40.01221, generatePantoonPopup()],
+    [59.54546, 69.80713, generatePantoonPopup()],
+    [32.45416, 92.83447, generatePantoonPopup()],
+    [1.55987, 98.15186, generatePantoonPopup()],
+    [-16.44662, 87.60498, generatePantoonPopup()],
   ],
   rocks: [
-    [84.09227, -164.80591, ROCK],
-    [80.42485, -132.22046, ROCK],
-    [71.67403, -58.9856, ROCK],
-    [63.82613, -76.93726, ROCK],
-    [45.35215, -120.91553, ROCK],
+    [84.09227, -164.80591, generateRockPopup()],
+    [80.42485, -132.22046, generateRockPopup()],
+    [71.67403, -58.9856, generateRockPopup()],
+    [63.82613, -76.93726, generateRockPopup()],
+    [45.35215, -120.91553, generateRockPopup()],
+  ],
+  teleports: [
+    [
+      -24.72687,
+      -39.30908,
+      generateDescription('Телепорт в Шарк-Сити', null, 'Быстрое перемещение в цетр Шарк-Сити'),
+    ],
+    [
+      -81.41393,
+      -142.0752,
+      generateDescription('Телепорт из Шарк-Сити', null, 'Быстрое перемещение к поселению "Орден"'),
+    ],
+  ],
+  postal: [
+    [
+      80.9699,
+      1.12061,
+      generateDescription(
+        'Почта N',
+        null,
+        'Поселение выдающее задание на перевозку сообщений',
+        null,
+        null,
+        null,
+        [ACTIONS.MESSAGE],
+      ),
+    ],
+    [
+      70.9597,
+      104.63379,
+      generateDescription(
+        'Почта NE',
+        null,
+        'Поселение выдающее задание на перевозку сообщений',
+        null,
+        null,
+        null,
+        [ACTIONS.MESSAGE],
+      ),
+    ],
+    [
+      -1.1425,
+      147.7002,
+      generateDescription(
+        'Почта E',
+        null,
+        'Поселение выдающее задание на перевозку сообщений',
+        null,
+        null,
+        null,
+        [ACTIONS.MESSAGE],
+      ),
+    ],
+    [
+      -71.66366,
+      104.5459,
+      generateDescription(
+        'Почта SE',
+        null,
+        'Поселение выдающее задание на перевозку сообщений',
+        null,
+        null,
+        null,
+        [ACTIONS.MESSAGE],
+      ),
+    ],
+    [
+      -81.28172,
+      1.18652,
+      generateDescription(
+        'Почта S',
+        null,
+        'Поселение выдающее задание на перевозку сообщений',
+        null,
+        null,
+        null,
+        [ACTIONS.MESSAGE],
+      ),
+    ],
+    [
+      -71.63599,
+      -102.08496,
+      generateDescription(
+        'Почта SW',
+        null,
+        'Поселение выдающее задание на перевозку сообщений',
+        null,
+        null,
+        null,
+        [ACTIONS.MESSAGE],
+      ),
+    ],
+    [
+      -1.1425,
+      -145.23926,
+      generateDescription(
+        'Почта W',
+        null,
+        'Поселение выдающее задание на перевозку сообщений',
+        null,
+        null,
+        null,
+        [ACTIONS.MESSAGE],
+      ),
+    ],
+    [
+      70.9597,
+      -102.08496,
+      generateDescription(
+        'Почта NW',
+        null,
+        'Поселение выдающее задание на перевозку сообщений',
+        null,
+        null,
+        null,
+        [ACTIONS.MESSAGE],
+      ),
+    ],
   ],
 };
 
@@ -652,16 +788,24 @@ const legendNames = {
   ammos: 'Обломки боеприпасов',
   chemicals: 'Химические отходы',
   pois: 'Поселения',
+  postal: 'Почта',
   traders: 'Торговцы',
   dynamites: 'Динамит',
   explosives: 'Мины',
-  pantoons: 'Деревянные пантоны',
-  rocks: 'Скалы'
+  pantoons: 'Разбитые пантоны',
+  rocks: 'Скалы',
+  teleports: 'Быстрые перемещения',
 };
 
 const icons = {
   pirates: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -32],
+  }),
+  teleports: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/teleport.png',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -32],
@@ -963,7 +1107,7 @@ function generateScrapPopup() {
     SCRAP,
     RESPURCES.SCRAP,
     'Место добычи при помощи драги',
-    [RESPURCES.SCRAP],
+    [RESPURCES.SCRAP, RESPURCES.COPPER, RESPURCES.STEEL, RESPURCES.COPPER_PLATES, RESPURCES.FIBER],
     null,
     'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте, крафте, исследованиях и строительстве базы',
   );
@@ -974,7 +1118,7 @@ function generateAmmoPopup() {
     AMMO,
     RESPURCES.AMMO,
     'Место добычи при помощи драги',
-    [RESPURCES.AMMO],
+    [RESPURCES.AMMO, RESPURCES.SCRAP, RESPURCES.WOOD, RESPURCES.TEXTILE],
     null,
     'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте и крафте оружия, исследованиях',
   );
@@ -985,8 +1129,54 @@ function generateChemicalPopup() {
     CHEMICAL,
     RESPURCES.CHEMICAL,
     'Место добычи при помощи драги',
-    [RESPURCES.CHEMICAL],
+    [RESPURCES.CHEMICAL, RESPURCES.WOOD, RESPURCES.FIBER, RESPURCES.SCRAP],
     null,
     'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте, крафте модулей и исследованиях',
+  );
+}
+
+function generateDynamitePopup() {
+  return generateDescription(
+    DYNAMITE,
+    RESPURCES.DYNAMITE,
+    'Место добычи при помощи драги',
+    [RESPURCES.DYNAMITE, RESPURCES.AMMO, RESPURCES.CHEMICAL, RESPURCES.SCRAP, RESPURCES.FIBER],
+    null,
+    'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте вооружения',
+  );
+}
+
+function generatePantoonPopup() {
+  return generateDescription(
+    PANTOON,
+    RESPURCES.WOOD,
+    'Место добычи через обычноге открытие',
+    [
+      RESPURCES.WOOD,
+      RESPURCES.BAIT,
+      RESPURCES.BARREL,
+      RESPURCES.FIBER,
+      RESPURCES.SCRAP,
+      RESPURCES.EAT,
+    ],
+    null,
+    'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте, крафте модулей и исследованиях',
+  );
+}
+
+function generateRockPopup() {
+  return generateDescription(
+    ROCK,
+    RESPURCES.BALLAST,
+    'Место добычи через обычноге открытие. Открытие скал требуется для задания "Географическая гипотеза"',
+    [
+      RESPURCES.BALLAST,
+      RESPURCES.BAIT,
+      RESPURCES.WOOD,
+      RESPURCES.FIBER,
+      RESPURCES.EAT,
+    ],
+    null,
+    'В малом количестве могут добываться и иные ресурсы. Ресурс используется в исследованиях и строительстве',
   );
 }
