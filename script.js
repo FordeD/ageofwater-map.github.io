@@ -289,8 +289,8 @@ const worldPoints = {
       'Мастерская "У Джмми"',
     ],
     [
-      67.187,
-      -14.28223,
+      62.32921,
+      -31.39893,
       generateDescription('Водолазное товарищество "Ама"', null, '', [], [], '', [
         ACTIONS.QUEST,
         ACTIONS.TRADE,
