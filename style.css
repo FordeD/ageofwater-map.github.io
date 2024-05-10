@@ -75,6 +75,17 @@ body {
   overflow-y: scroll;
 }
 
+.custom-popup-block:before {
+	content: ""; 
+	border: solid transparent;
+	position: absolute;
+ 	top: 100%;
+	left: 50%;
+	border-top-color: rgba(48, 48, 49, 0.9);
+	border-width: 9px;
+	margin-left: -9px;
+}
+
 .leaflet-popup-content-wrapper {
   background: none;
   color: #ffffff;
