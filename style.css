@@ -93,6 +93,15 @@ body {
   overflow-y: scroll;
 }
 
+.leaflet-popup-content p {
+  margin: 7px 0;
+}
+
+.leaflet-popup-content b {
+  margin: 15px 5px 5px 0px;
+  display: block;
+}
+
 .popup-header-block {
   min-width: 350px;
 }
@@ -100,7 +109,7 @@ body {
 .popup-title {
   display: block;
   float: left;
-  padding: 5px;
+  padding: 0px 5px 5px 0px;
   max-width: 350px;
   min-width: 200px;
 }
