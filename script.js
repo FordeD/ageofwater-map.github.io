@@ -158,63 +158,63 @@ const ITEMS = {
 const SHIPS = {
   T1: {
     SOFIYA: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T1_Sofiya.jpg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_Sofiya.jpg',
       name: 'София (I)',
     },
     DINGHY: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T1_dinghy.jpg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_dinghy.jpg',
       name: 'Dinghy (I)',
     },
   },
   T2: {
     SCORPEN: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T2_scorpen.jpg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_scorpen.jpg',
       name: 'Скорпен (II)',
     },
     MARIANA: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T2_mariana.jpg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_mariana.jpg',
       name: 'Mariana Seiner (II)',
     },
     MARLIN: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T2_marlin.jpg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_marlin.jpg',
       name: 'TK7 Marlin Torpedo Boat (II)',
     },
   },
   T3: {
     BISTRIY: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T3_bitriy.webp',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_bitriy.webp',
       name: 'Быстрый (III)',
     },
     ZORKIJ: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T3_zorkij.webp',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_zorkij.webp',
       name: 'Зоркий (III)',
     },
     CLEVER: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T3_clever.jwebppg',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_clever.jwebppg',
       name: 'Клевер (III)',
     },
     MORJ: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T3_morj.webp',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_morj.webp',
       name: 'Морж (III)',
     },
   },
   T4: {
     ANCHOUS: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T4_anchous.webp',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_anchous.webp',
       name: 'Анчоус (IV)',
     },
     MURENA: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T4_murena.webp',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_murena.webp',
       name: 'Мурена (IV)',
     },
     ZABIJAKA: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T4_zabijaka.webp',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_zabijaka.webp',
       name: 'Забияка (IV)',
     },
   },
   T5: {
     REPEJ: {
-      img: 'https://forded.github.io/ageofwater-map.github.io/items/T4_repej.webp',
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_repej.webp',
       name: 'Репей (V)',
     },
   },
@@ -703,8 +703,8 @@ const worldPoints = {
       ),
     ],
     [
-      83.70592,
-      26.98242,
+      53.74871,
+      -15.20508,
       generateDescription(
         'Флот T1-T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
