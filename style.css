@@ -135,7 +135,14 @@ body {
   border: 1px solid rgba(48, 48, 49, 0.9);
   background-color: rgba(48, 48, 49, 0.9);
   color: #ffffff;
-  padding: 8px 20px 4px 20px;
-  font-size: 1rem;
+  padding: 4px 8px 4px 8px;
+  font-size: 0.7rem;
   line-height: 100%;
+}
+
+.leaflet-tooltip-bottom:before {
+  top: 0;
+  margin-top: -12px;
+  margin-left: -6px;
+  border-bottom-color: rgba(48, 48, 49, 0.9);
 }

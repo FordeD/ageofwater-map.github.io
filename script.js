@@ -986,7 +986,7 @@ for (const type of types) {
         permanent: true,
         direction: "bottom",
         className: "marker-toltip",
-        offset: [-15, 30],
+        offset: [0, 15],
       });
     }
     iconGroups[type].addLayer(marker);
