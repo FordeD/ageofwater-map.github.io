@@ -408,6 +408,14 @@ L.Control.CustomButtons = L.Control.Layers.extend({
     this._addMarker();
     this._removeMarker();
     this._update();
+    const checkbox = document.querySelectorAll(
+      '.leaflet-control-layers-overlays input[type=checkbox]',
+    );
+
+    [].slice.call(checkbox).map((el) => {
+      el.checked = true;
+      el.click();
+    });
     return this._container;
   },
   _addMarker: function () {
