@@ -192,16 +192,19 @@ const worldPoints = {
         'В этом поселении берутся PvP квесты',
         [ACTIONS.QUEST],
       ),
+      'Поселение "Расщелина"',
     ],
     [
       -81.29503,
       -145.23926,
       generateDescription('Поселение "Шарк-Сити"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Шарк-Сити"',
     ],
     [
       -74.66002,
       123.20068,
       generateDescription('Поселение "Бензоколонка"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Бензоколонка"',
     ],
     [
       80.95955,
@@ -215,6 +218,7 @@ const worldPoints = {
         'В этом месте берутся и сдаются квесты на члена экипажа Лин',
         [ACTIONS.QUEST],
       ),
+      'Бар "Веселая пещера"',
     ],
     [
       77.99819,
@@ -227,6 +231,7 @@ const worldPoints = {
         [],
         'В это поселение приезжает караван в одном из квестов на получение члена экипажа Лин',
       ),
+      'Маяк',
     ],
     [
       76.58836,
@@ -240,16 +245,19 @@ const worldPoints = {
         'Поселение для начала цепочки квестов на получение члена экипажа Лин',
         [ACTIONS.QUEST, ACTIONS.CREW],
       ),
+      'Поселение "Кукольный дом"',
     ],
     [
       76.1745,
       -55.7666,
       generateDescription('Поселение "Радиодруин"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Радиодруин"',
     ],
     [
       72.75104,
       -6.1084,
       generateDescription('Бар "Богомол"', null, '', [], [], '', [ACTIONS.QUEST, ACTIONS.TRADE]),
+      'Бар "Богомол"',
     ],
     [
       77.99819,
@@ -258,11 +266,13 @@ const worldPoints = {
         ACTIONS.QUEST,
         ACTIONS.TRADE,
       ]),
+      'Поселение "Авианосец"',
     ],
     [
       80.42302,
       111.92871,
       generateDescription('Поселение "Дутагаз"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Дутагаз"',
     ],
     [
       67.187,
@@ -276,6 +286,7 @@ const worldPoints = {
         '',
         [ACTIONS.QUEST, ACTIONS.REPAIR],
       ),
+      'Мастерская "У Джмми"',
     ],
     [
       67.187,
@@ -284,6 +295,7 @@ const worldPoints = {
         ACTIONS.QUEST,
         ACTIONS.TRADE,
       ]),
+      'Водолазное товарищество "Ама"',
     ],
     [
       53.77469,
@@ -292,11 +304,13 @@ const worldPoints = {
         ACTIONS.QUEST,
         ACTIONS.TRADE,
       ]),
+      'Поселение "Дракон"',
     ],
     [
       51.6998,
       -80.1123,
       generateDescription('Поселение "Хани Бани"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Хани Бани"',
     ],
     [
       53.77469,
@@ -310,11 +324,13 @@ const worldPoints = {
         '',
         [ACTIONS.QUEST],
       ),
+      'Поселение "Мотель"',
     ],
     [
       48.60386,
       -39.41895,
       generateDescription('"Радиовышка"', null, '', [], [], '', [ACTIONS.QUEST]),
+      '"Радиовышка"',
     ],
     [
       45.24395,
@@ -328,16 +344,19 @@ const worldPoints = {
         '',
         [ACTIONS.REPAIR],
       ),
+      'Мастерская "Север"',
     ],
     [
       58.2864,
       13.40332,
       generateDescription('Поселение "Близнецы"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Близнецы"',
     ],
     [
       48.13677,
       52.33887,
       generateDescription('Поселение "Русалка"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Русалка"',
     ],
     [
       46.40756,
@@ -351,6 +370,7 @@ const worldPoints = {
         'По цепочке квестов в этом месте вы можете получит один из трех актуальных бортов I тира на выбор',
         [ACTIONS.QUEST, ACTIONS.REPAIR],
       ),
+      'Поселение "Корабел"',
     ],
     [
       25.52261,
@@ -359,6 +379,7 @@ const worldPoints = {
         ACTIONS.QUEST,
         ACTIONS.TRADE,
       ]),
+      'Поселение "Поплавок"',
     ],
     [
       3.645,
@@ -372,6 +393,7 @@ const worldPoints = {
         '',
         [ACTIONS.QUEST, ACTIONS.REPAIR],
       ),
+      'Мастерская "Нико"',
     ],
     [
       -12.51167,
@@ -385,6 +407,7 @@ const worldPoints = {
         'По цепочке квестов в из "Коллизея" на получение двух членов экипажа Лиззи попросит вас принисти 50 Химических отходов',
         [ACTIONS.QUEST, ACTIONS.TRADE],
       ),
+      'Поселение "Три трубы"',
     ],
     [
       -1.09857,
@@ -398,6 +421,7 @@ const worldPoints = {
         '',
         [ACTIONS.REPAIR],
       ),
+      'Мастерская "Восток"',
     ],
     [
       23.9461,
@@ -411,6 +435,7 @@ const worldPoints = {
         '',
         [ACTIONS.QUEST, ACTIONS.TRADE, ACTIONS.MESSAGE, ACTIONS.REPAIR],
       ),
+      'Поселение "Три кита"',
     ],
     [
       27.43029,
@@ -424,6 +449,7 @@ const worldPoints = {
         'В некоторых квестах на развитие базы вас будут отправлять в это место',
         [ACTIONS.QUEST, ACTIONS.TRADE],
       ),
+      'Бар "Три Хвоста"',
     ],
     [
       -1.18644,
@@ -437,6 +463,7 @@ const worldPoints = {
         '',
         [ACTIONS.REPAIR],
       ),
+      'Мастерская "Запад"',
     ],
     [
       6.79554,
@@ -450,6 +477,7 @@ const worldPoints = {
         '',
         [ACTIONS.QUEST],
       ),
+      'Поселение "Клумба"',
     ],
     [29.95493, -75.36621, generateDescription('Поселение "Статуя"', null, '', [], [], '')],
     [
@@ -464,6 +492,7 @@ const worldPoints = {
         '',
         [ACTIONS.QUEST, ACTIONS.CREW],
       ),
+      'Поселение "Колизей"',
     ],
     [
       -44.55916,
@@ -477,6 +506,7 @@ const worldPoints = {
         '',
         [ACTIONS.QUEST, ACTIONS.TRADE],
       ),
+      'Поселение "Донжон"',
     ],
     [
       -37.33522,
@@ -484,16 +514,19 @@ const worldPoints = {
       generateDescription('Поселение "Дом охотника на акул"', null, '', [], [], '', [
         ACTIONS.QUEST,
       ]),
+      'Поселение "Дом охотника на акул"',
     ],
     [
       -55.40407,
       -53.21777,
-      generateDescription('NPC охотник на акул', null, '', [], [], '', [ACTIONS.QUEST]),
+      generateDescription('Охотник на акул', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Охотник на акул',
     ],
     [
       -61.07954,
       -55.67871,
       generateDescription('Поселение "Проклятый локатор"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Проклятый локатор"',
     ],
     [
       -31.98944,
@@ -502,6 +535,7 @@ const worldPoints = {
         ACTIONS.QUEST,
         ACTIONS.TRADE,
       ]),
+      'Поселение "Орден"',
     ],
     [
       -50.65294,
@@ -515,6 +549,7 @@ const worldPoints = {
         '',
         [ACTIONS.REPAIR],
       ),
+      'Мастерская "Юг"',
     ],
     [
       -64.75539,
@@ -523,46 +558,55 @@ const worldPoints = {
         ACTIONS.QUEST,
         ACTIONS.TRADE,
       ]),
+      'Поселение "Красная стрела"',
     ],
     [
       -63.33241,
       17.44629,
       generateDescription('Бар "Жираф"', null, '', [], [], '', [ACTIONS.QUEST, ACTIONS.TRADE]),
+      'Бар "Жираф"',
     ],
     [
       -72.40899,
       -14.98535,
       generateDescription('Поселение "Колокольня"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Колокольня"',
     ],
     [
       -75.53014,
       22.45605,
       generateDescription('Поселение "Ветряки"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Ветряки"',
     ],
     [
       -66.7399,
       46.62598,
       generateDescription('Поселение "Здание суда"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Здание суда"',
     ],
     [
       -59.46741,
       69.47754,
       generateDescription('Поселение "Слон"', null, '', [], [], '', [ACTIONS.QUEST, ACTIONS.TRADE]),
+      'Поселение "Слон"',
     ],
     [
       -44.62175,
       33.61816,
       generateDescription('Поселение "Моби Дик"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Моби Дик"',
     ],
     [
       -34.70549,
       63.06152,
       generateDescription('Поселение "Диоген"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Диоген"',
     ],
     [
       -29.11378,
       41.96777,
       generateDescription('Поселение "Вход на вулкан"', null, '', [], [], '', [ACTIONS.QUEST]),
+      'Поселение "Вход на вулкан"',
     ],
   ],
   traders: [
@@ -931,14 +975,14 @@ for (const type of types) {
   iconGroups[type] = new L.FeatureGroup();
   legendMarkers[legendNames[type]] = iconGroups[type];
   for (let i = 0; i < worldPoints[type].length; i++) {
-    const [lat, lng, popupContent] = worldPoints[type][i];
+    const [lat, lng, popupContent, tooltipText] = worldPoints[type][i];
 
     let marker = new L.marker([lat, lng], { icon: icons[type] }).bindPopup(
       popupContent,
       popupOptions,
     );
     if (type === 'pois') {
-      marker.bindTooltip(popupText, {
+      marker.bindTooltip(tooltipText, {
         permanent: true,
         direction: "bottom",
         className: "marker-toltip",
