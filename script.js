@@ -375,8 +375,8 @@ const worldPoints = {
       ),
     ],
     [
-      33.46811,
-      -153.14941,
+      -34.37971,
+      -117.6416,
       generateDescription(
         'Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
