@@ -925,7 +925,7 @@ function generateDescription(title, image = null, description = null, resources 
   if (actions) {
     context += '<div class="popup-actions-block">';
     for (const action of actions) {
-      context += `<img class="popup-resource-image" src="${action}" width="35" height="35" />`;
+      context += `<img class="popup-resource-image" src="${action}" width="20" height="20" />`;
     }
     context += '</div>';
   }
