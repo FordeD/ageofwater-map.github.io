@@ -335,7 +335,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
   },
 });
 
-new L.Control.CustomButtons(null, overlayMaps, { collapsed: false }).addTo(map);
+new L.Control.CustomButtons(null, legendMarkers, { collapsed: false }).addTo(map);
 
 const legendPlace = document.querySelector('.leaflet-control-layers-list');
 
