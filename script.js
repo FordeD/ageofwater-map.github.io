@@ -2012,7 +2012,7 @@ function generateDescription(title, image = null, description = null, resources 
     context += `<div class="popup-resource-block">`;
     context += '<b>Можно получить корабли:</b>';
     for (const ship of ships) {
-      context += `<div class="board-ship-block"><b>${ship.name}</b><img class="popup-resource-image" src="${ship.img}" width="300" height="240" /></div>`;
+      context += `<div class="board-ship-block"><b>${ship.name}</b><img class="popup-resource-image" src="${ship.img}" width="300" height="200" /></div>`;
     }
     context += `</div>`;
   }
