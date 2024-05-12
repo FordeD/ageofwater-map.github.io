@@ -2073,7 +2073,7 @@ const shareControl = L.Control.extend({
   // method
   onAdd: function (map) {
     const btn = L.DomUtil.create('button');
-    btn.title = 'Скопировать ссылку на позицию карты';
+    btn.title = 'Скопировать быструю ссылку на карту';
     btn.textContent = '🌐';
     btn.className = 'showLegend';
     btn.setAttribute(
