@@ -2084,8 +2084,14 @@ const shareControl = L.Control.extend({
 
     // показываем и скрываем указатель получения координат
     btn.onclick = function () {
-      const { lat, lng, zoom } = map.getCenter();
-      const url = window.location.href + `?lat=${lat}&lng=${lng}&zoom=${zoom}`;
+      const { lat, lng } = map.getCenter();
+      const zoom = map.getZoom();
+      const url =
+        location.protocol +
+        '//' +
+        location.host +
+        location.pathname +
+        `?lat=${lat}&lng=${lng}&zoom=${zoom}`;
       navigator.clipboard.writeText(url);
     };
 
