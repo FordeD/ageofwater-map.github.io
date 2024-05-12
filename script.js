@@ -2090,7 +2090,7 @@ const shareControl = L.Control.extend({
         '//' +
         location.host +
         location.pathname +
-        `?lat=${lat}&lng=${lng}&zoom=${zoom}`;
+        `?lat=${lat.toFixed(5)}&lng=${lng.toFixed(5)}&zoom=${zoom}`;
       navigator.clipboard.writeText(url);
     };
 
