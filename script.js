@@ -2047,9 +2047,8 @@ document.addEventListener('DOMContentLoaded', function () {
   updateInfo();
 });
 
-setInterval(updateInfo(), 100);
-
 const gridCoordPlace = document.querySelector('.grid-pointer');
+setInterval(updateInfo(), 100);
 function updateInfo() {
   const { lat, lng } = map.getCenter();
   markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
