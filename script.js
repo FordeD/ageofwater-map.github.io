@@ -2154,7 +2154,7 @@ function generateDescription(title, image = null, description = null, resources 
   let context = '';
   if (isHidable) {
     context +=
-      '<div class="hide-button-block"><button class="custom-button-styled" onClick="hideMarker()">Скрыть/показать маркер</button></div>';
+      '<div class="hide-button-block"><button class="custom-button-styled" onClick="hideMarker()">👁️‍🗨️</button></div>';
   }
 
   context += `<div class="popup-header-block"><h3 class="popup-title">${title}</h3>`;
