@@ -1,3 +1,39 @@
+// grid data
+const middleMap = [14.9554, 1.17554];
+const topLeftMap = [84.87266, -177.83569];
+const rightDownMap = [-85.05208, 180.01099];
+const squareSide = 16.26000;
+const mapWidth = 358;
+const mapHalfWidth = mapWidth / 2;
+const mapHeight = 170;
+const mapHalfHeight = mapHeight / 2;
+const widthNamings = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+];
+const heightNamings = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
+
 const SCRAP = 'Металл';
 const AMMO = 'Обломки боеприпасов';
 const CHEMICAL = 'Химические отходы';
@@ -2009,9 +2045,27 @@ document.addEventListener('DOMContentLoaded', function () {
   updateInfo();
 });
 
+const gridCoordPlace = document.querySelector('.grid-pointer');
 function updateInfo() {
   const { lat, lng } = map.getCenter();
   markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+  // height, width
+  let currentWidth = lng;
+  let currentHeight = lat;
+  if (currentWidth > 0) {
+    currentWidth += mapHalfWidth;
+  } else {
+    currentWidth = mapHalfWidth + currentWidth
+  }
+  if (currentHeight > 0) {
+    currentHeight += mapHalfHeight;
+  } else {
+    currentHeight = mapHalfHeight + currentHeight
+  }
+  const widthIndex = Math.floor(currentWidth / squareSide);
+  const heightIndex = Math.floor(currentHeight / squareSide);
+  const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightIndex];
+  gridCoordPlace.innerHTML = pointCoordinates;
 }
 
 // create custom button

@@ -211,3 +211,20 @@ body {
 	pointer-events: none;
 	opacity: 0.65;
 }
+
+.grid-pointer {
+  z-index: 100;
+  display: block;
+  position: absolute;
+  left: 50vw;
+  top: 50vh;
+  color: #DBE7F2;
+  background-color: rgba(48, 48, 49, 0.7);
+  line-height: 40px;
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 100;
+  font-family: Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;
+}
