@@ -159,4 +159,5 @@ body {
   font-size: 1.5rem !important;
   outline: none !important;
   margin-left: 12px !important;
+  filter: sepia(1) saturate(5) hue-rotate(179deg) !important;
 }
