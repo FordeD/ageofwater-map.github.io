@@ -2070,9 +2070,12 @@ L.Control.CustomButtons = L.Control.Layers.extend({
 
       // Remove/add all layer from map when click on button
       [].slice.call(checkbox).map((el) => {
-        console.log(checkbox);
         el.checked = type === 'Показать' ? false : true;
-        el.click();
+        try {
+          el.click();
+        } catch (e) {
+          console.log(e);
+        }
       });
     });
   },
