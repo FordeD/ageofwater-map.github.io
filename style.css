@@ -67,6 +67,9 @@ body {
   color: #ffffff;
 }
 
+.custom-popup-block {
+  z-index: 401;
+}
 .custom-popup-block:before {
 	z-index: 999;
   content: "";
@@ -213,7 +216,7 @@ body {
 }
 
 .grid-pointer {
-  z-index: 100;
+  z-index: 400;
   display: block;
   position: absolute;
   left: calc(50vw - 40px);
