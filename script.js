@@ -7,9 +7,9 @@ const squareSideHeight = 8.59349;
 const mapWidthOffset = 2.06542;
 const mapHeightOffset = 0.18128;
 const mapWidth = 357.84668;
-const mapHalfWidth = (mapWidth / 2) - middleMap[1];
+const mapHalfWidth = mapWidth / 2;
 const mapHeight = 169.92473;
-const mapHalfHeight = (mapHeight / 2) - middleMap[0];
+const mapHalfHeight = mapHeight / 2;
 const widthNamings = [
   'A',
   'B',
@@ -2026,8 +2026,8 @@ function hideMarker(e) {
 
 
 // Вывод координат на карте
-map.on('dragend', updateInfo);
-map.on('zoomend', updateInfo);
+// map.on('dragend', updateInfo);
+// map.on('zoomend', updateInfo);
 
 // Блок с координатами точки
 const coordinates = L.control({ position: 'bottomleft' });
@@ -2047,18 +2047,25 @@ document.addEventListener('DOMContentLoaded', function () {
   updateInfo();
 });
 
+setInterval(updateInfo(), 100);
+
 const gridCoordPlace = document.querySelector('.grid-pointer');
 function updateInfo() {
   const { lat, lng } = map.getCenter();
   markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
   // height, width
-  let currentWidth = lng;
-  // let currentHeight = lat;
-  if (currentWidth > middleMap[1]) {
-    currentWidth += mapHalfWidth;
-  } else {
-    currentWidth = mapHalfWidth - Math.abs(currentWidth);
+  let currentWidth = lng + mapWidthOffset;
+  if (currentWidth > 0) {
+    currentWidth += mapHalfWidth
   }
+  // let currentHeight = lat;
+  if (currentWidth > 0) {
+    currentWidth += mapHalfWidth + middleMap[1];
+  } else {
+    currentWidth = (mapHalfWidth - middleMap[1]) - Math.abs(currentWidth);
+  }
+
+  currentWidth -= middleMap[1] + mapWidthOffset
 
   // if (currentHeight > middleMap[0]) {
   //   currentHeight += mapHalfHeight;
@@ -2068,7 +2075,7 @@ function updateInfo() {
   const widthIndex = Math.floor((currentWidth+mapWidthOffset) / squareSideWidth);
   // const heightIndex = Math.floor(currentHeight / squareSideHeight);
   const pointCoordinates = widthNamings[widthIndex];// + heightNamings[heightNamings.length - heightIndex];
-  gridCoordPlace.innerHTML = pointCoordinates;
+  gridCoordPlace.innerHTML = pointCoordinates + (lng > middleMap[1] ? '+' : '-');
 }
 
 // create custom button

@@ -217,7 +217,7 @@ body {
 
 .grid-pointer {
   z-index: 400;
-  display: block;
+  display: none;
   position: absolute;
   left: calc(50vw - 40px);
   top: 50vh;
