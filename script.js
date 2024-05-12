@@ -1883,18 +1883,17 @@ const popupOptions = {
   className: 'custom-popup-block', // name custom popup
 };
 
-function getQueryStringValue (key) {  
-  return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
-} 
-var urlLat = getQueryStringValue("lat");
-var urlLng = getQueryStringValue("lng");
-var urlZoom = getQueryStringValue("zoom");
+const urlParams = new URLSearchParams(window.location.search);
+
+var urlLat = urlParams.get('lat');
+var urlLng = urlParams.get('lng');
+var urlZoom = urlParams.get('zoom');
   
 // magnification with which the map will start
-const zoom = urlZoom ? parseFloat(urlZoom) : 2;
+const zoom = urlZoom ? parseInt(urlZoom) : 2;
 // co-ordinates
-const lat = urlLat ? parseFloat(urlLat) : 50;
-const lng = urlLng ? parseFloat(urlLat) : 50;
+const lat = urlLat ? parseInt(urlLat) : 50;
+const lng = urlLng ? parseInt(urlLat) : 50;
 
 // calling map
 const map = L.map('map', config).setView([lat, lng], zoom);
