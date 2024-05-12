@@ -121,6 +121,10 @@ const ITEMS = {
       T2: 'https://forded.github.io/ageofwater-map.github.io/items/steel_shield_2.jpg',
       T3: 'https://forded.github.io/ageofwater-map.github.io/items/steel_shield_3.jpg',
     },
+    SHIELD_JEL_VOINA: {
+      T21: 'https://forded.github.io/ageofwater-map.github.io/items/shield_jel_voina_1.jpg',
+      T22: 'https://forded.github.io/ageofwater-map.github.io/items/shield_jel_voina_2.jpg',
+    },
     MUSOR_SHIELD: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/mus_shield_1.jpg',
     },
@@ -266,6 +270,8 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
           ITEMS.MODULES.ACCUMULATOR.T2,
+          ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T21,
+          ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T22,
         ],
         `В этой точке можно абордажить ${SHIPS.T5.REPEJ.name}`,
         null,
