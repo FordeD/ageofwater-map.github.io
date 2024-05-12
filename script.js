@@ -1932,10 +1932,9 @@ for (const type of types) {
           options.icon = icons.hidedRocks;
         }
       }
-      options['index'] = i;
     }
 
-    let marker = new L.marker([lat, lng], { icon: icons[type] })
+    let marker = new L.marker([lat, lng], options)
       .bindPopup(popupContent, popupOptions)
       .on('mouseover', onMarkerOpen)
       .getPopup()
