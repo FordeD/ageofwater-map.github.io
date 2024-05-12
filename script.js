@@ -166,7 +166,7 @@ const SHIPS = {
     },
     DINGHY: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_dinghy.webp',
-      name: 'Dinghy (I)',
+      name: 'Шаланда (I)',
     },
   },
   T2: {
@@ -176,11 +176,11 @@ const SHIPS = {
     },
     MARIANA: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_mariana.webp',
-      name: 'Mariana Seiner (II)',
+      name: 'Марина (II)',
     },
     MARLIN: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_marlin.webp',
-      name: 'TK7 Marlin Torpedo Boat (II)',
+      name: 'Марлин (II)',
     },
   },
   T3: {
