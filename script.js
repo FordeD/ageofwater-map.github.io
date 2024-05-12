@@ -2,7 +2,8 @@
 const middleMap = [14.9554, 1.17554];
 const topLeftMap = [84.87266, -177.83569];
 const rightDownMap = [-85.05208, 180.01099];
-const squareSide = 16.26000;
+const squareSideWidth = 16.26000;
+const squareSideHeight = 8.59349;
 const mapWidth = 358;
 const mapHalfWidth = mapWidth / 2;
 const mapHeight = 170;
@@ -2064,8 +2065,8 @@ function updateInfo() {
     //0.18128
     currentHeight = mapHalfHeight - Math.abs(currentHeight);
   }
-  const widthIndex = Math.floor(currentWidth / squareSide);
-  const heightIndex = Math.floor(currentHeight / squareSide);
+  const widthIndex = Math.floor(currentWidth / squareSideWidth);
+  const heightIndex = Math.floor(currentHeight / squareSideHeight);
   const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightNamings.length - heightIndex];
   gridCoordPlace.innerHTML = pointCoordinates;
 }
