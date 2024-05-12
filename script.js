@@ -2055,16 +2055,19 @@ function updateInfo() {
   if (currentWidth > 0) {
     currentWidth += mapHalfWidth;
   } else {
-    currentWidth = mapHalfWidth + currentWidth
+    currentWidth = mapHalfWidth - Math.abs(currentWidth);
   }
+  currentWidth += 2.06542;
+  
   if (currentHeight > 0) {
     currentHeight += mapHalfHeight;
   } else {
-    currentHeight = mapHalfHeight + currentHeight
+    currentHeight = mapHalfHeight - Math.abs(currentHeight);
   }
+  currentHeight += 0.18128;
   const widthIndex = Math.floor(currentWidth / squareSide);
   const heightIndex = Math.floor(currentHeight / squareSide);
-  const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightIndex];
+  const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightNamings.length - heightIndex];
   gridCoordPlace.innerHTML = pointCoordinates;
 }
 
