@@ -481,6 +481,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
           ITEMS.MODULES.ACCUMULATOR.T2,
+          ITEMS.MODULES.POMPA.T4,
         ],
         '',
         null,
