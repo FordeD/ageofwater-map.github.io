@@ -152,6 +152,9 @@ const ITEMS = {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_1.jpg',
       T2: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_2.jpg',
     },
+    SEINER: {
+      PLATFORMA: 'https://forded.github.io/ageofwater-map.github.io/items/platf_sein.jpg',
+    },
   },
 };
 
@@ -229,6 +232,44 @@ const ACTIONS = {
 };
 
 const worldPoints = {
+  rangers: [
+    [
+      76.07967,
+      127.17773,
+      generateDescription(
+        'Флот T2-T5',
+        'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
+        `Флот рейнджеров состояший из ${SHIPS.T5.REPEJ.name}, ${SHIPS.T4.ZABIJAKA.name}, ${SHIPS.T3.CLEVER.name} и ${SHIPS.T2.MARIANA.name}.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+        ],
+        [
+          ITEMS.CONSTRUCTIONS.STENKA.T1,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
+          ITEMS.CONSTRUCTIONS.CISTERNA,
+          ITEMS.CONSTRUCTIONS.TRAULER.CABINA,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+          ITEMS.MODULES.ACCUMULATOR.T2,
+        ],
+        `В этой точке можно абордажить ${SHIPS.T5.REPEJ.name}`,
+        null,
+        [SHIPS.T5.REPEJ, SHIPS.T4.ZABIJAKA, SHIPS.T3.CLEVER, SHIPS.T2.MARIANA],
+      ),
+    ],
+  ],
   pirates: [
     [
       81.96629,
@@ -560,42 +601,6 @@ const worldPoints = {
       ),
     ],
     [
-      76.07967,
-      127.17773,
-      generateDescription(
-        'Флот T2-T5',
-        'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
-        `Пиратский флот состояший из ${SHIPS.T5.REPEJ.name}, ${SHIPS.T4.ZABIJAKA.name}, ${SHIPS.T3.CLEVER.name} и ${SHIPS.T2.MARIANA.name}.`,
-        [
-          RESPURCES.SCRAP,
-          RESPURCES.FIBER,
-          RESPURCES.WOOD,
-          RESPURCES.PLASTIC,
-          RESPURCES.MECHANISM,
-          RESPURCES.PLATS,
-          RESPURCES.AMMO_DETAILS,
-          RESPURCES.BARREL,
-          RESPURCES.COPPER,
-          RESPURCES.STEEL,
-          RESPURCES.COPPER_PLATES,
-        ],
-        [
-          ITEMS.CONSTRUCTIONS.STENKA.T1,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
-          ITEMS.CONSTRUCTIONS.CISTERNA,
-          ITEMS.CONSTRUCTIONS.TRAULER.CABINA,
-          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
-          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
-          ITEMS.MODULES.ACCUMULATOR.T2,
-        ],
-        `В этой точке можно абордажить ${SHIPS.T5.REPEJ.name}`,
-        null,
-        [SHIPS.T5.REPEJ, SHIPS.T4.ZABIJAKA, SHIPS.T3.CLEVER, SHIPS.T2.MARIANA],
-      ),
-    ],
-    [
       83.70592,
       26.98242,
       generateDescription(
@@ -625,6 +630,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
           ITEMS.MODULES.ACCUMULATOR.T2,
+          ITEMS.CONSTRUCTIONS.SEINER.PLATFORMA,
         ],
         `В этой точке не получится абордажить ${SHIPS.T5.REPEJ.name}, при выведении экипажа из строя корабль сразу потонет`,
         null,
@@ -1750,6 +1756,7 @@ const worldPoints = {
 
 const legendNames = {
   pirates: 'Пиратские корабли',
+  rangers: 'Корабли рейнджеров',
   scraps: 'Металл',
   ammos: 'Обломки боеприпасов',
   chemicals: 'Химические отходы',
@@ -1770,9 +1777,15 @@ const icons = {
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -32],
-  }), 
+  }),
   pirates: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -32],
+  }),
+  rangers: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -32],
