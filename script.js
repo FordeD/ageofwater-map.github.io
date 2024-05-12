@@ -2052,20 +2052,20 @@ function updateInfo() {
   // height, width
   let currentWidth = lng;
   let currentHeight = lat;
-  if (currentWidth > 0) {
+  if (currentWidth > middleMap[1]) {
     currentWidth += mapHalfWidth;
   } else {
     // 2.06542
     currentWidth = mapHalfWidth - Math.abs(currentWidth);
   }
 
-  if (currentHeight > 0) {
+  if (currentHeight > middleMap[0]) {
     currentHeight += mapHalfHeight;
   } else {
     //0.18128
     currentHeight = mapHalfHeight - Math.abs(currentHeight);
   }
-  const widthIndex = Math.floor((currentWidth - 2.06542) / squareSideWidth);
+  const widthIndex = Math.floor(currentWidth / squareSideWidth);
   const heightIndex = Math.floor(currentHeight / squareSideHeight);
   const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightNamings.length - heightIndex];
   gridCoordPlace.innerHTML = pointCoordinates;
