@@ -1919,7 +1919,7 @@ L.control.zoom({ position: 'topleft' }).addTo(map);
 const types = Object.keys(worldPoints);
 iconGroups['all'] = new L.FeatureGroup();
 const legendMarkers = {};
-let HIDED_MARKERS = localStorage.getItem('hidedMarkers') !== null ? JSON.parse(localStorage.getItem('hidedMarkers')) : [] ;
+let HIDED_MARKERS = localStorage.getItem('hidedMarkers') !== '' ? JSON.parse(localStorage.getItem('hidedMarkers')) : [] ;
 for (const type of types) {
   iconGroups[type] = new L.FeatureGroup();
   legendMarkers[legendNames[type]] = iconGroups[type];
@@ -1965,9 +1965,11 @@ function onMarkerClose(e) {
 }
 
 function hideMarker(e) {
-  let hided = JSON.parse(localStorage.getItem('hidedMarkers'));
+  let hided = localStorage.getItem('hidedMarkers');
   if (!hided) {
     hided = [];
+  } else {
+    hided = JSON.parse(hided);
   }
 
   if (targetMarker !== null) {
