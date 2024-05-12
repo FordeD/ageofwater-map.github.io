@@ -1953,7 +1953,7 @@ for (const type of types) {
   }
 }
 
-localStorage.setItem('hidedMarkers', HIDED_MARKERS);
+localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
 
 let targetMarker = null;
 function onMarkerOpen(e) {
