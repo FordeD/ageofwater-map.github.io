@@ -15,6 +15,9 @@ const widthNamings = [
   'E',
   'F',
   'G',
+  'H',
+  'I',
+  'J',
   'K',
   'L',
   'M',
@@ -27,10 +30,6 @@ const widthNamings = [
   'T',
   'U',
   'V',
-  'W',
-  'X',
-  'Y',
-  'Z',
 ];
 const heightNamings = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
 
@@ -2058,7 +2057,7 @@ function updateInfo() {
     currentWidth = mapHalfWidth - Math.abs(currentWidth);
   }
   currentWidth += 2.06542;
-  
+
   if (currentHeight > 0) {
     currentHeight += mapHalfHeight;
   } else {
