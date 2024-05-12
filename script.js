@@ -2081,7 +2081,7 @@ new L.Control.CustomButtons(null, legendMarkers, { collapsed: false }).addTo(map
 
 const legendPlace = document.querySelector('.leaflet-control-layers');
 const visibleMarkersPlace = document.querySelector('.add-button');
-visibleMarkersPlace.click();
+setTimeout(() => { visibleMarkersPlace.click(); }, 500);
 
 
 const legendControl = L.Control.extend({
