@@ -1882,11 +1882,19 @@ const popupOptions = {
   maxHeight: '500px',
   className: 'custom-popup-block', // name custom popup
 };
+
+function getQueryStringValue (key) {  
+  return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+} 
+var urlLat = getQueryStringValue("lat");
+var urlLng = getQueryStringValue("lng");
+var urlZoom = getQueryStringValue("zoom");
+  
 // magnification with which the map will start
-const zoom = 2;
+const zoom = urlZoom ? parseFloat(urlZoom) : 2;
 // co-ordinates
-const lat = 50;
-const lng = 50;
+const lat = urlLat ? parseFloat(urlLat) : 50;
+const lng = urlLng ? parseFloat(urlLat) : 50;
 
 // calling map
 const map = L.map('map', config).setView([lat, lng], zoom);
@@ -2056,6 +2064,37 @@ const legendControl = L.Control.extend({
 
 // добавляем кнопку на карту
 map.addControl(new legendControl());
+
+const shareControl = L.Control.extend({
+  // button position
+  options: {
+    position: 'topleft',
+  },
+
+  // method
+  onAdd: function (map) {
+    const btn = L.DomUtil.create('button');
+    btn.title = 'Скопировать ссылку на позицию карты';
+    btn.textContent = '🌐';
+    btn.className = 'showLegend';
+    btn.setAttribute(
+      'style',
+      'background-color: transparent; width: 26px; height: 26px; border: none; display: flex; cursor: pointer; justify-content: center; font-size: 2rem;',
+    );
+
+    // показываем и скрываем указатель получения координат
+    btn.onclick = function () {
+      const { lat, lng, zoom } = map.getCenter();
+      const url = window.location.href + `?lat=${lat}&lng=${lng}&zoom=${zoom}`;
+      navigator.clipboard.writeText(url);
+    };
+
+    return btn;
+  },
+});
+
+// добавляем кнопку на карту
+map.addControl(new shareControl());
 
 
 function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null, actions = [], ships = []) {
