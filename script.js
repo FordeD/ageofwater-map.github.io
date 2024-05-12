@@ -1853,6 +1853,12 @@ const icons = {
     iconAnchor: [15, 15],
     popupAnchor: [0, -32],
   }),
+  hidedRocks: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/rock_transparent.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -32],
+  }),
   dynamites: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/resources/dynamite.jpg',
     iconSize: [30, 30],
@@ -1913,16 +1919,27 @@ L.control.zoom({ position: 'topleft' }).addTo(map);
 const types = Object.keys(worldPoints);
 iconGroups['all'] = new L.FeatureGroup();
 const legendMarkers = {};
+let HIDED_MARKERS = localStorage.getItem('hidedMarkers') !== null ? JSON.parse(localStorage.getItem('hidedMarkers')) : [] ;
 for (const type of types) {
   iconGroups[type] = new L.FeatureGroup();
   legendMarkers[legendNames[type]] = iconGroups[type];
   for (let i = 0; i < worldPoints[type].length; i++) {
     const [lat, lng, popupContent, tooltipText] = worldPoints[type][i];
+    const options = { icon: icons[type], markerType: type, markerId: type + i };
+    if (type === 'rocks') {
+      if (HIDED_MARKERS && HIDED_MARKERS.length) {
+        if (HIDED_MARKERS.includes(type + i)) {
+          options.icon = icons.hidedRocks;
+        }
+      }
+      options['index'] = i;
+    }
 
-    let marker = new L.marker([lat, lng], { icon: icons[type] }).bindPopup(
-      popupContent,
-      popupOptions,
-    );
+    let marker = new L.marker([lat, lng], { icon: icons[type] })
+      .bindPopup(popupContent, popupOptions)
+      .on('mouseover', onMarkerOpen)
+      .getPopup()
+      .on('remove', onMarkerClose);
     if (type === 'pois') {
       marker.bindTooltip(tooltipText, {
         permanent: true,
@@ -1934,6 +1951,37 @@ for (const type of types) {
     iconGroups[type].addLayer(marker);
     
   }
+}
+
+localStorage.setItem('hidedMarkers', HIDED_MARKERS);
+
+let targetMarker = null;
+function onMarkerOpen(e) {
+ targetMarker = e.target;
+}
+
+function onMarkerClose(e) {
+  targetMarker = null;
+}
+
+function hideMarker(e) {
+  let hided = JSON.parse(localStorage.getItem('hidedMarkers'));
+  if (!hided) {
+    hided = [];
+  }
+
+  if (targetMarker !== null) {
+    const key = targetMarker.options.markerId;
+    if (hided.includes(key)) {
+      let index = hided.indexOf(key);
+      hided.splice(index, 1);
+      targetMarker.setIcon(icons.rocks);
+    } else {
+      hided.push(key);
+      targetMarker.setIcon(icons.hidedRocks);
+    }
+  }
+  localStorage.setItem('hidedMarkers', JSON.stringify(hided));
 }
 
 
@@ -2103,8 +2151,13 @@ const shareControl = L.Control.extend({
 map.addControl(new shareControl());
 
 
-function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null, actions = [], ships = []) {
-  let context = `<div class="popup-header-block"><h3 class="popup-title">${title}</h3>`;
+function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null, actions = [], ships = [], isHidable = false) {
+  let context = '';
+  if (isHidable) {
+    context += '<div class="hide-button-block"><button onClick="hideMarker()">Скрыть/показать маркер</button></div>'
+  }
+
+  context += `<div class="popup-header-block"><h3 class="popup-title">${title}</h3>`;
   if (image) {
     context += `<div class="popup-main-image"><img src="${image}" width="100" height="100"></div>`;
   }
@@ -2229,5 +2282,8 @@ function generateRockPopup() {
     ],
     null,
     'В малом количестве могут добываться и иные ресурсы. Ресурс используется в исследованиях и строительстве',
+    [],
+    [],
+    true,
   );
 }
