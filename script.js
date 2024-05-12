@@ -1896,13 +1896,13 @@ var urlLng = urlParams.get('lng');
 var urlZoom = urlParams.get('zoom');
   
 // magnification with which the map will start
-const zoom = urlZoom ? parseInt(urlZoom) : 2;
+const baseZoom = urlZoom ? parseFloat(urlZoom) : 3;
 // co-ordinates
-const lat = urlLat ? parseInt(urlLat) : 50;
-const lng = urlLng ? parseInt(urlLng) : 50;
+const baseLat = urlLat ? parseFloat(urlLat) : 24.04646;
+const baseLng = urlLng ? parseFloat(urlLng) : 0.9668;
 
 // calling map
-const map = L.map('map', config).setView([lat, lng], zoom);
+const map = L.map('map', config).setView([baseLat, baseLng], baseZoom);
 
 // Used to load and display tile layers on the map
 // Most tile servers require attribution, which you can set under `Layer`
