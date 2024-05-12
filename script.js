@@ -1965,7 +1965,7 @@ const coordsPointControl = L.Control.extend({
   onAdd: function (map) {
     const btn = L.DomUtil.create('button');
     btn.title = 'Показать точку вывода координат';
-    btn.textContent = '🛠';
+    btn.textContent = '⚓️';
     btn.className = 'showPoint';
     btn.setAttribute(
       'style',
@@ -2035,7 +2035,7 @@ const legendControl = L.Control.extend({
   onAdd: function (map) {
     const btn = L.DomUtil.create('button');
     btn.title = 'Показать/скрыть фильтр меток';
-    btn.textContent = '📌';
+    btn.textContent = '🔘';
     btn.className = 'showLegend';
     btn.setAttribute(
       'style',
