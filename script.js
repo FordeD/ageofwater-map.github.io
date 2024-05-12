@@ -2153,7 +2153,8 @@ map.addControl(new shareControl());
 function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null, actions = [], ships = [], isHidable = false) {
   let context = '';
   if (isHidable) {
-    context += '<div class="hide-button-block"><button onClick="hideMarker()">Скрыть/показать маркер</button></div>'
+    context +=
+      '<div class="hide-button-block"><button class="custom-button-styled" onClick="hideMarker()">Скрыть/показать маркер</button></div>';
   }
 
   context += `<div class="popup-header-block"><h3 class="popup-title">${title}</h3>`;
