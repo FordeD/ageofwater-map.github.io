@@ -494,6 +494,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.JEL_VOIN.CABINA,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+          ITEMS.MODULES.GENERATOR.T3,
         ],
         'В этом месте хорошо фармить части оружия и ткань при абордаже на разбор, корабли слабые и выбить экипаж довольно просто',
         null,
