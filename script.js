@@ -1893,7 +1893,7 @@ var urlZoom = urlParams.get('zoom');
 const zoom = urlZoom ? parseInt(urlZoom) : 2;
 // co-ordinates
 const lat = urlLat ? parseInt(urlLat) : 50;
-const lng = urlLng ? parseInt(urlLat) : 50;
+const lng = urlLng ? parseInt(urlLng) : 50;
 
 // calling map
 const map = L.map('map', config).setView([lat, lng], zoom);
