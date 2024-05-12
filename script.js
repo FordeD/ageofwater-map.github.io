@@ -1937,8 +1937,6 @@ for (const type of types) {
     let marker = new L.marker([lat, lng], options)
       .bindPopup(popupContent, popupOptions)
       .on('mouseover', onMarkerOpen)
-      .getPopup()
-      .on('remove', onMarkerClose);
     if (type === 'pois') {
       marker.bindTooltip(tooltipText, {
         permanent: true,
@@ -1957,10 +1955,6 @@ localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
 let targetMarker = null;
 function onMarkerOpen(e) {
  targetMarker = e.target;
-}
-
-function onMarkerClose(e) {
-  targetMarker = null;
 }
 
 function hideMarker(e) {
