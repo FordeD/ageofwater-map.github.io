@@ -216,7 +216,7 @@ body {
   z-index: 100;
   display: block;
   position: absolute;
-  left: 50vw;
+  left: calc(50vw - 40px);
   top: 50vh;
   color: #DBE7F2;
   background-color: rgba(48, 48, 49, 0.7);
