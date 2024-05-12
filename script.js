@@ -2092,7 +2092,7 @@ const shareControl = L.Control.extend({
         location.pathname +
         `?lat=${lat.toFixed(5)}&lng=${lng.toFixed(5)}&zoom=${zoom}`;
       navigator.clipboard.writeText(url);
-      alert(`Точная ссылка места на карте скопирована в буфер обмена ${url}`);
+      alert(`Точная ссылка места на карте скопирована в буфер обмена.\n${url}`);
     };
 
     return btn;
