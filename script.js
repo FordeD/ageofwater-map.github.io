@@ -2071,7 +2071,6 @@ function updateInfo() {
 
   currentHeight -= middleMap[0];
   const widthIndex = Math.floor(currentWidth / squareSideWidth);
-  console.log(currentWidth, ' / ', squareSideWidth, ' = ', widthIndex);
   const heightIndex = heightNamings.length - Math.floor(currentHeight / squareSideHeight);
   const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightIndex];
   gridCoordPlace.innerHTML = pointCoordinates;
