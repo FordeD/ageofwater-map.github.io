@@ -2176,7 +2176,15 @@ function hideMarker(e) {
 
 function copyLinkToMarker(unique) {
   const url = location.protocol + '//' + location.host + location.pathname + `?marker=${unique}`;
-  navigator.clipboard.writeText(url);
+  navigator.clipboard.writeText(url).then(
+    function () {
+      // Копируем текст в буффер обмена
+      //1
+    },
+    function () {
+      //2
+    },
+  );
   alert(`Точная ссылка места на карте скопирована в буфер обмена.\n${url}`);
 }
 
@@ -2394,7 +2402,15 @@ const shareControl = L.Control.extend({
         location.host +
         location.pathname +
         `?lat=${lat.toFixed(5)}&lng=${lng.toFixed(5)}&zoom=${zoom}`;
-      navigator.clipboard.writeText(url);
+      navigator.clipboard.writeText(url).then(
+        function () {
+          // Копируем текст в буффер обмена
+          //1
+        },
+        function () {
+          //2
+        },
+      );
       alert(`Точная ссылка места на карте скопирована в буфер обмена.\n${url}`);
     };
 
