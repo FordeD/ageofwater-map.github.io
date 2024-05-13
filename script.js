@@ -2045,7 +2045,6 @@ const mapPlace = document.querySelector('#map');
 document.addEventListener('DOMContentLoaded', function () {
   map.on('dragend', updateInfo);
   map.on('zoomend', updateInfo);
-  map.cursor.enable();
   map.addEventListener('mousemove', (event) => {
     let lat = Math.round(event.latlng.lat * 100000) / 100000;
     let lng = Math.round(event.latlng.lng * 100000) / 100000;
@@ -2069,8 +2068,8 @@ document.body.onmousemove = function (e) {
   e = window.event;
 
   gridCoordPlace.style.opacity = '1';
-  gridCoordPlace.style.left = e.pageX - 100 + 'px';
-  gridCoordPlace.style.top = e.pageY + 30 + 'px';
+  gridCoordPlace.style.left = e.pageX - 40 + 'px';
+  gridCoordPlace.style.top = e.pageY + 10 + 'px';
 };
 
 document.body.onmouseout = function () {
