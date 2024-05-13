@@ -1,15 +1,15 @@
 // grid data
 const middleMap = [14.9554, 1.17554];
-const topLeftMap = [84.87266, -177.83569];
-const rightDownMap = [-85.05208, 180.01099];
-const squareSideWidth = 16.26000;
-const squareSideHeight = 8.59349;
-const mapWidthOffset = 2.06542;
+const topLeftMap = [-85.05302, -177.76978];
+const rightDownMap = [84.87127, 180.02727];
+const mapWidthOffset = 1.38428;
 const mapHeightOffset = 0.18128;
-const mapWidth = 357.84668;
+const mapWidth = Math.abs(topLeftMap[1]) + rightDownMap[1];
 const mapHalfWidth = mapWidth / 2;
-const mapHeight = 169.92473;
+const mapHeight = Math.abs(topLeftMap[0]) + rightDownMap[0];
 const mapHalfHeight = mapHeight / 2;
+const squareSideWidth = mapWidth / 22;
+const squareSideHeight = mapHeight / 22;
 const widthNamings = [
   'A',
   'B',
