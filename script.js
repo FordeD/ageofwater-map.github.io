@@ -2388,11 +2388,11 @@ function generateDescription(title, image = null, description = null, resources 
     } else {
       const shipNames = Object.keys(boardings);
       for (const shipName of shipNames) {
-        context += `<div<b>Можно получить c ${shipName}:</b>`;
+        context += `<div><b>Можно получить c ${shipName}:</b><div>`;
         for (const boardingItem of boardings[shipName]) {
           context += `<img class="popup-resource-image" src="${boardingItem}" width="75" height="75" />`;
         }
-        context += `</div>`;
+        context += `</div></div>`;
       }
     }
   }
