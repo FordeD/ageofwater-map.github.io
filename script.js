@@ -807,14 +807,7 @@ const worldPoints = {
           RESPURCES.COPPER_PLATES,
         ],
         [
-          ITEMS.CONSTRUCTIONS.STENKA.T1,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
-          ITEMS.CONSTRUCTIONS.CISTERNA,
-          ITEMS.CONSTRUCTIONS.TRAULER.CABINA,
-          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
-          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+          ITEMS.CONSTRUCTIONS.STENKA.T1
         ],
         `В этой точке не получится абордажить ${SHIPS.T5.REPEJ.name}, при выведении экипажа из строя корабль сразу потонет`,
         null,
