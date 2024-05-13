@@ -2209,7 +2209,11 @@ document.addEventListener('DOMContentLoaded', function () {
       return false;
     });
     if (marker) {
-      setTimeout(() => { marker.openPopup(); }, 500);
+      setTimeout(() => {
+        const pos = marker.getLatLng();
+        map.flyTo([pos.lat, pos.lng], 4);
+        marker.openPopup();
+      }, 500);
     }
   }
 });
