@@ -533,18 +533,36 @@ const worldPoints = {
           RESPURCES.STEEL,
           RESPURCES.COPPER_PLATES,
         ],
-        [
-          ITEMS.CONSTRUCTIONS.MUSOR_SHIELD.T1,
-          ITEMS.CONSTRUCTIONS.STENKA.T1,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
-          ITEMS.CONSTRUCTIONS.CISTERNA,
-          ITEMS.CONSTRUCTIONS.JEL_VOIN.CABINA,
-          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
-          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
-          ITEMS.MODULES.GENERATOR.T3,
-        ],
+        {
+          [SHIPS.T3.BISTRIY.name]: [
+            ITEMS.CONSTRUCTIONS.MUSOR_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.STENKA.T1,
+            ITEMS.MODULES.GENERATOR.T3,
+            ITEMS.CONSTRUCTIONS.JEL_VOIN.CABINA,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+          ],
+          [SHIPS.T3.ZORKIJ.name]: [
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.STENKA.T1,
+          ],
+          [SHIPS.T4.ANCHOUS.name]: [
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
+            ITEMS.CONSTRUCTIONS.CISTERNA,
+            ITEMS.MODULES.GENERATOR.T3,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+          ],
+          [SHIPS.T4.MURENA.name]: [
+            ITEMS.CONSTRUCTIONS.STENKA.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+          ],
+        },
         'В этом месте хорошо фармить части оружия и ткань при абордаже на разбор, корабли слабые и выбить экипаж довольно просто',
         null,
         [SHIPS.T4.MURENA, SHIPS.T4.ANCHOUS, SHIPS.T3.ZORKIJ, SHIPS.T3.BISTRIY],
@@ -2359,13 +2377,24 @@ function generateDescription(title, image = null, description = null, resources 
     context += `</div>`;
   }
 
-  if (boardings && boardings.length) {
-    context += `<div class="popup-resource-block">`;
-    context += '<b>Можно получить при абордаже:</b>';
-    for (const boarding of boardings) {
-      context += `<img class="popup-resource-image" src="${boarding}" width="75" height="75" />`;
+  if (boardings) {
+    if (Array.isArray(boardings)) {
+      context += `<div class="popup-resource-block">`;
+      context += '<b>Можно получить при абордаже:</b>';
+      for (const boarding of boardings) {
+        context += `<img class="popup-resource-image" src="${boarding}" width="75" height="75" />`;
+      }
+      context += `</div>`;
+    } else {
+      const shipNames = Object.keys(boardings);
+      for (const shipName of shipNames) {
+        context += `<div<b>Можно получить c ${shipName}:</b>`;
+        for (const boardingItem of boardings[shipName]) {
+          context += `<img class="popup-resource-image" src="${boardingItem}" width="75" height="75" />`;
+        }
+        context += `</div>`;
+      }
     }
-    context += `</div>`;
   }
 
   if (ships && ships.length) {
