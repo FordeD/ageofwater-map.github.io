@@ -2068,7 +2068,7 @@ document.body.onmousemove = function (e) {
   e = window.event;
 
   gridCoordPlace.style.opacity = '1';
-  gridCoordPlace.style.left = e.pageX - 40 + 'px';
+  gridCoordPlace.style.left = e.pageX - 20 + 'px';
   gridCoordPlace.style.top = e.pageY + 10 + 'px';
 };
 
