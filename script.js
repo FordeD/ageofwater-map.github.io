@@ -681,7 +681,6 @@ const worldPoints = {
           ITEMS.MODULES.ACCUMULATOR.T2,
           ITEMS.CONSTRUCTIONS.SEINER.PLATFORMA,
           ITEMS.MODULES.TRUBA.T3,
-          
         ],
         `В этой точке не получится абордажить ${SHIPS.T5.REPEJ.name}, при выведении экипажа из строя корабль сразу потонет`,
         null,
@@ -2055,6 +2054,11 @@ setInterval(updateInfo(), 100);
 function updateInfo() {
   const { lat, lng } = map.getCenter();
   markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+  const pointCoordinates = coordsToMapPosition(lat, lng);
+  gridCoordPlace.innerHTML = pointCoordinates;
+}
+
+function coordsToMapPosition(lat, lng) {
   // height, width
   let currentWidth = lng;
   if (currentWidth >= 0) {
@@ -2068,8 +2072,8 @@ function updateInfo() {
   let currentHeight = lat;
   const widthIndex = Math.floor(currentWidth / squareSideWidth);
   const heightIndex = caltLatitudeToGrid(currentHeight);
-  const pointCoordinates = (widthNamings[widthIndex] ?? '-') + (heightNamings[heightIndex] ?? '-' );
-  gridCoordPlace.innerHTML = pointCoordinates;
+  const pointCoordinates = (widthNamings[widthIndex] ?? '-') + (heightNamings[heightIndex] ?? '-');
+  return pointCoordinates;
 }
 
 function caltLatitudeToGrid(searchLat, increment = 0) {
