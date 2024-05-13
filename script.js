@@ -2026,8 +2026,8 @@ function hideMarker(e) {
 
 
 // Вывод координат на карте
-// map.on('dragend', updateInfo);
-// map.on('zoomend', updateInfo);
+map.on('dragend', updateInfo);
+map.on('zoomend', updateInfo);
 
 // Блок с координатами точки
 const coordinates = L.control({ position: 'bottomleft' });
