@@ -2062,7 +2062,7 @@ function updateInfo() {
   }
 
   console.log('Transform to absolute lng', currentWidth);
-  currentWidth += middleMap[1];
+  currentWidth -= middleMap[1];
   console.log('Add offset to lng', currentWidth);
   // let currentHeight = lat;
   // if (currentWidth > 0) {
