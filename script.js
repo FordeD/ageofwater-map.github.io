@@ -3,13 +3,14 @@ const middleMap = [14.9554, 1.17554];
 const topLeftMap = [-85.05302, -177.76978];
 const rightDownMap = [84.87127, 180.02727];
 const mapWidthOffset = 1.38428;
-const mapHeightOffset = 0.18128;
 const mapWidth = Math.abs(topLeftMap[1]) + rightDownMap[1];
-const mapHeight = Math.abs(topLeftMap[0]) + rightDownMap[0];
 const mapHalfWidth = mapWidth / 2;
-const mapHalfHeight = mapHeight / 2;
 const squareSideWidth = mapWidth / 22;
-const squareSideHeight = mapHeight / 22;
+const mapHeights = [
+  -85.05492, -83.43279, -81.2917, -78.44663, -74.68905, -69.75616, -63.36198, -55.07837, -44.65302,
+  -31.95216, -17.18278, -1.18644, 14.92355, 29.89781, 42.95642, 53.73572, 62.33941, 68.9978,
+  74.11605, 78.00276, 80.9561, 83.19229, 84.86971,
+].reverse();
 const widthNamings = [
   'A',
   'B',
@@ -2063,21 +2064,21 @@ function updateInfo() {
   currentWidth -= middleMap[1];
 
   let currentHeight = lat;
-  console.log('Base height', currentHeight);
-  if (currentHeight >= 0) {
-    currentHeight += mapHalfHeight;
-  } else {
-    currentHeight = mapHalfHeight - Math.abs(currentHeight);
-  }
-  console.log('Transform height to absolute', currentHeight);
 
   currentHeight += mapHeightOffset;
-  console.log('Add height offset', currentHeight);
   const widthIndex = Math.floor(currentWidth / squareSideWidth);
-  const heightIndex = heightNamings.length - Math.floor(currentHeight / squareSideHeight);
-  console.log(currentHeight, '/', squareSideHeight, '=', Math.floor(currentHeight / squareSideHeight));
+  const heightIndex = caltLatitudeToGrid(currentHeight);
   const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightIndex];
   gridCoordPlace.innerHTML = pointCoordinates;
+}
+
+function caltLatitudeToGrid(searchLat, increment = 0) {
+  if (searchLat < mapHeights[increment]) {
+    increment++;
+    caltLatitudeToGrid(searchLat, increment);
+  } else {
+    return increment;
+  }
 }
 
 // create custom button
