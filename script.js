@@ -2066,9 +2066,11 @@ const popupOptions = {
 
 const urlParams = new URLSearchParams(window.location.search);
 
-var urlLat = urlParams.get('lat');
-var urlLng = urlParams.get('lng');
-var urlZoom = urlParams.get('zoom');
+let urlLat = urlParams.get('lat');
+let urlLng = urlParams.get('lng');
+let urlZoom = urlParams.get('zoom');
+let urlMarker = urlParams.get('marker');
+
   
 // magnification with which the map will start
 const baseZoom = urlZoom ? parseFloat(urlZoom) : 3;
@@ -2094,6 +2096,7 @@ L.control.zoom({ position: 'topleft' }).addTo(map);
 const types = Object.keys(worldPoints);
 iconGroups['all'] = new L.FeatureGroup();
 const legendMarkers = {};
+const MARKERS = [];
 let HIDED_MARKERS = localStorage.getItem('hidedMarkers') !== '' ? JSON.parse(localStorage.getItem('hidedMarkers')) : [] ;
 for (const type of types) {
   iconGroups[type] = new L.FeatureGroup();
@@ -2109,9 +2112,11 @@ for (const type of types) {
       }
     }
 
+    popupContent = popupContent.replace('$[unique]', type + i);
+
     let marker = new L.marker([lat, lng], options)
       .bindPopup(popupContent, popupOptions)
-      .on('mouseover', onMarkerOpen)
+      .on('mouseover', onMarkerOpen);
     if (type === 'pois') {
       marker.bindTooltip(tooltipText, {
         permanent: true,
@@ -2121,7 +2126,20 @@ for (const type of types) {
       });
     }
     iconGroups[type].addLayer(marker);
+    MARKERS.push(marker);
     
+  }
+}
+
+if (urlMarker) {
+  const marker = MARKERS.find((mrk) => {
+    if (mrk.options.markerId === urlMarker) {
+      return true;
+    }
+    return false;
+  });
+  if (marker) {
+    marker.openPopup();
   }
 }
 
@@ -2154,6 +2172,11 @@ function hideMarker(e) {
   localStorage.setItem('hidedMarkers', JSON.stringify(hided));
 }
 
+function copyLinkToMarker(unique) {
+  const url = location.protocol + '//' + location.host + location.pathname + `?marker=${unique}`;
+  navigator.clipboard.writeText(url);
+  alert(`Точная ссылка места на карте скопирована в буфер обмена.\n${url}`);
+}
 
 
 // Блок с координатами точки
@@ -2387,6 +2410,9 @@ function generateDescription(title, image = null, description = null, resources 
     context +=
       '<div class="hide-button-block"><button class="custom-button-styled" onClick="hideMarker()">👁️‍🗨️</button></div>';
   }
+
+  context +=
+    '<div class="hide-button-block"><button class="custom-button-styled" onClick="copyLinkToMarker(\'$[unique]\')">🔗</button></div>';
 
   context += `<div class="popup-header-block"><h3 class="popup-title">${title}</h3>`;
   if (image) {
