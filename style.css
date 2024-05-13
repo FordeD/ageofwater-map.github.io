@@ -187,6 +187,27 @@ body {
     background: transparent;
 }
 
+.custom-button-styled-filter {
+  box-sizing: border-box;
+  padding: 0 5px;
+  margin: 6px 0px 3px 17px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  height: 25px;
+  min-width: 130px;
+  line-height: 25px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #385898;
+  background-color: #e7f3ff;
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+}
+
 .custom-button-styled {
 	display: inline-block;
   box-sizing: border-box;
@@ -207,16 +228,16 @@ body {
   appearance: none;
   touch-action: manipulation;
 }
-.custom-button-styled:focus-visible {
+.custom-button-styled:focus-visible, .custom-button-styled-filter:focus-visible {
 	box-shadow: 0 0 0 2px #666;
 }
-.custom-button-styled:hover {
+.custom-button-styled:hover, .custom-button-styled-filter:hover {
 	background-color: #DBE7F2;
 }
-.custom-button-styled:active {
+.custom-button-styled:active, .custom-button-styled-filter:active {
 	transform: scale(0.96);
 }
-.custom-button-styled:disabled {
+.custom-button-styled:disabled, .custom-button-styled-filter:disabled {
 	pointer-events: none;
 	opacity: 0.65;
 }

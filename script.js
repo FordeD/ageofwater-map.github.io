@@ -2155,7 +2155,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
     const elements = this._container.getElementsByClassName('leaflet-control-layers-list');
     const button = L.DomUtil.create(
       'button',
-      `btn-markers custom-button-styled ${className}`,
+      `btn-markers custom-button-styled-filter ${className}`,
       elements[0],
     );
     button.textContent = `${type} метки`;
