@@ -2209,8 +2209,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return false;
     });
     if (marker) {
-      marker.openPopup();
-      marker.click();
+      setTimeout(() => { marker.openPopup(); }, 500);
     }
   }
 });
