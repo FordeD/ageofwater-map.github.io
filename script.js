@@ -2071,11 +2071,14 @@ function updateInfo() {
 }
 
 function caltLatitudeToGrid(searchLat, increment = 0) {
+  if (!mapHeights[increment]) {
+    return increment;
+  }
   if (searchLat < mapHeights[increment]) {
     increment++;
     caltLatitudeToGrid(searchLat, increment);
   } else {
-    return increment-1;
+    return increment - 1;
   }
 }
 
