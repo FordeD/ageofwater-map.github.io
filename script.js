@@ -215,6 +215,10 @@ const SHIPS = {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_sargan.webp',
       name: 'ТК3 Сарган торпедный катер (I)',
     },
+    NJORD: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_njord.webp',
+      name: 'Нъерд (I)',
+    },
   },
   T2: {
     SCORPEN: {
@@ -727,7 +731,7 @@ const worldPoints = {
       generateDescription(
         'Флот T1-T2',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
-        `Флот из кораблей Т1 и Т2, быстро спавнится для прокачки без остановки`,
+        `Флот из кораблей ${SHIPS.T1.NJORD.name}, Т1 и Т2, быстро спавнится для прокачки без остановки`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -759,7 +763,7 @@ const worldPoints = {
       generateDescription(
         'Флот T1 и плавающих на подушке курьеров',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
-        `Флот из кораблей ${SHIPS.T1.DINGHY.name} и плавающих на подушке курьеров. очень сильный флот из-за большого количества ракет и гранат выпускаемых курьерами`,
+        `Флот из кораблей ${SHIPS.T1.NJORD.name} и плавающих на подушке курьеров. очень сильный флот из-за большого количества ракет и гранат выпускаемых курьерами`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -806,9 +810,7 @@ const worldPoints = {
           RESPURCES.STEEL,
           RESPURCES.COPPER_PLATES,
         ],
-        [
-          ITEMS.CONSTRUCTIONS.STENKA.T1
-        ],
+        [ITEMS.CONSTRUCTIONS.STENKA.T1],
         `В этой точке не получится абордажить ${SHIPS.T5.REPEJ.name}, при выведении экипажа из строя корабль сразу потонет`,
         null,
         [SHIPS.T1.SARGAN],
@@ -1506,7 +1508,10 @@ const worldPoints = {
     [0.48339, 22.0166, generateDynamitePopup()],
     [23.20096, 36.95801, generateDynamitePopup()],
   ],
-  explosives: [[-56.77681, 90.4834, EXPLOSIVES]],
+  explosives: [
+    [-56.77681, 90.4834, EXPLOSIVES],
+    [75.84517, 39.81445, EXPLOSIVES],
+  ],
   pantoons: [
     [69.72572, 7.7124, generatePantoonPopup()],
     [66.5045, 25.86182, generatePantoonPopup()],
@@ -1831,6 +1836,38 @@ const worldPoints = {
         ],
         null,
         'Данный противник слаб против быстрых лодок',
+      ),
+    ],
+    [
+      70.9597,
+      36.65039,
+      generateDescription(
+        'Курьер на воздушной подушке',
+        'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
+        'Блуждающий на одном месте плавающий курьер на воздушной подушке',
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+          ITEMS.MODULES.TURBINA.T1,
+          ITEMS.WEAPONS.GRANATOMET.T1,
+          ITEMS.WEAPONS.KARTECH.T1,
+          ITEMS.WEAPONS.PULEMET.T1,
+          ITEMS.WEAPONS.PUSHKA.T1,
+          ITEMS.MODULES.GENERATOR.T1,
+          ITEMS.MODULES.MOTOR.T1,
+          ITEMS.MODULES.MOTOR.T2,
+        ],
+        null,
+        'Довольно просто убивается если стрелять в турбины на задней части, после их поломки он потонет',
       ),
     ],
   ],
