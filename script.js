@@ -2111,13 +2111,13 @@ for (const type of types) {
         }
       }
     }
-
-    if (popupContent) {
-      popupContent = String(popupContent).replace('$[unique]', type + i);
+    let formattedContext = popupContent;
+    if (formattedContext) {
+      formattedContext = formattedContext.replace('$[unique]', type + i);
     }
 
     let marker = new L.marker([lat, lng], options)
-      .bindPopup(popupContent, popupOptions)
+      .bindPopup(formattedContext, popupOptions)
       .on('mouseover', onMarkerOpen);
     if (type === 'pois') {
       marker.bindTooltip(tooltipText, {
