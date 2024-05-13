@@ -2077,7 +2077,7 @@ function caltLatitudeToGrid(searchLat, increment = 0) {
     increment++;
     caltLatitudeToGrid(searchLat, increment);
   } else {
-    return increment;
+    return increment-1;
   }
 }
 
