@@ -2054,34 +2054,26 @@ function updateInfo() {
   markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
   // height, width
   let currentWidth = lng;
-  console.log('Map lng', lng);
   if (currentWidth > 0) {
-    currentWidth += mapHalfWidth
+    currentWidth += mapHalfWidth;
   } else {
     currentWidth = mapHalfWidth - Math.abs(currentWidth);
   }
 
-  console.log('Transform to absolute lng', currentWidth);
   currentWidth -= middleMap[1];
-  console.log('Add offset to lng', currentWidth);
-  // let currentHeight = lat;
-  // if (currentWidth > 0) {
-  //   currentWidth += mapHalfWidth + middleMap[1];
-  // } else {
-  //   currentWidth = (mapHalfWidth - middleMap[1]) - Math.abs(currentWidth);
-  // }
 
-  // currentWidth -= middleMap[1] + mapWidthOffset
+  let currentHeight = lat;
+  if (currentHeight > 0) {
+    currentHeight += mapHalfHeight;
+  } else {
+    currentHeight = mapHalfHeight - Math.abs(currentHeight);
+  }
 
-  // if (currentHeight > middleMap[0]) {
-  //   currentHeight += mapHalfHeight;
-  // } else {
-  //   currentHeight = mapHalfHeight - Math.abs(currentHeight);
-  // }
+  currentHeight -= middleMap[0];
   const widthIndex = Math.floor(currentWidth / squareSideWidth);
   console.log(currentWidth, ' / ', squareSideWidth, ' = ', widthIndex);
-  // const heightIndex = Math.floor(currentHeight / squareSideHeight);
-  const pointCoordinates = widthNamings[widthIndex];// + heightNamings[heightNamings.length - heightIndex];
+  const heightIndex = heightNamings.length - Math.floor(currentHeight / squareSideHeight);
+  const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightIndex];
   gridCoordPlace.innerHTML = pointCoordinates;
 }
 
