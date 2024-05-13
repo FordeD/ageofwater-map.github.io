@@ -9,7 +9,7 @@ const mapHalfWidth = mapWidth / 2;
 const mapHeight = Math.abs(topLeftMap[0]) + rightDownMap[0];
 const mapHalfHeight = mapHeight / 2;
 const squareSideWidth = mapWidth / 22;
-const squareSideHeight = mapHeight / 22;
+const squareSideHeight = mapHalfHeight / 22;
 const widthNamings = [
   'A',
   'B',
@@ -2071,7 +2071,7 @@ function updateInfo() {
   }
   console.log('Transform height to absolute', currentHeight);
 
-  currentHeight += middleMap[0];
+  // currentHeight += mapHeightOffset;
   console.log('Add height offset', currentHeight);
   const widthIndex = Math.floor(currentWidth / squareSideWidth);
   const heightIndex = heightNamings.length - Math.floor(currentHeight / squareSideHeight);
