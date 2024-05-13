@@ -167,6 +167,9 @@ const ITEMS = {
     MUSOR_SHIELD: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/mus_shield_1.jpg',
     },
+    MUSOR_SHIELD_DVOIN: {
+      T1: 'https://forded.github.io/ageofwater-map.github.io/items/mus_shield_dvoin.jpg',
+    },
     STENKA: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/sten_1.jpg',
     },
@@ -192,6 +195,7 @@ const ITEMS = {
     CISTERNA: 'https://forded.github.io/ageofwater-map.github.io/items/cist.jpg',
     POZJ_MACHTA: 'https://forded.github.io/ageofwater-map.github.io/items/pozj_machta.jpg',
     PLAST_RUBKA: 'https://forded.github.io/ageofwater-map.github.io/items/plast_rub.jpg',
+    RUBKA_BOTA: 'https://forded.github.io/ageofwater-map.github.io/items/rubka_bota.jpg',
     TUR_BAZA: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_1.jpg',
       T2: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_2.jpg',
@@ -835,6 +839,40 @@ const worldPoints = {
         `В этой точке не получится абордажить ${SHIPS.T5.REPEJ.name}, при выведении экипажа из строя корабль сразу потонет`,
         null,
         [SHIPS.T1.SARGAN],
+      ),
+    ],
+    [
+      -64.16811,
+      130.12207,
+      generateDescription(
+        'Корабли два корабля Т1',
+        'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
+        `Два корабля ${SHIPS.T1.SOFIYA.name}.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+        ],
+        {
+          [SHIPS.T1.SOFIYA.name]: [
+            ITEMS.CONSTRUCTIONS.STENKA.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.MUSOR_SHIELD_DVOIN,
+            ITEMS.CONSTRUCTIONS.RUBKA_BOTA,
+          ],
+        },
+        'Появляются рядом с потоком, во время абордажа нужно быть внимательней, могут заагриться Репеи из флота рядом',
+        null,
+        [SHIPS.T1.SOFIYA],
       ),
     ],
   ],
