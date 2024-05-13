@@ -2064,8 +2064,6 @@ function updateInfo() {
   currentWidth -= middleMap[1];
 
   let currentHeight = lat;
-
-  currentHeight += mapHeightOffset;
   const widthIndex = Math.floor(currentWidth / squareSideWidth);
   const heightIndex = caltLatitudeToGrid(currentHeight);
   const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightIndex];
