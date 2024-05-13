@@ -2027,15 +2027,6 @@ function hideMarker(e) {
 }
 
 
-// Вывод координат на карте
-map.on('dragend', updateInfo);
-map.on('zoomend', updateInfo);
-map.cursor.enable();
-map.addEventListener('mousemove', (event) => {
-  let lat = Math.round(event.latlng.lat * 100000) / 100000;
-  let lng = Math.round(event.latlng.lng * 100000) / 100000;
-  updatePosition(lat, lng);
-});
 
 // Блок с координатами точки
 const coordinates = L.control({ position: 'bottomleft' });
@@ -2052,11 +2043,18 @@ const mapPlace = document.querySelector('#map');
 
 // update info about bounds when site loaded
 document.addEventListener('DOMContentLoaded', function () {
+  map.on('dragend', updateInfo);
+  map.on('zoomend', updateInfo);
+  map.cursor.enable();
+  map.addEventListener('mousemove', (event) => {
+    let lat = Math.round(event.latlng.lat * 100000) / 100000;
+    let lng = Math.round(event.latlng.lng * 100000) / 100000;
+    updatePosition(lat, lng);
+  });
   updateInfo();
 });
 
 const gridCoordPlace = document.querySelector('.grid-pointer');
-setInterval(updateInfo(), 100);
 function updateInfo() {
   const { lat, lng } = map.getCenter();
   markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
