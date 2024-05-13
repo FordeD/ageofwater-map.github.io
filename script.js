@@ -191,6 +191,7 @@ const ITEMS = {
     },
     CISTERNA: 'https://forded.github.io/ageofwater-map.github.io/items/cist.jpg',
     POZJ_MACHTA: 'https://forded.github.io/ageofwater-map.github.io/items/pozj_machta.jpg',
+    PLAST_RUBKA: 'https://forded.github.io/ageofwater-map.github.io/items/plast_rub.jpg',
     TUR_BAZA: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_1.jpg',
       T2: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_2.jpg',
@@ -357,6 +358,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
           ITEMS.CONSTRUCTIONS.PALTUS.CABINA,
           ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
+          ITEMS.CONSTRUCTIONS.PLAST_RUBKA,
         ],
         `На данном месте проблемы могут быть только от ${SHIPS.T3.CLEVER.name}, в остальном фармится спокойно`,
         null,
