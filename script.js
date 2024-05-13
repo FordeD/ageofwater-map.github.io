@@ -2066,7 +2066,7 @@ function updateInfo() {
   let currentHeight = lat;
   const widthIndex = Math.floor(currentWidth / squareSideWidth);
   const heightIndex = caltLatitudeToGrid(currentHeight);
-  const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightIndex];
+  const pointCoordinates = (widthNamings[widthIndex] ?? '-') + (heightNamings[heightIndex] ?? '-' );
   gridCoordPlace.innerHTML = pointCoordinates;
 }
 
