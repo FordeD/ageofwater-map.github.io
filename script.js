@@ -2030,6 +2030,12 @@ function hideMarker(e) {
 // Вывод координат на карте
 map.on('dragend', updateInfo);
 map.on('zoomend', updateInfo);
+map.cursor.enable();
+map.addEventListener('mousemove', (event) => {
+  let lat = Math.round(event.latlng.lat * 100000) / 100000;
+  let lng = Math.round(event.latlng.lng * 100000) / 100000;
+  updatePosition(lat, lng);
+});
 
 // Блок с координатами точки
 const coordinates = L.control({ position: 'bottomleft' });
@@ -2054,9 +2060,24 @@ setInterval(updateInfo(), 100);
 function updateInfo() {
   const { lat, lng } = map.getCenter();
   markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+}
+
+function updatePosition(lat, lng) {
   const pointCoordinates = coordsToMapPosition(lat, lng);
   gridCoordPlace.innerHTML = pointCoordinates;
 }
+
+document.body.onmousemove = function (e) {
+  e = window.event;
+
+  gridCoordPlace.style.opacity = '1';
+  gridCoordPlace.style.left = e.pageX - 100 + 'px';
+  gridCoordPlace.style.top = e.pageY + 30 + 'px';
+};
+
+document.body.onmouseout = function () {
+  gridCoordPlace.style.opacity = '0';
+};
 
 function coordsToMapPosition(lat, lng) {
   // height, width
