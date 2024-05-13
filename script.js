@@ -2133,18 +2133,6 @@ for (const type of types) {
   }
 }
 
-if (urlMarker) {
-  const marker = MARKERS.find((mrk) => {
-    if (mrk.options.markerId === urlMarker) {
-      return true;
-    }
-    return false;
-  });
-  if (marker) {
-    marker.openPopup();
-  }
-}
-
 localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
 
 let targetMarker = null;
@@ -2212,6 +2200,19 @@ document.addEventListener('DOMContentLoaded', function () {
     updatePosition(lat, lng);
   });
   updateInfo();
+
+  if (urlMarker) {
+    const marker = MARKERS.find((mrk) => {
+      if (mrk.options.markerId === urlMarker) {
+        return true;
+      }
+      return false;
+    });
+    if (marker) {
+      marker.openPopup();
+      marker.click();
+    }
+  }
 });
 
 const gridCoordPlace = document.querySelector('.grid-pointer');
