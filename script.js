@@ -680,6 +680,8 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
           ITEMS.MODULES.ACCUMULATOR.T2,
           ITEMS.CONSTRUCTIONS.SEINER.PLATFORMA,
+          ITEMS.MODULES.TRUBA.T3,
+          
         ],
         `В этой точке не получится абордажить ${SHIPS.T5.REPEJ.name}, при выведении экипажа из строя корабль сразу потонет`,
         null,
