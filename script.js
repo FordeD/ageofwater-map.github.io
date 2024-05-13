@@ -561,6 +561,7 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.STENKA.T1,
             ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
             ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
           ],
         },
         'В этом месте хорошо фармить части оружия и ткань при абордаже на разбор, корабли слабые и выбить экипаж довольно просто',
