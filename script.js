@@ -2054,7 +2054,7 @@ function updateInfo() {
   markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
   // height, width
   let currentWidth = lng;
-  if (currentWidth > 0) {
+  if (currentWidth >= 0) {
     currentWidth += mapHalfWidth;
   } else {
     currentWidth = mapHalfWidth - Math.abs(currentWidth);
@@ -2063,15 +2063,19 @@ function updateInfo() {
   currentWidth -= middleMap[1];
 
   let currentHeight = lat;
-  if (currentHeight > 0) {
+  console.log('Base height', currentHeight);
+  if (currentHeight >= 0) {
     currentHeight += mapHalfHeight;
   } else {
     currentHeight = mapHalfHeight - Math.abs(currentHeight);
   }
+  console.log('Transform height to absolute', currentHeight);
 
-  currentHeight -= middleMap[0];
+  currentHeight += middleMap[0];
+  console.log('Add height offset', currentHeight);
   const widthIndex = Math.floor(currentWidth / squareSideWidth);
   const heightIndex = heightNamings.length - Math.floor(currentHeight / squareSideHeight);
+  console.log(currentHeight, '/', squareSideHeight, '=', Math.floor(currentHeight / squareSideHeight));
   const pointCoordinates = widthNamings[widthIndex] + heightNamings[heightIndex];
   gridCoordPlace.innerHTML = pointCoordinates;
 }
