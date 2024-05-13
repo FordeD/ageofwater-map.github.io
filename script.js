@@ -2076,7 +2076,7 @@ function caltLatitudeToGrid(searchLat, increment = 0) {
   }
   if (searchLat < mapHeights[increment]) {
     increment++;
-    caltLatitudeToGrid(searchLat, increment);
+    return caltLatitudeToGrid(searchLat, increment);
   } else {
     return increment - 1;
   }
