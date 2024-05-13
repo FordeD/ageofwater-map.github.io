@@ -217,7 +217,7 @@ body {
 
 .grid-pointer {
   z-index: 400;
-  display: none;
+  display: block;
   position: absolute;
   left: calc(50vw - 40px);
   top: 50vh;
@@ -229,5 +229,5 @@ body {
   text-align: center;
   border-radius: 5px;
   font-weight: 100;
-  font-family: Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;
+  font-family: Menlo,Consolas,Monaco,'Liberation Mono','Lucida Console',monospace;
 }

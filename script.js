@@ -2053,28 +2053,31 @@ function updateInfo() {
   const { lat, lng } = map.getCenter();
   markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
   // height, width
-  let currentWidth = lng + mapWidthOffset;
+  let currentWidth = lng;
   if (currentWidth > 0) {
     currentWidth += mapHalfWidth
-  }
-  // let currentHeight = lat;
-  if (currentWidth > 0) {
-    currentWidth += mapHalfWidth + middleMap[1];
   } else {
-    currentWidth = (mapHalfWidth - middleMap[1]) - Math.abs(currentWidth);
+    currentWidth = mapHalfWidth - Math.abs(currentWidth);
   }
+  currentWidth += middleMap[1];
+  // let currentHeight = lat;
+  // if (currentWidth > 0) {
+  //   currentWidth += mapHalfWidth + middleMap[1];
+  // } else {
+  //   currentWidth = (mapHalfWidth - middleMap[1]) - Math.abs(currentWidth);
+  // }
 
-  currentWidth -= middleMap[1] + mapWidthOffset
+  // currentWidth -= middleMap[1] + mapWidthOffset
 
   // if (currentHeight > middleMap[0]) {
   //   currentHeight += mapHalfHeight;
   // } else {
   //   currentHeight = mapHalfHeight - Math.abs(currentHeight);
   // }
-  const widthIndex = Math.floor((currentWidth+mapWidthOffset) / squareSideWidth);
+  const widthIndex = Math.floor(currentWidth / squareSideWidth);
   // const heightIndex = Math.floor(currentHeight / squareSideHeight);
   const pointCoordinates = widthNamings[widthIndex];// + heightNamings[heightNamings.length - heightIndex];
-  gridCoordPlace.innerHTML = pointCoordinates + (lng > middleMap[1] ? '+' : '-');
+  gridCoordPlace.innerHTML = pointCoordinates;
 }
 
 // create custom button
