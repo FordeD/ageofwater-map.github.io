@@ -2112,7 +2112,9 @@ for (const type of types) {
       }
     }
 
-    popupContent = popupContent.replace('$[unique]', type + i);
+    if (popupContent) {
+      popupContent = popupContent.replace('$[unique]', type + i);
+    }
 
     let marker = new L.marker([lat, lng], options)
       .bindPopup(popupContent, popupOptions)
