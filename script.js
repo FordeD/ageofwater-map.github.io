@@ -918,8 +918,8 @@ const worldPoints = {
       ),
     ],
     [
-      -64.16811,
-      130.12207,
+      75.09563,
+      -66.00586,
       generateDescription(
         'Корабль Т2',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -938,9 +938,7 @@ const worldPoints = {
           RESPURCES.COPPER_PLATES,
         ],
         {
-          [SHIPS.T2.VEHA.name]: [
-            ITEMS.MODULES.POMPA.T3,
-          ]
+          [SHIPS.T2.VEHA.name]: [ITEMS.MODULES.POMPA.T3],
         },
         'Появляются рядом с потоком, во время абордажа нужно быть внимательней, могут заагриться Репеи из флота рядом',
         null,
