@@ -284,6 +284,9 @@ body {
   border-radius: 5px;
   animation: fade 120s linear;
   -webkit-animation: fade 120s linear;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
   transition: background 0.5s;
 } 
 
@@ -291,12 +294,16 @@ body {
   background: linear-gradient(to bottom right,rgb(106 160 222), rgb(45 123 214));
 }
 
+.donate-button:active {
+  box-shadow: 0 0 3px 1px #9b9b9b, 0 0 1px 2px #9b9b9b inset, 0 0 0 7px #9b9b9b inset;
+}
+
 @keyframes fade {
-  0%,33%,67%,100% { 
+  0%,29%,61%,100% { 
     opacity: 0;
     display: none;
   }
-  35%,65% { 
+  30%,60% { 
     opacity: 1;
     display: block;
   }
