@@ -189,6 +189,7 @@ const ITEMS = {
     JEL_VOIN: {
       CABINA: 'https://forded.github.io/ageofwater-map.github.io/items/cab_jel_voina.jpg',
     },
+    RUB_1338: 'https://forded.github.io/ageofwater-map.github.io/items/rub_1338.jpg',
     TRAULER: {
       CABINA: 'https://forded.github.io/ageofwater-map.github.io/items/cab_traul.jpg',
     },
@@ -345,6 +346,7 @@ const worldPoints = {
           ITEMS.MODULES.ACCUMULATOR.T2,
           ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T21,
           ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T22,
+          ITEMS.CONSTRUCTIONS.RUB_1338,
         ],
         `В этой точке можно абордажить ${SHIPS.T5.REPEJ.name}`,
         null,

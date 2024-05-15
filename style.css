@@ -264,3 +264,40 @@ body {
   font-weight: 100;
   font-family: Menlo,Consolas,Monaco,'Liberation Mono','Lucida Console',monospace;
 }
+
+
+.donate-button {
+  position: absolute;
+  width: 155px;
+  height: 35px;
+  display: block;
+  z-index: 999;
+  opacity: 1;
+  left: calc(100vw - 160px);
+  top: calc(100vh - 76px);
+  line-height: 35px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: linear-gradient(to bottom right,rgb(45 123 214), rgb(106 160 222));
+  border-radius: 5px;
+  /* animation: fade 10s linear; */
+  /* -webkit-animation: fade 4s linear; */
+  transition: background 0.5s;
+} 
+
+.donate-button:hover {
+  background: linear-gradient(to bottom right,rgb(106 160 222), rgb(45 123 214));
+}
+
+@keyframes fade {
+  0%,33%,67%,100% { 
+    opacity: 0;
+    display: none;
+  }
+  35%,65% { 
+    opacity: 1;
+    display: block;
+  }
+}
