@@ -282,8 +282,8 @@ body {
   text-decoration: none;
   background: linear-gradient(to bottom right,rgb(45 123 214), rgb(106 160 222));
   border-radius: 5px;
-  /* animation: fade 10s linear; */
-  /* -webkit-animation: fade 4s linear; */
+  animation: fade 120s linear;
+  -webkit-animation: fade 120s linear;
   transition: background 0.5s;
 } 
 
