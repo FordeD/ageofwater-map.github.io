@@ -2147,6 +2147,8 @@ URL.searchParams.delete('lat');
 URL.searchParams.delete('lng');
 URL.searchParams.delete('zoom');
 URL.searchParams.delete('marker');
+
+window.history.replaceState(window.history.state, document.title, URL.toString());
   
 // magnification with which the map will start
 const baseZoom = urlZoom ? parseFloat(urlZoom) : 3;
