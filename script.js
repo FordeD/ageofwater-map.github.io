@@ -940,9 +940,9 @@ const worldPoints = {
         {
           [SHIPS.T2.VEHA.name]: [ITEMS.MODULES.POMPA.T3],
         },
-        'Появляются рядом с потоком, во время абордажа нужно быть внимательней, могут заагриться Репеи из флота рядом',
+        '',
         null,
-        [SHIPS.T1.SOFIYA],
+        [SHIPS.T2.VEHA],
       ),
     ],
   ],
