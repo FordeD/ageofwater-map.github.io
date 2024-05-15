@@ -288,9 +288,9 @@ body {
   -moz-transition: background 0.5s;
   -o-transition: background 0.5s;
   transition: background 0.5s;
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px #ccc;
-  box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: -5px -5px 7px -5px rgba(34, 60, 80, 0.6);
+  -moz-box-shadow: -5px -5px 7px -5px rgba(34, 60, 80, 0.6);
+  box-shadow: -5px -5px 7px -5px rgba(34, 60, 80, 0.6);
 } 
 
 .donate-button:hover {
@@ -298,7 +298,9 @@ body {
 }
 
 .donate-button:active {
-  box-shadow: 0 0 3px 1px #9b9b9b, 0 0 1px 2px #9b9b9b inset, 0 0 0 7px #9b9b9b inset;
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(34, 60, 80, 0.2) inset;
+  -moz-box-shadow: 0px 0px 14px 0px rgba(34, 60, 80, 0.2) inset;
+  box-shadow: 0px 0px 14px 0px rgba(34, 60, 80, 0.2) inset;
 }
 
 @keyframes fade {
