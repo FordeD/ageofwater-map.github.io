@@ -211,70 +211,90 @@ const SHIPS = {
     SOFIYA: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_Sofiya.webp',
       name: 'София (I)',
+      url: 'https://ageofwater.fandom.com/wiki/Sofiya_Longboat',
     },
     DINGHY: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_dinghy.webp',
       name: 'Шаланда (I)',
+      url: 'https://ageofwater.fandom.com/wiki/Dinghy',
     },
     SARGAN: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_sargan.webp',
       name: 'ТК3 Сарган торпедный катер (I)',
+      url: 'https://ageofwater.fandom.com/wiki/TK3_Garpike_Torpedo_Boat',
     },
     NJORD: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_njord.webp',
       name: 'Нъерд (I)',
+      url: 'https://ageofwater.fandom.com/wiki/Njord_Boat',
     },
   },
   T2: {
     SCORPEN: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_scorpen.webp',
       name: 'Скорпен (II)',
+      url: 'https://ageofwater.fandom.com/wiki/Scorpena_Torpedo_Boat',
     },
     MARIANA: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_mariana.webp',
-      name: 'Марина (II)',
+      name: 'Сейнер Мариана (II)',
+      url: 'https://ageofwater.fandom.com/wiki/Mariana_Seiner',
     },
     MARLIN: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_marlin.webp',
       name: 'Марлин (II)',
+      url: 'https://ageofwater.fandom.com/wiki/TK7_Marlin_Torpedo_Boat',
+    },
+    VEHA: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_veha.webp',
+      name: 'Лоцманский катер Веха (II)',
+      url: 'https://ageofwater.fandom.com/wiki/Strut_Pilot_Boat',
     },
   },
   T3: {
     BISTRIY: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_bistriy.webp',
       name: 'Быстрый (III)',
+      url: 'https://ageofwater.fandom.com/wiki/Snappy_Patrol_Boat',
     },
     ZORKIJ: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_zorkij.webp',
       name: 'Зоркий (III)',
+      url: 'https://ageofwater.fandom.com/wiki/Vigilant_Patrol_Boat',
     },
     CLEVER: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_clever.webp',
       name: 'Клевер (III)',
+      url: 'https://ageofwater.fandom.com/wiki/Shamrock_Trawler',
     },
     MORJ: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_morj.webp',
       name: 'Морж (III)',
+      url: 'https://ageofwater.fandom.com/wiki/Walrus_Tugboat',
     },
   },
   T4: {
     ANCHOUS: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_anchous.webp',
       name: 'Анчоус (IV)',
+      url: 'https://ageofwater.fandom.com/wiki/Anchovy_Trawler',
     },
     MURENA: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_murena.webp',
       name: 'Мурена (IV)',
+      url: 'https://ageofwater.fandom.com/wiki/BK_Muraena_Patrol_Boat',
     },
     ZABIJAKA: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_zabijaka.webp',
       name: 'Забияка (IV)',
+      url: 'https://ageofwater.fandom.com/wiki/Brawler_Torpedo_Boat',
     },
   },
   T5: {
     REPEJ: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T5_repej.webp',
       name: 'Репей (V)',
+      url: 'https://ageofwater.fandom.com/wiki/Burdock_Gunboat',
     },
   },
 };
@@ -684,7 +704,7 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
             ITEMS.MODULES.GENERATOR.T3,
           ],
-          [SHIPS.T1.MARIANA.name]: [
+          [SHIPS.T2.MARIANA.name]: [
             ITEMS.CONSTRUCTIONS.STENKA.T1,
             ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
           ],
@@ -867,7 +887,7 @@ const worldPoints = {
       -64.16811,
       130.12207,
       generateDescription(
-        'Корабли два корабля Т1',
+        'Два корабля Т1',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Два корабля ${SHIPS.T1.SOFIYA.name}.`,
         [
@@ -891,6 +911,36 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.MUSOR_SHIELD_DVOIN.T1,
             ITEMS.CONSTRUCTIONS.RUBKA_BOTA,
           ],
+        },
+        'Появляются рядом с потоком, во время абордажа нужно быть внимательней, могут заагриться Репеи из флота рядом',
+        null,
+        [SHIPS.T1.SOFIYA],
+      ),
+    ],
+    [
+      -64.16811,
+      130.12207,
+      generateDescription(
+        'Корабль Т2',
+        'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
+        `Корабль ${SHIPS.T2.VEHA.name}.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+        ],
+        {
+          [SHIPS.T2.VEHA.name]: [
+            ITEMS.MODULES.POMPA.T3,
+          ]
         },
         'Появляются рядом с потоком, во время абордажа нужно быть внимательней, могут заагриться Репеи из флота рядом',
         null,
@@ -2510,7 +2560,7 @@ function generateDescription(title, image = null, description = null, resources 
     context += `<div class="popup-resource-block">`;
     context += '<b>Можно получить корабли:</b>';
     for (const ship of ships) {
-      context += `<div class="board-ship-block"><b>${ship.name}</b><img class="popup-resource-image" src="${ship.img}" width="300" height="200" /></div>`;
+      context += `<div class="board-ship-block"><b><a href="${ship.url}">${ship.name}</a></b><img class="popup-resource-image" src="${ship.img}" width="300" height="200" /></div>`;
     }
     context += `</div>`;
   }
