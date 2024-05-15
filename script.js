@@ -196,6 +196,7 @@ const ITEMS = {
     POZJ_MACHTA: 'https://forded.github.io/ageofwater-map.github.io/items/pozj_machta.jpg',
     PLAST_RUBKA: 'https://forded.github.io/ageofwater-map.github.io/items/plast_rub.jpg',
     RUBKA_BOTA: 'https://forded.github.io/ageofwater-map.github.io/items/rubka_bota.jpg',
+    ZASH_PEREGORODKA: 'https://forded.github.io/ageofwater-map.github.io/items/zash_pereg.jpg',
     TUR_BAZA: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_1.jpg',
       T2: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_2.jpg',
@@ -938,7 +939,7 @@ const worldPoints = {
           RESPURCES.COPPER_PLATES,
         ],
         {
-          [SHIPS.T2.VEHA.name]: [ITEMS.MODULES.POMPA.T3],
+          [SHIPS.T2.VEHA.name]: [ITEMS.MODULES.POMPA.T3, ITEMS.CONSTRUCTIONS.ZASH_PEREGORODKA],
         },
         '',
         null,
