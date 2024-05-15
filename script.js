@@ -2142,6 +2142,11 @@ let urlLng = urlParams.get('lng');
 let urlZoom = urlParams.get('zoom');
 let urlMarker = urlParams.get('marker');
 
+const URL = new URL(location.href);
+URL.searchParams.delete('lat');
+URL.searchParams.delete('lng');
+URL.searchParams.delete('zoom');
+URL.searchParams.delete('marker');
   
 // magnification with which the map will start
 const baseZoom = urlZoom ? parseFloat(urlZoom) : 3;
