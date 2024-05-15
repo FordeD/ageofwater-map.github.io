@@ -2141,14 +2141,6 @@ let urlLat = urlParams.get('lat');
 let urlLng = urlParams.get('lng');
 let urlZoom = urlParams.get('zoom');
 let urlMarker = urlParams.get('marker');
-
-const URL = new URL(location.href);
-URL.searchParams.delete('lat');
-URL.searchParams.delete('lng');
-URL.searchParams.delete('zoom');
-URL.searchParams.delete('marker');
-
-window.history.replaceState(window.history.state, document.title, URL.toString());
   
 // magnification with which the map will start
 const baseZoom = urlZoom ? parseFloat(urlZoom) : 3;
@@ -2294,6 +2286,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 500);
     }
   }
+
+  const URL = new URL(location.href);
+  URL.searchParams.delete('lat');
+  URL.searchParams.delete('lng');
+  URL.searchParams.delete('zoom');
+  URL.searchParams.delete('marker');
+
+  window.history.replaceState(window.history.state, document.title, URL.toString());
 });
 
 const gridCoordPlace = document.querySelector('.grid-pointer');
