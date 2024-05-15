@@ -2287,13 +2287,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  const URL = new URL(location.href);
-  URL.searchParams.delete('lat');
-  URL.searchParams.delete('lng');
-  URL.searchParams.delete('zoom');
-  URL.searchParams.delete('marker');
-
-  window.history.replaceState(window.history.state, document.title, URL.toString());
+  window.history.replaceState(window.history.state, document.title, location.pathname);
 });
 
 const gridCoordPlace = document.querySelector('.grid-pointer');
