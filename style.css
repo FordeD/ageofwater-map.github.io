@@ -288,6 +288,9 @@ body {
   -moz-transition: background 0.5s;
   -o-transition: background 0.5s;
   transition: background 0.5s;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+  box-shadow: 0 0 3px #ccc;
 } 
 
 .donate-button:hover {
