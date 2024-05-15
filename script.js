@@ -2287,7 +2287,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  window.history.replaceState(window.history.state, document.title, location.pathname);
+  window.history.pushState(window.history.state, document.title, location.pathname);
 });
 
 const gridCoordPlace = document.querySelector('.grid-pointer');
