@@ -2361,9 +2361,10 @@ for (const type of types) {
     }
   }
   if (prevGroupName !== curentGroupType) {
+    // parent.addTo(map);
     prevGroupName = curentGroupType;
     layerControl.addOverlay(
-      iconGroups[groupMarkerTypeNames[curentGroupType]],
+      iconGroups[curentGroupType],
       groupMarkerTypeNames[curentGroupType],
     );
   }
