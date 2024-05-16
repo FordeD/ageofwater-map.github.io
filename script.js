@@ -1,16 +1,7 @@
 // grid data
-const middleMap = [14.9554, 1.17554];
-const topLeftMap = [-85.05302, -177.76978];
-const rightDownMap = [84.87127, 180.02727];
-const mapWidthOffset = 1.38428;
-const mapWidth = Math.abs(topLeftMap[1]) + rightDownMap[1];
-const mapHalfWidth = mapWidth / 2;
-const squareSideWidth = mapWidth / 22;
-const mapHeights = [
-  -85.05492, -83.43279, -81.2917, -78.44663, -74.68905, -69.75616, -63.36198, -55.07837, -44.65302,
-  -31.95216, -17.18278, -1.18644, 14.92355, 29.89781, 42.95642, 53.73572, 62.33941, 68.9978,
-  74.11605, 78.00276, 80.9561, 83.19229, 84.86971,
-].reverse();
+const middleMap = [-110.1875, 128.8125];
+const squareOffset = 11.70311;
+const sideOffset = 1.53906;
 const widthNamings = [
   'A',
   'B',
@@ -57,7 +48,6 @@ const widthNamings = [
   'AU',
   'AV',
 ];
-const heightNamings = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
 
 const SCRAP = 'Металл';
 const AMMO = 'Обломки боеприпасов';
@@ -2424,9 +2414,9 @@ let urlMarker = urlParams.get('marker');
   
 // magnification with which the map will start
 const baseZoom = urlZoom ? parseFloat(urlZoom) : 3;
-// co-ordinates
-const baseLat = urlLat ? parseFloat(urlLat) : 24.04646;
-const baseLng = urlLng ? parseFloat(urlLng) : 0.9668;
+// coordinates
+const baseLat = urlLat ? parseFloat(urlLat) : middleMap[0];
+const baseLng = urlLng ? parseFloat(urlLng) : middleMap[1];
 
 // calling map
 const map = L.map('map', config).setView([baseLat, baseLng], baseZoom);
@@ -2610,32 +2600,13 @@ document.body.onmouseout = function () {
 
 function coordsToMapPosition(lat, lng) {
   // height, width
-  let currentWidth = lng;
-  if (currentWidth >= 0) {
-    currentWidth += mapHalfWidth;
-  } else {
-    currentWidth = mapHalfWidth - Math.abs(currentWidth);
-  }
+  let currentWidth = lng - sideOffset;
+  let currentHeight = lat - sideOffset;
 
-  currentWidth -= middleMap[1];
-
-  let currentHeight = lat;
-  const widthIndex = Math.floor(currentWidth / squareSideWidth);
-  const heightIndex = caltLatitudeToGrid(currentHeight);
-  const pointCoordinates = (widthNamings[widthIndex] ?? '-') + (heightNamings[heightIndex] ?? '-');
+  const widthIndex = Math.floor(currentWidth / squareOffset);
+  const heightIndex = Math.floor(currentHeight / squareOffset);
+  const pointCoordinates = (widthNamings[widthIndex] ?? '-') + (heightIndex+1);
   return pointCoordinates;
-}
-
-function caltLatitudeToGrid(searchLat, increment = 0) {
-  if (!mapHeights[increment]) {
-    return increment;
-  }
-  if (searchLat < mapHeights[increment]) {
-    increment++;
-    return caltLatitudeToGrid(searchLat, increment);
-  } else {
-    return increment - 1;
-  }
 }
 
 // create custom button
