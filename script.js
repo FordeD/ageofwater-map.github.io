@@ -1,7 +1,9 @@
 // grid data
 const middleMap = [-110.1875, 128.8125];
-const squareOffset = 11.70311;
-const sideOffset = 1.53906;
+const squareHeightOffset = 11.70311;
+const squareWidthOffset = 11.59375;
+const heightOffset = 1.53906;
+const widthOffset = 1.54688;
 const widthNamings = [
   'A',
   'B',
@@ -2605,11 +2607,11 @@ document.body.onmouseout = function () {
 
 function coordsToMapPosition(lat, lng) {
   // height, width
-  let currentWidth = lng - sideOffset;
-  let currentHeight = Math.abs(lat) - sideOffset;
+  let currentWidth = lng - widthOffset;
+  let currentHeight = Math.abs(lat) - heightOffset;
 
-  const widthIndex = Math.floor(currentWidth / squareOffset);
-  const heightIndex = Math.floor(currentHeight / squareOffset);
+  const widthIndex = Math.floor(currentWidth / squareWidthOffset);
+  const heightIndex = Math.floor(currentHeight / squareHeightOffset);
   const pointCoordinates = (widthNamings[widthIndex] ?? '-') + (heightIndex+1);
   return pointCoordinates;
 }
