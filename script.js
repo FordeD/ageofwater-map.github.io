@@ -2143,6 +2143,7 @@ const groupMarkerTypes = {
   bases: ['pois', 'postal', 'traders'],
   others: ['explosives', 'rocks', 'teleports'],
 };
+
 const groupMarkerTypeNames = {
   resources: 'Ресурсы',
   flots: 'Флоты',
@@ -2244,7 +2245,6 @@ const icons = {
 };
 
 const iconGroups = [];
-const iconSubGroups = [];
 
 const config = {
   minZoom: 1,
@@ -2295,30 +2295,13 @@ L.control.zoom({ position: 'topleft' }).addTo(map);
 
 // loop that adds many markers to the map
 const types = Object.keys(worldPoints);
+iconGroups['all'] = new L.FeatureGroup();
 const legendMarkers = {};
 const MARKERS = [];
-let HIDED_MARKERS = localStorage.getItem('hidedMarkers') !== '' ? JSON.parse(localStorage.getItem('hidedMarkers')) : [];
-const goupMarkerTypesKeys = Object.keys(groupMarkerTypes);
-// groupMarkerTypes.includes() -> groupMarkerTypeNames[type]
+let HIDED_MARKERS = localStorage.getItem('hidedMarkers') !== '' ? JSON.parse(localStorage.getItem('hidedMarkers')) : [] ;
 for (const type of types) {
-  let curentGroupType = '';
-
-  for (const groupType of goupMarkerTypesKeys) {
-    if (groupMarkerTypes[groupType].includes(type)) {
-      curentGroupType = groupType;
-    }
-  }
-  if (!iconGroups[curentGroupType]) {
-    iconGroups[curentGroupType] = new L.featureGroup();
-  }
-
-  if (!iconSubGroups[type]) {
-    iconSubGroups[type] = new L.featureGroup.subGroup(
-      iconGroups[curentGroupType],
-    );
-  }
-
-  // legendMarkers[legendNames[type]] = iconGroups[type];
+  iconGroups[type] = new L.FeatureGroup();
+  legendMarkers[legendNames[type]] = iconGroups[type];
   for (let i = 0; i < worldPoints[type].length; i++) {
     const [lat, lng, popupContent, tooltipText] = worldPoints[type][i];
     const options = { icon: icons[type], markerType: type, markerId: type + i };
@@ -2345,36 +2328,11 @@ for (const type of types) {
         offset: [0, 15],
       });
     }
-    iconGroups[curentGroupType].addLayer(marker);
-    iconSubGroups[type].addLayer(marker);
+    iconGroups[type].addLayer(marker);
     MARKERS.push(marker);
     
   }
 }
-
-const layerControl = new L.control.layers(null, null, { collapsed: false });
-let prevGroupName = '';
-for (const type of types) {
-  for (const groupType of goupMarkerTypesKeys) {
-    if (groupMarkerTypes[groupType].includes(type)) {
-      curentGroupType = groupType;
-    }
-  }
-  if (prevGroupName !== curentGroupType) {
-    // parent.addTo(map);
-    prevGroupName = curentGroupType;
-    layerControl.addOverlay(
-      iconGroups[curentGroupType],
-      groupMarkerTypeNames[curentGroupType],
-    );
-  }
-  layerControl.addOverlay(iconSubGroups[type], legendNames[type]);
-}
-layerControl.addTo(map);
-
-// new L.Control.CustomButtons(null, Object.assign(iconGroups, iconSubGroups), {
-//   collapsed: false,
-// }).addTo(map);
 
 localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
 
@@ -2587,6 +2545,8 @@ L.Control.CustomButtons = L.Control.Layers.extend({
     });
   },
 });
+
+new L.Control.CustomButtons(null, legendMarkers, { collapsed: false }).addTo(map);
 
 const legendPlace = document.querySelector('.leaflet-control-layers');
 const visibleMarkersPlace = document.querySelector('.add-button');
