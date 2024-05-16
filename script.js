@@ -2308,13 +2308,13 @@ for (const type of types) {
     }
   }
   if (!iconGroups[curentGroupType]) {
-    iconGroups[curentGroupType] = new L.FeatureGroup();
-    legendMarkers[groupMarkerTypeNames[curentGroupType]] = iconGroups[curentGroupType];
+    iconGroups[groupMarkerTypeNames[curentGroupType]] = new L.FeatureGroup();
+    legendMarkers[groupMarkerTypeNames[curentGroupType]] = iconGroups[curentGrgroupMarkerTypeNames[curentGroupType]oupType];
   }
 
   if (!iconSubGroups[type]) {
-    iconSubGroups[type] = new L.FeatureGroup();
-    legendMarkers[legendNames[type]] = iconSubGroups[type];
+    iconSubGroups[legendNames[type]] = new L.FeatureGroup();
+    legendMarkers[legendNames[type]] = iconSubGroups[legendNames[type]];
   }
 
   // legendMarkers[legendNames[type]] = iconGroups[type];
@@ -2563,7 +2563,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
   },
 });
 
-new L.Control.CustomButtons(null, [iconGroups,iconSubGroups], { collapsed: false }).addTo(map);
+new L.Control.CustomButtons(null, Object.assign(iconGroups,iconSubGroups), { collapsed: false }).addTo(map);
 
 const legendPlace = document.querySelector('.leaflet-control-layers');
 const visibleMarkersPlace = document.querySelector('.add-button');
