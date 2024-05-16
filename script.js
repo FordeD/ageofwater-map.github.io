@@ -2383,7 +2383,7 @@ const config = {
   noWrap: true,
   bounds: [
     [85.05492, -179.86816],
-    [-89.70194, 362.46094],
+    [-89.97636, 550.89844],
   ],
   attribution:
     '&copy; <a href="https://steamcommunity.com/id/forded/"><img width="12" height="12" src="https://forded.github.io/ageofwater-map.github.io/icons/steam_logo.webp"/>Создано игроком FordeD</a></br><a href="https://discord.gg/SWumurcV6g"><img src="https://forded.github.io/ageofwater-map.github.io/icons/discord_logo.webp" width="12" height="12" />при поддержке Русского сообщества AoW</a>',
