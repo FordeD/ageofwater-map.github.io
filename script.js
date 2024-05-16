@@ -2345,8 +2345,8 @@ for (const type of types) {
         offset: [0, 15],
       });
     }
-    iconGroups[curentGroupType].addLayer(marker);
-    iconSubGroups[type].addLayer(marker);
+    iconGroups[groupMarkerTypeNames[curentGroupType]].addLayer(marker);
+    iconSubGroups[legendNames[type]].addLayer(marker);
     MARKERS.push(marker);
     
   }
