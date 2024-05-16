@@ -2352,7 +2352,7 @@ for (const type of types) {
   }
 }
 
-const layerControl = L.control.layers(null, null, { collapsed: false });
+const layerControl = new L.control.layers(null, null, { collapsed: false });
 let prevGroupName = '';
 for (const type of types) {
   for (const groupType of goupMarkerTypesKeys) {
