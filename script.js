@@ -2440,7 +2440,7 @@ L.tileLayer(
 L.control.zoom({ position: 'topleft' }).addTo(map);
 
 let timedHidedMarkers = localStorage.getItem('hidedMarkers');
-if (!timedHidedMarkers) {
+if (!timedHidedMarkers || timedHidedMarkers === 'null') {
   localStorage.setItem('hidedMarkers', []);
 }
 delete timedHidedMarkers;
