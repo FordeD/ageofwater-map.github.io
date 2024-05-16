@@ -998,7 +998,7 @@ const worldPoints = {
       generateDescription(
         'Корабли T1 и T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
-        `Флот из кораблей ${SHIPS.T3.MORJ.name} b ${SHIPS.T1.DINGHY.name}.`,
+        `Большой флот из кораблей ${SHIPS.T3.MORJ.name} и ${SHIPS.T1.DINGHY.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
