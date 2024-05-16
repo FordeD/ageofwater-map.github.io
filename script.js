@@ -2302,7 +2302,7 @@ const goupMarkerTypesKeys = Object.keys(groupMarkerTypes);
 // groupMarkerTypes.includes() -> groupMarkerTypeNames[type]
 for (const type of types) {
   let curentGroupType = '';
-  for (const groupType of goupMarkerTypes) {
+  for (const groupType of goupMarkerTypesKeys) {
     if (goupMarkerTypesKeys[groupType].includes(type)) {
       curentGroupType = groupType;
     }
