@@ -2506,6 +2506,9 @@ function hideMarker(e) {
       targetMarker.setIcon(icons.hidedRocks);
     }
   }
+  if (!hided) {
+    hided = [];
+  }
   localStorage.setItem('hidedMarkers', JSON.stringify(hided));
 }
 
