@@ -2137,6 +2137,19 @@ const legendNames = {
   couriers: 'Курьеры',
 };
 
+const groupMarkerTypes = {
+  resources: ['scraps', 'ammos', 'chemicals', 'dynamites', 'pantoons'],
+  flots: ['pirates', 'rangers', 'couriers'],
+  bases: ['pois', 'postal', 'traders'],
+  others: ['explosives', 'rocks', 'teleports'],
+};
+const groupMarkerTypeNames = {
+  resources: 'Ресурсы',
+  flots: 'Флоты',
+  bases: 'Базы',
+  others: 'Остальное',
+};
+
 const icons = {
   couriers: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
@@ -2231,6 +2244,7 @@ const icons = {
 };
 
 const iconGroups = [];
+const iconSubGroups = [];
 
 const config = {
   minZoom: 1,
@@ -2281,13 +2295,29 @@ L.control.zoom({ position: 'topleft' }).addTo(map);
 
 // loop that adds many markers to the map
 const types = Object.keys(worldPoints);
-iconGroups['all'] = new L.FeatureGroup();
 const legendMarkers = {};
 const MARKERS = [];
-let HIDED_MARKERS = localStorage.getItem('hidedMarkers') !== '' ? JSON.parse(localStorage.getItem('hidedMarkers')) : [] ;
+let HIDED_MARKERS = localStorage.getItem('hidedMarkers') !== '' ? JSON.parse(localStorage.getItem('hidedMarkers')) : [];
+const goupMarkerTypesKeys = Object.keys(groupMarkerTypes);
+// groupMarkerTypes.includes() -> groupMarkerTypeNames[type]
 for (const type of types) {
-  iconGroups[type] = new L.FeatureGroup();
-  legendMarkers[legendNames[type]] = iconGroups[type];
+  let curentGroupType = '';
+  for (const groupType of goupMarkerTypes) {
+    if (goupMarkerTypesKeys[groupType].includes(type)) {
+      curentGroupType = groupType;
+    }
+  }
+  if (!iconGroups[curentGroupType]) {
+    iconGroups[curentGroupType] = new L.FeatureGroup();
+    legendMarkers[groupMarkerTypeNames[curentGroupType]] = iconGroups[curentGroupType];
+  }
+
+  if (!iconSubGroups[type]) {
+    iconSubGroups[type] = new L.FeatureGroup();
+    legendMarkers[legendNames[type]] = iconSubGroups[type];
+  }
+
+  // legendMarkers[legendNames[type]] = iconGroups[type];
   for (let i = 0; i < worldPoints[type].length; i++) {
     const [lat, lng, popupContent, tooltipText] = worldPoints[type][i];
     const options = { icon: icons[type], markerType: type, markerId: type + i };
@@ -2314,7 +2344,8 @@ for (const type of types) {
         offset: [0, 15],
       });
     }
-    iconGroups[type].addLayer(marker);
+    iconGroups[curentGroupType].addLayer(marker);
+    iconSubGroups[type].addLayer(marker);
     MARKERS.push(marker);
     
   }
@@ -2532,7 +2563,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
   },
 });
 
-new L.Control.CustomButtons(null, legendMarkers, { collapsed: false }).addTo(map);
+new L.Control.CustomButtons(iconGroups, iconSubGroups, { collapsed: false }).addTo(map);
 
 const legendPlace = document.querySelector('.leaflet-control-layers');
 const visibleMarkersPlace = document.querySelector('.add-button');
