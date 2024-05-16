@@ -2403,6 +2403,7 @@ const config = {
   zoomControl: false,
   fullscreenControl: true,
   noWrap: true,
+  crs: L.CRS.Simple,
   bounds: [
     [85.05492, -179.86816],
     [-89.97636, 550.89844],
