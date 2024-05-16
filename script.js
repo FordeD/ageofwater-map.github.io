@@ -347,6 +347,8 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T21,
           ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T22,
           ITEMS.CONSTRUCTIONS.RUB_1338,
+          ITEMS.MODULES.GENERATOR.T3,
+          ITEMS.MODULES.POMPA.T4,
         ],
         `В этой точке можно абордажить ${SHIPS.T5.REPEJ.name}`,
         null,
