@@ -2563,7 +2563,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
   },
 });
 
-new L.Control.CustomButtons(iconGroups, iconSubGroups, { collapsed: false }).addTo(map);
+new L.Control.CustomButtons(null, [iconGroups,iconSubGroups], { collapsed: false }).addTo(map);
 
 const legendPlace = document.querySelector('.leaflet-control-layers');
 const visibleMarkersPlace = document.querySelector('.add-button');
