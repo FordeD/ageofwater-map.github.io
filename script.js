@@ -349,8 +349,8 @@ const ACTIONS = {
 const worldPoints = {
   rangers: [
     [
-      76.07967,
-      127.17773,
+      -42.9375,
+      218.4375,
       generateDescription(
         'Флот T2-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
@@ -2069,8 +2069,8 @@ const worldPoints = {
   ],
   couriers: [
     [
-      75.6068,
-      -153.19336,
+      -43.3125,
+      19.3125,
       generateDescription(
         'Курьер на воздушной подушке',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
@@ -2101,8 +2101,8 @@ const worldPoints = {
       ),
     ],
     [
-      63.56812,
-      -117.46582,
+      -69.5625,
+      44.0625,
       generateDescription(
         'Летающий курьер (коптер)',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
@@ -2138,8 +2138,8 @@ const worldPoints = {
       ),
     ],
     [
-      80.11102,
-      -41.26465,
+      -28.0625,
+      99.3125,
       generateDescription(
         'Плавающий курьер Т2',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
@@ -2168,8 +2168,8 @@ const worldPoints = {
       ),
     ],
     [
-      26.70636,
-      71.7627,
+      -107.9375,
+      177.9375,
       generateDescription(
         'Летающий курьер (коптер)',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
@@ -2205,8 +2205,8 @@ const worldPoints = {
       ),
     ],
     [
-      70.9597,
-      36.65039,
+      -55.8125,
+      153.3125,
       generateDescription(
         'Курьер на воздушной подушке',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
@@ -2237,8 +2237,8 @@ const worldPoints = {
       ),
     ],
     [
-      -87.54007,
-      8.96484,
+      -277.1875,
+      132.6875,
       generateDescription(
         'Курьер на воздушной подушке',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
