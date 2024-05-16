@@ -215,6 +215,11 @@ const SHIPS = {
       name: 'София (I)',
       url: 'https://ageofwater.fandom.com/wiki/Sofiya_Longboat',
     },
+    SONJA: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_sonja.webp',
+      name: 'Соня (I)',
+      url: 'https://ageofwater.fandom.com/wiki/Sonja_Longboat',
+    },
     DINGHY: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_dinghy.webp',
       name: 'Шаланда (I)',
@@ -249,7 +254,7 @@ const SHIPS = {
     },
     MARIANA: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_mariana.webp',
-      name: 'Сейнер Мариана (II)',
+      name: 'Сейнер Марина (II)',
       url: 'https://ageofwater.fandom.com/wiki/Mariana_Seiner',
     },
     MARLIN: {
@@ -1079,7 +1084,7 @@ const worldPoints = {
       generateDescription(
         'Флот T1-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
-        `Пиратский флот состояший из ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T1.DINGHY.name}, ${SHIPS.T1.MARIANA.name}, ${SHIPS.T1.SARGAN.name}, ${SHIPS.T1.JARL.name}, ${SHIPS.T1.RUBBER.name}. вооруженных дробовиками и гранатометами`,
+        `Пиратский флот состояший из ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T1.DINGHY.name}, ${SHIPS.T2.MARIANA.name}, ${SHIPS.T1.SARGAN.name}, ${SHIPS.T1.JARL.name}, ${SHIPS.T1.RUBBER.name}. вооруженных дробовиками и гранатометами`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -1142,9 +1147,9 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.SEINER.PLATFORMA,
           ITEMS.MODULES.TRUBA.T3,
         ],
-        `Находятся за буйками ровно от центра квадрата L22 на Юг в 1100 метрах`,
+        `Находятся за буйками ровно от центра квадрата L22 на Юг в 3500 метрах`,
         null,
-        [SHIPS.T4.ANCHOUS],
+        [],
       ),
     ],
   ],
