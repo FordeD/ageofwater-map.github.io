@@ -2606,7 +2606,7 @@ document.body.onmouseout = function () {
 function coordsToMapPosition(lat, lng) {
   // height, width
   let currentWidth = lng - sideOffset;
-  let currentHeight = lat - Math.abs(sideOffset);
+  let currentHeight = Math.abs(lat) - sideOffset;
 
   const widthIndex = Math.floor(currentWidth / squareOffset);
   const heightIndex = Math.floor(currentHeight / squareOffset);
