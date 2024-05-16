@@ -405,8 +405,8 @@ const worldPoints = {
   ],
   pirates: [
     [
-      81.96629,
-      -28.87207,
+      -19.4375,
+      106.8125,
       generateDescription(
         'Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -442,8 +442,8 @@ const worldPoints = {
       ),
     ],
     [
-      71.73266,
-      -161.49902,
+      -54.1875,
+      13.0625,
       generateDescription(
         'Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -482,8 +482,8 @@ const worldPoints = {
       ),
     ],
     [
-      33.46811,
-      -153.14941,
+      -101.9375,
+      19.4375,
       generateDescription(
         'Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -517,8 +517,8 @@ const worldPoints = {
       ),
     ],
     [
-      -38.6512,
-      -137.76855,
+      -156.8125,
+      29.8125,
       generateDescription(
         'Корабли T1 и Т2',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -550,8 +550,8 @@ const worldPoints = {
       ),
     ],
     [
-      -34.37971,
-      -117.6416,
+      -154.4375,
+      44.3125,
       generateDescription(
         'Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -590,8 +590,8 @@ const worldPoints = {
       ),
     ],
     [
-      -77.56104,
-      -124.93652,
+      -218.4375,
+      38.8125,
       generateDescription(
         'Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -646,8 +646,8 @@ const worldPoints = {
       ),
     ],
     [
-      -80.92149,
-      -53.83301,
+      -230.9375,
+      90.1875,
       generateDescription(
         'Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -684,8 +684,8 @@ const worldPoints = {
       ),
     ],
     [
-      -82.02748,
-      41.7041,
+      -236.6875,
+      157.9375,
       generateDescription(
         'Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -727,8 +727,8 @@ const worldPoints = {
       ),
     ],
     [
-      -58.19387,
-      125.46387,
+      -178.9375,
+      216.4375,
       generateDescription(
         'Флот T2-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -767,8 +767,8 @@ const worldPoints = {
       ),
     ],
     [
-      83.70592,
-      26.98242,
+      -8.8125,
+      146.9375,
       generateDescription(
         'Флот T2-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -805,8 +805,8 @@ const worldPoints = {
       ),
     ],
     [
-      53.74871,
-      -15.20508,
+      -83.6875,
+      117.5625,
       generateDescription(
         'Корабли T1 и T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -835,8 +835,8 @@ const worldPoints = {
       ),
     ],
     [
-      65.87472,
-      74.04785,
+      -65.1875,
+      180.0625,
       generateDescription(
         'Флот T1-T2',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -867,8 +867,8 @@ const worldPoints = {
       ),
     ],
     [
-      61.85615,
-      91.62598,
+      -71.8125,
+      193.8125,
       generateDescription(
         'Флот T1 и плавающих на подушке курьеров',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -900,8 +900,8 @@ const worldPoints = {
       ),
     ],
     [
-      18.39623,
-      -115.22461,
+      -114.8125,
+      46.1875,
       generateDescription(
         'Флот T1 и T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -936,8 +936,8 @@ const worldPoints = {
       ),
     ],
     [
-      -64.16811,
-      130.12207,
+      -188.8125,
+      219.8125,
       generateDescription(
         'Два корабля Т1',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -970,8 +970,8 @@ const worldPoints = {
       ),
     ],
     [
-      75.09563,
-      -66.00586,
+      -45.9375,
+      81.5625,
       generateDescription(
         'Корабль Т2',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -998,8 +998,8 @@ const worldPoints = {
       ),
     ],
     [
-      77.18643,
-      49.43848,
+      -38.0625,
+      162.6875,
       generateDescription(
         'Большой флот Т1 и дельтапланов',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -1030,8 +1030,8 @@ const worldPoints = {
       ),
     ],
     [
-      -30.67572,
-      146.38184,
+      -151.0625,
+      232.1875,
       generateDescription(
         'Корабли T1 и T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -1063,8 +1063,8 @@ const worldPoints = {
       ),
     ],
     [
-      -46.73986,
-      149.72168,
+      -165.3125,
+      234.1875,
       generateDescription(
         'Флот T3-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -1101,8 +1101,8 @@ const worldPoints = {
       ),
     ],
     [
-      -86.47297,
-      9.4043,
+      -268.5625,
+      134.6875,
       generateDescription(
         'Флот T1-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -1137,8 +1137,8 @@ const worldPoints = {
       ),
     ],
     [
-      -88.58376,
-      9.31641,
+      -290.6875,
+      136.4375,
       generateDescription(
         'Флот T1-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
