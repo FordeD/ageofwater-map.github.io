@@ -2309,7 +2309,8 @@ for (const type of types) {
   }
   if (!iconGroups[curentGroupType]) {
     iconGroups[groupMarkerTypeNames[curentGroupType]] = new L.FeatureGroup();
-    legendMarkers[groupMarkerTypeNames[curentGroupType]] = iconGroups[curentGrgroupMarkerTypeNames[curentGroupType]oupType];
+    legendMarkers[groupMarkerTypeNames[curentGroupType]] =
+      iconGroups[groupMarkerTypeNames[curentGroupType]];
   }
 
   if (!iconSubGroups[type]) {
