@@ -950,6 +950,38 @@ const worldPoints = {
         [SHIPS.T2.VEHA],
       ),
     ],
+    [
+      77.18643,
+      49.43848,
+      generateDescription(
+        'Большой флот Т1 и дельтапланов',
+        'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
+        `Большой флот из кораблей ${SHIPS.T1.DINGHY.name} и дельтапланы пиратов.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+        ],
+        {
+          [SHIPS.T1.DINGHY.name]: [
+            ITEMS.CONSTRUCTIONS.BAMBUK_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STENKA.T1,
+          ],
+        },
+        'Большой быстро восстанавливающий себя флот, неудобен для фарма и прокачки',
+        null,
+        [SHIPS.T1.DINGHY],
+      ),
+    ],
   ],
   scraps: [
     [82.50056, -133.28613, generateScrapPopup()],
