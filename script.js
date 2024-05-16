@@ -2668,7 +2668,7 @@ function generateDescription(title, image = null, description = null, resources 
   }
 
   if (boardings) {
-    if (Array.isArray(boardings)) {
+    if (Array.isArray(boardings) && boardings.length) {
       context += `<div class="popup-resource-block">`;
       context += '<b>Можно получить при абордаже:</b>';
       for (const boarding of boardings) {
