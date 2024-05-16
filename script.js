@@ -2439,6 +2439,12 @@ L.tileLayer(
 // [topleft, topright, bottomleft, bottomright]
 L.control.zoom({ position: 'topleft' }).addTo(map);
 
+let timedHidedMarkers = localStorage.getItem('hidedMarkers');
+if (!timedHidedMarkers) {
+  localStorage.setItem('hidedMarkers', []);
+}
+delete timedHidedMarkers;
+
 // loop that adds many markers to the map
 const types = Object.keys(worldPoints);
 iconGroups['all'] = new L.FeatureGroup();
