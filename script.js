@@ -1829,11 +1829,11 @@ const worldPoints = {
       generateDescription(
         'Мастерская "Нико"',
         null,
-        'В этой мастерской можно починить корабль за пробки',
+        'Мастерская художника Нико',
         null,
         null,
         '',
-        [ACTIONS.QUEST, ACTIONS.REPAIR],
+        [ACTIONS.QUEST],
       ),
       'Мастерская "Нико"',
     ],
