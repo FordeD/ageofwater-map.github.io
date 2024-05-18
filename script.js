@@ -404,6 +404,40 @@ const worldPoints = {
         [SHIPS.T1.JARL],
       ),
     ],
+    [
+      -198.28125,
+      168.96875,
+      generateDescription(
+        'Корабли T1',
+        'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
+        `Два корабля ${SHIPS.T1.SONJA.name}.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+        ],
+        {
+          [SHIPS.T1.SONJA.name]: [
+            ITEMS.CONSTRUCTIONS.STENKA.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.MUSOR_SHIELD_DVOIN.T1,
+            ITEMS.CONSTRUCTIONS.RUBKA_BOTA,
+          ],
+        },
+        null,
+        null,
+        [SHIPS.T1.SONJA],
+      ),
+    ],
   ],
   rangers: [
     [
