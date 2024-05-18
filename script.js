@@ -454,7 +454,7 @@ const worldPoints = {
         ],
         null,
         null,
-        [SHIPS.T3.MORJ],
+        [SHIPS.T1.NJORD],
       ),
     ],
   ],
