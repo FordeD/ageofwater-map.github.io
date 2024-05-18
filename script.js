@@ -425,6 +425,38 @@ const worldPoints = {
         [SHIPS.T3.MORJ],
       ),
     ],
+    [
+      -216.46875,
+      121.96875,
+      generateDescription(
+        'Корабли T1',
+        'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
+        `Два корабля ${SHIPS.T1.NJORD.name}.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+        ],
+        [
+          ITEMS.CONSTRUCTIONS.STENKA.T1,
+          ITEMS.CONSTRUCTIONS.BAMBUK_SHIELD.T1,
+          ITEMS.MODULES.GENERATOR.T2,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+          ITEMS.CONSTRUCTIONS.CISTERNA_KORPUS.CABINA,
+        ],
+        null,
+        null,
+        [SHIPS.T3.MORJ],
+      ),
+    ],
   ],
   pirates: [
     [
