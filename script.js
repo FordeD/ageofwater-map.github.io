@@ -394,6 +394,37 @@ const worldPoints = {
         [SHIPS.T5.REPEJ, SHIPS.T4.ZABIJAKA, SHIPS.T3.CLEVER, SHIPS.T2.MARIANA],
       ),
     ],
+    [
+      -214.59375,
+      96.34375,
+      generateDescription(
+        'Корабль T3',
+        'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
+        `Корабль ${SHIPS.T3.MORJ.name}.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+        ],
+        [
+          ITEMS.CONSTRUCTIONS.STENKA.T1,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+          ITEMS.MODULES.ACCUMULATOR.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+        ],
+        `Самое легкое место для абордажа корбаля ${SHIPS.T3.MORJ.name}`,
+        null,
+        [SHIPS.T3.MORJ],
+      ),
+    ],
   ],
   pirates: [
     [
@@ -820,6 +851,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.STENKA.T1,
           ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
           ITEMS.MODULES.ACCUMULATOR.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
         ],
         `Самое легкое место для абордажа корбаля ${SHIPS.T3.MORJ.name}`,
         null,
@@ -1167,8 +1199,8 @@ const worldPoints = {
       ),
     ],
     [
-      -214.96875,
-      93.40625,
+      -215.78125,
+      93.96875,
       generateDescription(
         'Корабли T1 и Т2',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
