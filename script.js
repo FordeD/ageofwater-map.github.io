@@ -180,7 +180,7 @@ const ITEMS = {
     },
     MUSOR_SHIELD: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/mus_shield_1.jpg',
-      T11: 'https://forded.github.io/ageofwater-map.github.io/items/mus_shield_2.jpg',
+      T11: 'https://forded.github.io/ageofwater-map.github.io/items/mus_shield_2.png',
     },
     MUSOR_SHIELD_DVOIN: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/mus_shield_dvoin.jpg',
@@ -220,7 +220,7 @@ const ITEMS = {
     SEINER: {
       PLATFORMA: 'https://forded.github.io/ageofwater-map.github.io/items/platf_sein.jpg',
     },
-    RUBKA_SCORPENA: 'https://forded.github.io/ageofwater-map.github.io/items/rub_scorp.jpg',
+    RUBKA_SCORPENA: 'https://forded.github.io/ageofwater-map.github.io/items/rub_scorp.png',
   },
 };
 
