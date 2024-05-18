@@ -1484,6 +1484,7 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.STENKA.T1,
             ITEMS.CONSTRUCTIONS.BAMBUK_SHIELD.T1,
             ITEMS.MODULES.GENERATOR.T2,
+            ITEMS.CONSTRUCTIONS.CISTERNA,
           ],
         },
         null,
