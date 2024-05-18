@@ -343,8 +343,8 @@ const ACTIONS = {
 const worldPoints = {
   trashs: [
     [
-      -206.59375,
-      164.28125,
+      -209.15625,
+      164.84375,
       generateDescription(
         'Корабли T1',
         'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
@@ -366,7 +366,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.MUSOR_SHIELD.T11,
           ITEMS.CONSTRUCTIONS.MUSOR_SHIELD_DVOIN.T1,
           ITEMS.CONSTRUCTIONS.RUBKA_SCORPENA,
-          ITEMS.CONSTRUCTIONS.CISTERNA
+          ITEMS.CONSTRUCTIONS.CISTERNA,
         ],
         null,
         null,
