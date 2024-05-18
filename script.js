@@ -180,6 +180,7 @@ const ITEMS = {
     },
     MUSOR_SHIELD: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/mus_shield_1.jpg',
+      T11: 'https://forded.github.io/ageofwater-map.github.io/items/mus_shield_2.jpg',
     },
     MUSOR_SHIELD_DVOIN: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/mus_shield_dvoin.jpg',
@@ -219,6 +220,7 @@ const ITEMS = {
     SEINER: {
       PLATFORMA: 'https://forded.github.io/ageofwater-map.github.io/items/platf_sein.jpg',
     },
+    RUBKA_SCORPENA: 'https://forded.github.io/ageofwater-map.github.io/items/rub_scorp.jpg',
   },
 };
 
@@ -339,6 +341,39 @@ const ACTIONS = {
 };
 
 const worldPoints = {
+  trashs: [
+    [
+      -206.59375,
+      164.28125,
+      generateDescription(
+        'Корабли T1',
+        'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
+        `Два корабля ${SHIPS.T1.JARL.name}.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+        ],
+        [
+          ITEMS.CONSTRUCTIONS.MUSOR_SHIELD.T11,
+          ITEMS.CONSTRUCTIONS.MUSOR_SHIELD_DVOIN.T1,
+          ITEMS.CONSTRUCTIONS.RUBKA_SCORPENA,
+          ITEMS.CONSTRUCTIONS.CISTERNA
+        ],
+        null,
+        null,
+        [SHIPS.T1.JARL],
+      ),
+    ],
+  ],
   rangers: [
     [
       -42.9375,
@@ -2424,6 +2459,7 @@ const worldPoints = {
 
 const legendNames = {
   pirates: 'Пиратские корабли',
+  trashs: 'Корабли мусорщиков',
   rangers: 'Корабли рейнджеров',
   scraps: 'Металл',
   ammos: 'Обломки боеприпасов',
@@ -2441,7 +2477,7 @@ const legendNames = {
 
 const groupMarkerTypes = {
   resources: ['scraps', 'ammos', 'chemicals', 'dynamites', 'pantoons'],
-  flots: ['pirates', 'rangers', 'couriers'],
+  flots: ['pirates', 'trashs', 'rangers', 'couriers'],
   bases: ['pois', 'postal', 'traders'],
   others: ['explosives', 'rocks', 'teleports'],
 };
@@ -2459,6 +2495,12 @@ const icons = {
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -20],
+  }),
+  trashs: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
+    iconSize: [30, 40],
+    iconAnchor: [15, 20],
+    popupAnchor: [0, -25],
   }),
   pirates: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
