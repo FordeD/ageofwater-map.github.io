@@ -217,6 +217,7 @@ const ITEMS = {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_1.jpg',
       T2: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_2.jpg',
     },
+    TUR_BAZA_PLAST: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_plast.jpg',
     SEINER: {
       PLATFORMA: 'https://forded.github.io/ageofwater-map.github.io/items/platf_sein.jpg',
     },
@@ -1485,6 +1486,7 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.BAMBUK_SHIELD.T1,
             ITEMS.MODULES.GENERATOR.T2,
             ITEMS.CONSTRUCTIONS.CISTERNA,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA_PLAST,
           ],
         },
         null,
