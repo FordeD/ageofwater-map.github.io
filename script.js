@@ -3114,6 +3114,9 @@ map.addControl(
     marker: false,
     clickable: false,
     propertyName: 'searchContext',
+    container: '🔎',
+    textErr: 'Меток с этим текстом не найдено',
+    textPlaceholder: 'Поиск по меткам',
   }).on('search:locationfound', function (e) {
     if (e.layer._popup) e.layer.openPopup();
   }),
