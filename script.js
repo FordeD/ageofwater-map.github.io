@@ -2958,13 +2958,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let lng = Math.round(event.latlng.lng * 100000) / 100000;
     updatePosition(lat, lng);
   });
-  map.addEventListener('touchmove', (event) => {
-    console.log(event);
-    let lat = Math.round(event.latlng.lat * 100000) / 100000;
-    let lng = Math.round(event.latlng.lng * 100000) / 100000;
-    console.log(lat, lng);
-    updatePosition(lat, lng);
-  });
   updateInfo();
 
   if (urlMarker) {
@@ -3022,24 +3015,6 @@ document.body.onmousemove = function (e) {
 
 document.body.onmouseout = function () {
   gridCoordPlace.style.opacity = '0';
-};
-
-document.body.ontouchstart = () => {
-  gridCoordPlace.style.opacity = '1';
-}
-
-document.body.ontouchend = () => {
-  setTimeout(() => {
-    gridCoordPlace.style.opacity = '0';
-  }, 5000);
-};
-
-document.body.ontouchmove = function (e) {
-  e = window.event;
-
-  gridCoordPlace.style.opacity = '1';
-  gridCoordPlace.style.left = e.touches[0].clientX - 20 + 'px';
-  gridCoordPlace.style.top = e.touches[0].clientY + 10 + 'px';
 };
 
 function coordsToMapPosition(lat, lng) {
