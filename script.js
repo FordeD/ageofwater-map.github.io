@@ -3103,7 +3103,7 @@ var controlSearch = new L.Control.Search({
   position: 'topleft',
   layer: L.featureGroup(SEARCH_LAYERS),
   initial: false,
-  zoom: 3,
+  zoom: 15,
   marker: false,
   clickable: true,
 });
