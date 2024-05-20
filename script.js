@@ -3117,9 +3117,7 @@ map.addControl(
     container: '🔎',
     textErr: 'Меток с этим текстом не найдено',
     textPlaceholder: 'Поиск по меткам',
-  }).on('search:locationfound', function (e) {
-    if (e.layer._popup) e.layer.openPopup();
-  }),
+  })
 );
 
 L.Control.CustomButtons = L.Control.Layers.extend({
