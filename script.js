@@ -2958,6 +2958,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let lng = Math.round(event.latlng.lng * 100000) / 100000;
     updatePosition(lat, lng);
   });
+  map.addEventListener('touchmove', (event) => {
+    let lat = Math.round(event.latlng.lat * 100000) / 100000;
+    let lng = Math.round(event.latlng.lng * 100000) / 100000;
+    updatePosition(lat, lng);
+  });
   updateInfo();
 
   if (urlMarker) {
@@ -3110,7 +3115,7 @@ setTimeout(() => { visibleMarkersPlace.click(); }, 500);
 const legendControl = L.Control.extend({
   // button position
   options: {
-    position: 'topleft',
+    position: 'topright',
   },
 
   // method
@@ -3121,7 +3126,7 @@ const legendControl = L.Control.extend({
     btn.className = 'showLegend';
     btn.setAttribute(
       'style',
-      "background-color: transparent; width: 26px; height: 26px; border: none; display: flex; cursor: pointer; justify-content: center; font-size: 2rem;",
+      'background-color: transparent; width: 26px; height: 26px; border: none; display: flex; cursor: pointer; justify-content: center; font-size: 2rem;',
     );
 
     // показываем и скрываем указатель получения координат
@@ -3129,6 +3134,13 @@ const legendControl = L.Control.extend({
       legendPlace.classList.toggle('hide');
     };
 
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
+        navigator.userAgent,
+      )
+    ) {
+      legendPlace.classList.toggle('hide');
+    }
     return btn;
   },
 });
