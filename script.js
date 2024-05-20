@@ -3264,7 +3264,7 @@ function generateDescription(title, image = null, description = null, resources 
     '<div class="hide-button-block"><button class="custom-button-styled" onClick="copyLinkToMarker(\'$[unique]\')">🔗</button></div>';
 
   context += `<div class="popup-header-block"><h3 class="popup-title">${title}</h3>`;
-  searchContent += `<b>${title}</b><br>`;
+  searchContent += `</br><b>${title}</b></br>`;
   if (image) {
     context += `<div class="popup-main-image"><img src="${image}" width="100" height="100"></div>`;
   }
@@ -3324,6 +3324,7 @@ function generateDescription(title, image = null, description = null, resources 
     }
     context += `</div>`;
   }
+  searchContent += '</br>';
   return [context, searchContent];
 };
 

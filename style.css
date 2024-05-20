@@ -323,11 +323,12 @@ body {
 
 .search-tip {
   max-width: 70vw !important;
+  width: auto !important;
   color: #ffffff !important;
   background: rgba(48, 48, 49, 1) !important;
   border-bottom: #212121 2px !important;
 }
 
 .search-tip:hover {
-  background: rgba(21, 21, 21, 1) !important;
+  background: rgba(31, 31, 31, 1) !important;
 }
