@@ -3103,11 +3103,12 @@ for (const type of types) {
 map.addControl(
   new L.Control.Search({
     position: 'topleft',
-    layer: L.featureGroup(SEARCH_LAYERS),
+    layer: L.layerGroup(SEARCH_LAYERS),
     initial: true,
     zoom: 15,
     marker: false,
     clickable: true,
+    propertyName: 'name',
   }).on('search:locationfound', function (e) {
     if (e.layer._popup) e.layer.openPopup();
   }),
