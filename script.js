@@ -2959,8 +2959,10 @@ document.addEventListener('DOMContentLoaded', function () {
     updatePosition(lat, lng);
   });
   map.addEventListener('touchmove', (event) => {
+    console.log(event);
     let lat = Math.round(event.latlng.lat * 100000) / 100000;
     let lng = Math.round(event.latlng.lng * 100000) / 100000;
+    console.log(lat, lng);
     updatePosition(lat, lng);
   });
   updateInfo();
