@@ -2922,7 +2922,6 @@ for (const type of types) {
     }
     iconGroups[type].addLayer(marker);
     MARKERS.push(marker);
-    
   }
 }
 
@@ -3096,9 +3095,10 @@ const coordsPointControl = L.Control.extend({
 // добавляем кнопку на карту
 map.addControl(new coordsPointControl());
 
+const SEARCH_LAYER = new L.FeatureGroup(MARKERS);
 var controlSearch = new L.Control.Search({
   position: 'topleft',
-  layer: MARKERS,
+  layer: SEARCH_LAYER,
   initial: false,
   zoom: 3,
   marker: false,
