@@ -3111,13 +3111,15 @@ map.addControl(
     layer: L.layerGroup(SEARCH_LAYERS),
     initial: false,
     zoom: 4,
-    marker: false,
-    clickable: false,
+    marker: true,
+    clickable: true,
     propertyName: 'searchContext',
     container: '🔎',
     textErr: 'Меток с этим текстом не найдено',
     textPlaceholder: 'Поиск по меткам',
-  })
+  }).on('search:locationfound', function (e) {
+    if (e.layer._popup) e.layer.openPopup();
+  }),
 );
 
 L.Control.CustomButtons = L.Control.Layers.extend({
