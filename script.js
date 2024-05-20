@@ -3121,6 +3121,7 @@ map.addControl(
     if (e.layer._popup) e.layer.openPopup();
     const searchInputPlace = document.getElementById('searchtext15');
     searchInputPlace.value = '';
+    searchInputPlace.setAttribute('size', '15');
   }),
 );
 
