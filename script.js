@@ -3119,6 +3119,8 @@ map.addControl(
     autoType: false,
   }).on('search:locationfound', function (e) {
     if (e.layer._popup) e.layer.openPopup();
+    const searchInputPlace = document.getElementById('searchtext15');
+    searchInputPlace.value = '';
   }),
 );
 
