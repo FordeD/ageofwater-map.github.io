@@ -3121,6 +3121,9 @@ map.addControl(
   }),
 );
 
+const searchBtnPlace = document.querySelector('.search-button');
+searchBtnPlace.innerHTML = '🔍';
+
 L.Control.CustomButtons = L.Control.Layers.extend({
   onAdd: function () {
     this._initLayout();
