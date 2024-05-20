@@ -2246,8 +2246,8 @@ const worldPoints = {
     [-36.3125, 105.6875, generateDynamitePopup()],
   ],
   explosives: [
-    [-177.9375, 192.4375, EXPLOSIVES],
-    [-42.3125, 156.0625, EXPLOSIVES],
+    [-177.9375, 192.4375, [EXPLOSIVES, EXPLOSIVES]],
+    [-42.3125, 156.0625, [EXPLOSIVES, EXPLOSIVES]],
   ],
   pantoons: [
     [-57.921875, 133.734375, generatePantoonPopup()],
@@ -2900,7 +2900,7 @@ for (const type of types) {
       icon: icons[type],
       markerType: type,
       markerId: type + i,
-      content: popupContent,
+      searchContext: popupContent[1],
     };
     if (type === 'rocks') {
       if (HIDED_MARKERS && HIDED_MARKERS.length) {
@@ -2909,7 +2909,7 @@ for (const type of types) {
         }
       }
     }
-    let formattedContext = popupContent;
+    let formattedContext = popupContent[0];
     if (formattedContext) {
       formattedContext = formattedContext.replace('$[unique]', type + i);
     }
@@ -3110,10 +3110,10 @@ map.addControl(
     position: 'topleft',
     layer: L.layerGroup(SEARCH_LAYERS),
     initial: false,
-    zoom: 15,
+    zoom: 4,
     marker: false,
     clickable: false,
-    propertyName: 'content',
+    propertyName: 'searchContext',
   }).on('search:locationfound', function (e) {
     if (e.layer._popup) e.layer.openPopup();
   }),
@@ -3252,6 +3252,7 @@ map.addControl(new shareControl());
 
 function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null, actions = [], ships = [], isHidable = false) {
   let context = '';
+  let searchContent = '';
   if (isHidable) {
     context +=
       '<div class="hide-button-block"><button class="custom-button-styled" onClick="hideMarker()">👁️‍🗨️</button></div>';
@@ -3261,6 +3262,7 @@ function generateDescription(title, image = null, description = null, resources 
     '<div class="hide-button-block"><button class="custom-button-styled" onClick="copyLinkToMarker(\'$[unique]\')">🔗</button></div>';
 
   context += `<div class="popup-header-block"><h3 class="popup-title">${title}</h3>`;
+  searchContent += `<b>${title}</b><br>`;
   if (image) {
     context += `<div class="popup-main-image"><img src="${image}" width="100" height="100"></div>`;
   }
@@ -3275,15 +3277,17 @@ function generateDescription(title, image = null, description = null, resources 
   context += '</div><div class="clr"></div>';
   if (description) {
     context += `<b>Описание:</b><p>${description}</p>`;
+    searchContent += `<b>Описание:</b><p>${description}</p><br>`;
   }
   if (nuances) {
     context += `<b>Уточнение:</b><p>${nuances}</p>`;
+    searchContent += `<b>Уточнение:</b><p>${nuances}</p></br>`;
   }
   if (resources && resources.length) {
     context += `<div class="popup-resource-block">`;
     context += '<b>Получаемые ресурсы:</b>';
     for (const resource of resources) {
-      context += `<img class="popup-resource-image" src="${resource}" width="40" height="40" />`;
+      context += `<img class="popup-resource-image" src="${resource}" width="40" height="40" />`;;
     }
     context += `</div>`;
   }
@@ -3311,12 +3315,14 @@ function generateDescription(title, image = null, description = null, resources 
   if (ships && ships.length) {
     context += `<div class="popup-resource-block">`;
     context += '<b>Можно получить корабли:</b>';
+    searchContent += `<b>Можно получить корабли:</b></br>`;
     for (const ship of ships) {
       context += `<div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${ship.url}">${ship.name}</a></b><img class="popup-resource-image" src="${ship.img}" width="300" height="200" /></div>`;
+      searchContent += `${ship.name}</br>`;
     }
     context += `</div>`;
   }
-  return context;
+  return [context, searchContent];
 };
 
 
