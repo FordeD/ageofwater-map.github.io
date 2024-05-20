@@ -3096,6 +3096,21 @@ const coordsPointControl = L.Control.extend({
 // добавляем кнопку на карту
 map.addControl(new coordsPointControl());
 
+var controlSearch = new L.Control.Search({
+  position: 'topleft',
+  layer: MARKERS,
+  initial: false,
+  zoom: 3,
+  marker: false,
+  clickable: true,
+});
+
+controlSearch.on('search:locationfound', function (e) {
+  if (e.layer._popup) e.layer.openPopup();
+});
+
+map.addControl(controlSearch);
+
 L.Control.CustomButtons = L.Control.Layers.extend({
   onAdd: function () {
     this._initLayout();
