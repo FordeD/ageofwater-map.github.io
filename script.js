@@ -3104,10 +3104,10 @@ map.addControl(
   new L.Control.Search({
     position: 'topleft',
     layer: L.layerGroup(SEARCH_LAYERS),
-    initial: true,
+    initial: false,
     zoom: 15,
     marker: false,
-    clickable: true,
+    clickable: false,
     propertyName: 'name',
   }).on('search:locationfound', function (e) {
     if (e.layer._popup) e.layer.openPopup();
