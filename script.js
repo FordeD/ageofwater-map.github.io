@@ -3099,20 +3099,19 @@ const SEARCH_LAYERS = []
 for (const type of types) {
   SEARCH_LAYERS.push(iconGroups[type]);
 }
-var controlSearch = new L.Control.Search({
-  position: 'topleft',
-  layer: L.featureGroup(SEARCH_LAYERS),
-  initial: false,
-  zoom: 15,
-  marker: false,
-  clickable: true,
-});
 
-controlSearch.on('search:locationfound', function (e) {
-  if (e.layer._popup) e.layer.openPopup();
-});
-
-map.addControl(controlSearch);
+map.addControl(
+  new L.Control.Search({
+    position: 'topleft',
+    layer: L.featureGroup(SEARCH_LAYERS),
+    initial: true,
+    zoom: 15,
+    marker: false,
+    clickable: true,
+  }).on('search:locationfound', function (e) {
+    if (e.layer._popup) e.layer.openPopup();
+  }),
+);
 
 L.Control.CustomButtons = L.Control.Layers.extend({
   onAdd: function () {
