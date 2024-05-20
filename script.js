@@ -3095,10 +3095,13 @@ const coordsPointControl = L.Control.extend({
 // добавляем кнопку на карту
 map.addControl(new coordsPointControl());
 
-const SEARCH_LAYER = new L.FeatureGroup(MARKERS);
+const SEARCH_LAYERS = []
+for (const type of types) {
+  SEARCH_LAYERS.push(iconGroups[type]);
+}
 var controlSearch = new L.Control.Search({
   position: 'topleft',
-  layer: SEARCH_LAYER,
+  layer: L.featureGroup(SEARCH_LAYERS),
   initial: false,
   zoom: 3,
   marker: false,
