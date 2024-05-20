@@ -3123,7 +3123,7 @@ map.addControl(
 );
 
 const searchBtnPlace = document.querySelector('.search-button');
-searchBtnPlace.classList.add(showPoint);
+searchBtnPlace.classList.add('showPoint');
 searchBtnPlace.innerHTML = '🔍';
 
 L.Control.CustomButtons = L.Control.Layers.extend({
