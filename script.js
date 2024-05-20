@@ -2896,7 +2896,12 @@ for (const type of types) {
   legendMarkers[legendNames[type]] = iconGroups[type];
   for (let i = 0; i < worldPoints[type].length; i++) {
     const [lat, lng, popupContent, tooltipText] = worldPoints[type][i];
-    const options = { icon: icons[type], markerType: type, markerId: type + i };
+    const options = {
+      icon: icons[type],
+      markerType: type,
+      markerId: type + i,
+      content: popupContent,
+    };
     if (type === 'rocks') {
       if (HIDED_MARKERS && HIDED_MARKERS.length) {
         if (HIDED_MARKERS.includes(type + i)) {
@@ -3108,7 +3113,7 @@ map.addControl(
     zoom: 15,
     marker: false,
     clickable: false,
-    propertyName: 'name',
+    propertyName: 'content',
   }).on('search:locationfound', function (e) {
     if (e.layer._popup) e.layer.openPopup();
   }),
