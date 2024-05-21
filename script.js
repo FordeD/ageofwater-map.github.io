@@ -927,6 +927,7 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.CISTERNA,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+            ITEMS.MODULES.ACCUMULATOR.T4,
           ],
           [SHIPS.T4.MURENA.name]: [
             ITEMS.CONSTRUCTIONS.STENKA.T1,
