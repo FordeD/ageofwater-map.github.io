@@ -1015,6 +1015,7 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.CISTERNA,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+            ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
           ],
         },
         '',
