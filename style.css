@@ -347,3 +347,42 @@ body {
 .search-tip:hover {
   background: rgba(31, 31, 31, 1) !important;
 }
+
+
+.popup-block-container {
+  display: block;
+  max-width: 80vw;
+  min-width: 250px;
+  position: absolute;
+  top: 0;
+  left: calc(80vw - 100px);
+  background: rgba(31, 31, 31, 0.9) !important;
+  border-radius: 0 0 5px 5px;
+}
+
+.popup-block-text {
+  width: auto;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  font-family: Menlo,Consolas,Monaco,'Liberation Mono','Lucida Console',monospace;
+  color: #ffffff;
+}
+
+.popup-block-cancel-btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  float: left;
+  cursor: pointer;
+  position: relative;
+  left: calc(100% - 50px);
+  top: 5px;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+.popup-block-cancel-btn:hover {
+  color: #a9a9a9;
+}

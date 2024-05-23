@@ -3440,3 +3440,42 @@ function generateRockPopup() {
     true,
   );
 }
+
+const getJSON = function (url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.responseType = 'json';
+  xhr.onload = function () {
+    var status = xhr.status;
+    if (status === 200) {
+      callback(null, xhr.response);
+    } else {
+      callback(status, xhr.response);
+    }
+  };
+  xhr.send();
+};
+
+const popupContainerPlace = document.querySelector('.popup-block-container');
+const popupTextPlace = document.querySelector('.popup-block-text');
+const popupBtnPlace = document.querySelector('.popup-block-cancel-btn');
+
+function getLastUpdateDate() {
+  const result = getJSON('https://api.github.com/repos/FordeD/ageofwater-map.github.io/commits', (status, resp) => {
+    if (status === null) {
+      popupTextPlace.innerHTML = `Последнее обновление карты: ${new Date(
+        resp[0].commit.committer.date,
+      ).toLocaleString()}`; 
+      popupContainerPlace.classList.toggle('hide');
+      setTimeout(() => {
+        hidePopupBlock();
+      }, 60000);
+    } else {
+      hidePopupBlock();
+    }
+  });
+}
+
+function hidePopupBlock() {
+  popupContainerPlace.classList.toggle('hide');
+}
