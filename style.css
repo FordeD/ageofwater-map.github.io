@@ -350,12 +350,12 @@ body {
 
 
 .popup-block-container {
-  display: block;
+  z-index: 999;
   max-width: 80vw;
   min-width: 250px;
   position: absolute;
   top: 0;
-  left: calc(80vw - 100px);
+  left: calc(48vw - 100px);
   background: rgba(31, 31, 31, 0.9) !important;
   border-radius: 0 0 5px 5px;
 }
