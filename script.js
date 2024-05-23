@@ -3464,7 +3464,7 @@ const popupBtnPlace = document.querySelector('.popup-block-cancel-btn');
 function getLastUpdateDate() {
   const result = getJSON('https://api.github.com/repos/FordeD/ageofwater-map.github.io/commits', (status, resp) => {
     if (status === null) {
-      popupTextPlace.innerHTML = `Последнее обновление карты: ${new Date(
+      popupTextPlace.innerHTML = `Карта обновлена: ${new Date(
         resp[0].commit.committer.date,
       ).toLocaleString()}`; 
       popupContainerPlace.classList.toggle('hide');
