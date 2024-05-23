@@ -3041,6 +3041,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   window.history.pushState(window.history.state, document.title, location.pathname);
+  getLastUpdateDate();
 });
 
 const gridCoordPlace = document.querySelector('.grid-pointer');
