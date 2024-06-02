@@ -3379,7 +3379,7 @@ function generateAmmoPopup() {
     AMMO,
     RESPURCES.AMMO,
     'Место добычи при помощи драги',
-    [RESPURCES.AMMO, RESPURCES.SCRAP, RESPURCES.WOOD, RESPURCES.TEXTILE],
+    [RESPURCES.AMMO, RESPURCES.SCRAP, RESPURCES.WOOD, RESPURCES.TEXTILE, RESPURCES.AMMO_DETAILS],
     null,
     'В малом количестве могут добываться и иные ресурсы. Ресурс используется в ремонте и крафте оружия, исследованиях',
   );
