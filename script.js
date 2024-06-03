@@ -1263,7 +1263,7 @@ const worldPoints = {
       generateDescription(
         'Два корабля Т1',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
-        `Два корабля ${SHIPS.T1.SOFIYA.name}.`,
+        `Два корабля ${SHIPS.T1.SONJA.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -1278,7 +1278,7 @@ const worldPoints = {
           RESPURCES.COPPER_PLATES,
         ],
         {
-          [SHIPS.T1.SOFIYA.name]: [
+          [SHIPS.T1.SONJA.name]: [
             ITEMS.CONSTRUCTIONS.STENKA.T1,
             ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
             ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
@@ -1288,7 +1288,7 @@ const worldPoints = {
         },
         'Появляются рядом с потоком, во время абордажа нужно быть внимательней, могут заагриться Репеи из флота рядом',
         null,
-        [SHIPS.T1.SOFIYA],
+        [SHIPS.T1.SONJA],
       ),
     ],
     [
