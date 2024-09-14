@@ -2877,8 +2877,8 @@ const worldPoints = {
       ),
     ],
     [
-      -215.5625,
-      7.4375,
+      -30.375,
+      250.5625,
       generateDescription(
         'Флот в нескольких волнах T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
