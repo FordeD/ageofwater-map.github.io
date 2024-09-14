@@ -2884,8 +2884,8 @@ const worldPoints = {
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
         `Усиленный флот армады в нескольких волнах:</br>
 <b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.SHEVRON.name}.</br>
-<b>2 Волна:</b> *НЕИЗВЕСТНО*.</br>
-<b>3 Волна:</b> *НЕИЗВЕСТНО*.`,
+<b>2 Волна:</b> ${SHIPS.T4.MURENA.name}.</br>
+<b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -2906,12 +2906,14 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
         ],
         {
+          [SHIPS.T4.ANCHOUS.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
+          [SHIPS.T4.MURENA.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
           [SHIPS.T3.SHEVRON.name]: [RESPURCES.OST_MOSH_ORUJ],
           [SHIPS.T3.ZORKIJ.name]: [RESPURCES.OST_MOSH_ORUJ],
         },
-        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.SHEVRON.name}.`,
+        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.SHEVRON.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name}.`,
         null,
-        [SHIPS.T3.ZORKIJ, SHIPS.T3.SHEVRON],
+        [SHIPS.T4.ANCHOUS, SHIPS.T4.MURENA, SHIPS.T3.ZORKIJ, SHIPS.T3.SHEVRON],
       ),
     ],
     [
@@ -2923,7 +2925,7 @@ const worldPoints = {
         `Усиленный флот армады в нескольких волнах:</br>
 <b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
 <b>2 Волна:</b> ${SHIPS.T4.BASTION.name} и ${SHIPS.T4.MURENA.name}.</br>
-<b>3 Волна:</b> *НЕИЗВЕСТНО*.`,
+<b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -2946,13 +2948,14 @@ const worldPoints = {
         ],
         {
           [SHIPS.T4.BASTION.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
+          [SHIPS.T4.ANCHOUS.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
           [SHIPS.T4.MURENA.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
           [SHIPS.T3.BISTRIY.name]: [RESPURCES.OST_MOSH_ORUJ],
           [SHIPS.T3.ZORKIJ.name]: [RESPURCES.OST_MOSH_ORUJ],
         },
-        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.BISTRIY.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.BASTION.name}.`,
+        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.BISTRIY.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T4.BASTION.name}.`,
         null,
-        [SHIPS.T4.BASTION, SHIPS.T4.MURENA, SHIPS.T3.ZORKIJ, SHIPS.T3.BISTRIY],
+        [SHIPS.T4.BASTION, SHIPS.T4.ANCHOUS, SHIPS.T4.MURENA, SHIPS.T3.ZORKIJ, SHIPS.T3.BISTRIY],
       ),
     ],
     [
@@ -2964,7 +2967,7 @@ const worldPoints = {
         `Усиленный флот армады в нескольких волнах:</br>
 <b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
 <b>2 Волна:</b> ${SHIPS.T4.SHPROT.name} и ${SHIPS.T4.MURENA.name}.</br>
-<b>3 Волна:</b> *НЕИЗВЕСТНО*.`,
+<b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -2987,13 +2990,14 @@ const worldPoints = {
         ],
         {
           [SHIPS.T4.SHPROT.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
+          [SHIPS.T4.ANCHOUS.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
           [SHIPS.T4.MURENA.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
           [SHIPS.T3.BISTRIY.name]: [RESPURCES.OST_MOSH_ORUJ],
           [SHIPS.T3.ZORKIJ.name]: [RESPURCES.OST_MOSH_ORUJ],
         },
-        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.BISTRIY.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.SHPROT.name}.`,
+        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.BISTRIY.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T4.SHPROT.name}.`,
         null,
-        [SHIPS.T4.SHPROT, SHIPS.T4.MURENA, SHIPS.T3.ZORKIJ, SHIPS.T3.BISTRIY],
+        [SHIPS.T4.SHPROT, SHIPS.T4.ANCHOUS, SHIPS.T4.MURENA, SHIPS.T3.ZORKIJ, SHIPS.T3.BISTRIY],
       ),
     ],
   ],
