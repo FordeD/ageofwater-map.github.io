@@ -1990,10 +1990,7 @@ const worldPoints = {
         'Основное поселение игры, на данном поселении находится база игрока которую нужно будет улучшать. В поселении имеется торговец, шериф выдающий как обычные так и PvP задания, а так же другие NPC.',
         null,
         null,
-        `На базе у корабела Лаошай можно выполнить 3 задания по очереди для получения лодок: </br>
-<div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${SHIPS.T2.LIVERPUL.url}">300 динамита - ${SHIPS.T2.LIVERPUL.name}</a></b><img class="popup-resource-image" src="${SHIPS.T2.LIVERPUL.img}" width="300" height="200" /></div></br>
-<div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${SHIPS.T3.LIMUSIN.url}">500 динамита - ${SHIPS.T3.LIMUSIN.name}</a></b><img class="popup-resource-image" src="${SHIPS.T3.LIMUSIN.img}" width="300" height="200" /></div></br>
-<div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${SHIPS.T4.KORSAR.url}">700 динамита - ${SHIPS.T4.KORSAR.name}</a></b><img class="popup-resource-image" src="${SHIPS.T4.KORSAR.img}" width="300" height="200" /></div>`,
+        `На базе у корабела Лаошай можно выполнить 3 задания по очереди для получения лодок: </br><div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${SHIPS.T2.LIVERPUL.url}">300 динамита - ${SHIPS.T2.LIVERPUL.name}</a></b><img class="popup-resource-image" src="${SHIPS.T2.LIVERPUL.img}" width="300" height="200" /></div></br><div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${SHIPS.T3.LIMUSIN.url}">500 динамита - ${SHIPS.T3.LIMUSIN.name}</a></b><img class="popup-resource-image" src="${SHIPS.T3.LIMUSIN.img}" width="300" height="200" /></div></br><div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${SHIPS.T4.KORSAR.url}">700 динамита - ${SHIPS.T4.KORSAR.name}</a></b><img class="popup-resource-image" src="${SHIPS.T4.KORSAR.img}" width="300" height="200" /></div>`,
         [ACTIONS.QUEST, ACTIONS.TRADE, ACTIONS.MESSAGE, ACTIONS.REPAIR, ACTIONS.SHIP],
       ),
       'Поселение "Три кита"',
@@ -2781,10 +2778,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Усиленный флот армады в нескольких волнах:</br>
-<b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
-<b>2 Волна:</b> ${SHIPS.T4.MURENA.name} и ${SHIPS.T4.ANCHOUS.name}.</br>
-<b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.VSPOLOH.name}.`,
+        `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br><b>2 Волна:</b> ${SHIPS.T4.MURENA.name} и ${SHIPS.T4.ANCHOUS.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.VSPOLOH.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -2842,10 +2836,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Усиленный флот армады в нескольких волнах:</br>
-<b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
-<b>2 Волна:</b> ${SHIPS.T4.MURENA.name} и ${SHIPS.T4.ANCHOUS.name}.</br>
-<b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.HVAT.name}.`,
+        `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br><b>2 Волна:</b> ${SHIPS.T4.MURENA.name} и ${SHIPS.T4.ANCHOUS.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.HVAT.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -2903,10 +2894,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Усиленный флот армады в нескольких волнах:</br>
-<b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.SHEVRON.name}.</br>
-<b>2 Волна:</b> ${SHIPS.T4.MURENA.name}.</br>
-<b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
+        `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.SHEVRON.name}.</br><b>2 Волна:</b> ${SHIPS.T4.MURENA.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -2943,10 +2931,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3-Т4',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Усиленный флот армады в нескольких волнах:</br>
-<b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
-<b>2 Волна:</b> ${SHIPS.T4.BASTION.name} и ${SHIPS.T4.MURENA.name}.</br>
-<b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
+        `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br><b>2 Волна:</b> ${SHIPS.T4.BASTION.name} и ${SHIPS.T4.MURENA.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -2985,10 +2970,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3-Т4',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Усиленный флот армады в нескольких волнах:</br>
-<b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
-<b>2 Волна:</b> ${SHIPS.T4.SHPROT.name} и ${SHIPS.T4.MURENA.name}.</br>
-<b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
+        `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br><b>2 Волна:</b> ${SHIPS.T4.SHPROT.name} и ${SHIPS.T4.MURENA.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
