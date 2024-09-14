@@ -84,6 +84,8 @@ const RESPURCES = {
   ROPE: 'https://forded.github.io/ageofwater-map.github.io/resources/rope.jpg',
   WATER: 'https://forded.github.io/ageofwater-map.github.io/resources/water.jpg',
   PLANK: 'https://forded.github.io/ageofwater-map.github.io/resources/plank.jpg',
+  OST_AKUL_ORUJ: 'https://forded.github.io/ageofwater-map.github.io/resources/ost_akul_oruj.jpg',
+  OST_MOSH_ORUJ: 'https://forded.github.io/ageofwater-map.github.io/resources/ost_mosh_oruj.jpg',
 };
 
 const ITEMS = {
@@ -317,6 +319,11 @@ const SHIPS = {
       name: 'Морж (III)',
       url: 'https://ageofwater.fandom.com/wiki/Walrus_Tugboat',
     },
+    SHEVRON: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_shevron.webp',
+      name: 'Шеврон (III)',
+      url: 'https://ageofwater.fandom.com/wiki/Stripe_Patrol_Boat',
+    },
   },
   T4: {
     ANCHOUS: {
@@ -334,12 +341,32 @@ const SHIPS = {
       name: 'Забияка (IV)',
       url: 'https://ageofwater.fandom.com/wiki/Brawler_Torpedo_Boat',
     },
+    BASTION: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_bastion.jpg',
+      name: 'Бастион (IV)',
+      url: 'https://ageofwater.fandom.com/wiki/Bastion_Boat',
+    },
+    SHPROT: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_shprot.webp',
+      name: 'Шпрот (IV)',
+      url: 'https://ageofwater.fandom.com/wiki/Sprattus_Trawler',
+    },
   },
   T5: {
     REPEJ: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T5_repej.webp',
       name: 'Репей (V)',
       url: 'https://ageofwater.fandom.com/wiki/Burdock_Gunboat',
+    },
+    HVAT: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T5_hvat.webp',
+      name: 'Хват (V)',
+      url: 'https://ageofwater.fandom.com/wiki/Grasp_Tugboat',
+    },
+    VSPOLOH: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T5_vspoloh.webp',
+      name: 'Всполох (V)',
+      url: 'https://ageofwater.fandom.com/wiki/Glare_Rocket_Boat',
     },
   },
 };
@@ -2726,6 +2753,250 @@ const worldPoints = {
       ),
     ],
   ],
+  armades: [
+    [
+      -129.1875,
+      -12.0625,
+      generateDescription(
+        'Флот в нескольких волнах T3-T5',
+        'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
+        `Флот армады в нескольких волнах:</br>
+<b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
+<b>2 Волна:</b> ${SHIPS.T4.MURENA.name} и ${SHIPS.T4.ANCHOUS.name}.</br>
+<b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.VSPOLOH.name}.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+          RESPURCES.OST_MOSH_ORUJ,
+          RESPURCES.OST_AKUL_ORUJ,
+          ITEMS.MODULES.MOTOR.T2,
+          ITEMS.CONSTRUCTIONS.BAMBUK_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+        ],
+        {
+          [SHIPS.T5.VSPOLOH.name]: [
+            RESPURCES.OST_MOSH_ORUJ,
+            RESPURCES.OST_AKUL_ORUJ,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
+            ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T21,
+            ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T22,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+          ],
+          [SHIPS.T4.ANCHOUS.name]: [
+            RESPURCES.OST_MOSH_ORUJ,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
+            ITEMS.CONSTRUCTIONS.CISTERNA,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+            ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
+          ],
+          [SHIPS.T4.MURENA.name]: [RESPURCES.OST_MOSH_ORUJ],
+          [SHIPS.T3.BISTRIY.name]: [RESPURCES.OST_MOSH_ORUJ],
+          [SHIPS.T3.ZORKIJ.name]: [RESPURCES.OST_MOSH_ORUJ],
+        },
+        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.BISTRIY.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.VSPOLOH.name}`,
+        null,
+        [SHIPS.T5.VSPOLOH, SHIPS.T4.MURENA, SHIPS.T4.ANCHOUS, SHIPS.T3.ZORKIJ, SHIPS.T3.BISTRIY],
+      ),
+    ],
+    [
+      -215.5625,
+      7.4375,
+      generateDescription(
+        'Флот в нескольких волнах T3-T5',
+        'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
+        `Флот армады в нескольких волнах:</br>
+<b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
+<b>2 Волна:</b> ${SHIPS.T4.MURENA.name} и ${SHIPS.T4.ANCHOUS.name}.</br>
+<b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.HVAT.name}.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+          RESPURCES.OST_MOSH_ORUJ,
+          RESPURCES.OST_AKUL_ORUJ,
+          ITEMS.MODULES.MOTOR.T2,
+          ITEMS.CONSTRUCTIONS.BAMBUK_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+        ],
+        {
+          [SHIPS.T5.HVAT.name]: [
+            RESPURCES.OST_MOSH_ORUJ,
+            RESPURCES.OST_AKUL_ORUJ,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
+            ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T21,
+            ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T22,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+          ],
+          [SHIPS.T4.ANCHOUS.name]: [
+            RESPURCES.OST_MOSH_ORUJ,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
+            ITEMS.CONSTRUCTIONS.CISTERNA,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+            ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
+          ],
+          [SHIPS.T4.MURENA.name]: [RESPURCES.OST_MOSH_ORUJ],
+          [SHIPS.T3.BISTRIY.name]: [RESPURCES.OST_MOSH_ORUJ],
+          [SHIPS.T3.ZORKIJ.name]: [RESPURCES.OST_MOSH_ORUJ],
+        },
+        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.BISTRIY.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.HVAT.name}`,
+        null,
+        [SHIPS.T5.HVAT, SHIPS.T4.MURENA, SHIPS.T4.ANCHOUS, SHIPS.T3.ZORKIJ, SHIPS.T3.BISTRIY],
+      ),
+    ],
+    [
+      -215.5625,
+      7.4375,
+      generateDescription(
+        'Флот в нескольких волнах T3',
+        'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
+        `Флот армады в нескольких волнах:</br>
+<b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.SHEVRON.name}.</br>
+<b>2 Волна:</b> *НЕИЗВЕСТНО*.</br>
+<b>3 Волна:</b> *НЕИЗВЕСТНО*.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+          RESPURCES.OST_MOSH_ORUJ,
+          ITEMS.MODULES.MOTOR.T2,
+          ITEMS.CONSTRUCTIONS.BAMBUK_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+        ],
+        {
+          [SHIPS.T3.SHEVRON.name]: [RESPURCES.OST_MOSH_ORUJ],
+          [SHIPS.T3.ZORKIJ.name]: [RESPURCES.OST_MOSH_ORUJ],
+        },
+        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.SHEVRON.name}.`,
+        null,
+        [SHIPS.T3.ZORKIJ, SHIPS.T3.SHEVRON],
+      ),
+    ],
+    [
+      10.3125,
+      128.9375,
+      generateDescription(
+        'Флот в нескольких волнах T3-Т4',
+        'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
+        `Флот армады в нескольких волнах:</br>
+<b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
+<b>2 Волна:</b> ${SHIPS.T4.BASTION.name} и ${SHIPS.T4.MURENA.name}.</br>
+<b>3 Волна:</b> *НЕИЗВЕСТНО*.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+          RESPURCES.OST_MOSH_ORUJ,
+          RESPURCES.OST_AKUL_ORUJ,
+          ITEMS.MODULES.MOTOR.T2,
+          ITEMS.CONSTRUCTIONS.BAMBUK_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+        ],
+        {
+          [SHIPS.T4.BASTION.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
+          [SHIPS.T4.MURENA.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
+          [SHIPS.T3.BISTRIY.name]: [RESPURCES.OST_MOSH_ORUJ],
+          [SHIPS.T3.ZORKIJ.name]: [RESPURCES.OST_MOSH_ORUJ],
+        },
+        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.BISTRIY.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.BASTION.name}.`,
+        null,
+        [SHIPS.T4.BASTION, SHIPS.T4.MURENA, SHIPS.T3.ZORKIJ, SHIPS.T3.BISTRIY],
+      ),
+    ],
+    [
+      20.9375,
+      30.6875,
+      generateDescription(
+        'Флот в нескольких волнах T3-Т4',
+        'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
+        `Флот армады в нескольких волнах:</br>
+<b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
+<b>2 Волна:</b> ${SHIPS.T4.SHPROT.name} и ${SHIPS.T4.MURENA.name}.</br>
+<b>3 Волна:</b> *НЕИЗВЕСТНО*.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+          RESPURCES.OST_MOSH_ORUJ,
+          RESPURCES.OST_AKUL_ORUJ,
+          ITEMS.MODULES.MOTOR.T2,
+          ITEMS.CONSTRUCTIONS.BAMBUK_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+        ],
+        {
+          [SHIPS.T4.SHPROT.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
+          [SHIPS.T4.MURENA.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
+          [SHIPS.T3.BISTRIY.name]: [RESPURCES.OST_MOSH_ORUJ],
+          [SHIPS.T3.ZORKIJ.name]: [RESPURCES.OST_MOSH_ORUJ],
+        },
+        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.BISTRIY.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.SHPROT.name}.`,
+        null,
+        [SHIPS.T4.SHPROT, SHIPS.T4.MURENA, SHIPS.T3.ZORKIJ, SHIPS.T3.BISTRIY],
+      ),
+    ],
+  ],
 };
 
 const legendNames = {
@@ -2744,11 +3015,12 @@ const legendNames = {
   rocks: 'Скалы',
   teleports: 'Быстрые перемещения',
   couriers: 'Курьеры',
+  armades: 'Армады',
 };
 
 const groupMarkerTypes = {
   resources: ['scraps', 'ammos', 'chemicals', 'dynamites', 'pantoons'],
-  flots: ['pirates', 'trashs', 'rangers', 'couriers'],
+  flots: ['pirates', 'trashs', 'rangers', 'couriers', 'armades'],
   bases: ['pois', 'postal', 'traders'],
   others: ['explosives', 'rocks', 'teleports'],
 };
@@ -2853,6 +3125,12 @@ const icons = {
   }),
   dynamites: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/resources/dynamite.jpg',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -20],
+  }),
+  armades: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -20],
