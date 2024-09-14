@@ -2760,7 +2760,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Флот армады в нескольких волнах:</br>
+        `Усиленный флот армады в нескольких волнах:</br>
 <b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
 <b>2 Волна:</b> ${SHIPS.T4.MURENA.name} и ${SHIPS.T4.ANCHOUS.name}.</br>
 <b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.VSPOLOH.name}.`,
@@ -2821,7 +2821,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Флот армады в нескольких волнах:</br>
+        `Усиленный флот армады в нескольких волнах:</br>
 <b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
 <b>2 Волна:</b> ${SHIPS.T4.MURENA.name} и ${SHIPS.T4.ANCHOUS.name}.</br>
 <b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.HVAT.name}.`,
@@ -2882,7 +2882,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Флот армады в нескольких волнах:</br>
+        `Усиленный флот армады в нескольких волнах:</br>
 <b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.SHEVRON.name}.</br>
 <b>2 Волна:</b> *НЕИЗВЕСТНО*.</br>
 <b>3 Волна:</b> *НЕИЗВЕСТНО*.`,
@@ -2920,7 +2920,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3-Т4',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Флот армады в нескольких волнах:</br>
+        `Усиленный флот армады в нескольких волнах:</br>
 <b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
 <b>2 Волна:</b> ${SHIPS.T4.BASTION.name} и ${SHIPS.T4.MURENA.name}.</br>
 <b>3 Волна:</b> *НЕИЗВЕСТНО*.`,
@@ -2961,7 +2961,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3-Т4',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Флот армады в нескольких волнах:</br>
+        `Усиленный флот армады в нескольких волнах:</br>
 <b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br>
 <b>2 Волна:</b> ${SHIPS.T4.SHPROT.name} и ${SHIPS.T4.MURENA.name}.</br>
 <b>3 Волна:</b> *НЕИЗВЕСТНО*.`,
