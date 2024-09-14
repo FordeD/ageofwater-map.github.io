@@ -297,6 +297,11 @@ const SHIPS = {
       name: 'Лоцманский катер Веха (II)',
       url: 'https://ageofwater.fandom.com/wiki/Strut_Pilot_Boat',
     },
+    LIVERPUL: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_liverpul.webp',
+      name: 'Ливерпуль (II)',
+      url: 'https://ageofwater.fandom.com/wiki/Liverpool',
+    },
   },
   T3: {
     BISTRIY: {
@@ -323,6 +328,11 @@ const SHIPS = {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_shevron.webp',
       name: 'Шеврон (III)',
       url: 'https://ageofwater.fandom.com/wiki/Stripe_Patrol_Boat',
+    },
+    LIMUSIN: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_limusin.webp',
+      name: 'Лимузин (III)',
+      url: 'https://ageofwater.fandom.com/wiki/Limousine',
     },
   },
   T4: {
@@ -351,6 +361,11 @@ const SHIPS = {
       name: 'Шпрот (IV)',
       url: 'https://ageofwater.fandom.com/wiki/Sprattus_Trawler',
     },
+    KORSAR: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_korsar.webp',
+      name: 'Корсар (VI)',
+      url: 'https://ageofwater.fandom.com/wiki/Corsair',
+    },
   },
   T5: {
     REPEJ: {
@@ -377,6 +392,7 @@ const ACTIONS = {
   REPAIR: 'https://forded.github.io/ageofwater-map.github.io/icons/repair_action.png',
   QUEST: 'https://forded.github.io/ageofwater-map.github.io/icons/quest_action.png',
   MESSAGE: 'https://forded.github.io/ageofwater-map.github.io/icons/mail_action.png',
+  SHIP: 'https://forded.github.io/ageofwater-map.github.io/icons/ship_action.png',
 };
 
 const worldPoints = {
@@ -1916,7 +1932,7 @@ const worldPoints = {
         null,
         null,
         'По цепочке квестов в этом месте вы можете получит один из трех актуальных бортов I тира на выбор',
-        [ACTIONS.QUEST, ACTIONS.REPAIR],
+        [ACTIONS.QUEST, ACTIONS.REPAIR, ACTIONS.SHIP],
       ),
       'Поселение "Корабел"',
     ],
@@ -1971,11 +1987,14 @@ const worldPoints = {
       generateDescription(
         'Поселение "Три кита"',
         null,
-        'Основное поселение игры, на данном поселении находится база игрока которую нужно будет улучшать. В поселении имеется торговец, шериф выдающий как обычные так и PvP задания, а так же другие NPC',
+        'Основное поселение игры, на данном поселении находится база игрока которую нужно будет улучшать. В поселении имеется торговец, шериф выдающий как обычные так и PvP задания, а так же другие NPC.',
         null,
         null,
-        '',
-        [ACTIONS.QUEST, ACTIONS.TRADE, ACTIONS.MESSAGE, ACTIONS.REPAIR],
+        `На базе у корабела Лаошай можно выполнить 3 задания по очереди для получения лодок: </br>
+<div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${SHIPS.T2.LIVERPUL.url}">300 динамита - ${SHIPS.T2.LIVERPUL.name}</a></b><img class="popup-resource-image" src="${SHIPS.T2.LIVERPUL.img}" width="300" height="200" /></div></br>
+<div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${SHIPS.T3.LIMUSIN.url}">500 динамита - ${SHIPS.T3.LIMUSIN.name}</a></b><img class="popup-resource-image" src="${SHIPS.T3.LIMUSIN.img}" width="300" height="200" /></div></br>
+<div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${SHIPS.T4.KORSAR.url}">700 динамита - ${SHIPS.T4.KORSAR.name}</a></b><img class="popup-resource-image" src="${SHIPS.T4.KORSAR.img}" width="300" height="200" /></div>`,
+        [ACTIONS.QUEST, ACTIONS.TRADE, ACTIONS.MESSAGE, ACTIONS.REPAIR, ACTIONS.SHIP],
       ),
       'Поселение "Три кита"',
     ],
@@ -2060,6 +2079,7 @@ const worldPoints = {
       101.046875,
       generateDescription('Поселение "Дом охотника на акул"', null, '', null, null, '', [
         ACTIONS.QUEST,
+        ACTIONS.CREW,
       ]),
       'Поселение "Дом охотника на акул"',
     ],
@@ -2083,6 +2103,7 @@ const worldPoints = {
       generateDescription('Поселение "Орден"', null, '', null, null, '', [
         ACTIONS.QUEST,
         ACTIONS.TRADE,
+        ACTIONS.CREW,
       ]),
       'Поселение "Орден"',
     ],
