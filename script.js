@@ -1752,7 +1752,10 @@ const worldPoints = {
     [
       -232.82813,
       24.70313,
-      generateDescription('Поселение "Шарк-Сити"', null, '', null, null, '', [ACTIONS.QUEST]),
+      generateDescription('Поселение "Шарк-Сити"', null, '', null, null, '', [
+        ACTIONS.QUEST,
+        ACTIONS.CREW,
+      ]),
       'Поселение "Шарк-Сити"',
     ],
     [
@@ -2177,6 +2180,98 @@ const worldPoints = {
       157.71875,
       generateDescription('Поселение "Вход на вулкан"', null, '', null, null, '', [ACTIONS.QUEST]),
       'Поселение "Вход на вулкан"',
+    ],
+  ],
+  fczs: [
+    [
+      -18.4375,
+      57.9375,
+      generateDescription(
+        'Пешая боевая зона "Застрявшая баржа"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+      ),
+    ],
+    [
+      -74.5625,
+      181.0625,
+      generateDescription(
+        'Пешая боевая зона "Офисный центр"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+      ),
+    ],
+    [
+      -78.1875,
+      217.3125,
+      generateDescription(
+        'Пешая боевая зона "Очистные сооружения"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+      ),
+    ],
+    [
+      -112.6875,
+      55.4375,
+      generateDescription(
+        'Пешая боевая зона "Недостроенный бизнес-центр"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+      ),
+    ],
+    [
+      -141.1875,
+      96.5625,
+      generateDescription(
+        'Пешая боевая зона "Университет"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+      ),
+    ],
+    [
+      -127.8125,
+      185.8125,
+      generateDescription(
+        'Пешая боевая зона "Покосившийся небоскреб"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+      ),
+    ],
+    [
+      -188.4375,
+      205.6875,
+      generateDescription(
+        'Пешая боевая зона "Школа"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+      ),
+    ],
+    [
+      -182.3125,
+      72.9375,
+      generateDescription(
+        'Пешая боевая зона "Музей"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+      ),
+    ],
+    [
+      -207.4375,
+      131.5625,
+      generateDescription(
+        'Пешая боевая зона "Торговый центр Макс"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+      ),
+    ],
+    [
+      -118.3125,
+      248.0625,
+      generateDescription(
+        'Пешая боевая зона "Обсерватория"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+      ),
     ],
   ],
   traders: [
@@ -3044,6 +3139,7 @@ const legendNames = {
   ammos: 'Обломки боеприпасов',
   chemicals: 'Химические отходы',
   pois: 'Поселения',
+  fczs: 'Пешие боевые зоны',
   postal: 'Почта',
   traders: 'Торговцы',
   dynamites: 'Динамит',
@@ -3059,7 +3155,7 @@ const groupMarkerTypes = {
   resources: ['scraps', 'ammos', 'chemicals', 'dynamites', 'pantoons'],
   flots: ['pirates', 'trashs', 'rangers', 'couriers', 'armades'],
   bases: ['pois', 'postal', 'traders'],
-  others: ['explosives', 'rocks', 'teleports'],
+  others: ['explosives', 'rocks', 'teleports', 'fczs'],
 };
 
 const groupMarkerTypeNames = {
@@ -3120,6 +3216,12 @@ const icons = {
   }),
   pois: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/poi.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -20],
+  }),
+  fczs: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -20],
