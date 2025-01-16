@@ -86,6 +86,7 @@ const RESPURCES = {
   PLANK: 'https://forded.github.io/ageofwater-map.github.io/resources/plank.jpg',
   OST_AKUL_ORUJ: 'https://forded.github.io/ageofwater-map.github.io/resources/ost_akul_oruj.jpg',
   OST_MOSH_ORUJ: 'https://forded.github.io/ageofwater-map.github.io/resources/ost_mosh_oruj.jpg',
+  REPAIR: 'https://forded.github.io/ageofwater-map.github.io/resources/repair.jpg',
 };
 
 const ITEMS = {
@@ -2190,6 +2191,9 @@ const worldPoints = {
         'Пешая боевая зона "Застрявшая баржа"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
         'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [RESPURCES.AMMO, RESPURCES.DYNAMITE],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
       ),
     ],
     [
@@ -2199,6 +2203,9 @@ const worldPoints = {
         'Пешая боевая зона "Офисный центр"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
         'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [RESPURCES.SCRAP, RESPURCES.STEEL],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
       ),
     ],
     [
@@ -2208,6 +2215,9 @@ const worldPoints = {
         'Пешая боевая зона "Очистные сооружения"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
         'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [RESPURCES.PLATS, RESPURCES.MECHANISM],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
       ),
     ],
     [
@@ -2217,6 +2227,9 @@ const worldPoints = {
         'Пешая боевая зона "Недостроенный бизнес-центр"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
         'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [RESPURCES.COPPER, RESPURCES.COPPER_PLATES],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
       ),
     ],
     [
@@ -2226,6 +2239,9 @@ const worldPoints = {
         'Пешая боевая зона "Университет"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
         'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [RESPURCES.WOOD, RESPURCES.PLANK],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
       ),
     ],
     [
@@ -2235,6 +2251,9 @@ const worldPoints = {
         'Пешая боевая зона "Покосившийся небоскреб"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
         'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [RESPURCES.PLASTIC, RESPURCES.PLASTIC_PLATE],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
       ),
     ],
     [
@@ -2244,6 +2263,9 @@ const worldPoints = {
         'Пешая боевая зона "Школа"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
         'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [RESPURCES.AMMO_DETAILS, RESPURCES.REPAIR],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
       ),
     ],
     [
@@ -2253,6 +2275,9 @@ const worldPoints = {
         'Пешая боевая зона "Музей"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
         'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [RESPURCES.FIBER, RESPURCES.ROPE],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
       ),
     ],
     [
@@ -2262,6 +2287,9 @@ const worldPoints = {
         'Пешая боевая зона "Торговый центр Макс"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
         'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [RESPURCES.TEXTILE, RESPURCES.FABRIC],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
       ),
     ],
     [
@@ -2271,6 +2299,9 @@ const worldPoints = {
         'Пешая боевая зона "Обсерватория"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
         'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [RESPURCES.REACTIVE, RESPURCES.CHEMICAL],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
       ),
     ],
   ],
@@ -3129,6 +3160,104 @@ const worldPoints = {
       ),
     ],
   ],
+  repQuests: [
+    [
+      -79.21875,
+      167.34375,
+      generateDescription(
+        'Инстанс Босс Ранг I',
+        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'Территория с отдельным инстансом для боя с босом на корабле I ранга',
+        null,
+        null,
+        'За победу над боссом вы получаете награду в виде небольшого количества ресурсов, медалей и опыта членам экипажа.',
+      ),
+    ],
+    [
+      -105.09375,
+      200.96875,
+      generateDescription(
+        'Инстанс Босс Ранг II',
+        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'Территория с отдельным инстансом для боя с босом на корабле II ранга',
+        null,
+        null,
+        'За победу над боссом вы получаете награду в виде небольшого количества ресурсов, медалей и опыта членам экипажа.',
+      ),
+    ],
+    [
+      -73.34375,
+      121.28125,
+      generateDescription(
+        'Инстанс Босс Ранг III',
+        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'Территория с отдельным инстансом для боя с босом на корабле III ранга',
+        null,
+        null,
+        'За победу над боссом вы получаете награду в виде небольшого количества ресурсов, медалей и опыта членам экипажа.',
+      ),
+    ],
+    [
+      -194.46875,
+      45.71875,
+      generateDescription(
+        'Инстанс Босс Ранг IV',
+        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'Территория с отдельным инстансом для боя с босом на корабле IV ранга',
+        null,
+        null,
+        'За победу над боссом вы получаете награду в виде небольшого количества ресурсов, медалей и опыта членам экипажа.',
+      ),
+    ],
+    [
+      -231.59375,
+      171.59375,
+      generateDescription(
+        'Инстанс Босс Ранг V',
+        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'Территория с отдельным инстансом для боя с босом на корабле V ранга',
+        null,
+        null,
+        'За победу над боссом вы получаете награду в виде небольшого количества ресурсов, медалей и опыта членам экипажа.',
+      ),
+    ],
+    [
+      -49.890625,
+      137.078125,
+      generateDescription(
+        'Инстанс повторяющегося задания "Охота за Каракатицей" (Группа)',
+        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'Групповая территория с отдельным инстансом для повторного выполнения задания',
+        null,
+        null,
+        'За победу над вражескими кораблями вы получаете награду в виде небольшого количества ресурсов, медалей и опыта членам экипажа.',
+      ),
+    ],
+    [
+      -76.359375,
+      207.546875,
+      generateDescription(
+        'Инстанс повторяющегося задания "Сигнал о спасении" (Группа)',
+        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'Групповая территория с отдельным инстансом для повторного выполнения задания',
+        null,
+        null,
+        'За победу над вражескими кораблями вы получаете награду в виде небольшого количества ресурсов, медалей и опыта членам экипажа.',
+      ),
+    ],
+    [
+      -119.34375,
+      221.40625,
+      generateDescription(
+        'Инстанс повторяющегося задания "Спасение Берты" (Группа)',
+        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'Групповая территория с отдельным инстансом для повторного выполнения задания',
+        null,
+        null,
+        'За победу над вражескими кораблями вы получаете награду в виде небольшого количества ресурсов, медалей и опыта членам экипажа.',
+      ),
+    ],
+  ],
 };
 
 const legendNames = {
@@ -3149,13 +3278,14 @@ const legendNames = {
   teleports: 'Быстрые перемещения',
   couriers: 'Курьеры',
   armades: 'Армады',
+  repQuests: 'Повторяющиеся задания',
 };
 
 const groupMarkerTypes = {
   resources: ['scraps', 'ammos', 'chemicals', 'dynamites', 'pantoons'],
   flots: ['pirates', 'trashs', 'rangers', 'couriers', 'armades'],
   bases: ['pois', 'postal', 'traders'],
-  others: ['explosives', 'rocks', 'teleports', 'fczs'],
+  others: ['explosives', 'rocks', 'teleports', 'fczs', 'repQuests'],
 };
 
 const groupMarkerTypeNames = {
@@ -3270,6 +3400,12 @@ const icons = {
   }),
   armades: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -20],
+  }),
+  repQuests: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/rep_quest.png',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -20],
