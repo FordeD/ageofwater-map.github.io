@@ -3166,7 +3166,7 @@ const worldPoints = {
       167.34375,
       generateDescription(
         'Инстанс Босс Ранг I',
-        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'https://forded.github.io/ageofwater-map.github.io/icons/rep_quests.png',
         'Территория с отдельным инстансом для боя с босом на корабле I ранга',
         null,
         null,
@@ -3178,7 +3178,7 @@ const worldPoints = {
       200.96875,
       generateDescription(
         'Инстанс Босс Ранг II',
-        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'https://forded.github.io/ageofwater-map.github.io/icons/rep_quests.png',
         'Территория с отдельным инстансом для боя с босом на корабле II ранга',
         null,
         null,
@@ -3190,7 +3190,7 @@ const worldPoints = {
       121.28125,
       generateDescription(
         'Инстанс Босс Ранг III',
-        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'https://forded.github.io/ageofwater-map.github.io/icons/rep_quests.png',
         'Территория с отдельным инстансом для боя с босом на корабле III ранга',
         null,
         null,
@@ -3202,7 +3202,7 @@ const worldPoints = {
       45.71875,
       generateDescription(
         'Инстанс Босс Ранг IV',
-        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'https://forded.github.io/ageofwater-map.github.io/icons/rep_quests.png',
         'Территория с отдельным инстансом для боя с босом на корабле IV ранга',
         null,
         null,
@@ -3214,7 +3214,7 @@ const worldPoints = {
       171.59375,
       generateDescription(
         'Инстанс Босс Ранг V',
-        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'https://forded.github.io/ageofwater-map.github.io/icons/rep_quests.png',
         'Территория с отдельным инстансом для боя с босом на корабле V ранга',
         null,
         null,
@@ -3226,7 +3226,7 @@ const worldPoints = {
       137.078125,
       generateDescription(
         'Инстанс повторяющегося задания "Охота за Каракатицей" (Группа)',
-        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'https://forded.github.io/ageofwater-map.github.io/icons/rep_quests.png',
         'Групповая территория с отдельным инстансом для повторного выполнения задания',
         null,
         null,
@@ -3238,7 +3238,7 @@ const worldPoints = {
       207.546875,
       generateDescription(
         'Инстанс повторяющегося задания "Сигнал о спасении" (Группа)',
-        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'https://forded.github.io/ageofwater-map.github.io/icons/rep_quests.png',
         'Групповая территория с отдельным инстансом для повторного выполнения задания',
         null,
         null,
@@ -3250,7 +3250,7 @@ const worldPoints = {
       221.40625,
       generateDescription(
         'Инстанс повторяющегося задания "Спасение Берты" (Группа)',
-        'https://forded.github.io/ageofwater-map.github.io/icons/repquests.png',
+        'https://forded.github.io/ageofwater-map.github.io/icons/rep_quests.png',
         'Групповая территория с отдельным инстансом для повторного выполнения задания',
         null,
         null,
@@ -3405,7 +3405,7 @@ const icons = {
     popupAnchor: [0, -20],
   }),
   repQuests: L.icon({
-    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/rep_quest.png',
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/rep_quests.png',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -20],
