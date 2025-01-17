@@ -64,7 +64,26 @@ function initInterface(tag, url, openButtonImage, title) {
     panelIframe = document.createElement('iframe');
     panelIframe.id = `iframe-${tag}-object`;
     panelIframe.classList.add('iframe-integration-block');
-    panelIframe.src = url;
+    if (url.includes('steam')) {
+      fetch('https://steamcommunity.com/app/2695490')
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.text();
+        })
+        .then((html) => {
+          panelIframe.src = html;
+        })
+        .catch((error) => {
+          console.error('Ошибка получения новостей игры Steam:', error);
+        });
+    } else {
+      panelIframe.src = url;
+    }
+    panelIframe.frameborder = 0;
+    panelIframe.frameBorder = 0;
+    panelIframe.scolling = 'auto';
     panelBlock.appendChild(panelIframe);
   }
 
