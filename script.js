@@ -74,7 +74,7 @@ const RESPURCES = {
   FABRIC: 'https://forded.github.io/ageofwater-map.github.io/resources/fabric.jpg',
   MECHANISM: 'https://forded.github.io/ageofwater-map.github.io/resources/mechanism.jpg',
   PLASTIC: 'https://forded.github.io/ageofwater-map.github.io/resources/plastic.jpg',
-  PLASTIC_PLATE: 'https://forded.github.io/ageofwater-map.github.io/resources/plastic_PLATE.jpg',
+  PLASTIC_PLATE: 'https://forded.github.io/ageofwater-map.github.io/resources/plastic_plate.jpg',
   PLATS: 'https://forded.github.io/ageofwater-map.github.io/resources/plats.jpg',
   REACTIVE: 'https://forded.github.io/ageofwater-map.github.io/resources/reactive.jpg',
   BARREL: 'https://forded.github.io/ageofwater-map.github.io/resources/barrel.jpg',
