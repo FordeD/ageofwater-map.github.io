@@ -66,7 +66,7 @@ const INTEGRATIONS = {
   },
   NEWS: {
     TAG: 'news',
-    URL: 'https://vk.com/ageofwater',
+    URL: 'https://ageofwater.net/ru/#/news',
     ICON: 'https://forded.github.io/ageofwater-map.github.io/icons/news.png',
     TITLE: 'Открыть новости игры Age of Water',
   },
@@ -4175,6 +4175,12 @@ setTimeout(() => {
     INTEGRATIONS.STEAMCHARTS.URL,
     INTEGRATIONS.STEAMCHARTS.ICON,
     INTEGRATIONS.STEAMCHARTS.TITLE,
+  );
+  createSideIntegrationBlock(
+    INTEGRATIONS.NEWS.TAG,
+    INTEGRATIONS.NEWS.URL,
+    INTEGRATIONS.NEWS.ICON,
+    INTEGRATIONS.NEWS.TITLE,
   );
 }, 1500);
 
