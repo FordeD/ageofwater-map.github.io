@@ -3463,7 +3463,10 @@ L.tileLayer(
 L.control.zoom({ position: 'topleft' }).addTo(map);
 
 let timedHidedMarkers = localStorage.getItem('hidedMarkers');
-let showedMarkers = localStorage.getItem('showedMarkers') !== '' ? JSON.parse(localStorage.getItem('showedMarkers')) : [];
+let showedMarkers =
+  localStorage.getItem('showedMarkers') !== '' && localStorage.getItem('showedMarkers') !== null
+    ? JSON.parse(localStorage.getItem('showedMarkers'))
+    : [];
 if (!timedHidedMarkers || timedHidedMarkers === 'null') {
   localStorage.setItem('hidedMarkers', []);
 }
