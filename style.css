@@ -401,7 +401,7 @@ body {
   left: -100%;
   top: 0;
   z-index: 1001;
-  background: blue;
+  background: #f1f1f1;
   transition: left 1s 1s;
 }
 
