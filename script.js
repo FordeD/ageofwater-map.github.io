@@ -3741,7 +3741,8 @@ L.Control.CustomButtons = L.Control.Layers.extend({
       input;
     
     if (!showedMarkers.includes(findKeyByValue(legendNames, obj.name))) {
-      this._map.removeLayer(iconGroups[findKeyByValue(legendNames, obj.name)]);
+      layer = this._getLayer(L.Util.stamp(obj.layer)).layer;
+      this._map.removeLayer(layer);
       checked = false;
     }
 
@@ -3751,7 +3752,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
       input.className = 'leaflet-control-layers-selector';
       input.defaultChecked = checked;
     } else {
-      input = this._createRadioElement('leaflet-base-layers_' + Util.stamp(this), checked);
+      input = this._createRadioElement('leaflet-base-layers_' + L.Util.stamp(this), checked);
     }
 
     this._layerControlInputs.push(input);
