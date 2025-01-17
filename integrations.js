@@ -60,31 +60,23 @@ function initInterface(tag, url, openButtonImage, title) {
   panelBlock.appendChild(closePanelButton);
 
   let panelIframe;
-  if (url) {
-    panelIframe = document.createElement('iframe');
-    panelIframe.id = `iframe-${tag}-object`;
-    panelIframe.classList.add('iframe-integration-block');
-    if (url.includes('steam')) {
-      fetch('https://steamcommunity.com/app/2695490')
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.text();
-        })
-        .then((html) => {
-          panelIframe.src = html;
-        })
-        .catch((error) => {
-          console.error('Ошибка получения новостей игры Steam:', error);
-        });
-    } else {
-      panelIframe.src = url;
+  if (tag === 'news') {
+    panelBlock.innerHTML += '<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script><div id="vk_groups"></div><script type="text/javascript">VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, color1: "FFFFFF", color2: "000000", color3: "5181B8"}, 197716556);</script>'
+  } else {
+    if (url) {
+      panelIframe = document.createElement('iframe');
+      panelIframe.id = `iframe-${tag}-object`;
+      panelIframe.classList.add('iframe-integration-block');
+      if (url.includes('steam')) {
+      
+      } else {
+        panelIframe.src = url;
+      }
+      panelIframe.frameborder = 0;
+      panelIframe.frameBorder = 0;
+      panelIframe.scolling = 'auto';
+      panelBlock.appendChild(panelIframe);
     }
-    panelIframe.frameborder = 0;
-    panelIframe.frameBorder = 0;
-    panelIframe.scolling = 'auto';
-    panelBlock.appendChild(panelIframe);
   }
 
   body.appendChild(panelBlock);

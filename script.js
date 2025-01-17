@@ -68,7 +68,7 @@ const INTEGRATIONS = {
     TAG: 'news',
     URL: 'https://steamcommunity.com/app/2695490',
     ICON: 'https://forded.github.io/ageofwater-map.github.io/icons/news.png',
-    TITLE: 'Открыть новости игры Age of Water в Steam',
+    TITLE: 'Открыть новости игры Age of Water',
   },
 };
 
