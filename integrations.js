@@ -56,6 +56,7 @@ function initInterface(tag, url, openButtonImage, title) {
   const closePanelButton = document.createElement('button');
   closePanelButton.id = `close-${tag}-button`;
   closePanelButton.classList.add('close-integration-button');
+  closePanelButton.innerHTML = '❌';
   panelBlock.appendChild(closePanelButton);
 
   let panelIframe;
