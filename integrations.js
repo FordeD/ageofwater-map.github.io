@@ -60,9 +60,6 @@ function initInterface(tag, url, openButtonImage, title) {
   panelBlock.appendChild(closePanelButton);
 
   let panelIframe;
-  if (tag === 'news') {
-    panelBlock.innerHTML += '<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script><div id="vk_groups"></div><script type="text/javascript">VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, color1: "FFFFFF", color2: "000000", color3: "5181B8"}, 197716556);</script>'
-  } else {
     if (url) {
       panelIframe = document.createElement('iframe');
       panelIframe.id = `iframe-${tag}-object`;
@@ -73,9 +70,20 @@ function initInterface(tag, url, openButtonImage, title) {
       panelIframe.scolling = 'auto';
       panelBlock.appendChild(panelIframe);
     }
-  }
 
   body.appendChild(panelBlock);
+
+  if (tag === 'news') {
+    const vkGroup = document.createElement('div');
+    vkGroup.id = `vk_groups`;
+    vkGroup.classList.add('iframe-integration-block');
+    panelBlock.appendChild(vkGroup);
+    VK.Widgets.Group(
+      'vk_groups',
+      { mode: 4, wide: 1, color1: 'FFFFFF', color2: '000000', color3: '5181B8' },
+      197716556,
+    );
+  }
 
   document.querySelector(`#open-${tag}-panel`).addEventListener('click', () => {
     if (!document.querySelector(`#main-${tag}-panel`).classList.contains('active')) {
