@@ -450,5 +450,6 @@ body {
 }
 
 .open-integration-button-image {
-
+  width: 100%;
+  height: 100%;
 }
