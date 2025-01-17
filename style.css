@@ -400,7 +400,7 @@ body {
   height: 100%;
   left: -100%;
   top: 0;
-  z-index: 1;
+  z-index: 1001;
   background: blue;
   transition: left 1s 1s;
 }
@@ -420,11 +420,15 @@ body {
 }
 
 .close-integration-button {
+  width: 30px;
+  height: 30px;
   transform: scale(0);
   transition: transform 1s;
 }
 
 .close-integration-button-active {
+  width: 30px;
+  height: 30px;
   transform: scale(1);
   transition: transform 1s 1s;
 }
