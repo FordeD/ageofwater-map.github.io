@@ -1,7 +1,7 @@
 const integrations = {};
 
-function createSideIntegrationBlock(tag, url, openButtonImage) {
-  initInterface(tag, url, openButtonImage);
+function createSideIntegrationBlock(tag, url, openButtonImage, title) {
+  initInterface(tag, url, openButtonImage, title);
   integrations[tag].actions = initInteractive(tag);
 }
 
@@ -28,10 +28,13 @@ function initInteractive(tag) {
   };
 }
 
-function initInterface(tag, url, openButtonImage) {
+function initInterface(tag, url, openButtonImage, title) {
   const body = document.querySelector('body');
   const mapButtonsPanel = document.querySelector('.leaflet-top.leaflet-left');
-  const openPanelButton = document.createElement('div');
+  const openPanelButton = document.createElement('button');
+  if (title) {
+    openPanelButton.title = title;
+  }
   openPanelButton.id = `open-${tag}-panel`;
   openPanelButton.classList.add('open-integration-button');
   openPanelButton.classList.add('leaflet-control');
@@ -40,6 +43,7 @@ function initInterface(tag, url, openButtonImage) {
 
   if (openButtonImage) {
     const buttonImage = document.createElement('img');
+    buttonImage.src = openButtonImage;
     buttonImage.classList.add('open-integration-button-image');
     openPanelButton.appendChild(buttonImage);
   }

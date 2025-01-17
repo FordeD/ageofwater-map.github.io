@@ -56,6 +56,7 @@ const INTEGRATIONS = {
     TAG: 'wiki',
     URL: 'https://ageofwater.fandom.com/wiki/Age_of_Water_Wiki',
     ICON: 'https://forded.github.io/ageofwater-map.github.io/icons/wiki.png',
+    TITLE: 'Открыть Википедию по игре'
   },
 };
 
@@ -4151,7 +4152,12 @@ function hidePopupBlock() {
 
 
 setTimeout(() => {
-  createSideIntegrationBlock(INTEGRATIONS.WIKI.TAG, INTEGRATIONS.WIKI.URL, INTEGRATIONS.WIKI.ICON);
+  createSideIntegrationBlock(
+    INTEGRATIONS.WIKI.TAG,
+    INTEGRATIONS.WIKI.URL,
+    INTEGRATIONS.WIKI.ICON,
+    INTEGRATIONS.WIKI.TITLE,
+  );
 }, 1500);
 
 
