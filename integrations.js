@@ -73,18 +73,6 @@ function initInterface(tag, url, openButtonImage, title) {
 
   body.appendChild(panelBlock);
 
-  if (tag === 'news') {
-    const vkGroup = document.createElement('div');
-    vkGroup.id = `vk_groups`;
-    vkGroup.classList.add('iframe-integration-block');
-    panelBlock.appendChild(vkGroup);
-    VK.Widgets.Group(
-      'vk_groups',
-      { mode: 4, wide: 1, color1: 'FFFFFF', color2: '000000', color3: '5181B8' },
-      197716556,
-    );
-  }
-
   document.querySelector(`#open-${tag}-panel`).addEventListener('click', () => {
     if (!document.querySelector(`#main-${tag}-panel`).classList.contains('active')) {
       document.querySelector(`#main-${tag}-panel`).classList.add('active');

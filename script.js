@@ -66,7 +66,7 @@ const INTEGRATIONS = {
   },
   NEWS: {
     TAG: 'news',
-    URL: null,
+    URL: 'https://vk.com/ageofwater',
     ICON: 'https://forded.github.io/ageofwater-map.github.io/icons/news.png',
     TITLE: 'Открыть новости игры Age of Water',
   },
