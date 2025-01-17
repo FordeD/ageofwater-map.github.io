@@ -63,7 +63,7 @@ function initInterface(tag, url, openButtonImage, title) {
   if (url) {
     panelIframe = document.createElement('iframe');
     panelIframe.id = `iframe-${tag}-object`;
-    closePanelButton.classList.add('iframe-integration-block');
+    panelIframe.classList.add('iframe-integration-block');
     panelIframe.src = url;
     panelBlock.appendChild(panelIframe);
   }
