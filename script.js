@@ -3755,7 +3755,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
     }
 
     this._layerControlInputs.push(input);
-    input.layerId = Util.stamp(obj.layer);
+    input.layerId = L.Util.stamp(obj.layer);
 
     DomEvent.on(input, 'click', this._onInputClick, this);
 
