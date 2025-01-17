@@ -3412,6 +3412,10 @@ const icons = {
   }),
 };
 
+const findKeyByValue = (obj, value) => {
+  return Object.keys(obj).find((key) => obj[key] === value);
+};
+
 const iconGroups = [];
 
 const config = {
@@ -3459,6 +3463,7 @@ L.tileLayer(
 L.control.zoom({ position: 'topleft' }).addTo(map);
 
 let timedHidedMarkers = localStorage.getItem('hidedMarkers');
+let showedMarkers = localStorage.getItem('showedMarkers') !== '' ? JSON.parse(localStorage.getItem('showedMarkers')) : [];
 if (!timedHidedMarkers || timedHidedMarkers === 'null') {
   localStorage.setItem('hidedMarkers', []);
 }
@@ -3507,9 +3512,14 @@ for (const type of types) {
     iconGroups[type].addLayer(marker);
     MARKERS.push(marker);
   }
+
+  if (!showedMarkers.includes(type)) {
+    map.removeLayer(iconGroups[type]);
+  }
 }
 
 localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
+
 
 let targetMarker = null;
 function onMarkerOpen(e) {
@@ -3721,6 +3731,48 @@ L.Control.CustomButtons = L.Control.Layers.extend({
   },
   _removeMarker: function () {
     this.createButton('Скрыть', 'remove-button');
+  },
+  _onInputClick: function () {
+    var inputs = this._layerControlInputs,
+      input,
+      layer;
+    var addedLayers = [],
+      removedLayers = [];
+
+    this._handlingClick = true;
+
+    for (var i = inputs.length - 1; i >= 0; i--) {
+      input = inputs[i];
+      layer = this._getLayer(input.layerId).layer;
+
+      // input.labels[0].innerText.trim()
+      if (input.checked) {
+        addedLayers.push(layer);
+      } else if (!input.checked) {
+        removedLayers.push(layer);
+      }
+    }
+
+    // Bugfix issue 2318: Should remove all old layers before readding new ones
+    for (i = 0; i < removedLayers.length; i++) {
+      if (this._map.hasLayer(removedLayers[i])) {
+        this._map.removeLayer(removedLayers[i]);
+      }
+    }
+    const showedGroups = []
+    for (i = 0; i < addedLayers.length; i++) {
+      if (!this._map.hasLayer(addedLayers[i])) {
+        this._map.addLayer(addedLayers[i]);
+        showedGroups.push(findKeyByValue(legendNames, addedLayers[i].labels[0].innerText.trim()));
+      }
+    }
+
+    console.log('Save visible markers', showedGroups);
+    localStorage.setItem('showedMarkers', JSON.stringify(showedGroups));
+
+    this._handlingClick = false;
+
+    this._refocusOnMap();
   },
   createButton: function (type, className) {
     const elements = this._container.getElementsByClassName('leaflet-control-layers-list');
