@@ -56,7 +56,19 @@ const INTEGRATIONS = {
     TAG: 'wiki',
     URL: 'https://ageofwater.fandom.com/wiki/Age_of_Water_Wiki',
     ICON: 'https://forded.github.io/ageofwater-map.github.io/icons/wiki.png',
-    TITLE: 'Открыть Википедию по игре'
+    TITLE: 'Открыть Википедию по игре',
+  },
+  STEAMCHARTS: {
+    TAG: 'steamcharts',
+    URL: 'https://steamcharts.com/app/2695490',
+    ICON: 'https://forded.github.io/ageofwater-map.github.io/icons/steamcharts.png',
+    TITLE: 'Открыть статистику анализа одновременных игроков Steam',
+  },
+  NEWS: {
+    TAG: 'news',
+    URL: 'https://steamcommunity.com/app/2695490',
+    ICON: 'https://forded.github.io/ageofwater-map.github.io/icons/news.png',
+    TITLE: 'Открыть новости игры Age of Water в Steam',
   },
 };
 
@@ -4152,6 +4164,12 @@ function hidePopupBlock() {
 
 
 setTimeout(() => {
+  createSideIntegrationBlock(
+    INTEGRATIONS.WIKI.TAG,
+    INTEGRATIONS.WIKI.URL,
+    INTEGRATIONS.WIKI.ICON,
+    INTEGRATIONS.WIKI.TITLE,
+  );
   createSideIntegrationBlock(
     INTEGRATIONS.WIKI.TAG,
     INTEGRATIONS.WIKI.URL,
