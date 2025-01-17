@@ -402,7 +402,7 @@ body {
   top: 0;
   z-index: 1001;
   background: #f1f1f1;
-  transition: left 1s 1s;
+  transition: left 0.5s 0.5s;
 }
 
 .iframe-integration-block {
@@ -411,12 +411,12 @@ body {
   height: 100%;
   left: 0;
   top: 0;
-  transition: left 1s 1s;
+  transition: left 0.5s 0.5s;
 }
 
 .main-integration-panel.active {
   left: 0;
-  transition: left 1s;
+  transition: left 0.5s;
 }
 
 .close-integration-button {
@@ -427,7 +427,7 @@ body {
   left: 5px;
   top: 5px;
   transform: scale(0);
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 
 .close-integration-button-active {
@@ -437,7 +437,7 @@ body {
   left: 5px;
   top: 5px;
   transform: scale(1);
-  transition: transform 1s 1s;
+  transition: transform 0.5s 0.5s;
 }
 
 .iframe-integration-block {
