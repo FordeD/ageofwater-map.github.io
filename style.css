@@ -162,7 +162,7 @@ body {
   border-bottom-color: rgba(48, 48, 49, 0.9);
 }
 
-.showPoint, .showLegend {
+.showPoint, .showLegend, .open-integration-button {
   background: #fff !important;
   width: 30px !important;
   height: 30px !important;
@@ -430,5 +430,5 @@ body {
 }
 
 .open-integration-button-image {
-  
+
 }
