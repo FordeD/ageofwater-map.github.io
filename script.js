@@ -51,6 +51,14 @@ const widthNamings = [
   'AV',
 ];
 
+const INTEGRATIONS = {
+  WIKI: {
+    TAG: 'wiki',
+    URL: 'https://ageofwater.fandom.com/wiki/Age_of_Water_Wiki',
+    ICON: 'https://forded.github.io/ageofwater-map.github.io/icons/wiki.png',
+  },
+};
+
 const SCRAP = 'Металл';
 const AMMO = 'Обломки боеприпасов';
 const CHEMICAL = 'Химические отходы';
@@ -4140,3 +4148,25 @@ function getLastUpdateDate() {
 function hidePopupBlock() {
   popupContainerPlace.classList.toggle('hide');
 }
+
+
+createSideIntegrationBlock(
+  INTEGRATIONS_TAG.WIKI,
+  'https://ageofwater.fandom.com/wiki/Age_of_Water_Wiki',
+  'https://forded.github.io/ageofwater-map.github.io/icons/wiki.png',
+);
+
+
+document.addEventListener('click', (e) => {
+  let target = e.target.closest('a');
+  if (target) {
+    const url = target.getAttribute('href');
+    // if the click was on or within an <a>
+    // then based on some condition...
+    if (url.includes('ageofwater.fandom.com')) {
+      e.preventDefault(); // tell the browser not to respond to the link click
+      integrations[INTEGRATIONS_TAG.WIKI].actions.openIframeUrl(url);
+      integrations[INTEGRATIONS_TAG.WIKI].actions.openPanel();
+    }
+  }
+});

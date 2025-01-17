@@ -392,3 +392,43 @@ body {
   color: #a9a9a9;
   opacity: 0.7;
 }
+
+.main-integration-panel {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  z-index: 1;
+  background: blue;
+  transition: left 1s 1s;
+}
+
+.iframe-integration-block {
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: left 1s 1s;
+}
+
+.main-integration-panel.active {
+  left: 0;
+  transition: left 1s;
+}
+
+.close-integration-button {
+  transform: scale(0);
+  transition: transform 1s;
+}
+
+.close-integration-button-active {
+  transform: scale(1);
+  transition: transform 1s 1s;
+}
+
+.open-integration-button-image {
+  
+}
