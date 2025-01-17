@@ -67,11 +67,7 @@ function initInterface(tag, url, openButtonImage, title) {
       panelIframe = document.createElement('iframe');
       panelIframe.id = `iframe-${tag}-object`;
       panelIframe.classList.add('iframe-integration-block');
-      if (url.includes('steam')) {
-      
-      } else {
-        panelIframe.src = url;
-      }
+      panelIframe.src = url;
       panelIframe.frameborder = 0;
       panelIframe.frameBorder = 0;
       panelIframe.scolling = 'auto';
