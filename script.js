@@ -4150,11 +4150,9 @@ function hidePopupBlock() {
 }
 
 
-map.on('load', () => {
-  setTimeout(() => {
-    createSideIntegrationBlock(INTEGRATIONS.WIKI.TAG, INTEGRATIONS.WIKI.URL, INTEGRATIONS.WIKI.ICON);
-  }, 1500);
-});
+setTimeout(() => {
+  createSideIntegrationBlock(INTEGRATIONS.WIKI.TAG, INTEGRATIONS.WIKI.URL, INTEGRATIONS.WIKI.ICON);
+}, 1500);
 
 
 document.addEventListener('click', (e) => {
