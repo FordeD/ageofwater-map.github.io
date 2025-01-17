@@ -3721,12 +3721,18 @@ map.addControl(
 const searchBtnPlace = document.querySelector('.search-button');
 searchBtnPlace.innerHTML = '🔍';
 
+const tempLayersToHide = [];
 L.Control.CustomButtons = L.Control.Layers.extend({
   onAdd: function () {
     this._initLayout();
     this._addMarker();
     this._removeMarker();
     this._update();
+    setTimeout(() => {
+      for (input of tempLayersToHide) {
+        input.click()
+      }
+    }, 1000);
     return this._container;
   },
   _addMarker: function () {
@@ -3744,6 +3750,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
       layer = this._getLayer(L.Util.stamp(obj.layer)).layer;
       this._map.removeLayer(layer);
       checked = false;
+      tempLayersToHide.push(input);
     }
 
     if (obj.overlay) {
