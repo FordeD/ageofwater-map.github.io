@@ -4150,11 +4150,7 @@ function hidePopupBlock() {
 }
 
 
-createSideIntegrationBlock(
-  INTEGRATIONS_TAG.WIKI,
-  'https://ageofwater.fandom.com/wiki/Age_of_Water_Wiki',
-  'https://forded.github.io/ageofwater-map.github.io/icons/wiki.png',
-);
+createSideIntegrationBlock(INTEGRATIONS.WIKI.TAG, INTEGRATIONS.WIKI.URL, INTEGRATIONS.WIKI.ICON);
 
 
 document.addEventListener('click', (e) => {
@@ -4165,8 +4161,8 @@ document.addEventListener('click', (e) => {
     // then based on some condition...
     if (url.includes('ageofwater.fandom.com')) {
       e.preventDefault(); // tell the browser not to respond to the link click
-      integrations[INTEGRATIONS_TAG.WIKI].actions.openIframeUrl(url);
-      integrations[INTEGRATIONS_TAG.WIKI].actions.openPanel();
+      integrations[INTEGRATIONS.WIKI.TAG].actions.openIframeUrl(url);
+      integrations[INTEGRATIONS.WIKI.TAG].actions.openPanel();
     }
   }
 });
