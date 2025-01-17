@@ -3750,7 +3750,6 @@ L.Control.CustomButtons = L.Control.Layers.extend({
       layer = this._getLayer(L.Util.stamp(obj.layer)).layer;
       this._map.removeLayer(layer);
       checked = false;
-      tempLayersToHide.push(input);
     }
 
     if (obj.overlay) {
@@ -3777,6 +3776,10 @@ L.Control.CustomButtons = L.Control.Layers.extend({
     label.appendChild(holder);
     holder.appendChild(input);
     holder.appendChild(name);
+
+    if (!checked) {
+      tempLayersToHide.push(input);
+    }
 
     var container = obj.overlay ? this._overlaysList : this._baseLayersList;
     container.appendChild(label);
