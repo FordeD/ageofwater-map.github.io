@@ -3744,17 +3744,20 @@ L.Control.CustomButtons = L.Control.Layers.extend({
 
     this._handlingClick = true;
 
+    const showedGroups = [];
     for (var i = inputs.length - 1; i >= 0; i--) {
       input = inputs[i];
       layer = this._getLayer(input.layerId).layer;
 
-      // input.labels[0].innerText.trim()
       if (input.checked) {
         addedLayers.push(layer);
+        showedGroups.push(findKeyByValue(legendNames, input.labels[0].innerText.trim()));
       } else if (!input.checked) {
         removedLayers.push(layer);
       }
     }
+    console.log('Save visible markers', showedGroups);
+    localStorage.setItem('showedMarkers', JSON.stringify(showedGroups));
 
     // Bugfix issue 2318: Should remove all old layers before readding new ones
     for (i = 0; i < removedLayers.length; i++) {
@@ -3762,16 +3765,11 @@ L.Control.CustomButtons = L.Control.Layers.extend({
         this._map.removeLayer(removedLayers[i]);
       }
     }
-    const showedGroups = []
     for (i = 0; i < addedLayers.length; i++) {
       if (!this._map.hasLayer(addedLayers[i])) {
         this._map.addLayer(addedLayers[i]);
-        showedGroups.push(findKeyByValue(legendNames, addedLayers[i].labels[0].innerText.trim()));
       }
     }
-
-    console.log('Save visible markers', showedGroups);
-    localStorage.setItem('showedMarkers', JSON.stringify(showedGroups));
 
     this._handlingClick = false;
 
