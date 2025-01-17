@@ -3757,7 +3757,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
     this._layerControlInputs.push(input);
     input.layerId = L.Util.stamp(obj.layer);
 
-    DomEvent.on(input, 'click', this._onInputClick, this);
+    L.DomEvent.on(input, 'click', this._onInputClick, this);
 
     var name = document.createElement('span');
     name.innerHTML = ' ' + obj.name;
