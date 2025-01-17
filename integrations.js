@@ -1,6 +1,3 @@
-const body = document.querySelector('body');
-const mapButtonsPanel = document.querySelector('.leaflet-top.leaflet-left');
-
 const integrations = {};
 
 function createSideIntegrationBlock(tag, url, openButtonImage) {
@@ -31,6 +28,8 @@ function initInteractive(tag) {
 }
 
 function initInterface(tag, url, openButtonImage) {
+  const body = document.querySelector('body');
+  const mapButtonsPanel = document.querySelector('.leaflet-top.leaflet-left');
   const openPanelButton = document.createElement('div');
   openPanelButton.id = `open-${tag}-panel`;
   openPanelButton.classList.add('open-integration-button');
