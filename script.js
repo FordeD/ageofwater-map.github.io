@@ -4151,7 +4151,9 @@ function hidePopupBlock() {
 
 
 map.on('load', () => {
-  createSideIntegrationBlock(INTEGRATIONS.WIKI.TAG, INTEGRATIONS.WIKI.URL, INTEGRATIONS.WIKI.ICON);
+  setTimeout(() => {
+    createSideIntegrationBlock(INTEGRATIONS.WIKI.TAG, INTEGRATIONS.WIKI.URL, INTEGRATIONS.WIKI.ICON);
+  }, 1500);
 });
 
 

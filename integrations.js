@@ -58,8 +58,10 @@ function initInterface(tag, url, openButtonImage) {
     panelIframe.id = `iframe-${tag}-object`;
     closePanelButton.classList.add('iframe-integration-block');
     panelIframe.src = url;
-    integrationBlock.appendChild(panelIframe);
+    panelBlock.appendChild(panelIframe);
   }
+
+  body.appendChild(panelBlock);
 
   document.querySelector(`#open-${tag}-panel`).addEventListener('click', () => {
     if (!document.querySelector(`#main-${tag}-panel`).classList.contains('active')) {
