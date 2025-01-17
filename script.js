@@ -3808,7 +3808,6 @@ L.Control.CustomButtons = L.Control.Layers.extend({
         removedLayers.push(layer);
       }
     }
-    console.log('Save visible markers', showedGroups);
     localStorage.setItem('showedMarkers', JSON.stringify(showedGroups));
 
     // Bugfix issue 2318: Should remove all old layers before readding new ones
