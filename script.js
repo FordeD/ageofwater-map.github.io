@@ -3741,7 +3741,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
       input;
     
     if (!showedMarkers.includes(findKeyByValue(legendNames, obj.name))) {
-      this._map.removeLayer(iconGroups[type]);
+      this._map.removeLayer(iconGroups[findKeyByValue(legendNames, obj.name)]);
       checked = false;
     }
 
