@@ -16,6 +16,7 @@ function initInteractive(tag) {
   closePanel.bind(this);
 
   const openIframeUrl = (url) => {
+    if (!integrations[tag].iframe) return false;
     integrations[tag].iframe.src = url;
   }
   openIframeUrl.bind(this);
@@ -53,8 +54,9 @@ function initInterface(tag, url, openButtonImage) {
   closePanelButton.classList.add('close-integration-button');
   panelBlock.appendChild(closePanelButton);
 
+  let panelIframe;
   if (url) {
-    const panelIframe = document.createElement('iframe');
+    panelIframe = document.createElement('iframe');
     panelIframe.id = `iframe-${tag}-object`;
     closePanelButton.classList.add('iframe-integration-block');
     panelIframe.src = url;
