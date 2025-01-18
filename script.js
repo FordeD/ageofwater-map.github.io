@@ -108,6 +108,11 @@ const RESPURCES = {
   OST_AKUL_ORUJ: 'https://forded.github.io/ageofwater-map.github.io/resources/ost_akul_oruj.jpg',
   OST_MOSH_ORUJ: 'https://forded.github.io/ageofwater-map.github.io/resources/ost_mosh_oruj.jpg',
   REPAIR: 'https://forded.github.io/ageofwater-map.github.io/resources/repair.jpg',
+  REPAIR_ITEM: 'https://forded.github.io/ageofwater-map.github.io/resources/repair_item.jpg',
+  NITRO: 'https://forded.github.io/ageofwater-map.github.io/resources/nitro.jpg',
+  POWERBANK: 'https://forded.github.io/ageofwater-map.github.io/resources/powerbank.jpg',
+  AMMO_ITEM: 'https://forded.github.io/ageofwater-map.github.io/resources/ammo_item.jpg',
+  MEDALS: 'https://forded.github.io/ageofwater-map.github.io/resources/medals.jpg',
 };
 
 const ITEMS = {
@@ -2323,6 +2328,24 @@ const worldPoints = {
         [RESPURCES.REACTIVE, RESPURCES.CHEMICAL],
         null,
         'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени.',
+      ),
+    ],
+    [
+      -59.3125,
+      232.9375,
+      generateDescription(
+        'Пешая боевая зона "Вертолетная площадка"',
+        'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
+        'Место для выполнения пешей задачи с получением ресурсов за прохождение',
+        [
+          RESPURCES.MEDALS,
+          RESPURCES.AMMO_ITEM,
+          RESPURCES.NITRO,
+          RESPURCES.POWERBANK,
+          RESPURCES.REPAIR_ITEM,
+        ],
+        null,
+        'Прохождение подразумевается как ежедневная активность, награда накапливается в реальном времени. до 5000 медалей и по 10 единиц каждого расходного предмета',
       ),
     ],
   ],
