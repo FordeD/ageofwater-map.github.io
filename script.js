@@ -410,6 +410,11 @@ const SHIPS = {
       name: 'Всполох (V)',
       url: 'https://ageofwater.fandom.com/wiki/Glare_Rocket_Boat',
     },
+    MIDORI: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T5_midori.webp',
+      name: 'Мидори (V)',
+      url: 'https://ageofwater.fandom.com/wiki/Torpedo_Boat_Midori',
+    },
   },
 };
 
@@ -3302,6 +3307,22 @@ const worldPoints = {
       ),
     ],
   ],
+  bqs: [
+    [
+      -100.3125,
+      186.0625,
+      generateDescription(
+        'Флот T3-T5 по заданию',
+        'https://forded.github.io/ageofwater-map.github.io/icons/boarding_quest_ship.png',
+        `Флот который появляется по квесту "Уборка мусора", на данном флоте можно взять на абордаж корабль ${SHIPS.T5.MIDORI.name}. Хоть по логике корабль получить нельзя но после зимнего обновления возможность взять его на абордаж осталась`,
+        [],
+        [],
+        `Только в данном месте можно взять на абордаж корабль ${SHIPS.T5.MIDORI.name}`,
+        null,
+        [SHIPS.T5.MIDORI],
+      ),
+    ],
+  ],
 };
 
 const legendNames = {
@@ -3323,11 +3344,12 @@ const legendNames = {
   couriers: 'Курьеры',
   armades: 'Армады',
   repQuests: 'Повторяющиеся задания',
+  bqs: 'Уникальные корабли',
 };
 
 const groupMarkerTypes = {
   resources: ['scraps', 'ammos', 'chemicals', 'dynamites', 'pantoons'],
-  flots: ['pirates', 'trashs', 'rangers', 'couriers', 'armades'],
+  flots: ['pirates', 'trashs', 'rangers', 'couriers', 'armades', 'bqs'],
   bases: ['pois', 'postal', 'traders'],
   others: ['explosives', 'rocks', 'teleports', 'fczs', 'repQuests'],
 };
@@ -3450,6 +3472,12 @@ const icons = {
   }),
   repQuests: L.icon({
     iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/rep_quests.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -20],
+  }),
+  bqs: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/boarding_quest_ship.png',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -20],
