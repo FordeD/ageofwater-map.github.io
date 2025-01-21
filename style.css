@@ -466,7 +466,6 @@ body {
 }
 
 .language__img {
-	margin: 2px;
 	cursor: pointer;
 	opacity: 0.5;
   display: inline-block;
