@@ -4252,7 +4252,7 @@ document.addEventListener('click', (e) => {
 
 
 window.onerror = function (msg, url, line) {
-  console.log(message, JSON.stringify(message));
+  console.log(msg, url, JSON.stringify(msg));
   if (msg == '[IFRAME ERROR MESSAGE]') {
     return true;
   } else {
