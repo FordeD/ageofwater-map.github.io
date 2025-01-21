@@ -4259,3 +4259,10 @@ window.onerror = function (msg, url, line) {
     //do nothing
   }
 };
+
+setInterval(() => {
+  const body = document.querySelector('body');
+  body.style = "";
+  const translateBlock = document.querySelector('.skiptranslate');
+  translateBlock.style = 'display: none !important;'
+}, 500);
