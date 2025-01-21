@@ -4250,16 +4250,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-
-window.onerror = function (msg, url, line) {
-  console.log(msg, url, JSON.stringify(msg));
-  if (msg == '[IFRAME ERROR MESSAGE]') {
-    return true;
-  } else {
-    //do nothing
-  }
-};
-
 setInterval(() => {
   const body = document.querySelector('body');
   body.style = "";
