@@ -4249,3 +4249,13 @@ document.addEventListener('click', (e) => {
     }
   }
 });
+
+
+window.onerror = function (msg, url, line) {
+  console.log(message, JSON.stringify(message));
+  if (msg == '[IFRAME ERROR MESSAGE]') {
+    return true;
+  } else {
+    //do nothing
+  }
+};
