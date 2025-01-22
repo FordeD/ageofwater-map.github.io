@@ -40,6 +40,7 @@ function initInteractive(tag) {
     if (!integrations[tag].content) return false;
     integrations[tag].content.innerHtml = html;
   }
+  setContent.bind(this);
 
   return {
     openPanel,
