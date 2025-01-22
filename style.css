@@ -427,24 +427,24 @@ body {
     font-size: 14px;
   }
 
-  .side-integration-panel > .popup-header-block {
+  .side-integration-panel .popup-header-block {
     width: 100%;
     height: auto;
   }
 
-  .side-integration-panel > .popup-header-block > .popup-title {
+  .side-integration-panel .popup-header-block .popup-title {
     width: 100%;
     display: block;
     float: none;
     padding: 0 0 25px 10px;
   }
 
-  .side-integration-panel > b > font > font {
+  .side-integration-panel b font {
     padding: 0 0 20px 0;
     display: block;
   }
 
-  .side-integration-panel > .popup-resource-block > b {
+  .side-integration-panel .popup-resource-block b {
     display: block;
   }
 }
