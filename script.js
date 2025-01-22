@@ -3792,7 +3792,7 @@ map.addControl(
 
 const searchBtnPlace = document.querySelector('.search-button');
 searchBtnPlace.innerHTML = '🔍';
-
+let legendPlace;
 const legendControl = L.Control.extend({
   // button position
   options: {
@@ -3965,7 +3965,7 @@ L.Control.CustomButtons = L.Control.Layers.extend({
 
 new L.Control.CustomButtons(null, legendMarkers, { collapsed: false }).addTo(map);
 
-const legendPlace = document.querySelector('.leaflet-control-layers');
+legendPlace = document.querySelector('.leaflet-control-layers');
 const visibleMarkersPlace = document.querySelector('.add-button');
 setTimeout(() => { visibleMarkersPlace.click(); }, 500);
 
