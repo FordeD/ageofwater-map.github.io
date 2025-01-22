@@ -3793,6 +3793,42 @@ map.addControl(
 const searchBtnPlace = document.querySelector('.search-button');
 searchBtnPlace.innerHTML = '🔍';
 
+const legendControl = L.Control.extend({
+  // button position
+  options: {
+    position: 'topright',
+  },
+
+  // method
+  onAdd: function (map) {
+    const btn = L.DomUtil.create('button');
+    btn.title = 'Показать/скрыть фильтр меток';
+    btn.textContent = '📍';
+    btn.className = 'showLegend';
+    btn.setAttribute(
+      'style',
+      'background-color: transparent; width: 26px; height: 26px; border: none; display: flex; cursor: pointer; justify-content: center; font-size: 2rem;',
+    );
+
+    // показываем и скрываем указатель получения координат
+    btn.onclick = function () {
+      legendPlace.classList.toggle('hide');
+    };
+
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
+        navigator.userAgent,
+      )
+    ) {
+      legendPlace.classList.toggle('hide');
+    }
+    return btn;
+  },
+});
+
+// добавляем кнопку на карту
+map.addControl(new legendControl());
+
 const tempLayersToHide = [];
 L.Control.CustomButtons = L.Control.Layers.extend({
   onAdd: function () {
@@ -3930,43 +3966,6 @@ new L.Control.CustomButtons(null, legendMarkers, { collapsed: false }).addTo(map
 const legendPlace = document.querySelector('.leaflet-control-layers');
 const visibleMarkersPlace = document.querySelector('.add-button');
 setTimeout(() => { visibleMarkersPlace.click(); }, 500);
-
-
-const legendControl = L.Control.extend({
-  // button position
-  options: {
-    position: 'topright',
-  },
-
-  // method
-  onAdd: function (map) {
-    const btn = L.DomUtil.create('button');
-    btn.title = 'Показать/скрыть фильтр меток';
-    btn.textContent = '🔘';
-    btn.className = 'showLegend';
-    btn.setAttribute(
-      'style',
-      'background-color: transparent; width: 26px; height: 26px; border: none; display: flex; cursor: pointer; justify-content: center; font-size: 2rem;',
-    );
-
-    // показываем и скрываем указатель получения координат
-    btn.onclick = function () {
-      legendPlace.classList.toggle('hide');
-    };
-
-    if (
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
-        navigator.userAgent,
-      )
-    ) {
-      legendPlace.classList.toggle('hide');
-    }
-    return btn;
-  },
-});
-
-// добавляем кнопку на карту
-map.addControl(new legendControl());
 
 const shareControl = L.Control.extend({
   // button position
@@ -4194,7 +4193,7 @@ const popupTextPlace = document.querySelector('.popup-block-text');
 const popupBtnPlace = document.querySelector('.popup-block-cancel-btn');
 
 function getLastUpdateDate() {
-  const result = getJSON('https://api.github.com/repos/FordeD/ageofwater-map.github.io/commits', (status, resp) => {
+  getJSON('https://api.github.com/repos/FordeD/ageofwater-map.github.io/commits', (status, resp) => {
     if (status === null) {
       popupTextPlace.innerHTML = `Последнее обновление: ${new Date(
         resp[0].commit.committer.date,
@@ -4256,3 +4255,6 @@ setInterval(() => {
   const translateBlock = document.querySelector('.skiptranslate');
   translateBlock.style = 'display: none !important;'
 }, 500);
+
+const languageBlock = document.querySelector('.language');
+languageBlock.classList.add('hide');
