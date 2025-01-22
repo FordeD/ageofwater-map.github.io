@@ -3820,7 +3820,9 @@ const legendControl = L.Control.extend({
         navigator.userAgent,
       )
     ) {
-      legendPlace.classList.toggle('hide');
+      if (legendPlace) {
+        legendPlace.classList.toggle('hide');
+      }
     }
     return btn;
   },
