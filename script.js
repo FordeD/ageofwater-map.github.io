@@ -3664,7 +3664,7 @@ for (const type of types) {
     let marker = new L.marker([lat, lng], options)
       .bindPopup(formattedContext, popupOptions)
       .on('mouseover', onMarkerOpen)
-      .on('click', handleMarkerClick.bind(this, formattedContext));
+      // .on('click', handleMarkerClick.bind(this, formattedContext));
     if (type === 'pois') {
       marker.bindTooltip(tooltipText, {
         permanent: true,
@@ -3682,12 +3682,12 @@ for (const type of types) {
   }
 }
 
-function handleMarkerClick(popupContext, marker) {
-  // console.log(marker, popupContext);
-  integrations[INTEGRATIONS.MARKER.TAG].actions.setContent('<br/><br/>' + popupContext);
-  integrations[INTEGRATIONS.MARKER.TAG].actions.openPanel();
-  marker.closePopup();
-}
+// function handleMarkerClick(popupContext, marker) {
+//   // console.log(marker, popupContext);
+//   integrations[INTEGRATIONS.MARKER.TAG].actions.setContent('<br/><br/>' + popupContext);
+//   integrations[INTEGRATIONS.MARKER.TAG].actions.openPanel();
+//   marker.closePopup();
+// }
 
 localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
 
