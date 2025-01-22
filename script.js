@@ -3686,6 +3686,7 @@ function handleMarkerClick(popupContext, marker) {
   // console.log(marker, popupContext);
   integrations[INTEGRATIONS.MARKER.TAG].actions.setContent('<br/><br/>' + popupContext);
   integrations[INTEGRATIONS.MARKER.TAG].actions.openPanel();
+  marker.closePopup();
 }
 
 localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
@@ -3857,7 +3858,6 @@ const coordsPointControl = L.Control.extend({
     btn.onclick = function () {
       markerPlace.classList.toggle('hide');
       mapPlace.classList.toggle('center-of-map');
-      integrations[INTEGRATIONS.MARKER.TAG].actions.openPanel();
     };
 
     return btn;
