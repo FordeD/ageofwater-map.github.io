@@ -828,7 +828,7 @@ const worldPoints = {
           RESPURCES.COPPER_PLATES,
         ],
         {
-          [SHIPS.T4.ANCHOUS]: [
+          [SHIPS.T4.ANCHOUS.name]: [
             ITEMS.CONSTRUCTIONS.CISTERNA,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
@@ -873,7 +873,7 @@ const worldPoints = {
           RESPURCES.COPPER_PLATES,
         ],
         {
-          [SHIPS.T4.ANCHOUS]: [
+          [SHIPS.T4.ANCHOUS.name]: [
             ITEMS.CONSTRUCTIONS.CISTERNA,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
