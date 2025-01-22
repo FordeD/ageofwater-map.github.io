@@ -416,6 +416,19 @@ body {
   transition: left 0.5s 0.5s;
 }
 
+@media screen and (max-width: 800px) {
+  .side-integration-panel {
+    width: 95% !important;
+    background: #393939f0 !important;
+  }
+}
+@media screen and (min-width: 801px) {
+  .side-integration-panel {
+    width: 450px !important;
+    background: #393939f0 !important;
+  }
+}
+
 .iframe-integration-block {
   display: block;
   width: 100%;

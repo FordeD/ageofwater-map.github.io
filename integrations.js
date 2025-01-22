@@ -1,7 +1,7 @@
 const integrations = {};
 
-function createSideIntegrationBlock(tag, url, openButtonImage, title, isHidden = false) {
-  initInterface(tag, url, openButtonImage, title, isHidden);
+function createSideIntegrationBlock(tag, url, openButtonImage, title, isHidden = false, openOnSide = false) {
+  initInterface(tag, url, openButtonImage, title, isHidden, openOnSide);
   integrations[tag].actions = initInteractive(tag);
 }
 
@@ -36,14 +36,20 @@ function initInteractive(tag) {
   }
   openIframeUrl.bind(this);
 
+  const setContent = (html) => {
+    if (!integrations[tag].content) return false;
+    integrations[tag].content.innerHtml = html;
+  }
+
   return {
     openPanel,
     closePanel,
     openIframeUrl,
+    setContent,
   };
 }
 
-function initInterface(tag, url, openButtonImage, title, isHidden = false) {
+function initInterface(tag, url, openButtonImage, title, isHidden = false, openOnSide = false) {
   const body = document.querySelector('body');
   const mapButtonsPanel = document.querySelector('.leaflet-top.leaflet-left');
   const openPanelButton = document.createElement('button');
@@ -69,6 +75,9 @@ function initInterface(tag, url, openButtonImage, title, isHidden = false) {
   const panelBlock = document.createElement('div');
   panelBlock.id = `main-${tag}-panel`;
   panelBlock.classList.add(`main-integration-panel`);
+  if (openOnSide) {
+    panelBlock.classList.add(`side-integration-panel`);
+  }
   const closePanelButton = document.createElement('button');
   closePanelButton.id = `close-${tag}-button`;
   closePanelButton.classList.add('close-integration-button');
@@ -76,16 +85,22 @@ function initInterface(tag, url, openButtonImage, title, isHidden = false) {
   panelBlock.appendChild(closePanelButton);
 
   let panelIframe;
-    if (url) {
-      panelIframe = document.createElement('iframe');
-      panelIframe.id = `iframe-${tag}-object`;
-      panelIframe.classList.add('iframe-integration-block');
-      panelIframe.src = url;
-      panelIframe.frameborder = 0;
-      panelIframe.frameBorder = 0;
-      panelIframe.scolling = 'auto';
-      panelBlock.appendChild(panelIframe);
-    }
+  let panelContent;
+  if (url) {
+    panelIframe = document.createElement('iframe');
+    panelIframe.id = `iframe-${tag}-object`;
+    panelIframe.classList.add('iframe-integration-block');
+    panelIframe.src = url;
+    panelIframe.frameborder = 0;
+    panelIframe.frameBorder = 0;
+    panelIframe.scolling = 'auto';
+    panelBlock.appendChild(panelIframe);
+  } else {
+    panelContent = document.createElement('div');
+    panelContent.id = `content-${tag}-object`;
+    panelContent.classList.add('content-integration-block');
+    panelBlock.appendChild(panelContent);
+  }
 
   body.appendChild(panelBlock);
 
@@ -126,6 +141,7 @@ function initInterface(tag, url, openButtonImage, title, isHidden = false) {
     closePanelButton,
     panelBlock,
     iframe: panelIframe,
+    content: panelContent,
     actions: {},
     isHidden,
   };

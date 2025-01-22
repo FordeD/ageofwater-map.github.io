@@ -3683,7 +3683,9 @@ for (const type of types) {
 }
 
 function handleMarkerClick(popupContext, marker) {
-  console.log(marker, popupContext);
+  // console.log(marker, popupContext);
+  integrations[INTEGRATIONS.MARKER.TAG].actions.setContent('<br/><br/>' + popupContext);
+  integrations[INTEGRATIONS.MARKER.TAG].actions.openPanel();
 }
 
 localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
@@ -4339,6 +4341,7 @@ setTimeout(() => {
     INTEGRATIONS.MARKER.URL,
     INTEGRATIONS.MARKER.ICON,
     INTEGRATIONS.MARKER.TITLE,
+    true,
     true
   );
 }, 1500);
