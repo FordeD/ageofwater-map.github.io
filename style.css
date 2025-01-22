@@ -443,6 +443,10 @@ body {
     padding: 0 0 20px 0;
     display: block;
   }
+
+  .side-integration-panel > .popup-resource-block > b {
+    display: block;
+  }
 }
 @media screen and (min-width: 801px) {
   .side-integration-panel {
@@ -469,6 +473,10 @@ body {
 
   .side-integration-panel > b > font > font {
     padding: 0 0 20px 0;
+    display: block;
+  }
+
+  .side-integration-panel > .popup-resource-block > b {
     display: block;
   }
 }
