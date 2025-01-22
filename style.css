@@ -441,7 +441,7 @@ body {
 
   .side-integration-panel b font {
     padding: 0 0 20px 0;
-    display: block;
+    display: contents;
   }
 
   .side-integration-panel .popup-resource-block b {
@@ -473,7 +473,7 @@ body {
 
   .side-integration-panel b font {
     padding: 0 0 20px 0;
-    display: block;
+    display: contents;
   }
 
   .side-integration-panel .popup-resource-block b {
