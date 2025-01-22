@@ -38,7 +38,7 @@ function initInteractive(tag) {
 
   const setContent = (html) => {
     if (!integrations[tag].content) return false;
-    integrations[tag].content.innerHtml = html;
+    integrations[tag].content.innerHTML = html;
   }
   setContent.bind(this);
 
