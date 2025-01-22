@@ -70,6 +70,12 @@ const INTEGRATIONS = {
     ICON: 'https://forded.github.io/ageofwater-map.github.io/icons/news.png',
     TITLE: 'Открыть новости игры Age of Water',
   },
+  MARKER: {
+    TAG: 'context',
+    URL: null,
+    ICON: null,
+    TITLE: 'Почитать информацию маркера',
+  },
 };
 
 const SCRAP = 'Металл';
@@ -3657,7 +3663,8 @@ for (const type of types) {
 
     let marker = new L.marker([lat, lng], options)
       .bindPopup(formattedContext, popupOptions)
-      .on('mouseover', onMarkerOpen);
+      .on('mouseover', onMarkerOpen)
+      .on('click', handleMarkerClick.bind(this, formattedContext));
     if (type === 'pois') {
       marker.bindTooltip(tooltipText, {
         permanent: true,
@@ -3673,6 +3680,10 @@ for (const type of types) {
   if (!showedMarkers.includes(type)) {
     map.removeLayer(iconGroups[type]);
   }
+}
+
+function handleMarkerClick(popupContext, marker) {
+  console.log(marker, popupContext);
 }
 
 localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
@@ -3844,6 +3855,7 @@ const coordsPointControl = L.Control.extend({
     btn.onclick = function () {
       markerPlace.classList.toggle('hide');
       mapPlace.classList.toggle('center-of-map');
+      integrations[INTEGRATIONS.MARKER.TAG].actions.openPanel();
     };
 
     return btn;
@@ -4321,6 +4333,13 @@ setTimeout(() => {
     INTEGRATIONS.NEWS.URL,
     INTEGRATIONS.NEWS.ICON,
     INTEGRATIONS.NEWS.TITLE,
+  );
+  createSideIntegrationBlock(
+    INTEGRATIONS.MARKER.TAG,
+    INTEGRATIONS.MARKER.URL,
+    INTEGRATIONS.MARKER.ICON,
+    INTEGRATIONS.MARKER.TITLE,
+    true
   );
 }, 1500);
 

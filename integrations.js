@@ -1,13 +1,28 @@
 const integrations = {};
 
-function createSideIntegrationBlock(tag, url, openButtonImage, title) {
-  initInterface(tag, url, openButtonImage, title);
+function createSideIntegrationBlock(tag, url, openButtonImage, title, isHidden = false) {
+  initInterface(tag, url, openButtonImage, title, isHidden);
   integrations[tag].actions = initInteractive(tag);
 }
 
 function initInteractive(tag) {
   const openPanel = () => {
-    document.querySelector(`#open-${tag}-panel`).click()
+    if (integrations[tag].isHidden) {
+      if (!document.querySelector(`#main-${tag}-panel`).classList.contains('active')) {
+        document.querySelector(`#main-${tag}-panel`).classList.add('active');
+      }
+      if (
+        !document
+          .querySelector(`#close-${tag}-button`)
+          .classList.contains('close-integration-button-active')
+      ) {
+        document
+          .querySelector(`#close-${tag}-button`)
+          .classList.add('close-integration-button-active');
+      }
+    } else {
+      document.querySelector(`#open-${tag}-panel`).click();
+    }
   }
   openPanel.bind(this);
   const closePanel = () => {
@@ -28,7 +43,7 @@ function initInteractive(tag) {
   };
 }
 
-function initInterface(tag, url, openButtonImage, title) {
+function initInterface(tag, url, openButtonImage, title, isHidden = false) {
   const body = document.querySelector('body');
   const mapButtonsPanel = document.querySelector('.leaflet-top.leaflet-left');
   const openPanelButton = document.createElement('button');
@@ -47,8 +62,9 @@ function initInterface(tag, url, openButtonImage, title) {
     buttonImage.classList.add('open-integration-button-image');
     openPanelButton.appendChild(buttonImage);
   }
-  mapButtonsPanel.appendChild(openPanelButton);
-  // body.appendChild(openPanelButton);
+  if (!isHidden) {
+    mapButtonsPanel.appendChild(openPanelButton);
+  }
 
   const panelBlock = document.createElement('div');
   panelBlock.id = `main-${tag}-panel`;
@@ -73,20 +89,22 @@ function initInterface(tag, url, openButtonImage, title) {
 
   body.appendChild(panelBlock);
 
-  document.querySelector(`#open-${tag}-panel`).addEventListener('click', () => {
-    if (!document.querySelector(`#main-${tag}-panel`).classList.contains('active')) {
-      document.querySelector(`#main-${tag}-panel`).classList.add('active');
-    }
-    if (
-      !document
-        .querySelector(`#close-${tag}-button`)
-        .classList.contains('close-integration-button-active')
-    ) {
-      document
-        .querySelector(`#close-${tag}-button`)
-        .classList.add('close-integration-button-active');
-    }
-  });
+  if (!isHidden) {
+    document.querySelector(`#open-${tag}-panel`).addEventListener('click', () => {
+      if (!document.querySelector(`#main-${tag}-panel`).classList.contains('active')) {
+        document.querySelector(`#main-${tag}-panel`).classList.add('active');
+      }
+      if (
+        !document
+          .querySelector(`#close-${tag}-button`)
+          .classList.contains('close-integration-button-active')
+      ) {
+        document
+          .querySelector(`#close-${tag}-button`)
+          .classList.add('close-integration-button-active');
+      }
+    });
+  }
 
   document.querySelector(`#close-${tag}-button`).addEventListener('click', () => {
     if (document.querySelector(`#main-${tag}-panel`).classList.contains('active')) {
@@ -109,6 +127,7 @@ function initInterface(tag, url, openButtonImage, title) {
     panelBlock,
     iframe: panelIframe,
     actions: {},
+    isHidden,
   };
 
   integrations[tag] = integrationObject;
