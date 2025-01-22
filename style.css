@@ -86,7 +86,7 @@ body {
   background-color: rgba(48, 48, 49, 0.7);
   background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
   background-attachment: local, local, scroll, scroll;
-  border: none
+  border: none;
 }
 
 .custom-popup-block {
