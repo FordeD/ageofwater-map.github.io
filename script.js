@@ -198,6 +198,29 @@ const ITEMS = {
     },
   },
   CONSTRUCTIONS: {
+    COMMANDO: {
+      RUBKA: 'https://forded.github.io/ageofwater-map.github.io/items/commando_rub.jpg',
+      SHIELD_1: 'https://forded.github.io/ageofwater-map.github.io/items/commando_shield_1.jpg',
+      SHIELD_3: 'https://forded.github.io/ageofwater-map.github.io/items/commando_shield_3.jpg',
+    },
+    GEFEST: {
+      RUBKA: 'https://forded.github.io/ageofwater-map.github.io/items/gefest_rub.jpg',
+      SHIELD_1: 'https://forded.github.io/ageofwater-map.github.io/items/gefest_shield_1.jpg',
+      SHIELD_3: 'https://forded.github.io/ageofwater-map.github.io/items/gefest_shield_3.jpg',
+      TUR_BAZA_1: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_gefest_1.jpg',
+      TUR_BAZA_3: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_gefest_3.jpg',
+    },
+    KUPEC: {
+      SHIELD_A: 'https://forded.github.io/ageofwater-map.github.io/items/kupec_shield_a.jpg',
+      SHIELD_B: 'https://forded.github.io/ageofwater-map.github.io/items/kupec_shield_b.jpg',
+      SHIELD_C: 'https://forded.github.io/ageofwater-map.github.io/items/kupec_shield_c.jpg',
+    },
+    LONGLIN: {
+      SHIELD_1: 'https://forded.github.io/ageofwater-map.github.io/items/longlin_shield_1.jpg',
+      SHIELD_2: 'https://forded.github.io/ageofwater-map.github.io/items/longlin_shield_2.jpg',
+      SHIELD_5: 'https://forded.github.io/ageofwater-map.github.io/items/longlin_shield_5.jpg',
+      SHIELD_6: 'https://forded.github.io/ageofwater-map.github.io/items/longlin_shield_6.jpg',
+    },
     STEEL_SHIELD: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/steel_shield_1.jpg',
       T2: 'https://forded.github.io/ageofwater-map.github.io/items/steel_shield_2.jpg',
@@ -234,6 +257,8 @@ const ITEMS = {
       CABINA: 'https://forded.github.io/ageofwater-map.github.io/items/cab_jel_voina.jpg',
     },
     RUB_1338: 'https://forded.github.io/ageofwater-map.github.io/items/rub_1338.jpg',
+    HIJ_RUB: 'https://forded.github.io/ageofwater-map.github.io/items/hij_rub.jpg',
+    TREXETAJ_RUB: 'https://forded.github.io/ageofwater-map.github.io/items/trexetaj_rub.jpg',
     TRAULER: {
       CABINA: 'https://forded.github.io/ageofwater-map.github.io/items/cab_traul.jpg',
     },
@@ -262,6 +287,7 @@ const ITEMS = {
       TUR_BAZA: 'https://forded.github.io/ageofwater-map.github.io/items/tur_baza_zorkiy.jpg',
       KORM_NADSTR: 'https://forded.github.io/ageofwater-map.github.io/items/korm_nadstr_zorkiy.jpg',
     },
+    KUZ_GRUS: 'https://forded.github.io/ageofwater-map.github.io/items/kuz_gruz.jpg',
   },
 };
 
@@ -801,18 +827,26 @@ const worldPoints = {
           RESPURCES.STEEL,
           RESPURCES.COPPER_PLATES,
         ],
-        [
-          ITEMS.CONSTRUCTIONS.CISTERNA,
-          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
-          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
-          ITEMS.CONSTRUCTIONS.STENKA.T1,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
-          ITEMS.CONSTRUCTIONS.PALTUS.CABINA,
-          ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
-          ITEMS.CONSTRUCTIONS.PLAST_RUBKA,
-        ],
+        {
+          [SHIPS.T4.ANCHOUS]: [
+            ITEMS.CONSTRUCTIONS.CISTERNA,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+            ITEMS.CONSTRUCTIONS.STENKA.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
+            ITEMS.CONSTRUCTIONS.PALTUS.CABINA,
+            ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
+            ITEMS.CONSTRUCTIONS.PLAST_RUBKA,
+            ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_A,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_B,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_C,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_2,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_5,
+          ],
+        },
         `На данном месте проблемы могут быть только от ${SHIPS.T3.CLEVER.name}, в остальном фармится спокойно`,
         null,
         [SHIPS.T4.ANCHOUS, SHIPS.T3.CLEVER],
@@ -838,21 +872,29 @@ const worldPoints = {
           RESPURCES.STEEL,
           RESPURCES.COPPER_PLATES,
         ],
-        [
-          ITEMS.CONSTRUCTIONS.CISTERNA,
-          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
-          ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
-          ITEMS.CONSTRUCTIONS.STENKA.T1,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
-          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
-          ITEMS.MODULES.ACCUMULATOR.T1,
-          ITEMS.MODULES.POMPA.T4,
-          ITEMS.CONSTRUCTIONS.PALTUS.CABINA,
-          ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
-          ITEMS.CONSTRUCTIONS.PALTUS.OSNOVANIE,
-          ITEMS.MODULES.TRUBA.T5,
-        ],
+        {
+          [SHIPS.T4.ANCHOUS]: [
+            ITEMS.CONSTRUCTIONS.CISTERNA,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+            ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+            ITEMS.CONSTRUCTIONS.STENKA.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T2,
+            ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
+            ITEMS.MODULES.ACCUMULATOR.T1,
+            ITEMS.MODULES.POMPA.T4,
+            ITEMS.CONSTRUCTIONS.PALTUS.CABINA,
+            ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
+            ITEMS.CONSTRUCTIONS.PALTUS.OSNOVANIE,
+            ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_A,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_B,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_C,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_2,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_5,
+            ITEMS.MODULES.TRUBA.T5,
+          ],
+        },
         `На данном месте бьют сильно, но можно выплыть за край карты и по одному топить каждый корабль`,
         null,
         [SHIPS.T4.ANCHOUS, SHIPS.T3.CLEVER],
@@ -967,6 +1009,12 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.PALTUS.CABINA,
             ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
             ITEMS.CONSTRUCTIONS.PALTUS.OSNOVANIE,
+            ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_A,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_B,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_C,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_2,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_5,
           ],
           [SHIPS.T3.ZORKIJ.name]: [
             ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
@@ -1115,6 +1163,12 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
             ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
+            ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_A,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_B,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_C,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_2,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_5,
           ],
         },
         '',
@@ -1527,6 +1581,12 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T3,
           ITEMS.CONSTRUCTIONS.PALTUS.CABINA,
           ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
+          ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
+          ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_A,
+          ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_B,
+          ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_C,
+          ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_2,
+          ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_5,
         ],
         `Находятся за буйками ровно от центра квадрата L22 на Юг в 1100 метрах`,
         null,
@@ -3012,6 +3072,12 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
             ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
             ITEMS.MODULES.GENERATOR.T4,
+            ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_A,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_B,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_C,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_2,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_5,
           ],
           [SHIPS.T4.MURENA.name]: [RESPURCES.OST_MOSH_ORUJ],
           [SHIPS.T3.BISTRIY.name]: [RESPURCES.OST_MOSH_ORUJ],
@@ -3071,6 +3137,12 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
             ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
             ITEMS.MODULES.GENERATOR.T4,
+            ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_A,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_B,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_C,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_2,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_5,
           ],
           [SHIPS.T4.MURENA.name]: [RESPURCES.OST_MOSH_ORUJ],
           [SHIPS.T3.BISTRIY.name]: [RESPURCES.OST_MOSH_ORUJ],
@@ -3193,7 +3265,17 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
         ],
         {
-          [SHIPS.T4.SHPROT.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
+          [SHIPS.T4.SHPROT.name]: [
+            RESPURCES.OST_MOSH_ORUJ,
+            RESPURCES.OST_AKUL_ORUJ,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_A,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_B,
+            ITEMS.CONSTRUCTIONS.KUPEC.SHIELD_C,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_2,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_5,
+            ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_6,
+            ITEMS.CONSTRUCTIONS.TREXETAJ_RUB
+          ],
           [SHIPS.T4.ANCHOUS.name]: [
             RESPURCES.OST_MOSH_ORUJ,
             RESPURCES.OST_AKUL_ORUJ,
@@ -3714,9 +3796,15 @@ function updatePosition(lat, lng) {
 document.body.onmousemove = function (e) {
   e = window.event;
 
-  gridCoordPlace.style.opacity = '1';
-  gridCoordPlace.style.left = e.pageX - 20 + 'px';
-  gridCoordPlace.style.top = e.pageY + 10 + 'px';
+  if (!(
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
+      navigator.userAgent,
+    ))
+  ) {
+    gridCoordPlace.style.opacity = '1';
+    gridCoordPlace.style.left = e.pageX - 20 + 'px';
+    gridCoordPlace.style.top = e.pageY + 10 + 'px';
+  }
 };
 
 document.body.onmouseout = function () {
