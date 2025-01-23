@@ -3717,7 +3717,7 @@ function handleMarkerClick(popupContext, marker) {
     const angle = Math.sin(progress * Math.PI * 4) * maxRotation;
 
     // Центрируем элемент по центру, затем вращаем
-    element.style.transform = `${defaultTransform} translate(-50%, -50%) rotate(${angle}deg)`;
+    element.style.transform = `${defaultTransform} translate(50%, 50%) rotate(${angle}deg)`;
 
     setTimeout(animate, stepTime);
   }
