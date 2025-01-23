@@ -3774,7 +3774,7 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(() => {
         const pos = marker.getLatLng();
         map.flyTo([pos.lat, pos.lng], 4);
-        marker.click();
+        marker.getElement().click();
       }, 500);
     }
   }
