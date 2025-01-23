@@ -3698,25 +3698,26 @@ function handleMarkerClick(popupContext, marker) {
 
   const element = marker.getElement();
   let defaultTransform = element.style.transform;
-  const duration = 2500; // общая продолжительность анимации
-  const stepTime = 50; // шаг анимации (50 миллисекунд)
-  const minScale = 0.5; // минимальный масштаб (50%)
-  const maxScale = 1.5; // максимальный масштаб (150%)
+  const duration = 2500;
+  const stepTime = 50;
+  const maxRotation = 20;
   let startTime = Date.now();
 
   function animate() {
     let elapsed = Date.now() - startTime;
     if (elapsed >= duration) {
-      element.style.transform = defaultTransform; // Вернуть в исходный размер
+      element.style.transform = defaultTransform; // Вернуть в исходное состояние
       return;
     }
 
     // Прогресс анимации от 0 до 1
     const progress = elapsed / duration;
-    // Колебание между minScale и maxScale по синусоидальной кривой
-    const scale = minScale + (maxScale - minScale) * (Math.sin(progress * Math.PI * 2) * 0.5 + 0.5);
 
-    element.style.transform = `${defaultTransform} scale(${scale})`;
+    // Колебания от -maxRotation до +maxRotation градусов
+    const angle = Math.sin(progress * Math.PI * 4) * maxRotation;
+
+    // Центрируем элемент по центру, затем вращаем
+    element.style.transform = `${defaultTransform} translate(-50%, -50%) rotate(${angle}deg)`;
 
     setTimeout(animate, stepTime);
   }
