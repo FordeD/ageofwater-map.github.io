@@ -3696,10 +3696,30 @@ function handleMarkerClick(popupContext, marker) {
   const pos = marker.getLatLng();
   map.flyTo([pos.lat, pos.lng]);
 
-  marker.getElement().classList.toggle('selected-marker');
-  setTimeout(() => {
-    marker.getElement().classList.toggle('selected-marker');
-  }, 2000);
+  const element = marker.getElement();
+  const defaultTransform = element.style.transform;
+  const duration = 2500; // общая продолжительность анимации
+  const stepTime = 50; // шаг анимации (50 миллисекунд)
+  const maxAngle = 10; // максимальный угол поворота
+  let startTime = Date.now();
+
+  function animate() {
+    let elapsed = Date.now() - startTime;
+    if (elapsed >= duration) {
+      element.style.transform = defaultTransform; // Вернуть в исходное положение
+      return;
+    }
+
+    // Плавное колебание угла с уменьшением амплитуды
+    const progress = elapsed / duration;
+    const angle = Math.sin(progress * Math.PI * 2) * maxAngle * (1 - progress);
+
+    element.style.transform = `${defaultTransform} rotate(${angle}deg)`;
+
+    setTimeout(animate, stepTime);
+  }
+
+  animate();
   // marker.closePopup();
 }
 
