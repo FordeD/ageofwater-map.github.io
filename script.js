@@ -3695,6 +3695,11 @@ function handleMarkerClick(popupContext, marker) {
   integrations[INTEGRATIONS.MARKER.TAG].actions.openPanel();
   const pos = marker.getLatLng();
   map.flyTo([pos.lat, pos.lng]);
+
+  marker.getElement().classList.toggle('selected-marker');
+  setTimeout(() => {
+    marker.getElement().classList.toggle('selected-marker');
+  }, 2000);
   // marker.closePopup();
 }
 
@@ -4142,7 +4147,7 @@ function generateDescription(title, image = null, description = null, resources 
       '<div class="hide-button-block"><button class="custom-button-styled popup-button" onClick="hideMarker()">👁️‍🗨️</button></div>';
   }
   context +=
-    '<div class="hide-button-block"><button class="custom-button-styled" onClick="copyLinkToMarker(\'$[unique]\')">🔗</button></div>';
+    '<div class="hide-button-block"><button class="custom-button-styled  popup-button" onClick="copyLinkToMarker(\'$[unique]\')">🔗</button></div>';
   context += '</div>';
   
   // Заголовок маркера
