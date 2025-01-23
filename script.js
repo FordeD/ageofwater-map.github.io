@@ -3662,7 +3662,7 @@ for (const type of types) {
     }
 
     let marker = new L.marker([lat, lng], options)
-      .bindPopup(formattedContext, popupOptions)
+      // .bindPopup(formattedContext, popupOptions)
       .on('mouseover', onMarkerOpen)
       .on('click', handleMarkerClick.bind(this, formattedContext));
     if (type === 'pois') {
@@ -3686,7 +3686,7 @@ function handleMarkerClick(popupContext, marker) {
   // console.log(marker, popupContext);
   integrations[INTEGRATIONS.MARKER.TAG].actions.setContent('<br/><br/>' + popupContext);
   integrations[INTEGRATIONS.MARKER.TAG].actions.openPanel();
-  marker.closePopup();
+  // marker.closePopup();
 }
 
 localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
@@ -4125,7 +4125,7 @@ function generateDescription(title, image = null, description = null, resources 
   context += '<div class="marker-button">';
   if (isHidable) {
     context +=
-      '<div class="hide-button-block"><button class="custom-button-styled" onClick="hideMarker()">👁️‍🗨️</button></div>';
+      '<div class="hide-button-block"><button class="custom-button-styled popup-button" onClick="hideMarker()">👁️‍🗨️</button></div>';
   }
   context +=
     '<div class="hide-button-block"><button class="custom-button-styled" onClick="copyLinkToMarker(\'$[unique]\')">🔗</button></div>';

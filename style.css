@@ -127,22 +127,22 @@ body {
   display: block;
 }
 
-.popup-header-block {
+/* .popup-header-block {
   min-width: 350px;
-}
+} */
 
-.popup-title {
+/* .popup-title {
   display: block;
   float: left;
   padding: 0px 5px 5px 0px;
   max-width: 350px;
   min-width: 200px;
-}
-.popup-main-image {
+} */
+/* .popup-main-image {
   display: block;
   float: right;
   width: 100px;
-}
+} */
 
 .clr {
   float: none;
@@ -152,9 +152,9 @@ body {
   width: 200px;
 }
 
-.popup-main-image img {
+/* .popup-main-image img {
   padding: 5px 0px 0px 5px;
-}
+} */
 
 .marker-toltip {
   border: 1px solid rgba(48, 48, 49, 0.9);
@@ -427,38 +427,6 @@ body {
     font-size: 14px;
     overflow-y: auto;
   }
-
-  .side-integration-panel div {
-    padding: 20px 0 10px 0;
-  }
-
-  .side-integration-panel .popup-header-block {
-    width: 100%;
-    height: auto;
-  }
-
-  .side-integration-panel .popup-header-block .popup-title {
-    width: 100%;
-    display: block;
-    float: none;
-    padding: 0 0 25px 10px;
-  }
-
-  .side-integration-panel b font {
-    padding: 0 0 20px 0;
-    display: contents;
-  }
-
-  .side-integration-panel .popup-resource-block b {
-    display: block;
-  }
-
-  .side-integration-panel .popup-resource-block .board-ship-block b a {
-    display: block;
-    padding: 20px 0 10px 0;
-    color: #0078A8;
-    -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
-  }
 }
 @media screen and (min-width: 801px) {
   .side-integration-panel {
@@ -470,38 +438,6 @@ body {
     font-style: normal;
     font-size: 14px;
     overflow-y: auto;
-  }
-
-  .side-integration-panel div {
-    padding: 20px 0 10px 0;
-  }
-
-  .side-integration-panel .popup-header-block {
-    width: 100%;
-    height: auto;
-  }
-
-  .side-integration-panel .popup-header-block .popup-title {
-    width: 100%;
-    display: block;
-    float: none;
-    padding: 0 0 25px 10px;
-  }
-
-  .side-integration-panel b font {
-    padding: 0 0 20px 0;
-    display: contents;
-  }
-
-  .side-integration-panel .popup-resource-block b {
-    display: block;
-  }
-
-  .side-integration-panel .popup-resource-block .board-ship-block b a {
-    display: block;
-    padding: 20px 0 10px 0;
-    color: #0078A8;
-    -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
   }
 }
 
@@ -578,40 +514,52 @@ body {
 	opacity: 1;
 }
 
+.content-context-object {
+  padding: 50px 10px 5px 10px;
+}
 
 /* Блок кнопок в попапе */
 .marker-button {
-
+  width: 100%;
+  height: 50px;
 }
 
 /* Блок кнопки в попапе */
 .hide-button-block {
-  
+  display: inline-block;
+  width: 30px;
+  height: 30px;
 }
 
 /* Кнопка в попапе */
-.custom-button-styled {
-
+.popup-button {
+  width: 100%;
+  height: 100%;
 }
 
 /* Блок шапки попапа */
 .popup-header-block {
-
+  width: 100%;
+  height: auto;
 }
 
 /* Блок заголовка в попапе */
 .popup-header-title-block {
-
+  display: inline-block;
+  max-width: calc(100% - 110px);
 }
 
 /* Текст заголовка попапа */
 .popup-title {
-  
+  font-size: 20px;
 }
 
 /* Блок изображения попапа */
 .popup-main-image {
-  
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  float: right;
 }
 
 /* Блок действий на метке в попапе */
@@ -621,35 +569,65 @@ body {
 
 /* Все дочерние изображения в попапе */
 .popup-resource-image {
-
+  padding: 0px;
 }
 
 /* Блок контекстного блока в попапе*/
 .popup-context-block {
-  
+  width: 100%;
+  height: 100%;
 }
 
 /* Блок ресурсного контекстного блока в попапе */
 .popup-resource-block {
-
+  display: block;
+  padding-top: 20px;
 }
 
 /* Блок текста в контексте попапа*/
 .popup-text-block {
+  display: block;
+  padding-top: 20px;
 
+}
+
+/* Блока заголовка текста в контексте попапа */
+.popup-context-title-block {
+  display: block;
+  padding: 10px 0 10px 0;
+}
+
+/* Текст в контексте блока текста попапа */
+.popup-text-block p {
+  padding: 10px 5px 10px 10px;
 }
 
 /* Блок изображений в контексте попапа */
 .popup-context-images-block {
-
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* Блок со ссылкой и изображением корабля в попапе */
 .board-ship-block {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 10px 0 10px 0;
+}
 
+.board-ship-block .popup-context-images-block .popup-resource-image {
+  width: 100%;
+  height: auto;
 }
 
 /* Ссылка в контексте */
 .popup-context-link {
-
+  display: block;
+  width: auto;
+  padding: 15px 0 10px 0;
+  min-height: 45px;
+  color: #0078A8;
+  -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
 }
