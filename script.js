@@ -3697,7 +3697,7 @@ function handleMarkerClick(popupContext, marker) {
   map.flyTo([pos.lat, pos.lng]);
 
   const element = marker.getElement();
-  const defaultTransform = element.style.transform;
+  let defaultTransform = element.style.transform;
   const duration = 2500; // общая продолжительность анимации
   const stepTime = 50; // шаг анимации (50 миллисекунд)
   const maxAngle = 20; // максимальный угол поворота
@@ -3719,7 +3719,10 @@ function handleMarkerClick(popupContext, marker) {
     setTimeout(animate, stepTime);
   }
 
-  setTimeout(() => animate(), 500);
+  setTimeout(() => {
+    defaultTransform = element.style.transform;
+    animate()
+  }, 500);
   // marker.closePopup();
 }
 
