@@ -520,7 +520,7 @@ body {
 }
 
 .close-integration-button {
-  position: relative;
+  position: fixed;
   z-index: 1003;
   width: 30px;
   height: 30px;
