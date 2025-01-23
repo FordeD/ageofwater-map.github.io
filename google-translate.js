@@ -31,13 +31,12 @@ const googleTranslateConfig = {
 };
 
 document.addEventListener('DOMContentLoaded', (event) => {
-	if (baseLang !== 'ru') {
+	if (baseLang == 'ru') return;
 		/* Подключаем виджет google translate */
 		/* Connecting the google translate widget */
 		let script = document.createElement('script');
 		script.src = `//translate.google.com/translate_a/element.js?cb=TranslateWidgetIsLoaded`;
 		document.getElementsByTagName('head')[0].appendChild(script);
-	}
 });
 
 function TranslateWidgetIsLoaded() {
