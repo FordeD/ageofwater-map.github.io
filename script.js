@@ -3664,7 +3664,7 @@ for (const type of types) {
     let marker = new L.marker([lat, lng], options)
       // .bindPopup(formattedContext, popupOptions)
       .on('mouseover', onMarkerOpen)
-      .on('click', handleMarkerClick.bind(this, formattedContext));
+      .on('click', handleMarkerClick.bind(this, formattedContext, marker));
     if (type === 'pois') {
       marker.bindTooltip(tooltipText, {
         permanent: true,
