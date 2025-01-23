@@ -3721,7 +3721,7 @@ function handleMarkerClick(popupContext, marker) {
     // Вычисляем смещение для центрирования (учитываем изменение размера)
     const offset = (originalSize * scale - originalSize) / 2;
 
-    element.style.transform = `${defaultTransform} translate(-50%, -50%) scale(${scale}) translate(${-offset}px, ${-offset}px)`;
+    element.style.transform = `${defaultTransform} scale(${scale}) translate(${-offset}px, ${-offset}px)`;
 
     setTimeout(animate, stepTime);
   }
