@@ -3686,6 +3686,8 @@ function handleMarkerClick(popupContext, marker) {
   // console.log(marker, popupContext);
   integrations[INTEGRATIONS.MARKER.TAG].actions.setContent('<br/><br/>' + popupContext);
   integrations[INTEGRATIONS.MARKER.TAG].actions.openPanel();
+  const pos = marker.getLatLng();
+  map.flyTo([pos.lat, pos.lng]);
   // marker.closePopup();
 }
 
@@ -3772,7 +3774,7 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(() => {
         const pos = marker.getLatLng();
         map.flyTo([pos.lat, pos.lng], 4);
-        marker.openPopup();
+        marker.click();
       }, 500);
     }
   }
@@ -3885,7 +3887,10 @@ map.addControl(
     textPlaceholder: 'Поиск по меткам',
     autoType: false,
   }).on('search:locationfound', function (e) {
-    if (e.layer._popup) e.layer.openPopup();
+    if (e.layer._popup) {
+      e.layer.click();
+      //e.layer.openPopup();
+    }
     const searchInputPlace = document.getElementById('searchtext15');
     searchInputPlace.value = '';
     searchInputPlace.setAttribute('size', '15');
