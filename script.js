@@ -3684,7 +3684,7 @@ for (const type of types) {
 
 function handleMarkerClick(popupContext, marker) {
   // console.log(marker, popupContext);
-  integrations[INTEGRATIONS.MARKER.TAG].actions.setContent('<br/><br/>' + popupContext);
+  integrations[INTEGRATIONS.MARKER.TAG].actions.setContent('<br/><br/><br/>' + popupContext);
   integrations[INTEGRATIONS.MARKER.TAG].actions.openPanel();
   const pos = marker.getLatLng();
   map.flyTo([pos.lat, pos.lng]);
