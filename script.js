@@ -1223,8 +1223,8 @@ const worldPoints = {
       ),
     ],
     [
-      -8.8125,
-      146.9375,
+      -15.71875,
+      146.78125,
       generateDescription(
         'Флот T2-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
@@ -3280,7 +3280,7 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_2,
             ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_5,
             ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_6,
-            ITEMS.CONSTRUCTIONS.TREXETAJ_RUB
+            ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
           ],
           [SHIPS.T4.ANCHOUS.name]: [
             RESPURCES.OST_MOSH_ORUJ,
@@ -3700,7 +3700,9 @@ function handleMarkerClick(popupContext, marker) {
   let defaultTransform = element.style.transform;
   const duration = 2500;
   const stepTime = 50;
-  const maxRotation = 20;
+  const minScale = 0.5; // минимальный масштаб (50%)
+  const maxScale = 1.5; // максимальный масштаб (150%)
+  const originalSize = 30; // исходный размер в пикселях
   let startTime = Date.now();
 
   function animate() {
@@ -3713,11 +3715,13 @@ function handleMarkerClick(popupContext, marker) {
     // Прогресс анимации от 0 до 1
     const progress = elapsed / duration;
 
-    // Колебания от -maxRotation до +maxRotation градусов
-    const angle = Math.sin(progress * Math.PI * 4) * maxRotation;
+    // Колебание масштаба от minScale до maxScale
+    const scale = minScale + (maxScale - minScale) * (Math.sin(progress * Math.PI * 2) * 0.5 + 0.5);
 
-    // Центрируем элемент по центру, затем вращаем
-    element.style.transform = `${defaultTransform} translate(50%, 50%) rotate(${angle}deg)`;
+    // Вычисляем смещение для центрирования (учитываем изменение размера)
+    const offset = (originalSize * scale - originalSize) / 2;
+
+    element.style.transform = `${defaultTransform} translate(-50%, -50%) scale(${scale}) translate(${-offset}px, ${-offset}px)`;
 
     setTimeout(animate, stepTime);
   }
