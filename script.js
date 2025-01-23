@@ -3700,7 +3700,7 @@ function handleMarkerClick(popupContext, marker) {
   const defaultTransform = element.style.transform;
   const duration = 2500; // общая продолжительность анимации
   const stepTime = 50; // шаг анимации (50 миллисекунд)
-  const maxAngle = 10; // максимальный угол поворота
+  const maxAngle = 20; // максимальный угол поворота
   let startTime = Date.now();
 
   function animate() {
@@ -3719,7 +3719,7 @@ function handleMarkerClick(popupContext, marker) {
     setTimeout(animate, stepTime);
   }
 
-  animate();
+  setTimeout(() => animate(), 500);
   // marker.closePopup();
 }
 
