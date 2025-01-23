@@ -411,7 +411,7 @@ body {
   height: 100%;
   left: -100%;
   top: 0;
-  z-index: 1001;
+  z-index: 1010;
   background: #f1f1f1;
   transition: left 0.5s 0.5s;
 }
@@ -426,6 +426,7 @@ body {
     font-style: normal;
     font-size: 14px;
     overflow-y: auto;
+    z-index: 1001 !important;
   }
 }
 @media screen and (min-width: 801px) {
@@ -438,6 +439,7 @@ body {
     font-style: normal;
     font-size: 14px;
     overflow-y: auto;
+    z-index: 1001 !important;
   }
 }
 
