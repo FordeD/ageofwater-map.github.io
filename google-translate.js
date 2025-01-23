@@ -45,6 +45,7 @@ function TranslateWidgetIsLoaded() {
 }
 
 function TranslateInit(config) {
+	if (baseLang == 'ru') return;
 	if (config.langFirstVisit && !Cookies.get("googtrans")) {
 		/* Если установлен язык перевода для первого посещения и куки не назначены */
 		/* If the translation language is installed for the first visit and cookies are not assigned */
