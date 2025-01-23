@@ -3672,6 +3672,13 @@ for (const type of types) {
         className: "marker-toltip",
         offset: [0, 15],
       });
+    } else {
+      marker.bindTooltip('Информация о данной метке', {
+        permanent: false,
+        direction: 'bottom',
+        className: 'marker-toltip',
+        offset: [0, 15],
+      });
     }
     iconGroups[type].addLayer(marker);
     MARKERS.push(marker);
