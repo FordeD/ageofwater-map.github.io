@@ -577,3 +577,79 @@ body {
 .language__img_active {
 	opacity: 1;
 }
+
+
+/* Блок кнопок в попапе */
+.marker-button {
+
+}
+
+/* Блок кнопки в попапе */
+.hide-button-block {
+  
+}
+
+/* Кнопка в попапе */
+.custom-button-styled {
+
+}
+
+/* Блок шапки попапа */
+.popup-header-block {
+
+}
+
+/* Блок заголовка в попапе */
+.popup-header-title-block {
+
+}
+
+/* Текст заголовка попапа */
+.popup-title {
+  
+}
+
+/* Блок изображения попапа */
+.popup-main-image {
+  
+}
+
+/* Блок действий на метке в попапе */
+.popup-actions-block {
+
+}
+
+/* Все дочерние изображения в попапе */
+.popup-resource-image {
+
+}
+
+/* Блок контекстного блока в попапе*/
+.popup-context-block {
+  
+}
+
+/* Блок ресурсного контекстного блока в попапе */
+.popup-resource-block {
+
+}
+
+/* Блок текста в контексте попапа*/
+.popup-text-block {
+
+}
+
+/* Блок изображений в контексте попапа */
+.popup-context-images-block {
+
+}
+
+/* Блок со ссылкой и изображением корабля в попапе */
+.board-ship-block {
+
+}
+
+/* Ссылка в контексте */
+.popup-context-link {
+
+}
