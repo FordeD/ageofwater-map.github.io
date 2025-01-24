@@ -3343,7 +3343,7 @@ const worldPoints = {
       generateDescription(
         'Флот в нескольких волнах T3-Т5',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
-        `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.HORIZONT.name}.</br><b>2 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T4.MURENA.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.MURENA.name}.`,
+        `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.HORIZONT.name}.</br><b>2 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T4.MURENA.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.MIDORI.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
