@@ -4036,10 +4036,13 @@ map.addControl(
     textPlaceholder: 'Поиск по меткам',
     autoType: false,
   }).on('search:locationfound', function (e) {
-    if (e.layer._popup) {
-      e.layer.click();
-      //e.layer.openPopup();
-    }
+    // if (e.layer._popup) {
+    //   // e.layer.click();
+    //   //e.layer.openPopup();
+    // }
+    setTimeout(() => {
+      e.layer.getElement().click();
+    }, 1000);
     const searchInputPlace = document.getElementById('searchtext15');
     searchInputPlace.value = '';
     searchInputPlace.setAttribute('size', '15');
