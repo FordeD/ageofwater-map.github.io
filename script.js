@@ -470,7 +470,7 @@ const worldPoints = {
       -209.15625,
       164.84375,
       generateDescription(
-        'Корабли T1',
+        '1. Корабли T1',
         'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
         `Два корабля ${SHIPS.T1.JARL.name}.`,
         [
@@ -505,7 +505,7 @@ const worldPoints = {
       -198.28125,
       168.96875,
       generateDescription(
-        'Корабли T1',
+        '2. Корабли T1',
         'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
         `Два корабля ${SHIPS.T1.JARL.name}.`,
         [
@@ -539,7 +539,7 @@ const worldPoints = {
       -198.28125,
       168.96875,
       generateDescription(
-        'Корабли T1',
+        '3. Корабли T1',
         'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
         `Два корабля ${SHIPS.T1.SONJA.name}.`,
         [
@@ -573,7 +573,7 @@ const worldPoints = {
       -153.09375,
       218.28125,
       generateDescription(
-        'Корабли T1',
+        '4. Корабли T1',
         'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
         `Два корабля ${SHIPS.T1.JARL.name}.`,
         [
@@ -608,7 +608,7 @@ const worldPoints = {
       -32.90625,
       175.03125,
       generateDescription(
-        'Корабли T1',
+        '5. Корабли T1',
         'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
         `Два корабля ${SHIPS.T1.SONJA.name}.`,
         [
@@ -645,7 +645,7 @@ const worldPoints = {
       -42.9375,
       218.4375,
       generateDescription(
-        'Флот T2-T5',
+        '1. Флот T2-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
         `Флот рейнджеров состояший из ${SHIPS.T5.REPEJ.name}, ${SHIPS.T4.ZABIJAKA.name}, ${SHIPS.T3.CLEVER.name} и ${SHIPS.T2.MARIANA.name}.`,
         [
@@ -699,7 +699,7 @@ const worldPoints = {
       -214.59375,
       96.34375,
       generateDescription(
-        'Корабль T3',
+        '2. Корабль T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
         `Корабль ${SHIPS.T3.MORJ.name}.`,
         [
@@ -731,7 +731,7 @@ const worldPoints = {
       -216.46875,
       121.96875,
       generateDescription(
-        'Корабли T1',
+        '3. Корабли T1',
         'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
         `Два корабля ${SHIPS.T1.NJORD.name}.`,
         [
@@ -763,7 +763,7 @@ const worldPoints = {
       -205.03125,
       152.21875,
       generateDescription(
-        'Корабли T1',
+        '4. Корабли T1',
         'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
         `Два корабля ${SHIPS.T1.JARL.name}.`,
         [
@@ -789,7 +789,7 @@ const worldPoints = {
       -142.109375,
       47.828125,
       generateDescription(
-        'Корабль T3',
+        '5. Корабль T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
         `Корабль ${SHIPS.T3.MORJ.name}.`,
         [
@@ -822,7 +822,7 @@ const worldPoints = {
       -19.4375,
       106.8125,
       generateDescription(
-        'Флот T3-T4',
+        '1. Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Пиратский флот состояший из ${SHIPS.T4.ANCHOUS.name} вооруженных пулеметами/пушками и ${SHIPS.T3.CLEVER.name}. вооруженных дробовиками и гранатометами`,
         [
@@ -867,7 +867,7 @@ const worldPoints = {
       -54.1875,
       13.0625,
       generateDescription(
-        'Флот T3-T4',
+        '2. Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Пиратский флот состояший из ${SHIPS.T4.ANCHOUS.name} вооруженных пулеметами/пушками и ${SHIPS.T3.CLEVER.name}. вооруженных пулеметами и гранатометами`,
         [
@@ -915,7 +915,7 @@ const worldPoints = {
       -101.9375,
       19.4375,
       generateDescription(
-        'Флот T3-T4',
+        '3. Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Пиратский флот состояший из ${SHIPS.T4.MURENA.name} и ${SHIPS.T3.MORJ.name}.`,
         [
@@ -950,7 +950,7 @@ const worldPoints = {
       -156.8125,
       29.8125,
       generateDescription(
-        'Корабли T1 и Т2',
+        '4. Корабли T1 и Т2',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Два корабля ${SHIPS.T2.SCORPEN.name} и ${SHIPS.T1.DINGHY.name}.`,
         [
@@ -983,7 +983,7 @@ const worldPoints = {
       -154.4375,
       44.3125,
       generateDescription(
-        'Флот T3-T4',
+        '5. Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Большой пиратский флот состояший из ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.`,
         [
@@ -1046,7 +1046,7 @@ const worldPoints = {
       -218.4375,
       38.8125,
       generateDescription(
-        'Флот T3-T4',
+        '6. Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Большой пиратский флот состояший из ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.`,
         [
@@ -1103,7 +1103,7 @@ const worldPoints = {
       -230.9375,
       90.1875,
       generateDescription(
-        'Флот T3-T4',
+        '7. Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Пиратский флот состояший из ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.`,
         [
@@ -1141,7 +1141,7 @@ const worldPoints = {
       -236.6875,
       157.9375,
       generateDescription(
-        'Флот T3-T4',
+        '8. Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Пиратский флот состояший из ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.`,
         [
@@ -1191,7 +1191,7 @@ const worldPoints = {
       -178.9375,
       216.4375,
       generateDescription(
-        'Флот T2-T5',
+        '9. Флот T2-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Пиратский флот состояший из ${SHIPS.T5.REPEJ.name}, ${SHIPS.T4.ZABIJAKA.name}, ${SHIPS.T3.CLEVER.name} и ${SHIPS.T2.MARIANA.name}.`,
         [
@@ -1231,7 +1231,7 @@ const worldPoints = {
       -15.71875,
       146.78125,
       generateDescription(
-        'Флот T2-T5',
+        '10. Флот T2-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Пиратский флот состояший из ${SHIPS.T5.REPEJ.name}, ${SHIPS.T4.ZABIJAKA.name}, ${SHIPS.T3.CLEVER.name} и ${SHIPS.T2.MARIANA.name}.`,
         [
@@ -1269,7 +1269,7 @@ const worldPoints = {
       -83.6875,
       117.5625,
       generateDescription(
-        'Корабли T1 и T3',
+        '11. Корабли T1 и T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Два корабля ${SHIPS.T3.MORJ.name} b ${SHIPS.T1.DINGHY.name}.`,
         [
@@ -1300,7 +1300,7 @@ const worldPoints = {
       -65.1875,
       180.0625,
       generateDescription(
-        'Флот T1-T2',
+        '12. Флот T1-T2',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Флот из кораблей ${SHIPS.T1.NJORD.name}, Т1 и Т2, быстро спавнится для прокачки без остановки`,
         [
@@ -1332,7 +1332,7 @@ const worldPoints = {
       -71.8125,
       193.8125,
       generateDescription(
-        'Флот T1 и плавающих на подушке курьеров',
+        '13. Флот T1 и плавающих на подушке курьеров',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Флот из кораблей ${SHIPS.T1.NJORD.name} и плавающих на подушке курьеров. очень сильный флот из-за большого количества ракет и гранат выпускаемых курьерами`,
         [
@@ -1365,7 +1365,7 @@ const worldPoints = {
       -114.8125,
       46.1875,
       generateDescription(
-        'Флот T1 и T5',
+        '14. Флот T1 и T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Большой пиратский флот состояший из ${SHIPS.T5.REPEJ.name} и ${SHIPS.T1.SARGAN.name}.`,
         [
@@ -1401,7 +1401,7 @@ const worldPoints = {
       -188.8125,
       219.8125,
       generateDescription(
-        'Два корабля Т1',
+        '15. Два корабля Т1',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Два корабля ${SHIPS.T1.SONJA.name}.`,
         [
@@ -1435,7 +1435,7 @@ const worldPoints = {
       -45.9375,
       81.5625,
       generateDescription(
-        'Корабль Т2',
+        '16. Корабль Т2',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Корабль ${SHIPS.T2.VEHA.name}.`,
         [
@@ -1463,7 +1463,7 @@ const worldPoints = {
       -38.0625,
       162.6875,
       generateDescription(
-        'Большой флот Т1 и дельтапланов',
+        '17. Большой флот Т1 и дельтапланов',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Большой флот из кораблей ${SHIPS.T1.DINGHY.name} и дельтапланы пиратов.`,
         [
@@ -1495,7 +1495,7 @@ const worldPoints = {
       -151.0625,
       232.1875,
       generateDescription(
-        'Корабли T1 и T3',
+        '18. Корабли T1 и T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Большой флот из кораблей ${SHIPS.T3.MORJ.name} и ${SHIPS.T1.DINGHY.name}.`,
         [
@@ -1528,7 +1528,7 @@ const worldPoints = {
       -165.3125,
       234.1875,
       generateDescription(
-        'Флот T3-T5',
+        '19. Флот T3-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Большой пиратский флот состояший из ${SHIPS.T5.REPEJ.name}, ${SHIPS.T4.ZABIJAKA.name} и ${SHIPS.T3.CLEVER.name}.`,
         [
@@ -1566,7 +1566,7 @@ const worldPoints = {
       -268.5625,
       134.6875,
       generateDescription(
-        'Флот T1-T4',
+        '20. Флот T1-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Пиратский флот состояший из ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T1.DINGHY.name}, ${SHIPS.T2.MARIANA.name}, ${SHIPS.T1.SARGAN.name}, ${SHIPS.T1.JARL.name}, ${SHIPS.T1.RUBBER.name}. вооруженных дробовиками и гранатометами`,
         [
@@ -1608,7 +1608,7 @@ const worldPoints = {
       -290.6875,
       136.4375,
       generateDescription(
-        'Флот T1-T5',
+        '21. Флот T1-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Большой пиратский флот состояший из ${SHIPS.T5.REPEJ.name}, ${SHIPS.T4.ZABIJAKA.name}, ${SHIPS.T3.MORJ.name}, ${SHIPS.T1.DINGHY.name}, ${SHIPS.T1.SARGAN.name}, ${SHIPS.T1.JARL.name} и дельтапланов`,
         [
@@ -1646,7 +1646,7 @@ const worldPoints = {
       -215.78125,
       93.96875,
       generateDescription(
-        'Корабли T1 и Т2',
+        '22. Корабли T1 и Т2',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Два корабля ${SHIPS.T2.SCORPEN.name} и ${SHIPS.T1.DINGHY.name}.`,
         [
@@ -1679,7 +1679,7 @@ const worldPoints = {
       -154.96875,
       16.28125,
       generateDescription(
-        'Флот T3-T4',
+        '23. Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
         `Пиратский флот состояший из ${SHIPS.T4.MURENA.name} и ${SHIPS.T3.CLEVER.name}.`,
         [
@@ -2776,7 +2776,7 @@ const worldPoints = {
       -43.3125,
       19.3125,
       generateDescription(
-        'Курьер на воздушной подушке',
+        '1. Курьер на воздушной подушке',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
         'Блуждающий на одном месте плавающий курьер на воздушной подушке',
         [
@@ -2808,7 +2808,7 @@ const worldPoints = {
       -69.5625,
       44.0625,
       generateDescription(
-        'Летающий курьер (коптер)',
+        '2. Летающий курьер (коптер)',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
         'Блуждающий на одном месте летающий курьер',
         [
@@ -2845,7 +2845,7 @@ const worldPoints = {
       -28.0625,
       99.3125,
       generateDescription(
-        'Плавающий курьер Т2',
+        '3. Плавающий курьер Т2',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
         `Плавающий курьер на ${SHIPS.T2.MARLIN.name}`,
         [
@@ -2875,7 +2875,7 @@ const worldPoints = {
       -107.9375,
       177.9375,
       generateDescription(
-        'Летающий курьер (коптер)',
+        '4. Летающий курьер (коптер)',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
         'Блуждающий на одном месте летающий курьер',
         [
@@ -2912,7 +2912,7 @@ const worldPoints = {
       -55.8125,
       153.3125,
       generateDescription(
-        'Курьер на воздушной подушке',
+        '5. Курьер на воздушной подушке',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
         'Блуждающий на одном месте плавающий курьер на воздушной подушке',
         [
@@ -2944,7 +2944,7 @@ const worldPoints = {
       -277.1875,
       132.6875,
       generateDescription(
-        'Курьер на воздушной подушке',
+        '6. Курьер на воздушной подушке',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
         'Блуждающий на одном месте плавающий курьер на воздушной подушке',
         [
@@ -2976,7 +2976,7 @@ const worldPoints = {
       -209.28125,
       138.09375,
       generateDescription(
-        'Плавающий курьер Т1',
+        '7. Плавающий курьер Т1',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
         `Плавающий курьер на ${SHIPS.T1.JARL.name}`,
         [
@@ -3006,7 +3006,7 @@ const worldPoints = {
       -167.65625,
       186.34375,
       generateDescription(
-        'Плавающий курьер Т1',
+        '8. Плавающий курьер Т1',
         'https://forded.github.io/ageofwater-map.github.io/icons/courier.png',
         `Плавающий курьер на ${SHIPS.T1.SONJA.name}`,
         [
@@ -3038,7 +3038,7 @@ const worldPoints = {
       -129.1875,
       -12.0625,
       generateDescription(
-        'Флот в нескольких волнах T3-T5',
+        '1. Флот в нескольких волнах T3-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
         `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br><b>2 Волна:</b> ${SHIPS.T4.MURENA.name} и ${SHIPS.T4.ANCHOUS.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.VSPOLOH.name}.`,
         [
@@ -3103,7 +3103,7 @@ const worldPoints = {
       -215.5625,
       7.4375,
       generateDescription(
-        'Флот в нескольких волнах T3-T5',
+        '2. Флот в нескольких волнах T3-T5',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
         `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br><b>2 Волна:</b> ${SHIPS.T4.MURENA.name} и ${SHIPS.T4.ANCHOUS.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.HVAT.name}.`,
         [
@@ -3168,7 +3168,7 @@ const worldPoints = {
       -30.375,
       250.5625,
       generateDescription(
-        'Флот в нескольких волнах T3',
+        '3. Флот в нескольких волнах T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
         `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.SHEVRON.name}.</br><b>2 Волна:</b> ${SHIPS.T4.MURENA.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
         [
@@ -3221,7 +3221,7 @@ const worldPoints = {
       10.3125,
       128.9375,
       generateDescription(
-        'Флот в нескольких волнах T3-Т4',
+        '4. Флот в нескольких волнах T3-Т4',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
         `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br><b>2 Волна:</b> ${SHIPS.T4.BASTION.name} и ${SHIPS.T4.MURENA.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
         [
@@ -3276,7 +3276,7 @@ const worldPoints = {
       20.9375,
       30.6875,
       generateDescription(
-        'Флот в нескольких волнах T3-Т4',
+        '5. Флот в нескольких волнах T3-Т4',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
         `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.BISTRIY.name}.</br><b>2 Волна:</b> ${SHIPS.T4.SHPROT.name} и ${SHIPS.T4.MURENA.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name}.`,
         [
@@ -3341,7 +3341,7 @@ const worldPoints = {
       -128.9375,
       268.4375,
       generateDescription(
-        'Флот в нескольких волнах T3-Т5',
+        '6. Флот в нескольких волнах T3-Т5',
         'https://forded.github.io/ageofwater-map.github.io/icons/armade.png',
         `Усиленный флот армады в нескольких волнах:</br><b>1 Волна:</b> ${SHIPS.T3.ZORKIJ.name} и ${SHIPS.T3.HORIZONT.name}.</br><b>2 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T4.MURENA.name}.</br><b>3 Волна:</b> ${SHIPS.T4.ANCHOUS.name} и ${SHIPS.T5.MIDORI.name}.`,
         [
@@ -3505,7 +3505,7 @@ const worldPoints = {
       -100.3125,
       186.0625,
       generateDescription(
-        'Флот T3-T5 по заданию',
+        '1. Флот T3-T5 по заданию',
         'https://forded.github.io/ageofwater-map.github.io/icons/boarding_quest_ship.png',
         `Флот который появляется по квесту "Уборка мусора", на данном флоте можно взять на абордаж корабль ${SHIPS.T5.MIDORI.name}. Хоть по логике корабль получить нельзя но после зимнего обновления возможность взять его на абордаж осталась`,
         [],
