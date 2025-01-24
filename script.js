@@ -3396,7 +3396,7 @@ const worldPoints = {
           [SHIPS.T3.ZORKIJ.name]: [RESPURCES.OST_MOSH_ORUJ, ITEMS.MODULES.GENERATOR.T3],
           [SHIPS.T3.HORIZONT.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
         },
-        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.HORIZONT.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T4.MIDORI.name}.`,
+        `В этой точке можно абордажить ${SHIPS.T3.ZORKIJ.name}, ${SHIPS.T3.HORIZONT.name}, ${SHIPS.T4.MURENA.name}, ${SHIPS.T4.ANCHOUS.name}, ${SHIPS.T5.MIDORI.name}.`,
         null,
         [SHIPS.T5.MIDORI, SHIPS.T4.ANCHOUS, SHIPS.T4.MURENA, SHIPS.T3.ZORKIJ, SHIPS.T3.HORIZONT],
       ),
