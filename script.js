@@ -4606,22 +4606,19 @@ document.addEventListener('click', (e) => {
   }
 });
 
-const baseLang = navLang.toLowerCase().includes('ru')
-  ? 'ru'
-  : navLang.toLowerCase().includes('en')
-  ? 'en'
-  : 'ru';
+const navBaseLang = navigator.language || navigator.userLanguage;
+const baseLangType = navBaseLang.toLowerCase().includes('ru') ? 'ru' : 'en';
 
 setInterval(() => {
-  if (baseLang !== 'ru') {
+  if (baseLangType !== 'ru') {
     const body = document.querySelector('body');
-    body.style = "";
+    body.style = '';
     const translateBlock = document.querySelector('.skiptranslate');
-    translateBlock.style = 'display: none !important;'
+    translateBlock.style = 'display: none !important;';
   }
 }, 500);
 
-if (baseLang === 'ru') {
+if (baseLangType === 'ru') {
   const languageBlock = document.querySelector('.language');
   languageBlock.classList.add('hide');
 }
