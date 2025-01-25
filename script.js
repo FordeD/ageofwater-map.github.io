@@ -646,8 +646,8 @@ const worldPoints = {
       ),
     ],
     [
-      -32.90625,
-      175.03125,
+      -164.90625,
+      199.71875,
       generateDescription(
         '6. Корабль T1',
         'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
