@@ -3777,9 +3777,12 @@ let showedMarkers =
   localStorage.getItem('showedMarkers') !== '' && localStorage.getItem('showedMarkers') !== null
     ? JSON.parse(localStorage.getItem('showedMarkers'))
     : [];
-if (!timedHidedMarkers || timedHidedMarkers === 'null') {
-  localStorage.setItem('hidedMarkers', []);
+if (!localStorage.getItem('showedMarkers')) {
+  showedMarkers = Object.keys(legendNames);
 }
+  if (!timedHidedMarkers || timedHidedMarkers === 'null') {
+    localStorage.setItem('hidedMarkers', []);
+  }
 delete timedHidedMarkers;
 
 // loop that adds many markers to the map
