@@ -8,7 +8,7 @@
 /* Вы можете перенести данный конфиг в head своего сайта, чтобы динамически конфигурировать значения при помощи данных из CMS */
 /* You can transfer this config to the head of your site to dynamically configure values using data from the CMS */
 const navLang = navigator.language || navigator.userLanguage;
-const baseLang = navBaseLang.toLowerCase().includes('ru') ? 'ru' : 'en';
+const baseLang = navLang.toLowerCase().includes('ru') ? 'ru' : 'en';
 const googleTranslateConfig = {
   /* Original language */
   lang: 'ru',
