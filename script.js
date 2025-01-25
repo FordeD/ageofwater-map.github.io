@@ -3842,6 +3842,7 @@ for (const type of types) {
   }
 }
 
+let lastActivateMarker = null;
 function handleMarkerClick(popupContext, marker) {
   // console.log(marker, popupContext);
   integrations[INTEGRATIONS.MARKER.TAG].actions.setContent('<br/><br/><br/>' + popupContext);
@@ -3850,6 +3851,7 @@ function handleMarkerClick(popupContext, marker) {
   map.flyTo([pos.lat, pos.lng]);
 
   const element = marker.getElement();
+  lastActivateMarker = element.getAttribute('aria-describedby');
   let defaultTransform = element.style.transform;
   const duration = 2500;
   const stepTime = 50;
@@ -3858,9 +3860,10 @@ function handleMarkerClick(popupContext, marker) {
   const originalSize = 30; // исходный размер в пикселях
   let startTime = Date.now();
 
-  function animate() {
+  function animate(element) {
+    const uniqueId = element.getAttribute('aria-describedby');
     let elapsed = Date.now() - startTime;
-    if (elapsed >= duration) {
+    if (elapsed >= duration || uniqueId !== lastActivateMarker) {
       element.style.transform = defaultTransform; // Вернуть в исходное состояние
       return;
     }
@@ -3876,12 +3879,12 @@ function handleMarkerClick(popupContext, marker) {
 
     element.style.transform = `${defaultTransform} scale(${scale}) translate(${-offset}px, ${-offset}px)`;
 
-    setTimeout(animate, stepTime);
+    setTimeout(animate.bind(this, element), stepTime);
   }
 
   setTimeout(() => {
     defaultTransform = element.style.transform;
-    animate();
+    animate(element);
   }, 500);
   // marker.closePopup();
 }
