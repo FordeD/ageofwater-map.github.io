@@ -261,6 +261,7 @@ const ITEMS = {
     },
     JEL_VOIN: {
       CABINA: 'https://forded.github.io/ageofwater-map.github.io/items/cab_jel_voina.jpg',
+      NADSTROIKA: 'https://forded.github.io/ageofwater-map.github.io/items/trub_jel_voin.jpg',
     },
     RUB_1338: 'https://forded.github.io/ageofwater-map.github.io/items/rub_1338.jpg',
     HIJ_RUB: 'https://forded.github.io/ageofwater-map.github.io/items/hij_rub.jpg',
@@ -334,6 +335,11 @@ const SHIPS = {
       name: 'Резиновая лодка (I)',
       url: 'https://ageofwater.fandom.com/wiki/Rubber_Boat',
     },
+    HUSKY: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_husky.webp',
+      name: 'Хаски (I)',
+      url: 'https://ageofwater.fandom.com/wiki/Husky_Launch',
+    },
   },
   T2: {
     SCORPEN: {
@@ -366,7 +372,7 @@ const SHIPS = {
     HORIZONT: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_horizon.jpg',
       name: 'Горизонт (III)',
-      url: 'https://ageofwater.fandom.com/wiki/Hulls'
+      url: 'https://ageofwater.fandom.com/wiki/Hulls',
     },
     BISTRIY: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T3_bistriy.webp',
@@ -637,6 +643,37 @@ const worldPoints = {
         null,
         null,
         [SHIPS.T1.SONJA],
+      ),
+    ],
+    [
+      -32.90625,
+      175.03125,
+      generateDescription(
+        '6. Корабль T1',
+        'https://forded.github.io/ageofwater-map.github.io/icons/trash.png',
+        `Корабль ${SHIPS.T1.HUSKY.name}.`,
+        [
+          RESPURCES.SCRAP,
+          RESPURCES.FIBER,
+          RESPURCES.WOOD,
+          RESPURCES.PLASTIC,
+          RESPURCES.MECHANISM,
+          RESPURCES.PLATS,
+          RESPURCES.AMMO_DETAILS,
+          RESPURCES.BARREL,
+          RESPURCES.COPPER,
+          RESPURCES.STEEL,
+          RESPURCES.COPPER_PLATES,
+        ],
+        [
+          ITEMS.CONSTRUCTIONS.MUSOR_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+          ITEMS.MODULES.GENERATOR.T1,
+        ],
+        null,
+        null,
+        [SHIPS.T1.HUSKY],
       ),
     ],
   ],
@@ -3060,6 +3097,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+          ITEMS.CONSTRUCTIONS.JEL_VOIN.NADSTROIKA,
         ],
         {
           [SHIPS.T5.VSPOLOH.name]: [
@@ -3072,6 +3110,8 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.SHIELD_JEL_VOINA.T22,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+            ITEMS.CONSTRUCTIONS.JEL_VOIN.NADSTROIKA,
+            ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
           ],
           [SHIPS.T4.ANCHOUS.name]: [
             RESPURCES.OST_MOSH_ORUJ,
@@ -3243,6 +3283,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+          ITEMS.CONSTRUCTIONS.JEL_VOIN.NADSTROIKA,
         ],
         {
           [SHIPS.T4.BASTION.name]: [RESPURCES.OST_MOSH_ORUJ, RESPURCES.OST_AKUL_ORUJ],
@@ -3298,6 +3339,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
+          ITEMS.CONSTRUCTIONS.JEL_VOIN.NADSTROIKA,
         ],
         {
           [SHIPS.T4.SHPROT.name]: [
@@ -3374,6 +3416,9 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_2,
             ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_5,
             ITEMS.CONSTRUCTIONS.LONGLIN.SHIELD_6,
+            ITEMS.MODULES.GENERATOR.T3,
+            ITEMS.CONSTRUCTIONS.CISTERNA_KORPUS.ZAKRITAYA,
+            ITEMS.CONSTRUCTIONS.RUL_RUB_BUKSIRA,
           ],
           [SHIPS.T4.ANCHOUS.name]: [
             RESPURCES.OST_MOSH_ORUJ,
