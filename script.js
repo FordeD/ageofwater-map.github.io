@@ -4656,6 +4656,10 @@ document.addEventListener('click', (e) => {
 
 const navBaseLang = navigator.language || navigator.userLanguage;
 const baseLangType = navBaseLang.toLowerCase().includes('ru') ? 'ru' : 'en';
+if (baseLangType === 'ru') {
+  const languageBlock = document.querySelector('.language');
+  languageBlock.classList.add('hide');
+}
 
 setInterval(() => {
   if (baseLangType !== 'ru') {
@@ -4665,8 +4669,3 @@ setInterval(() => {
     translateBlock.style = 'display: none !important;';
   }
 }, 500);
-
-if (baseLangType === 'ru') {
-  const languageBlock = document.querySelector('.language');
-  languageBlock.classList.add('hide');
-}

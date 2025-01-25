@@ -8,11 +8,7 @@
 /* Вы можете перенести данный конфиг в head своего сайта, чтобы динамически конфигурировать значения при помощи данных из CMS */
 /* You can transfer this config to the head of your site to dynamically configure values using data from the CMS */
 const navLang = navigator.language || navigator.userLanguage;
-const baseLang = navLang.toLowerCase().includes('ru')
-  ? 'ru'
-  : navLang.toLowerCase().includes('en')
-  ? 'en'
-  : 'ru';
+const baseLang = navBaseLang.toLowerCase().includes('ru') ? 'ru' : 'en';
 const googleTranslateConfig = {
   /* Original language */
   lang: 'ru',
@@ -31,7 +27,7 @@ const googleTranslateConfig = {
 };
 
 document.addEventListener('DOMContentLoaded', (event) => {
-	if (baseLang == 'ru') return;
+	if (baseLang === 'ru') return;
 		/* Подключаем виджет google translate */
 		/* Connecting the google translate widget */
 		let script = document.createElement('script');
@@ -44,22 +40,22 @@ function TranslateWidgetIsLoaded() {
 }
 
 function TranslateInit(config) {
-	if (baseLang == 'ru') return;
+	if (baseLang === 'ru') return;
 	if (config.langFirstVisit && !Cookies.get("googtrans")) {
 		/* Если установлен язык перевода для первого посещения и куки не назначены */
 		/* If the translation language is installed for the first visit and cookies are not assigned */
-		TranslateCookieHandler("/auto/" + config.langFirstVisit);
+		TranslateCookieHandler("/ru/" + config.langFirstVisit);
 	}
 
 	let code = TranslateGetCode(config);
 
 	TranslateHtmlHandler(code);
 
-	if (code == config.lang) {
-		/* Если язык по умолчанию, совпадает с языком на который переводим, то очищаем куки */
-		/* If the default language is the same as the language we are translating into, then we clear the cookies */
-		TranslateCookieHandler(null, config.domain);
-	}
+	if (code === config.lang || code === 'ru') {
+    /* Если язык по умолчанию, совпадает с языком на который переводим, то очищаем куки */
+    /* If the default language is the same as the language we are translating into, then we clear the cookies */
+    TranslateCookieHandler(null, config.domain);
+  }
 
 	if (config.testWord) TranslateMutationObserver(config.testWord, code == config.lang);
 
