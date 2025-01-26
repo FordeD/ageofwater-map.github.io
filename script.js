@@ -3114,6 +3114,7 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.PALTUS.OTSEK,
             ITEMS.CONSTRUCTIONS.PALTUS.OSNOVANIE,
             ITEMS.MODULES.GENERATOR.T4,
+            ITEMS.MODULES.TRUBA.T5,
           ],
           [SHIPS.T4.ANCHOUS.name]: [
             RESPURCES.OST_MOSH_ORUJ,
