@@ -949,12 +949,12 @@ const worldPoints = {
       ),
     ],
     [
-      -101.9375,
-      19.4375,
+      -112.875,
+      9.875,
       generateDescription(
         '3. Флот T3-T4',
         'https://forded.github.io/ageofwater-map.github.io/icons/pirate.png',
-        `Пиратский флот состояший из ${SHIPS.T4.MURENA.name} и ${SHIPS.T3.MORJ.name}.`,
+        `Пиратский флот состояший из ${SHIPS.T4.MURENA.name} и ${SHIPS.T3.CLEVER.name}.`,
         [
           RESPURCES.SCRAP,
           RESPURCES.FIBER,
@@ -980,7 +980,7 @@ const worldPoints = {
         ],
         null,
         null,
-        [SHIPS.T4.MURENA, SHIPS.T3.MORJ],
+        [SHIPS.T4.MURENA, SHIPS.T3.CLEVER],
       ),
     ],
     [
