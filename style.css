@@ -530,6 +530,7 @@ body {
 .hide-button-block {
   display: inline-block;
   height: 30px;
+  padding-right: 5px;
 }
 
 /* Кнопка в попапе */

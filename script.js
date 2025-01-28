@@ -3935,9 +3935,7 @@ for (const type of types) {
       formattedContext = formattedContext.replace('$[unique]', type + i);
     }
 
-    let marker = new L.marker([lat, lng], options)
-      // .bindPopup(formattedContext, popupOptions)
-      .on('mouseover', onMarkerOpen);
+    let marker = new L.marker([lat, lng], options);
     marker.on('click', handleMarkerClick.bind(this, formattedContext, marker));
     if (type === 'pois') {
       marker.bindTooltip(tooltipText, {
@@ -3964,6 +3962,7 @@ for (const type of types) {
 }
 
 let lastActivateMarker = null;
+let targetMarker = null;
 function handleMarkerClick(popupContext, marker) {
   // console.log(marker, popupContext);
   integrations[INTEGRATIONS.MARKER.TAG].actions.setContent('<br/><br/><br/>' + popupContext);
@@ -3971,6 +3970,7 @@ function handleMarkerClick(popupContext, marker) {
   const pos = marker.getLatLng();
   map.flyTo([pos.lat, pos.lng]);
 
+  targetMarker = marker;
   const element = marker.getElement();
   lastActivateMarker = element.getAttribute('aria-describedby');
   let defaultTransform = element.style.transform;
@@ -4011,12 +4011,6 @@ function handleMarkerClick(popupContext, marker) {
 }
 
 localStorage.setItem('hidedMarkers', JSON.stringify(HIDED_MARKERS));
-
-
-let targetMarker = null;
-function onMarkerOpen(e) {
- targetMarker = e.target;
-}
 
 function hideMarker(e) {
   let hided = localStorage.getItem('hidedMarkers');
@@ -4454,7 +4448,7 @@ function generateDescription(title, image = null, description = null, resources 
   context += '<div class="marker-button">';
   if (isHidable) {
     context +=
-      '<div class="hide-button-block"><button class="custom-button-styled popup-button" onClick="hideMarker()">👁️ Пометить</button></div>';
+      '<div class="hide-button-block"><button class="custom-button-styled popup-button" onClick="hideMarker(\'$[unique]\')">👁️ Пометить</button></div>';
   }
   context +=
     '<div class="hide-button-block"><button class="custom-button-styled  popup-button" onClick="copyLinkToMarker(\'$[unique]\')">🔗 Ссылка</button></div>';
