@@ -4458,13 +4458,13 @@ function generateDescription(title, image = null, description = null, resources 
   context += `<div class="popup-header-block"><div class="popup-header-title-block"><h3 class="popup-title">${title}</h3></div>`;
   searchContent += `</br><b>${title}</b></br>`;
   if (image) {
-    context += `<div class="popup-main-image"><img src="${image}" width="100" height="100"></div>`;
+    context += `<div class="popup-main-image"><img src="${image}" alt="${title}" title="${title}" width="100" height="100"></div>`;
   }
   context += '<div class="clr"></div>';
   if (actions) {
     context += '<div class="popup-actions-block">';
     for (const action of actions) {
-      context += `<img class="popup-resource-image" src="${action.img}" alt="${action.alt}" width="25" height="25" />`;
+      context += `<img class="popup-resource-image" src="${action.img}" alt="${action.alt}" title="${action.alt}" width="25" height="25" />`;
     }
     context += '</div>';
   }
@@ -4528,82 +4528,6 @@ function generateDescription(title, image = null, description = null, resources 
   searchContent += '</br>';
   return [context, searchContent];
 };
-
-// function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null, actions = [], ships = [], isHidable = false) {
-//   let context = '';
-//   let searchContent = '';
-//   if (isHidable) {
-//     context +=
-//       '<div class="hide-button-block"><button class="custom-button-styled" onClick="hideMarker()">👁️‍🗨️</button></div>';
-//   }
-
-//   context +=
-//     '<div class="hide-button-block"><button class="custom-button-styled" onClick="copyLinkToMarker(\'$[unique]\')">🔗</button></div>';
-
-//   context += `<div class="popup-header-block"><h3 class="popup-title">${title}</h3>`;
-//   searchContent += `</br><b>${title}</b></br>`;
-//   if (image) {
-//     context += `<div class="popup-main-image"><img src="${image}" width="100" height="100"></div>`;
-//   }
-//   context += '<div class="clr"></div>';
-//   if (actions) {
-//     context += '<div class="popup-actions-block">';
-//     for (const action of actions) {
-//       context += `<img class="popup-resource-image" src="${action}" width="20" height="20" />`;
-//     }
-//     context += '</div>';
-//   }
-//   context += '</div><div class="clr"></div>';
-//   if (description) {
-//     context += `<b>Описание:</b><p>${description}</p>`;
-//     searchContent += `<b>Описание:</b><p>${description}</p><br>`;
-//   }
-//   if (nuances) {
-//     context += `<b>Уточнение:</b><p>${nuances}</p>`;
-//     searchContent += `<b>Уточнение:</b><p>${nuances}</p></br>`;
-//   }
-//   if (resources && resources.length) {
-//     context += `<div class="popup-resource-block">`;
-//     context += '<b>Получаемые ресурсы:</b>';
-//     for (const resource of resources) {
-//       context += `<img class="popup-resource-image" src="${resource}" width="40" height="40" />`;;
-//     }
-//     context += `</div>`;
-//   }
-
-//   if (boardings) {
-//     if (Array.isArray(boardings) && boardings.length) {
-//       context += `<div class="popup-resource-block">`;
-//       context += '<b>Можно получить при абордаже:</b>';
-//       for (const boarding of boardings) {
-//         context += `<img class="popup-resource-image" src="${boarding}" width="75" height="75" />`;
-//       }
-//       context += `</div>`;
-//     } else {
-//       const shipNames = Object.keys(boardings);
-//       for (const shipName of shipNames) {
-//         context += `<div><div><b>Можно получить c ${shipName}:</b></div><div>`;
-//         for (const boardingItem of boardings[shipName]) {
-//           context += `<img class="popup-resource-image" src="${boardingItem}" width="75" height="75" />`;
-//         }
-//         context += `</div></div>`;
-//       }
-//     }
-//   }
-
-//   if (ships && ships.length) {
-//     context += `<div class="popup-resource-block">`;
-//     context += '<b>Можно получить корабли:</b>';
-//     searchContent += `<b>Можно получить корабли:</b></br>`;
-//     for (const ship of ships) {
-//       context += `<div class="board-ship-block"><b><a target="_blank" rel="noopener noreferrer" href="${ship.url}">${ship.name}</a></b><img class="popup-resource-image" src="${ship.img}" width="300" height="200" /></div>`;
-//       searchContent += `${ship.name}</br>`;
-//     }
-//     context += `</div>`;
-//   }
-//   searchContent += '</br>';
-//   return [context, searchContent];
-// };
 
 
 function generateScrapPopup() {
