@@ -462,12 +462,30 @@ const SHIPS = {
 };
 
 const ACTIONS = {
-  CREW: 'https://forded.github.io/ageofwater-map.github.io/icons/crew_action.png',
-  TRADE: 'https://forded.github.io/ageofwater-map.github.io/icons/trade_action.png',
-  REPAIR: 'https://forded.github.io/ageofwater-map.github.io/icons/repair_action.png',
-  QUEST: 'https://forded.github.io/ageofwater-map.github.io/icons/quest_action.png',
-  MESSAGE: 'https://forded.github.io/ageofwater-map.github.io/icons/mail_action.png',
-  SHIP: 'https://forded.github.io/ageofwater-map.github.io/icons/ship_action.png',
+  CREW: {
+    img: 'https://forded.github.io/ageofwater-map.github.io/icons/crew_action.png',
+    alt: 'Можно получить задание на получение члена экипажа',
+  },
+  TRADE: {
+    img: 'https://forded.github.io/ageofwater-map.github.io/icons/trade_action.png',
+    alt: 'Можно поторговать ресурсами',
+  },
+  REPAIR: {
+    img: 'https://forded.github.io/ageofwater-map.github.io/icons/repair_action.png',
+    alt: 'Можно починить свой корабль',
+  },
+  QUEST: {
+    img: 'https://forded.github.io/ageofwater-map.github.io/icons/quest_action.png',
+    alt: 'Можно получить квест на опыт или ресурсы',
+  },
+  MESSAGE: {
+    img: 'https://forded.github.io/ageofwater-map.github.io/icons/mail_action.png',
+    alt: 'Можно получить задание на развозку почты'
+  },
+  SHIP: {
+    img: 'https://forded.github.io/ageofwater-map.github.io/icons/ship_action.png',
+    alt: 'Можно получить корпус корабля по заданию',
+  }
 };
 
 const worldPoints = {
@@ -4336,10 +4354,10 @@ function generateDescription(title, image = null, description = null, resources 
   context += '<div class="marker-button">';
   if (isHidable) {
     context +=
-      '<div class="hide-button-block"><button class="custom-button-styled popup-button" onClick="hideMarker()">👁️‍🗨️</button></div>';
+      '<div class="hide-button-block"><button class="custom-button-styled popup-button" onClick="hideMarker()">👁️ Пометить</button></div>';
   }
   context +=
-    '<div class="hide-button-block"><button class="custom-button-styled  popup-button" onClick="copyLinkToMarker(\'$[unique]\')">🔗</button></div>';
+    '<div class="hide-button-block"><button class="custom-button-styled  popup-button" onClick="copyLinkToMarker(\'$[unique]\')">🔗 Ссылка</button></div>';
   context += '</div>';
   
   // Заголовок маркера
@@ -4352,7 +4370,7 @@ function generateDescription(title, image = null, description = null, resources 
   if (actions) {
     context += '<div class="popup-actions-block">';
     for (const action of actions) {
-      context += `<img class="popup-resource-image" src="${action}" width="25" height="25" />`;
+      context += `<img class="popup-resource-image" src="${action.img}" alt="${action.alt}" width="25" height="25" />`;
     }
     context += '</div>';
   }
