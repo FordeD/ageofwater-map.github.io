@@ -3945,7 +3945,7 @@ for (const type of types) {
         offset: [0, 15],
       });
     } else {
-      marker.bindTooltip('Информация о данной метке', {
+      marker.bindTooltip('Кликни чтобы посмотреть информацию о данной метке', {
         permanent: false,
         direction: 'bottom',
         className: 'marker-toltip',
