@@ -657,6 +657,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.KONTRABAND_SHIELD.T32,
           ITEMS.CONSTRUCTIONS.KONTRABAND_SHIELD.T33,
           ITEMS.CONSTRUCTIONS.RUL_RUB_BUKSIRA,
+          ITEMS.MODULES.GENERATOR.T3,
         ],
         null,
         null,
