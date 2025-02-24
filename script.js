@@ -2391,8 +2391,8 @@ const worldPoints = {
       ),
     ],
     [
-      -127.8125,
-      185.8125,
+      -141.1875,
+      96.5625,
       generateDescription(
         'Пешая боевая зона "Покосившийся небоскреб"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
@@ -2403,8 +2403,8 @@ const worldPoints = {
       ),
     ],
     [
-      -141.1875,
-      96.5625,
+      -127.8125,
+      185.8125,
       generateDescription(
         'Пешая боевая зона "Университет"',
         'https://forded.github.io/ageofwater-map.github.io/icons/fczs.png',
