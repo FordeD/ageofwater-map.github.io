@@ -2017,6 +2017,7 @@ const worldPoints = {
           ITEMS.MODULES.ACCUMULATOR.T2,
           ITEMS.CONSTRUCTIONS.SEINER.PLATFORMA,
           ITEMS.MODULES.TRUBA.T3,
+          ITEMS.MODULES.GENERATOR.T5,
         ],
         `В этой точке можно абордажить ${SHIPS.T5.REPEJ.name}`,
         null,
