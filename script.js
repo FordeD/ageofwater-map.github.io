@@ -1555,6 +1555,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
           ITEMS.MODULES.ACCUMULATOR.T2,
           ITEMS.MODULES.POMPA.T4,
+          ITEMS.CONSTRUCTIONS.TREXETAJ_RUB
         ],
         '',
         null,
@@ -1640,6 +1641,7 @@ const worldPoints = {
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
             ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
             ITEMS.MODULES.GENERATOR.T3,
+            ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
           ],
           [SHIPS.T2.MARIANA.name]: [
             ITEMS.CONSTRUCTIONS.STENKA.T1,
