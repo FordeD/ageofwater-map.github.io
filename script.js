@@ -1239,6 +1239,39 @@ const worldPoints = {
         [SHIPS.T3.REZKIJ],
       ),
     ],
+    [
+      -47.68750,
+      126.43750,
+      generateDescription(
+        '16. Корабль T3',
+        'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
+        `Корабль ${SHIPS.T3.REZKIJ.name}.`,
+        [
+          RESURCES.SCRAP,
+          RESURCES.FIBER,
+          RESURCES.WOOD,
+          RESURCES.PLASTIC,
+          RESURCES.MECHANISM,
+          RESURCES.PLATS,
+          RESURCES.AMMO_DETAILS,
+          RESURCES.BARREL,
+          RESURCES.COPPER,
+          RESURCES.STEEL,
+          RESURCES.COPPER_PLATES,
+        ],
+        [
+          ITEMS.CONSTRUCTIONS.STENKA.T1,
+          ITEMS.CONSTRUCTIONS.STEEL_SHIELD.T1,
+          ITEMS.MODULES.ACCUMULATOR.T1,
+          ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
+          ITEMS.CONSTRUCTIONS.MUSOR_SHIELD.T1,
+          ITEMS.MODULES.POMPA.T2,
+        ],
+        null,
+        null,
+        [SHIPS.T3.REZKIJ],
+      ),
+    ],
   ],
   pirates: [
     [
@@ -1555,7 +1588,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
           ITEMS.MODULES.ACCUMULATOR.T2,
           ITEMS.MODULES.POMPA.T4,
-          ITEMS.CONSTRUCTIONS.TREXETAJ_RUB
+          ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
         ],
         '',
         null,
