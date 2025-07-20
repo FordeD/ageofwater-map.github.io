@@ -1852,6 +1852,7 @@ const worldPoints = {
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T1,
           ITEMS.CONSTRUCTIONS.TUR_BAZA.T2,
           ITEMS.MODULES.ACCUMULATOR.T2,
+          ITEMS.CONSTRUCTIONS.TREXETAJ_RUB,
         ],
         `В этой точке можно абордажить ${SHIPS.T5.REPEJ.name}, но топятся они так же легко`,
         null,
@@ -4204,13 +4205,14 @@ const legendNames = {
   armades: 'Армады',
   repQuests: 'Повторяющиеся задания',
   bqs: 'Уникальные корабли',
+  custom: 'Свои метки',
 };
 
 const groupMarkerTypes = {
   resources: ['scraps', 'ammos', 'chemicals', 'dynamites', 'pantoons'],
   flots: ['pirates', 'trashs', 'rangers', 'couriers', 'armades', 'bqs'],
   bases: ['pois', 'postal', 'traders'],
-  others: ['explosives', 'rocks', 'teleports', 'fczs', 'repQuests'],
+  others: ['explosives', 'rocks', 'teleports', 'fczs', 'repQuests', 'custom'],
 };
 
 const groupMarkerTypeNames = {
@@ -4341,6 +4343,12 @@ const icons = {
     iconAnchor: [15, 15],
     popupAnchor: [0, -20],
   }),
+  custom: L.icon({
+    iconUrl: 'https://forded.github.io/ageofwater-map.github.io/icons/ammo.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -20],
+  }),
 };
 
 const findKeyByValue = (obj, value) => {
@@ -4461,6 +4469,67 @@ for (const type of types) {
   }
 }
 
+// Загружаем кастомные маркеры из localStorage
+const customMarkers = JSON.parse(localStorage.getItem('customMarkers') || '[]');
+if (customMarkers.length > 0) {
+  // Создаем группу для кастомных маркеров если её нет
+  if (!iconGroups['custom']) {
+    iconGroups['custom'] = new L.FeatureGroup();
+    legendMarkers[legendNames['custom']] = iconGroups['custom'];
+  }
+  
+  customMarkers.forEach((customMarker, index) => {
+    if (customMarker.coords && customMarker.coords.length === 2) {
+      const [lat, lng] = customMarker.coords;
+      
+      // Создаем описание маркера
+      const popupContent = generateDescription(
+        customMarker.title,
+        customMarker.icon,
+        customMarker.description,
+        customMarker.resources || [],
+        customMarker.boardings || [],
+        customMarker.nuances,
+        customMarker.actions || [],
+        customMarker.ships || [],
+        false,
+        true // isCustom = true для кастомных маркеров
+      );
+      
+      const options = {
+        icon: icons[customMarker.group] || icons['custom'], // Используем сохраненную группу или fallback на custom
+        markerType: 'custom',
+        markerId: 'custom' + index,
+        searchContext: popupContent[1],
+      };
+      
+      let formattedContext = popupContent[0];
+      if (formattedContext) {
+        formattedContext = formattedContext.replace('$[unique]', 'custom' + index);
+        // Заменяем placeholder для кнопки удаления на реальный markerId
+        formattedContext = formattedContext.replace('deleteCustomMarker(\'$[unique]\')', `deleteCustomMarker('custom${index}')`);
+      }
+      
+      let marker = new L.marker([lat, lng], options);
+      marker.on('click', handleMarkerClick.bind(this, formattedContext, marker));
+      marker.bindTooltip('Кликни чтобы посмотреть информацию о данной метке', {
+        permanent: false,
+        direction: 'bottom',
+        className: 'marker-toltip',
+        offset: [0, 15],
+      });
+      
+      iconGroups['custom'].addLayer(marker);
+      MARKERS.push(marker);
+    }
+  });
+  
+  // Показываем группу кастомных маркеров если она не скрыта
+  if (!showedMarkers.includes('custom')) {
+    map.removeLayer(iconGroups['custom']);
+  }
+}
+
 let lastActivateMarker = null;
 let targetMarker = null;
 function handleMarkerClick(popupContext, marker) {
@@ -4551,6 +4620,50 @@ function copyLinkToMarker(unique) {
   alert(`Точная ссылка места на карте скопирована в буфер обмена.\n${url}`);
 }
 
+function deleteCustomMarker(unique) {
+  console.log('Удаление маркера с ID:', unique);
+  
+  // Подтверждение удаления
+  if (!confirm('Вы уверены, что хотите удалить этот маркер?')) {
+    return;
+  }
+  
+  // Находим маркер по markerId
+  const marker = MARKERS.find(mrk => mrk.options.markerId === unique);
+  if (!marker) {
+    alert('Ошибка: маркер не найден');
+    return;
+  }
+  
+  // Извлекаем индекс из markerId (например, 'custom0' -> 0)
+  const index = parseInt(unique.replace('custom', ''));
+  
+  if (isNaN(index)) {
+    alert('Ошибка: неверный идентификатор маркера');
+    return;
+  }
+  
+  // Удаляем маркер с карты
+  iconGroups['custom'].removeLayer(marker);
+  
+  // Удаляем из общего массива маркеров
+  const markerIndex = MARKERS.indexOf(marker);
+  if (markerIndex > -1) {
+    MARKERS.splice(markerIndex, 1);
+  }
+  
+  // Удаляем из localStorage
+  const customMarkers = JSON.parse(localStorage.getItem('customMarkers') || '[]');
+  if (customMarkers[index] !== undefined) {
+    customMarkers.splice(index, 1);
+    localStorage.setItem('customMarkers', JSON.stringify(customMarkers));
+  }
+  
+  // Закрываем панель интеграции
+  integrations[INTEGRATIONS.MARKER.TAG].actions.closePanel();
+  
+  alert('Маркер успешно удален!');
+}
 
 // Блок с координатами точки
 const coordinates = L.control({ position: 'bottomleft' });
@@ -4603,7 +4716,7 @@ function updateInfo() {
   const { lat, lng } = map.getCenter();
   markerPlace.innerHTML = `Координаты: ${lat.toFixed(5)}, ${lng.toFixed(
     5,
-  )} <div onClick="copyCoords()">🔗</div>`;
+  )} <div onClick="copyCoords()">🔗</div><div onClick="createMarker()">➕</div><div onClick="exportCustomMarkers()">⬇️</div><div onClick="importCustomMarkers()">⬆️</div>`;
 }
 
 function copyCoords() {
@@ -4617,6 +4730,76 @@ function copyCoords() {
       //2
     },
   );
+}
+
+function exportCustomMarkers() {
+  const customMarkers = JSON.parse(localStorage.getItem('customMarkers') || '[]');
+  
+  if (customMarkers.length === 0) {
+    alert('Нет кастомных маркеров для экспорта');
+    return;
+  }
+  
+  const exportData = JSON.stringify(customMarkers, null, 2);
+  
+  navigator.clipboard.writeText(exportData).then(
+    function () {
+      alert(`Экспортировано ${customMarkers.length} кастомных маркеров в буфер обмена`);
+    },
+    function () {
+      alert('Ошибка при копировании в буфер обмена');
+    }
+  );
+}
+
+function importCustomMarkers() {
+  const importData = prompt('Вставьте JSON с кастомными маркерами:');
+  
+  if (!importData || importData.trim() === '') {
+    return;
+  }
+  
+  try {
+    const importedMarkers = JSON.parse(importData);
+    
+    if (!Array.isArray(importedMarkers)) {
+      alert('Ошибка: JSON должен содержать массив маркеров');
+      return;
+    }
+    
+    // Проверяем структуру маркеров
+    const validMarkers = importedMarkers.filter(marker => {
+      return marker && 
+             marker.coords && 
+             Array.isArray(marker.coords) && 
+             marker.coords.length === 2 &&
+             marker.title;
+    });
+    
+    if (validMarkers.length === 0) {
+      alert('Ошибка: не найдено валидных маркеров в JSON');
+      return;
+    }
+    
+    // Получаем существующие маркеры
+    const existingMarkers = JSON.parse(localStorage.getItem('customMarkers') || '[]');
+    
+    // Добавляем новые маркеры
+    const updatedMarkers = [...existingMarkers, ...validMarkers];
+    
+    // Сохраняем обновленный список
+    localStorage.setItem('customMarkers', JSON.stringify(updatedMarkers));
+    
+    alert(`Импортировано ${validMarkers.length} маркеров. Всего кастомных маркеров: ${updatedMarkers.length}`);
+    
+    // Перезагружаем страницу для отображения новых маркеров
+    if (confirm('Перезагрузить страницу для отображения импортированных маркеров?')) {
+      location.reload();
+    }
+    
+  } catch (error) {
+    alert('Ошибка при парсинге JSON: ' + error.message);
+  }
 }
 
 function updatePosition(lat, lng) {
@@ -4941,7 +5124,7 @@ const shareControl = L.Control.extend({
 map.addControl(new shareControl());
 
 
-function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null, actions = [], ships = [], isHidable = false) {
+function generateDescription(title, image = null, description = null, resources = [], boardings = [], nuances = null, actions = [], ships = [], isHidable = false, isCustom = false) {
   let context = '';
   let searchContent = '';
   // Кнопки маркера
@@ -4950,8 +5133,14 @@ function generateDescription(title, image = null, description = null, resources 
     context +=
       '<div class="hide-button-block"><button class="custom-button-styled popup-button" onClick="hideMarker(\'$[unique]\')">👁️ Пометить</button></div>';
   }
-  context +=
-    '<div class="hide-button-block"><button class="custom-button-styled  popup-button" onClick="copyLinkToMarker(\'$[unique]\')">🔗 Ссылка</button></div>';
+  if (!isCustom) {
+    context +=
+      '<div class="hide-button-block"><button class="custom-button-styled  popup-button" onClick="copyLinkToMarker(\'$[unique]\')">🔗 Ссылка</button></div>';
+  }
+  if (isCustom) {
+    context +=
+      '<div class="hide-button-block"><button class="custom-button-styled popup-button" onClick="deleteCustomMarker(\'$[unique]\')">🗑️ Удалить</button></div>';
+  }
   context += '</div>';
   
   // Заголовок маркера
@@ -5205,3 +5394,370 @@ setInterval(() => {
     translateBlock.style = 'display: none !important;';
   }
 }, 500);
+
+// Функция для создания пользовательского маркера
+function createMarker() {
+  const { lat, lng } = map.getCenter();
+  
+  // Создаем модальное окно
+  const modal = document.createElement('div');
+  modal.className = 'create-marker-modal';
+  
+  // Создаем контент модального окна
+  const modalContent = document.createElement('div');
+  modalContent.className = 'create-marker-content';
+  
+  // Кнопка закрытия
+  const closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '✖️';
+  closeBtn.className = 'create-marker-close';
+  closeBtn.onclick = () => document.body.removeChild(modal);
+  
+  // Заголовок
+  const title = document.createElement('h2');
+  title.textContent = 'Создать пользовательский маркер';
+  title.className = 'create-marker-title';
+  
+  // Поля ввода
+  const titleInput = createInput('title', 'Название маркера', 'text');
+  const descriptionInput = createInput('description', 'Описание', 'textarea');
+  const nuancesInput = createInput('nuances', 'Уточнения', 'textarea');
+  const coordsInput = createInput('coords', 'Координаты', 'text', `${lat.toFixed(5)}, ${lng.toFixed(5)}`);
+  coordsInput.readOnly = true;
+  
+  // Выбор группы маркеров
+  const groupSelect = document.createElement('select');
+  groupSelect.id = 'markerGroup';
+  groupSelect.className = 'create-marker-select';
+  
+  const groupLabel = document.createElement('label');
+  groupLabel.textContent = 'Группа маркеров:';
+  groupLabel.className = 'create-marker-label';
+  
+  // Добавляем опции из legendNames
+  Object.entries(legendNames).forEach(([key, value]) => {
+    const option = document.createElement('option');
+    option.value = key;
+    option.textContent = value;
+    groupSelect.appendChild(option);
+  });
+  
+  // Блоки для выбора ресурсов, предметов, кораблей и действий
+  const resourcesBlock = createSelectionBlock('resources', 'Ресурсы', RESURCES);
+  const boardingsBlock = createSelectionBlock('boardings', 'Предметы', ITEMS);
+  const shipsBlock = createSelectionBlock('ships', 'Корабли', SHIPS, true);
+  const actionsBlock = createSelectionBlock('actions', 'Действия', ACTIONS);
+  
+  // Кнопка создания
+  const createBtn = document.createElement('button');
+  createBtn.textContent = 'Создать';
+  createBtn.className = 'create-marker-button';
+  createBtn.onclick = () => {
+    // Получаем значения из полей ввода
+    const titleInputElement = document.getElementById('title');
+    const descriptionInputElement = document.getElementById('description');
+    const nuancesInputElement = document.getElementById('nuances');
+    const coordsInputElement = document.getElementById('coords');
+    
+    const markerData = {
+      title: titleInputElement ? titleInputElement.value : '',
+      description: descriptionInputElement ? descriptionInputElement.value : '',
+      nuances: nuancesInputElement ? nuancesInputElement.value : '',
+      coords: coordsInputElement ? coordsInputElement.value : '',
+      group: groupSelect.value,
+      resources: getSelectedItems('resources'),
+      boardings: getSelectedItems('boardings'),
+      ships: getSelectedItems('ships'),
+      actions: getSelectedItems('actions')
+    };
+    
+    // Генерируем объект в формате worldPoints
+    const worldPointObject = generateWorldPointObject(markerData);
+    
+    // Сохраняем в localStorage
+    const customMarkers = JSON.parse(localStorage.getItem('customMarkers') || '[]');
+    customMarkers.push(worldPointObject);
+    localStorage.setItem('customMarkers', JSON.stringify(customMarkers));
+    
+    alert('Маркер создан и сохранен!');
+    document.body.removeChild(modal);
+  };
+  
+  // Собираем все элементы
+  modalContent.appendChild(closeBtn);
+  modalContent.appendChild(title);
+  modalContent.appendChild(titleInput);
+  modalContent.appendChild(descriptionInput);
+  modalContent.appendChild(nuancesInput);
+  modalContent.appendChild(coordsInput);
+  modalContent.appendChild(groupLabel);
+  modalContent.appendChild(groupSelect);
+  modalContent.appendChild(resourcesBlock);
+  modalContent.appendChild(boardingsBlock);
+  modalContent.appendChild(shipsBlock);
+  modalContent.appendChild(actionsBlock);
+  modalContent.appendChild(createBtn);
+  
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
+}
+
+// Вспомогательные функции
+function createInput(id, label, type, defaultValue = '') {
+  const container = document.createElement('div');
+  container.style.marginBottom = '15px';
+  
+  const labelElement = document.createElement('label');
+  labelElement.textContent = label + ':';
+  labelElement.className = 'create-marker-label';
+  
+  let input;
+  if (type === 'textarea') {
+    input = document.createElement('textarea');
+    input.rows = 3;
+    input.className = 'create-marker-textarea';
+  } else {
+    input = document.createElement('input');
+    input.type = type;
+    input.className = 'create-marker-input';
+  }
+  
+  input.id = id;
+  input.value = defaultValue;
+  
+  container.appendChild(labelElement);
+  container.appendChild(input);
+  return container;
+}
+
+function createSelectionBlock(id, title, data, isShips = false) {
+  const container = document.createElement('div');
+  container.id = id;
+  container.style.cssText = `
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  `;
+  
+  const titleElement = document.createElement('h3');
+  titleElement.textContent = title;
+  titleElement.style.marginBottom = '10px';
+  
+  const grid = document.createElement('div');
+  grid.className = isShips ? 'create-marker-grid ships' : 'create-marker-grid';
+  
+  // Рекурсивно обходим объект данных
+  function addItems(obj, prefix = '') {
+    Object.entries(obj).forEach(([key, value]) => {
+      if (isShips && typeof value === 'object' && value !== null && value.img) {
+        // Для кораблей используем только поле img
+        const item = document.createElement('div');
+        item.className = 'create-marker-item ship';
+        
+        const img = document.createElement('img');
+        img.src = value.img;
+        
+        const nameText = document.createElement('div');
+        nameText.textContent = value.name || key;
+        nameText.className = 'create-marker-item-name';
+        
+        const fullKey = prefix ? `${prefix}.${key}` : key;
+        item.dataset.key = fullKey;
+        item.dataset.url = value.img;
+        
+        item.appendChild(img);
+        item.appendChild(nameText);
+        
+        item.addEventListener('click', () => {
+          item.classList.toggle('selected');
+        });
+        
+        grid.appendChild(item);
+      } else if (typeof value === 'string' && value.includes('http')) {
+        // Для обычных ресурсов и предметов
+        const item = document.createElement('div');
+        item.className = 'create-marker-item';
+        
+        const img = document.createElement('img');
+        img.src = value;
+        
+        const fullKey = prefix ? `${prefix}.${key}` : key;
+        item.dataset.key = fullKey;
+        item.dataset.url = value;
+        
+        item.appendChild(img);
+        
+        item.addEventListener('click', () => {
+          item.classList.toggle('selected');
+        });
+        
+        grid.appendChild(item);
+      } else if (typeof value === 'object' && value !== null) {
+        // Для действий (ACTIONS) добавляем всплывающие подсказки
+        if (value.img && value.alt) {
+          const item = document.createElement('div');
+          item.className = 'create-marker-item';
+          item.title = value.alt; // Добавляем всплывающую подсказку
+          
+          const img = document.createElement('img');
+          img.src = value.img;
+          img.alt = value.alt; // Добавляем alt для изображения
+          
+          const fullKey = prefix ? `${prefix}.${key}` : key;
+          item.dataset.key = fullKey;
+          item.dataset.url = value.img;
+          
+          item.appendChild(img);
+          
+          item.addEventListener('click', () => {
+            item.classList.toggle('selected');
+          });
+          
+          grid.appendChild(item);
+        } else {
+          // Рекурсивно обходим вложенные объекты
+          const newPrefix = prefix ? `${prefix}.${key}` : key;
+          addItems(value, newPrefix);
+        }
+      }
+    });
+  }
+  
+  // Если это блок resources или boardings, добавляем элементы из обоих объектов
+  if (id === 'resources' || id === 'boardings') {
+    addItems(RESURCES, 'RESOURCES');
+    addItems(ITEMS, 'ITEMS');
+  } else {
+    addItems(data);
+  }
+  
+  container.appendChild(titleElement);
+  container.appendChild(grid);
+  
+  return container;
+}
+
+function getSelectedItems(blockId) {
+  const block = document.getElementById(blockId);
+  const selectedItems = [];
+  
+  block.querySelectorAll('.create-marker-item.selected').forEach(item => {
+    selectedItems.push(item.dataset.key);
+  });
+  
+  return selectedItems;
+}
+
+function generateWorldPointObject(markerData) {
+  // Проверяем и парсим координаты
+  let lat = 0, lng = 0;
+  if (markerData.coords && markerData.coords.trim()) {
+    try {
+      [lat, lng] = markerData.coords.split(',').map(coord => parseFloat(coord.trim()));
+    } catch (error) {
+      console.warn('Ошибка парсинга координат:', markerData.coords);
+      lat = 0;
+      lng = 0;
+    }
+  }
+  
+  // Получаем иконку для выбранной группы
+  const iconUrl = icons[markerData.group] ? icons[markerData.group].options.iconUrl : 'https://forded.github.io/ageofwater-map.github.io/icons/poi.png';
+  
+  // Преобразуем выбранные ресурсы в массив URL
+  const resources = (markerData.resources || []).map(resource => {
+    const path = resource.split('.');
+    let current = null;
+    
+    // Определяем из какого объекта брать данные
+    if (path[0] === 'RESOURCES') {
+      current = RESURCES;
+      path.shift(); // Убираем 'RESOURCES' из пути
+    } else if (path[0] === 'ITEMS') {
+      current = ITEMS;
+      path.shift(); // Убираем 'ITEMS' из пути
+    }
+    
+    if (!current) return null;
+    
+    for (const key of path) {
+      if (current && current[key]) {
+        current = current[key];
+      } else {
+        return null;
+      }
+    }
+    return current;
+  }).filter(Boolean);
+  
+  // Преобразуем выбранные предметы в массив URL
+  const boardings = (markerData.boardings || []).map(boarding => {
+    const path = boarding.split('.');
+    let current = null;
+    
+    // Определяем из какого объекта брать данные
+    if (path[0] === 'RESOURCES') {
+      current = RESURCES;
+      path.shift(); // Убираем 'RESOURCES' из пути
+    } else if (path[0] === 'ITEMS') {
+      current = ITEMS;
+      path.shift(); // Убираем 'ITEMS' из пути
+    }
+    
+    if (!current) return null;
+    
+    for (const key of path) {
+      if (current && current[key]) {
+        current = current[key];
+      } else {
+        return null;
+      }
+    }
+    return current;
+  }).filter(Boolean);
+  
+  // Преобразуем выбранные корабли в массив объектов
+  const ships = (markerData.ships || []).map(ship => {
+    const path = ship.split('.');
+    let current = SHIPS;
+    for (const key of path) {
+      if (current && current[key]) {
+        current = current[key];
+      } else {
+        return null;
+      }
+    }
+    return current;
+  }).filter(Boolean);
+  
+  // Преобразуем выбранные действия в массив URL
+  const actions = (markerData.actions || []).map(action => {
+    const path = action.split('.');
+    let current = ACTIONS;
+    for (const key of path) {
+      if (current && current[key]) {
+        current = current[key];
+      } else {
+        return null;
+      }
+    }
+    return current;
+  }).filter(Boolean);
+  
+  const worldPoint = {
+    coords: [lat, lng],
+    icon: iconUrl,
+    title: markerData.title || '',
+    description: markerData.description || '',
+    resources: resources,
+    boardings: boardings,
+    ships: ships,
+    actions: actions,
+    nuances: markerData.nuances || null,
+    group: markerData.group || 'custom', // Сохраняем выбранную группу
+    isCustom: true // Флаг для пользовательских маркеров
+  };
+  
+  return worldPoint;
+}
