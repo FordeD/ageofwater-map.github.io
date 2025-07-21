@@ -180,14 +180,16 @@ const ITEMS = {
       T3: 'https://forded.github.io/ageofwater-map.github.io/items/gran_3.jpg',
       T4: 'https://forded.github.io/ageofwater-map.github.io/items/gran_4.jpg',
       T5: 'https://forded.github.io/ageofwater-map.github.io/items/gran_5.jpg',
+      T6: 'https://forded.github.io/ageofwater-map.github.io/items/gran_6.jpg',
       JARED: 'https://forded.github.io/ageofwater-map.github.io/items/gran_jared.png',
     },
     KARTECH: {
-      T1: 'https://forded.github.io/ageofwater-map.github.io/items/gran_1.jpg',
-      T2: 'https://forded.github.io/ageofwater-map.github.io/items/gran_2.jpg',
-      T3: 'https://forded.github.io/ageofwater-map.github.io/items/gran_3.jpg',
-      T4: 'https://forded.github.io/ageofwater-map.github.io/items/gran_4.jpg',
-      T5: 'https://forded.github.io/ageofwater-map.github.io/items/gran_5.jpg',
+      T1: 'https://forded.github.io/ageofwater-map.github.io/items/kar_1.jpg',
+      T2: 'https://forded.github.io/ageofwater-map.github.io/items/kar_2.jpg',
+      T3: 'https://forded.github.io/ageofwater-map.github.io/items/kar_3.jpg',
+      T4: 'https://forded.github.io/ageofwater-map.github.io/items/kar_4.jpg',
+      T5: 'https://forded.github.io/ageofwater-map.github.io/items/kar_5.jpg',
+      T6: 'https://forded.github.io/ageofwater-map.github.io/items/kar_6.jpg',
     },
     PULEMET: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/pul_1.jpg',
@@ -195,6 +197,7 @@ const ITEMS = {
       T3: 'https://forded.github.io/ageofwater-map.github.io/items/pul_3.jpg',
       T4: 'https://forded.github.io/ageofwater-map.github.io/items/pul_4.jpg',
       T5: 'https://forded.github.io/ageofwater-map.github.io/items/pul_5.jpg',
+      T6: 'https://forded.github.io/ageofwater-map.github.io/items/pul_6.jpg',
       MINIGUN: 'https://forded.github.io/ageofwater-map.github.io/items/minigun.png',
     },
     PUSHKA: {
@@ -203,6 +206,28 @@ const ITEMS = {
       T3: 'https://forded.github.io/ageofwater-map.github.io/items/push_3.jpg',
       T4: 'https://forded.github.io/ageofwater-map.github.io/items/push_4.jpg',
       T5: 'https://forded.github.io/ageofwater-map.github.io/items/push_5.jpg',
+      T6: 'https://forded.github.io/ageofwater-map.github.io/items/push_6.jpg',
+    },
+    RAKETA: {
+      T1: 'https://forded.github.io/ageofwater-map.github.io/items/rak_1.jpg',
+      T2: 'https://forded.github.io/ageofwater-map.github.io/items/rak_2.jpg',
+      T3: 'https://forded.github.io/ageofwater-map.github.io/items/rak_3.jpg',
+      T4: 'https://forded.github.io/ageofwater-map.github.io/items/rak_4.jpg',
+      T5: 'https://forded.github.io/ageofwater-map.github.io/items/rak_5.jpg',
+      T6: 'https://forded.github.io/ageofwater-map.github.io/items/rak_6.jpg',
+    },
+    TARAN: {
+      T1: 'https://forded.github.io/ageofwater-map.github.io/items/tar_1.jpg',
+      T2: 'https://forded.github.io/ageofwater-map.github.io/items/tar_2.jpg',
+      T3: 'https://forded.github.io/ageofwater-map.github.io/items/tar_3.jpg',
+      T4: 'https://forded.github.io/ageofwater-map.github.io/items/tar_4.jpg',
+      T5: 'https://forded.github.io/ageofwater-map.github.io/items/tar_5.jpg',
+    },
+    PILA: {
+      T2: 'https://forded.github.io/ageofwater-map.github.io/items/pila_2.jpg',
+      T3: 'https://forded.github.io/ageofwater-map.github.io/items/pila_3.jpg',
+      T4: 'https://forded.github.io/ageofwater-map.github.io/items/pila_4.jpg',
+      T5: 'https://forded.github.io/ageofwater-map.github.io/items/pila_5.jpg',
     },
   },
   CONSTRUCTIONS: {
@@ -226,8 +251,9 @@ const ITEMS = {
     LONGLIN: {
       SHIELD_1: 'https://forded.github.io/ageofwater-map.github.io/items/longlin_shield_1.jpg',
       SHIELD_2: 'https://forded.github.io/ageofwater-map.github.io/items/longlin_shield_2.jpg',
+      SHIELD_4: 'https://forded.github.io/ageofwater-map.github.io/items/longlin_shield_4.jpg',
       SHIELD_5: 'https://forded.github.io/ageofwater-map.github.io/items/longlin_shield_5.jpg',
-      SHIELD_6: 'https://forded.github.io/ageofwater-map.github.io/items/longlin_shield_6.jpg',
+      SHIELD_6: 'https://forded.github.io/ageofwater-map.github.io/items/longlin_shield_5.jpg',
     },
     STEEL_SHIELD: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/steel_shield_1.jpg',
@@ -353,6 +379,26 @@ const SHIPS = {
       name: 'Трагула (I)',
       url: 'https://ageofwater.fandom.com/wiki/Tragula_Trawler',
     },
+    ISHOD: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_ishod.webp',
+      name: 'Исход (I)',
+      url: 'https://ageofwater.fandom.com/wiki/Exodus_Survey_Vessel',
+    },
+    LAIDEN: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_laiden.webp',
+      name: 'Лаиден (I)',
+      url: 'https://ageofwater.fandom.com/wiki/Leiden_Boat',
+    },
+    NAINIV: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_nainiv.webp',
+      name: 'Найнив (I)',
+      url: 'https://ageofwater.fandom.com/wiki/Nyneve_Boat',
+    },
+    POMOR: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T1_pomor.webp',
+      name: 'Помор (I)',
+      url: 'https://ageofwater.fandom.com/wiki/Pomor_Tugboat',
+    },
   },
   T2: {
     SCORPEN: {
@@ -379,6 +425,31 @@ const SHIPS = {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_liverpul.webp',
       name: 'Ливерпуль (II)',
       url: 'https://ageofwater.fandom.com/wiki/Liverpool',
+    },
+    ARES: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_ares.webp',
+      name: 'Арес (II)',
+      url: 'https://ageofwater.fandom.com/wiki/Ares_Multipurpose_Boat',
+    },
+    BARABULYA: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_barabulya.webp',
+      name: 'Барбуля (II)',
+      url: 'https://ageofwater.fandom.com/wiki/Fishing_Trawler',
+    },
+    CASPIJ: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_caspij.webp',
+      name: 'Каспий (II)',
+      url: 'https://ageofwater.fandom.com/wiki/Caspian_Small_Trawler',
+    },
+    GLAM: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_glam.webp',
+      name: 'Глэм (II)',
+      url: 'https://ageofwater.fandom.com/wiki/Glam_Sailboat',
+    },
+    LAVRAK: {
+      img: 'https://forded.github.io/ageofwater-map.github.io/ships/T2_lavrak.webp',
+      name: 'Лаврак (II)',
+      url: 'https://ageofwater.fandom.com/wiki/Bass_Torpedo_Boat',
     },
   },
   T3: {
@@ -461,7 +532,7 @@ const SHIPS = {
     },
     KORSAR: {
       img: 'https://forded.github.io/ageofwater-map.github.io/ships/T4_korsar.webp',
-      name: 'Корсар (VI)',
+      name: 'Корсар (IV)',
       url: 'https://ageofwater.fandom.com/wiki/Corsair',
     },
     BRUNHILD: {
