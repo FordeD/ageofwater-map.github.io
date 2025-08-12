@@ -174,6 +174,9 @@ const ITEMS = {
     },
   },
   WEAPONS: {
+    OGNEMET: {
+      T6: 'https://forded.github.io/ageofwater-map.github.io/items/ogon_6.jpg',
+    },
     GRANATOMET: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/gran_1.jpg',
       T2: 'https://forded.github.io/ageofwater-map.github.io/items/gran_2.jpg',
@@ -1311,8 +1314,8 @@ const worldPoints = {
       ),
     ],
     [
-      -47.68750,
-      126.43750,
+      -47.6875,
+      126.4375,
       generateDescription(
         '16. Корабль T3',
         'https://forded.github.io/ageofwater-map.github.io/icons/ranger.png',
@@ -2557,14 +2560,14 @@ const worldPoints = {
       'Поселение "Близнецы"',
     ],
     [
-      -88.90625,
-      165.34375,
+      -112.75,
+      120.71875,
       generateDescription('Поселение "Русалка"', null, '', null, null, '', [ACTIONS.QUEST]),
       'Поселение "Русалка"',
     ],
     [
-      -90.65625,
-      190.15625,
+      -108.1875,
+      137.28125,
       generateDescription(
         'Поселение "Корабел"',
         null,
@@ -2622,6 +2625,20 @@ const worldPoints = {
       'Мастерская "Восток"',
     ],
     [
+      -107.640625,
+      129.109375,
+      generateDescription(
+        'Бар "Хвост Кита"',
+        null,
+        'В этом поселении можно купить воду и еду, а так же продать некоторые другие товары товары',
+        null,
+        null,
+        'В некоторых квестах на развитие базы вас будут отправлять в это место',
+        [ACTIONS.QUEST, ACTIONS.TRADE],
+      ),
+      'Бар "Хвост Кита"',
+    ],
+    [
       -110.578125,
       128.453125,
       generateDescription(
@@ -2634,20 +2651,6 @@ const worldPoints = {
         [ACTIONS.QUEST, ACTIONS.TRADE, ACTIONS.MESSAGE, ACTIONS.REPAIR, ACTIONS.SHIP],
       ),
       'Поселение "Три кита"',
-    ],
-    [
-      -107.640625,
-      129.109375,
-      generateDescription(
-        'Бар "Хвост Кита"',
-        null,
-        'В этом поселении можно купить воду и еду, а так же продать некоторые другие товары товары',
-        null,
-        null,
-        'В некоторых квестах на развитие базы вас будут отправлять в это место',
-        [ACTIONS.QUEST, ACTIONS.TRADE],
-      ),
-      'Бар "Три Хвоста"',
     ],
     [
       -128.828125,
