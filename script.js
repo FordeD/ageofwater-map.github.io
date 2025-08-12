@@ -176,6 +176,7 @@ const ITEMS = {
   WEAPONS: {
     OGNEMET: {
       T6: 'https://forded.github.io/ageofwater-map.github.io/items/ogon_6.jpg',
+      T61: 'https://forded.github.io/ageofwater-map.github.io/items/ogon_6.1.jpg',
     },
     GRANATOMET: {
       T1: 'https://forded.github.io/ageofwater-map.github.io/items/gran_1.jpg',
@@ -4231,6 +4232,7 @@ const worldPoints = {
           RESURCES.MECHANISM,
           RESURCES.PLATS,
           ITEMS.WEAPONS.PULEMET.MINIGUN,
+          ITEMS.WEAPONS.OGNEMET.T61,
         ],
         null,
         'За победу над вражеским кораблем вы получаете награду в зависимости от нанесенного урона, градация объема награды делится на 18.725 опыта за помощь и 25.000 опыта за активное участие. С маленьким шансом можно получить пулемет Миниган Т7 или другие редкие предметы декора или конструкций, а так же большое количество медальонов',
@@ -4251,6 +4253,7 @@ const worldPoints = {
           RESURCES.MECHANISM,
           RESURCES.PLATS,
           ITEMS.WEAPONS.PULEMET.MINIGUN,
+          ITEMS.WEAPONS.OGNEMET.T61,
         ],
         null,
         'За победу над вражеским кораблем вы получаете награду в зависимости от нанесенного урона, градация объема награды делится на 18.725 опыта за помощь и 25.000 опыта за активное участие. С маленьким шансом можно получить пулемет Миниган Т7 или другие редкие предметы декора или конструкций, а так же большое количество медальонов',
